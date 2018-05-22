@@ -1,0 +1,18 @@
+<div class="container ">
+  <div class="row">
+    <% @produits.each do |produit| %>
+      <div class="col-sm-3">
+        <div class="card">
+          <%=  image_tag produit.photo, height: 200, width: 200, crop: :thumb, class: "card-picture" %>
+
+          <div class="card-info">
+            <h5><%= produit.nom %></h5>
+            <p> <%= produit.quantite %> produits </p>
+              <br>
+              <p>  <%= produit.prix %> €</p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
