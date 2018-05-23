@@ -4,6 +4,10 @@ class ProduitsController < ApplicationController
     @produits = Produit.all
   end
 
+  def show
+    @produit = Produit.find(params[:id])
+  end
+
 
 end
 
