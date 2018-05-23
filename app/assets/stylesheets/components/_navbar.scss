@@ -38,13 +38,12 @@
 /* Navbar link */
 .navbar-wagon-link {
   font-family: 'Montserrat Alternates';
-  font-weight: lighter;
   color: #999999 ;
   font-size: 13px;
 }
 .navbar-wagon-link:hover {
   color: #512501;
-  border-bottom: 2px solid #512501;
+  font-weight: bold;
   text-decoration: none;
 }
 
