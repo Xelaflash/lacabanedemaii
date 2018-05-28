@@ -4,10 +4,12 @@
   <div class="navbar-wagon navbar-sticky-top navbar-wagon-white">
 <% end %>
 
-  <div class="form-group">
-      <%= render 'shared/search', query: params[:query] %>
-  </div>
 
+    <div class="hidden-xs">
+      <div class="form-group">
+          <%= render 'shared/search', query: params[:query] %>
+      </div>
+      </div>
 
 
   <!-- Logo -->
