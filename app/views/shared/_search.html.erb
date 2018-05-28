@@ -1,4 +1,11 @@
-<%= simple_form_for :search, url: produits_path, method: :get, html: { class: 'form-inline, search'}, remote: true do |f| %>
-<div class="form-inputs"></div>
- <%= f.input :title, label: false , placeholder: "Cherchez un produit...", autofocus: false, input_html: { size: '30%'}%><%= link_to "<i class='fa fa-search'></i>".html_safe, method: :submit%>
-<% end %>
+
+  <%= simple_form_for :search, url: produits_path, method: :get, html: { class: 'form-inline search'}, remote: true do |f| %>
+  <div class="search">
+        <%= f.input :title, label: false , placeholder: "Cherchez un produit...", autofocus: false, input_html: { size: '30%', class: 'form-search'}%><%= link_to "<i class='fa fa-search'></i>".html_safe, method: :submit%>
+  <% end %>
+  </div>
+
+
+
+
+
