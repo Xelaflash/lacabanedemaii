@@ -47,9 +47,18 @@
   text-decoration: none;
 }
 
+.right {
+  margin: 18px 30px 0 0;
+  p {
+    padding: 0 20px;
+    margin: 10px 0 0 0;
+  }
+}
+
 .right ul {
   list-style: none;
   display:flex;
+
 }
 
 
@@ -86,6 +95,13 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.delivery {
+  font-family: 'Montserrat Alternates';
+  color: #D3D3D3;
+  font-size: 12px;
+  font-style: italic;
 }
 
 
