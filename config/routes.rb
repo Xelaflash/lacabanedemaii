@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'livraison',       to: 'pages#livraison',       as: :livraison
   get 'faq',             to: 'pages#faq',             as: :faq
   get 'mentions_legales',to: 'pages#mentions_legales',as: :mentions_legales
-  get 'CGV',             to: 'pages#CGV',             as: :CGV
+  get 'CGV',             to: 'pages#CGV',             as: :cgv
 
   resources :produits, only: [:index]
 
