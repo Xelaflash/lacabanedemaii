@@ -1,4 +1,4 @@
-<div class="navbar-wagon navbar-wagon-white">
+<div class="navbar-wagon">
 
   <div class="hidden-xs">
     <div class="form-group">
@@ -22,13 +22,14 @@
           <%= link_to t(".sign_out", default: "Déconnexion"),destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
           <p class="delivery">Frais de port offerts à partir de 50 €</p>
         </div>
-
       <% else %>
         <!-- Login link (when logged out) -->
-        <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-         <%= link_to t(".sign_in", default: "S'inscrire"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <div class="right">
+          <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          <%= link_to t(".sign_in", default: "S'inscrire"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          <p class="delivery">Frais de port offerts à partir de 50 €</p>
       <% end %>
-      <br>
+        </div>
     </div>
 
     <!-- Dropdown list appearing on mobile only -->
