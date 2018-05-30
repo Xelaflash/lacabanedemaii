@@ -1,13 +1,21 @@
 <div class="footer" >
-  <div class="footer-links">
-</a>
+
+  <div class="footer-link">
+    <ul>
+        <li><%= link_to "Qui sommes-nous", qui_sommes_nous_path, class: "footer-item footer-link"%></li>
+        <li><%= link_to "Contact", contact_path, class: "footer-item footer-link"%></li>
+        <li><%= link_to "Livraison", livraison_path, class: "footer-item footer-link"%></li>
+        <li><%= link_to "Aide", faq_path, class: "footer-item footer-link"%></li>
+        <li><%= link_to "Mentions légales", mentions_legales_path, class: " footer-item footer-link"%></li>
+        <li><%= link_to "CGV", cgv_path, class: "footer-item footer-link"%></li>
+      </ul>
   </div>
-  <div class="footer-social">
+
+
+
+  <div class="footer-social hidden-xs">
     <p>Suivez nous sur </p>
     <a href="https://www.facebook.com/lacabanedemaii16/" target="_blank"><i class="fab fa-facebook-square"></i></a>
     <a href="https://www.instagram.com/la_cabane_de_maii/?hl=fr" target="_blank"><i class="fab fa-instagram"></i></a>
-
-
-
   </div>
 </div>
