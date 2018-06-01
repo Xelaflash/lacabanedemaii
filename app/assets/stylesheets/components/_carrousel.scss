@@ -1,7 +1,7 @@
 .multi-item-carousel{
   .carousel-inner{
     > .item{
-      transition: 500ms ease-in-out left;
+      transition: 1000ms ease-in-out left;
     }
     .active{
       &.left{

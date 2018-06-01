@@ -1,6 +1,3 @@
-$('.multi-item-carousel').carousel({
-        interval: 3000
-      });
 
       // for every slide in carousel, copy the next slide's item in the slide.
       // Do the same for the next, next item.
