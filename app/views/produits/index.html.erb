@@ -1,7 +1,8 @@
 <div class="container">
-      <div class="cards col-xs-12">
-    <% @produits.each do |produit| %>
-        <div class="card col-xs-12">
+  <div class="row">
+    <div class="cards">
+      <% @produits.each do |produit| %>
+        <div class="card">
           <div class="card-body text-center">
             <div class="card-pic" style="background-image: url('<%= cl_image_path produit.photo, height: 200, width: 200%>')">
               <div class="card-hover">
@@ -18,5 +19,7 @@
         </div>
       </div>
     <% end %>
+  </div>
+
   </div>
 
