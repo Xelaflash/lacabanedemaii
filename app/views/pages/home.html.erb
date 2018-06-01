@@ -22,28 +22,25 @@
 
 <div class="container car">
   <div class="row">
-    <div class="car">
-      <div class="carousel slide multi-item-carousel" data-ride="carousel" id="theCarousel">
+      <div class="carousel slide multi-item-carousel hidden-xs" data-ride="carousel" id="theCarousel">
         <div class="carousel-inner">
           <div class="item active">
-            <div class="col-xs-12"><%= cl_image_tag "13178711_1016701331710549_7678757278327869600_n.jpg", class: "img-responsive", alt: "Chambre Riad Zouhra Bas"%></div>
+            <div class="col-xs-1 col-sm-3 col-md-4"><%= cl_image_tag "13178711_1016701331710549_7678757278327869600_n.jpg", :quality=>100, class: "img-responsive", alt: "La cabane de Maï"%></div>
           </div>
           <div class="item">
-            <div class="col-xs-12"><%= cl_image_tag "14915364_1142732629107418_5153850638075461140_n.jpg", class: "img-responsive", alt: "Chambre Riad Zouhra Bas"%></div>
+            <div class="col-xs-1 col-sm-3 col-md-4"><%= cl_image_tag "14915364_1142732629107418_5153850638075461140_n.jpg", :quality=>100, class: "img-responsive", alt: "La cabane de Maï"%></div>
           </div>
           <div class="item">
-            <div class="col-xs-12"><%= cl_image_tag "13221507_1017309201649762_8553038773421732273_n.jpg", class: "img-responsive", alt: "Cuisine Riad Zouhra"%></a></div>
+            <div class="col-xs-1 col-sm-3 col-md-4"><%= cl_image_tag "13221507_1017309201649762_8553038773421732273_n.jpg",:quality=>100, class: "img-responsive", alt: "La cabane de Maï"%></a></div>
           </div>
           <div class="item">
-            <div class="col-xs-12"><%= cl_image_tag "15109477_1156447084402639_7391547034456198838_n.jpg", class: "img-responsive", alt: "Cuisine Riad Zouhra"%></div>
+            <div class="col-xs-1 col-sm-3 col-md-4"><%= cl_image_tag "15109477_1156447084402639_7391547034456198838_n.jpg",:quality=>100, class: "img-responsive", alt: "La cabane de Maï"%></div>
           </div>
-
-          <!--  Example item end -->
         </div>
-        <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-        <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+
+        <a class="left carousel-control hidden-xs" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+        <a class="right carousel-control hidden-xs" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
       </div>
-    </div>
   </div>
 </div>
 
