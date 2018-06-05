@@ -1,2 +1,2 @@
 import "bootstrap";
-import "../carousel";
+import '../components/carousel';
