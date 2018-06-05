@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2018_06_01_175047) do
     t.string "prix"
     t.integer "frais_de_port"
     t.integer "poids"
+    t.string "unit"
     t.text "description"
     t.text "composition"
     t.text "utilisation"

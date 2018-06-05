@@ -23,6 +23,15 @@
   margin: 0;
 }
 
+
+.card-picture {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center center;
+  }
+
 .card-pic:hover .card-hover {
   opacity: 1;
 }
@@ -32,11 +41,14 @@
   height: 100%;
   opacity: 0;
   background-color: rgba(255,255,255, 0.6);
+  position: absolute;
+  top: 0%;
+  left: 0%;
 
    h4 {
     position: absolute;
     top: 45%;
-    left: 5%;
+    left: 14%;
     border: 1px solid $secondary;
   }
 }
@@ -54,3 +66,18 @@
   opacity: 0.6;
   background-color: $secondary;
 }
+
+.card-info {
+  h5 {
+    color: black;
+    font-size: 20px;
+  }
+  h6 {
+    font-weight: bold;
+    font-size: 20px;
+    color: $secondary;
+  }
+}
+
+
+

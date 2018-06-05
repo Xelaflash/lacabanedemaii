@@ -1,17 +1,18 @@
 <div class="container">
   <div class="row">
-    <div class="cards">
       <% @produits.each do |produit| %>
+            <div class="cards">
         <div class="card">
           <div class="card-body text-center">
-            <div class="card-pic" style="background-image: url('<%= cl_image_path produit.photo, height: 200, width: 200%>')">
+            <div class="card-pic">
+              <%= cl_image_tag produit.photo, height: 300, width: 400, crop: :thumb, class: "card-picture" %>
               <div class="card-hover">
                 <h4>Voir le produit</h4>
               </div>
             </div>
           <div class="card-info">
             <h5><%= produit.nom %></h5>
-              <p>  <%= produit.prix %> €</p>
+              <h6>  <%= produit.prix %> €</h6>
             <%= link_to "Ajouter au Panier", cgv_path , class: "btn btn-primary"  %>
             <!-- button to handle when cart build -->
           </div>
@@ -19,6 +20,7 @@
         </div>
       </div>
     <% end %>
+
   </div>
 
   </div>
