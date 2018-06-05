@@ -41,9 +41,11 @@
   font-family: Cinzel;
   font-size: 16px;
   padding: 6px 25px;
+  a {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  }
 }
 
 .btn:hover {
@@ -68,6 +70,14 @@
     text-overflow: ellipsis;
   }
 }
+
+
+@media (max-width: 540px) {
+  .col-centered {
+  float: none;
+  margin: 0 auto;
+}
+  }
 
 
 
