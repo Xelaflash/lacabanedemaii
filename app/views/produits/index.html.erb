@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row ">
       <% @produits.each do |produit| %>
-      <div class="col-sm-3 col-xs-9 col-centered">
+      <div class="col-sm-3 col-xs-6">
         <div class="card text-center">
           <div class="card-pic">
-            <%= cl_image_tag produit.photo, height: 200, width: 250, crop: :thumb, class: "card-picture" %>
+            <%= cl_image_tag produit.photo, crop: :thumb, class: "img-responsive" %>
           <div class="card-hover">
             <h4>Voir le produit</h4>
           </div>
