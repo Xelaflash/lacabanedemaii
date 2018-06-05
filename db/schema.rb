@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_22_150105) do
+ActiveRecord::Schema.define(version: 2018_06_01_175047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2018_05_22_150105) do
     t.string "prix"
     t.integer "frais_de_port"
     t.integer "poids"
+    t.string "unit"
     t.text "description"
     t.text "composition"
     t.text "utilisation"

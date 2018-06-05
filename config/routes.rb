@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'CGV',             to: 'pages#CGV',             as: :cgv
 
   resources :produits, only: [:index]
+  resources :cart, only: [:show]
 
 
 end
