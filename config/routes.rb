@@ -10,8 +10,13 @@ Rails.application.routes.draw do
   get 'mentions_legales',to: 'pages#mentions_legales',as: :mentions_legales
   get 'CGV',             to: 'pages#CGV',             as: :cgv
 
-  resources :produits, only: [:index]
+
+  resources :produits, only: [:index] do
+    resources :reviews, only: [:create]
+  end
   resources :cart, only: [:show]
+  resources :order_items, only: [:create]
+
 
 
 end

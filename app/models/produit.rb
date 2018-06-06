@@ -1,6 +1,7 @@
 class Produit < ApplicationRecord
   belongs_to :gamme
   has_many :reviews, dependent: :destroy
+  has_many :orders_items
 
   validates :marque, presence: true
   validates :nom, presence: true, uniqueness: true

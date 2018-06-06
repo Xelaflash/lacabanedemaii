@@ -3,6 +3,7 @@ class ProduitsController < ApplicationController
 
   def index
     @produits = Produit.all
+    @order_item = current_order.order_items.new
   end
 
   def show
