@@ -14,6 +14,8 @@ class Produit < ApplicationRecord
   validates :description, presence: true
   validates :composition, presence: true
   validates :utilisation, presence: true
+
+  default_scope { where(active: true) }
 end
 
 
