@@ -2,7 +2,7 @@ class OrderItem < ApplicationRecord
   belongs_to :order
   belongs_to :produit
   validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
-  validate :produit_present
+  validate :product_present
   validate :order_present
 
   before_save :finalize
@@ -11,7 +11,7 @@ class OrderItem < ApplicationRecord
     if persisted?
       self[:unit_price]
     else
-      product.prix
+      produit.prix
     end
   end
 
@@ -22,8 +22,8 @@ class OrderItem < ApplicationRecord
 private
 
   def product_present
-    if product.nil?
-      errors.add(:product, "is not valid or is not active.")
+    if produit.nil?
+      errors.add(:produit, "is not valid or is not active.")
     end
   end
 

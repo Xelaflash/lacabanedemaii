@@ -13,6 +13,9 @@
     <% end %>
   </div>
 
+<%= link_to "#{current_order.order_items.size} produits dans le panier ( #{ current_order.subtotal} € )", cart_path, class: "btn btn-link" %>
+
+
 
   <% if user_signed_in? %>
     <div class="navbar-wagon-right hidden-xs hidden-sm">

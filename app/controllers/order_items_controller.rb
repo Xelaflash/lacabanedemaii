@@ -1,7 +1,5 @@
 class OrderItemsController < ApplicationController
   skip_before_action :authenticate_user!
-  before_action :set_cart, only: [:create, :destroy]
-  before_action :set_cart_item, only: [:destroy]
 
   def create
     @order = current_order
@@ -27,7 +25,7 @@ class OrderItemsController < ApplicationController
 private
 
   def order_item_params
-    params.require(:order_item).permit(:quantity, :produit_id)
+    params.require(:order_item).permit(:produit_id, :quantity)
   end
 
 end
