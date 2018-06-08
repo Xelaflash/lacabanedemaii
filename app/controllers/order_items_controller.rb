@@ -2,6 +2,7 @@ class OrderItemsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def create
+    binding.pry
     @order = current_order
     @item = @order.order_items.new(order_item_params)
     if @order.save
