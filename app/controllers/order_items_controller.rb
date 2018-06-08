@@ -4,7 +4,6 @@ class OrderItemsController < ApplicationController
   def create
     @order = current_order
     @item = @order.order_items.new(order_item_params)
-    binding.pry
     if @order.save
       session[:order_id] = @order.id
       flash[:notice] = "Product Successfully added to your cart"
