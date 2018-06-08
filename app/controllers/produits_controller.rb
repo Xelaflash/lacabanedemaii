@@ -6,10 +6,6 @@ class ProduitsController < ApplicationController
     @order_item = current_order.order_items.new
   end
 
-  def show
-    @produit = Produit.find(params[:id])
-  end
-
 end
 
 

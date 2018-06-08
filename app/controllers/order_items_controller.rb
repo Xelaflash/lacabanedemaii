@@ -4,9 +4,15 @@ class OrderItemsController < ApplicationController
   def create
     @order = current_order
     @item = @order.order_items.new(order_item_params)
-    @order.save
-    session[:order_id] = @order.id
-    redirect_to produits_path
+    binding.pry
+    if @order.save
+      session[:order_id] = @order.id
+      flash[:notice] = "Product Successfully added to your cart"
+      redirect_to produits_path
+    else
+      flash[:notice] = "Problem"
+      redirect_to produits_path
+    end
   end
 
   def update
