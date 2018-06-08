@@ -10,8 +10,13 @@ class Order < ApplicationRecord
 
 
 private
+
   def set_order_status
-    self.order_status_id = 1
+    if
+      self.order_status_id == nil?
+      self.order_status_id = 1
+    end
+
   end
 
   def update_subtotal
