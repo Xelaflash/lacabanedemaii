@@ -11,7 +11,7 @@
           </div>
           <div class="card-info">
             <h5><%= produit.nom %></h5>
-            <h6>  <%= produit.prix %> €</h6>
+            <h6>  <%= number_to_currency(produit.prix, :locale => :fr)  %></h6>
             <div class="quantity">
               <%= simple_form_for @order_item do |f| %>
               <%= f.input :quantity, collection: 1..10, label: false %>
