@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_08_200122) do
+ActiveRecord::Schema.define(version: 2018_06_11_132535) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 2018_06_08_200122) do
     t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "unit_price"
+    t.decimal "total_price"
     t.index ["order_id"], name: "index_order_items_on_order_id"
     t.index ["produit_id"], name: "index_order_items_on_produit_id"
   end
@@ -53,7 +55,6 @@ ActiveRecord::Schema.define(version: 2018_06_08_200122) do
     t.string "reference"
     t.text "photo"
     t.integer "quantite"
-    t.string "prix"
     t.integer "frais_de_port"
     t.integer "poids"
     t.text "description"
@@ -64,6 +65,7 @@ ActiveRecord::Schema.define(version: 2018_06_08_200122) do
     t.datetime "updated_at", null: false
     t.string "unit"
     t.boolean "active"
+    t.decimal "prix"
     t.index ["gamme_id"], name: "index_produits_on_gamme_id"
   end
 

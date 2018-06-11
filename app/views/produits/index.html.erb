@@ -17,7 +17,7 @@
             <%= simple_form_for @order_item do |f| %>
             <%= f.input :quantity, collection: 1..10, label: false %>
             <%= f.hidden_field :produit_id, value: produit.id %>
-              <%= f.button :submit, value: "Ajouter au panier",class: "btn btn-primary btn-block" %>
+              <%= f.submit "Ajouter au panier", class: "btn btn-primary btn-block" %>
           </div>
             <% end %>
         </div>
