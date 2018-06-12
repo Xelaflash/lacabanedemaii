@@ -1,6 +1,7 @@
 class Produit < ApplicationRecord
   belongs_to :gamme
   has_many :reviews, dependent: :destroy
+  has_many :order_items
 
   validates :marque, presence: true
   validates :nom, presence: true, uniqueness: true
@@ -13,6 +14,8 @@ class Produit < ApplicationRecord
   validates :description, presence: true
   validates :composition, presence: true
   validates :utilisation, presence: true
+
+  default_scope { where(active: true) }
 end
 
 

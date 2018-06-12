@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_01_175047) do
+ActiveRecord::Schema.define(version: 2018_06_11_132535) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,22 +21,51 @@ ActiveRecord::Schema.define(version: 2018_06_01_175047) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "order_items", force: :cascade do |t|
+    t.bigint "produit_id"
+    t.bigint "order_id"
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.decimal "unit_price"
+    t.decimal "total_price"
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+    t.index ["produit_id"], name: "index_order_items_on_produit_id"
+  end
+
+  create_table "order_statuses", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.decimal "total_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.decimal "subtotal"
+    t.decimal "shipping"
+    t.bigint "order_status_id"
+    t.index ["order_status_id"], name: "index_orders_on_order_status_id"
+  end
+
   create_table "produits", force: :cascade do |t|
     t.string "marque"
     t.string "nom"
     t.string "reference"
     t.text "photo"
     t.integer "quantite"
-    t.string "prix"
     t.integer "frais_de_port"
     t.integer "poids"
-    t.string "unit"
     t.text "description"
     t.text "composition"
     t.text "utilisation"
     t.bigint "gamme_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "unit"
+    t.boolean "active"
+    t.decimal "prix"
     t.index ["gamme_id"], name: "index_produits_on_gamme_id"
   end
 
@@ -75,6 +104,8 @@ ActiveRecord::Schema.define(version: 2018_06_01_175047) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "order_items", "orders"
+  add_foreign_key "order_items", "produits"
   add_foreign_key "produits", "gammes"
   add_foreign_key "reviews", "produits"
   add_foreign_key "reviews", "users"

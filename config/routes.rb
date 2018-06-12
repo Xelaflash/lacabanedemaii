@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
   devise_for :users
+
+  resources :produits, only: [:index]
+  resource :cart, only: [:show]
+  resources :order_items, only: [:create, :update, :destroy]
+
   root to: 'pages#home'
 
   get 'qui_sommes_nous', to: 'pages#qui_sommes_nous', as: :qui_sommes_nous
@@ -9,9 +14,6 @@ Rails.application.routes.draw do
   get 'faq',             to: 'pages#faq',             as: :faq
   get 'mentions_legales',to: 'pages#mentions_legales',as: :mentions_legales
   get 'CGV',             to: 'pages#CGV',             as: :cgv
-
-  resources :produits, only: [:index]
-  resources :cart, only: [:show]
 
 
 end
