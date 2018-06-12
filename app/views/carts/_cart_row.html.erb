@@ -1,38 +1,27 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-3">
-      <div class="card text-center">
-        <h4><%= produit.nom %></h4>
-        <div class="card-pic">
-              <%= cl_image_tag produit.photo, crop: :thumb, class: "img-responsive" %>
-        </div>
+    <div class="col-xs-2 col-sm-11 cart-list">
+      <div class="product">
+        <%= cl_image_tag produit.photo, crop: :thumb, class: "cart-pic" %>
+      </div>
+      <div class="name text-center">
+        <h6><%= produit.nom %></h6>
+      </div>
+      <div class="unit text-center">
+        <h6>Prix unitaire:  <span id="price" style="color: green"><%= number_to_currency(order_item.unit_price, :locale => :fr)%></span></h6>
+      </div>
+      <%= simple_form_for order_item, remote: true do |f| %>
+      <div class="quantity">
+        <p>Quantité: </p><%= f.number_field :quantity, value: order_item.quantity.to_i, class: "form-control", min: 1, max: 9 %>
+        <%= f.hidden_field :produit_id, value: produit.id %>
+      </div>
+      <% end %>
+      <div class="delete">
+        <%= link_to "<i class='far fa-trash-alt'></i>".html_safe, order_item, method: :delete, data: { confirm: "Are you sure you wish to delete the product '#{order_item.produit.nom}' from your cart?" }, remote: true %>
+      </div>
+      <div class="total text-center">
+        <h6><strong>Total : <span id="price" style="color: green"><%= number_to_currency(order_item.total_price, :locale => :fr) %></span></strong></h6>
       </div>
     </div>
-
-
-
-    <div class="right">
-          <div class="col-xs-4">
-      <%= simple_form_for order_item, remote: true do |f| %>
-        <h4 class="text-right">Prix unitaire: <span style="color: green"><%= number_to_currency(order_item.unit_price, :locale => :fr)%></span></h4>
-
-        <div class="row">
-          <div class="col-xs-4">
-            <%= f.number_field :quantity, value: order_item.quantity.to_i, class: "form-control", min: 1 %>
-            <%= f.hidden_field :produit_id, value: produit.id %>
-          </div>
-          <div class="col-xs-8 text-right">
-            <div class="btn-group">
-              <%= f.submit "Update Quantity", class: "btn btn-primary" %>
-              <%= link_to "<i class='far fa-trash-alt'></i>".html_safe, order_item, method: :delete, data: { confirm: "Are you sure you wish to delete the product '#{order_item.produit.nom}' from your cart?" }, remote: true %>
-            </div>
-          </div>
-        </div>
-        <h4 class="text-right">Total: <span style="color: green"><%= number_to_currency(order_item.total_price, :locale => :fr) %></span></h4>
-      <% end %>
-    </div>
-    </div>
-
-
   </div>
 </div>

@@ -12,7 +12,12 @@
     There are no items in your shopping cart.  Please <%= link_to "go back", produits_path %> and add some items to your cart.
   </p>
 <% else %>
+  <h1 class="text-center">Votre Panier</h1>
   <% @order_items.each do |order_item| %>
     <%= render 'carts/cart_row', produit: order_item.produit, order_item: order_item, show_total: true %>
+    <div class="container">
+      <hr id="separator2">
+    </div>
+
   <% end %>
 <% end %>
