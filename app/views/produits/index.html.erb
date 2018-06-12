@@ -1,28 +1,30 @@
 <div class="container">
   <div class="row ">
-      <% @produits.each do |produit| %>
+    <% @produits.each do |produit| %>
       <div class="col-sm-3 col-xs-6">
         <div class="card text-center">
-          <div class="card-pic">
-            <%= cl_image_tag produit.photo, crop: :thumb, class: "img-responsive" %>
+          <div class="card-up">
+            <div class="card-pic">
+              <%= cl_image_tag produit.photo, crop: :thumb, class: "img-responsive pic" %>
+            </div>
             <div class="card-hover">
-              <h4>Voir le produit</h4>
+              <h4 class="text">Voir le produit</h4>
             </div>
           </div>
           <div class="card-info">
             <h5><%= produit.nom %></h5>
             <h6>  <%= number_to_currency(produit.prix, :locale => :fr)  %></h6>
-            <div class="quantity">
+            <div class="buy">
               <%= simple_form_for @order_item do |f| %>
-              <%= f.input :quantity, collection: 1..10, label: false %>
               <%= f.hidden_field :produit_id, value: produit.id %>
+              <%= f.hidden_field :quantity, value: 1 %>
             </div>
-            <%= f.submit "Ajouter au panier", class: "btn btn-primary btn-block" %>
-            <% end %>
+                <%= f.submit "Ajouter au panier", class: "btn btn-primary btn-block" %>
+              <% end %>
           </div>
         </div>
-    </div>
-      <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
 
