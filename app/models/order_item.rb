@@ -20,6 +20,10 @@ class OrderItem < ApplicationRecord
     unit_price * quantity
   end
 
+  def unit_shipping
+    produit.frais_de_port
+  end
+
 private
 
   def product_present
@@ -36,6 +40,7 @@ private
 
   def finalize
     self[:unit_price] = unit_price
+    self[:unit_shipping] = unit_shipping
     self[:total_price] = quantity * self[:unit_price]
   end
 end

@@ -2,13 +2,16 @@
   <div class="row">
     <div class="col-xs-2 col-sm-11 cart-list">
       <div class="product">
-        <%= cl_image_tag produit.photo, crop: :thumb, class: "cart-pic" %>
-      </div>
       <div class="name text-center">
         <h6><%= produit.nom %></h6>
       </div>
+        <%= cl_image_tag produit.photo, crop: :thumb, class: "cart-pic" %>
+      </div>
       <div class="unit text-center">
         <h6>Prix unitaire:  <span id="price" style="color: green"><%= number_to_currency(order_item.unit_price, :locale => :fr)%></span></h6>
+      </div>
+      <div class="frais">
+        <h6>Frais de port:  <span id="price" style="color: green"><%= number_to_currency(order_item.unit_shipping, :locale => :fr)%></span></h6>
       </div>
       <%= simple_form_for order_item, remote: true do |f| %>
       <div class="quantity">

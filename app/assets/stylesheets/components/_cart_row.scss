@@ -28,7 +28,7 @@
 }
 
 .name {
-  width: 150px;
+  width: 125px;
   word-wrap:break-word;
 }
 
@@ -51,4 +51,16 @@ p {
   opacity: 0.6;
 }
 
+.back {
+  margin-left: 55px;
+  width: 120px;
+  color: $secondary;
+  text-decoration: none;
+  font-family: 'Montserrat Alternates', "Helvetica";
+  font-size: 14px;
+  font-style: italic;
 
+}
+  .back:hover {
+    text-decoration: none;
+  }

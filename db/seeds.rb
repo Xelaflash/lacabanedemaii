@@ -3,6 +3,7 @@ puts "destroy all"
 User.destroy_all
 OrderItem.destroy_all
 Produit.destroy_all
+Order.destroy_all
 
 
 puts "start seed"

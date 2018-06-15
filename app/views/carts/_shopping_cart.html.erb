@@ -12,6 +12,7 @@
     There are no items in your shopping cart.  Please <%= link_to "go back", produits_path %> and add some items to your cart.
   </p>
 <% else %>
+  <h6><%= link_to "back to produits", produits_path, class: "back" %></h6>
   <h1 id="cart-title" class="text-center">Votre Panier</h1>
   <% @order_items.each do |order_item| %>
     <%= render 'carts/cart_row', produit: order_item.produit, order_item: order_item, show_total: true %>
@@ -25,15 +26,20 @@
   <div class="col-md-11">
     <div class="sous-total text-right">
       <h6 class="">Sous-Total : <span><%= number_to_currency(current_order.subtotal, :locale => :fr) %></span></h6>
-    <hr id="separator2">
+      <hr id="separator2">
     </div>
     <div class="fdp text-right">
-      <h6>Frais de port : <span><%= number_to_currency(current_order.subtotal, :locale => :fr) %></span></h6>
-      <p id="fdp-text">Frais de port offerts à partir de 50 €, reste : xxx €</p>
+      <% if (current_order.free_shipping > 50) %>
+        <h6>Frais de port : <span><%= number_to_currency(current_order.shipping, :locale => :fr) %></span></h6>
+        <p class="fdp-text"> plus que <strong><%= number_to_currency(current_order.free_shipping, :locale => :fr)%></strong> pour bénéficier des frais de port gratuits</p>
+      <% else %>
+        <h6>Frais de port : <span><%= number_to_currency(0, :locale => :fr) %></span></h6>
+        <p class="fdp-text">Frais de ports offerts</p>
+      <% end %>
     </div>
     <hr id="separator2">
     <div class="full-total text-right">
-      <h4><strong>TOTAL : <span style="color: green"><%= number_to_currency(current_order.subtotal, :locale => :fr) %></span></strong></h4>
+      <h4><strong>TOTAL : <span style="color: green"><%= number_to_currency(current_order.total_price, :locale => :fr) %></span></strong></h4>
     </div>
     <div class="finalize text-right">
       <%# simple_form_for @order do |t| %>
