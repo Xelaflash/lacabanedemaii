@@ -13,7 +13,11 @@ class Order < ApplicationRecord
   end
 
   def total_price
-    (subtotal + shipping)
+    if (shipping < 50)
+      (subtotal + shipping)
+    else
+      subtotal
+    end
   end
 
   def free_shipping

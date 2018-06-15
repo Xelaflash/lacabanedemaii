@@ -29,7 +29,7 @@
       <hr id="separator2">
     </div>
     <div class="fdp text-right">
-      <% if (current_order.free_shipping > 50) %>
+      <% if (current_order.shipping < 50) %>
         <h6>Frais de port : <span><%= number_to_currency(current_order.shipping, :locale => :fr) %></span></h6>
         <p class="fdp-text"> plus que <strong><%= number_to_currency(current_order.free_shipping, :locale => :fr)%></strong> pour bénéficier des frais de port gratuits</p>
       <% else %>
