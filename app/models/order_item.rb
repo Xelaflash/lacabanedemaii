@@ -24,6 +24,10 @@ class OrderItem < ApplicationRecord
     produit.frais_de_port
   end
 
+  def available_quantity
+    produit.quantite
+  end
+
 private
 
   def product_present
