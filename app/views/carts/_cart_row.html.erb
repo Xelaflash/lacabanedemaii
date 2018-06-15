@@ -17,11 +17,15 @@
       <div class="quantity">
       <%= simple_form_for order_item, remote: true do |f| %>
         <p>Quantité: </p><%= f.input :quantity,
-                                      value: order_item.quantity.to_i,
-                                      collection: 1..order_item.available_quantity.to_i ,
+                                      collection: 1..order_item.available_quantity,
                                       label: false,
-                                      class: "form-control q"%>
+                                      default: 1,
+                                      value: order_item.quantity,
+                                      class: "form-control q",
+                                      onchange: 'this.form.submit()' %>
+
         <%= f.hidden_field :produit_id, value: produit.id %>
+        <%= f.submit %>
       </div>
       <% end %>
       <div class="delete">
