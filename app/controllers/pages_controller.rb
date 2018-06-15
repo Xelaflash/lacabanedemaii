@@ -13,7 +13,7 @@ class PagesController < ApplicationController
   def livraison
   end
 
-  def faq
+  def aide
   end
 
   def mentions_legales
