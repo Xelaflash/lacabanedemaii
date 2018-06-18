@@ -24,8 +24,8 @@
                                       class: "form-control q"%>
 
         <%= f.hidden_field :produit_id, value: produit.id %>
-        <%# f.submit, as: :hidden, id: "submit-form"%>
         <%= submit_tag "", :id => 'submit-form', :style => "display: none;" %>
+        <%= f.submit %>
       </div>
       <% end %>
       <div class="delete">
