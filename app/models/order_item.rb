@@ -28,6 +28,9 @@ class OrderItem < ApplicationRecord
     produit.quantite
   end
 
+
+
+
 private
 
   def product_present

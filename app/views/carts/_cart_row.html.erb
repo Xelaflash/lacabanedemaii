@@ -23,9 +23,9 @@
                                       value: order_item.quantity,
                                       class: "form-control q"%>
 
-
         <%= f.hidden_field :produit_id, value: produit.id %>
-        <%= f.submit %>
+        <%# f.submit, as: :hidden, id: "submit-form"%>
+        <%= submit_tag "", :id => 'submit-form', :style => "display: none;" %>
       </div>
       <% end %>
       <div class="delete">
