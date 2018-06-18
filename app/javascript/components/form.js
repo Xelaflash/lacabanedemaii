@@ -1,13 +1,15 @@
-// document.addEventListener('DOMContentLoaded',function() {
-//     document.querySelector('select[name="order_item[quantity]"]').onchange=updateQuantity;
-// },false);
+const fields = document.querySelectorAll("#order_item_quantity");
 
-//       function updateQuantity(event2) {
-//         const newQuantity = event2.target.value;
-//         console.log(newQuantity);
-//         alert('You have change the quantity to ' + event.target.value);
+fields.forEach((field) => {
+  field.addEventListener("change", updateQuantity);
+});
 
-//         const submit = document.getElementById('submit-form');
-//         submit.click();
-// };
+function updateQuantity(event) {
+  const newQuantity = event.target.value;
+  alert('You have change the quantity to ' + event.target.value);
+  const submit = document.getElementById('submit-form');
+  submit.click();
+};
+
+
 
