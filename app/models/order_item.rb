@@ -20,10 +20,6 @@ class OrderItem < ApplicationRecord
     unit_price * quantity
   end
 
-  def unit_shipping
-    produit.frais_de_port
-  end
-
   def available_quantity
     produit.quantite
   end

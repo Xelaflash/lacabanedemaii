@@ -9,7 +9,7 @@ class Order < ApplicationRecord
   end
 
   def shipping
-    order_items.collect { |i| i.valid? ? (i.quantity * i.unit_shipping) : 0 }.sum
+    5.80
   end
 
   def total_price
@@ -21,7 +21,7 @@ class Order < ApplicationRecord
   end
 
   def free_shipping
-    (50 - shipping)
+    (50 - subtotal)
   end
 
 
