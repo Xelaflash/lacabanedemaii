@@ -4,12 +4,28 @@
   color: $primary;
 }
 
-.price-resume h6 {
-  font-size: 18px;
+.price-resume {
+  width: 82%;
+  margin-bottom: 15px;
+
+  h6 {
+  font-size: 19px;
+  padding-top: 10px;
+  }
 }
+
+.prod-line {
+  height: 10px;
+}
+
+
+.price-resume
 
 .fdp-text {
   font-family: 'Montserrat Alternates', 'Helvetica';
   color: $primary;
-  font-size: 13px;
+  font-size: 15px;
 }
+
+
+

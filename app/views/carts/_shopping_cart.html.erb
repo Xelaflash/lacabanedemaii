@@ -16,17 +16,15 @@
   <h1 id="cart-title" class="text-center">Votre Panier</h1>
   <% @order_items.each do |order_item| %>
     <%= render 'carts/cart_row', produit: order_item.produit, order_item: order_item, show_total: true %>
-    <div class="container">
-      <hr id="separator2">
+    <div class="container prod-line">
+      <hr class="separator2">
     </div>
   <% end %>
 <% end %>
 
-<div class="container price-resume">
-  <div class="col-md-11">
+<div class="container price-resume text-right">
     <div class="sous-total text-right">
-      <h6 class="">Sous-Total : <span><%= number_to_currency(current_order.subtotal, :locale => :fr) %></span></h6>
-      <hr id="separator2">
+      <h6>Sous-Total : <span><%= number_to_currency(current_order.subtotal, :locale => :fr) %></span></h6>
     </div>
     <div class="fdp text-right">
       <% if (current_order.subtotal < 50) %>
@@ -37,7 +35,7 @@
         <p class="fdp-text">Frais de ports offerts</p>
       <% end %>
     </div>
-    <hr id="separator2">
+    <hr class="separator2">
     <div class="full-total text-right">
       <h4><strong>TOTAL : <span style="color: green"><%= number_to_currency(current_order.total_price, :locale => :fr) %></span></strong></h4>
     </div>
@@ -47,5 +45,5 @@
       <%# end %>
     </div>
   </div>
-</div>
+
 

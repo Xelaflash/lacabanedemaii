@@ -1,15 +1,15 @@
-<div class="cart_row">
+<div class="cart-row">
   <div class="container">
     <div class="row">
-      <div class="col-xs-2 col-sm-11 cart-list">
+      <div class="col-xs-2 col-sm-8 col-lg-10 cart-list">
         <div class="product">
         <div class="name text-center">
           <h6><%= produit.nom %></h6>
         </div>
           <%= cl_image_tag produit.photo, crop: :thumb, class: "cart-pic" %>
         </div>
-        <div class="unit text-center">
-          <h6>Prix unitaire:  <span id="price" style="color: green"><%= number_to_currency(order_item.unit_price, :locale => :fr)%></span></h6>
+        <div class="unit hidden-xs text-center">
+          <h6>Prix unitaire :  <span id="price" style="color: green"><%= number_to_currency(order_item.unit_price, :locale => :fr)%></span></h6>
         </div>
 
 
@@ -17,7 +17,7 @@
 
         <div class="quantity text-center">
             <%= simple_form_for order_item, remote: true do |f| %>
-            <p>Quantité: </p><%= f.input :quantity,
+            <p>Quantité : </p><%= f.input :quantity,
                                         collection: 1..order_item.available_quantity,
                                         label: false,
                                         default: 1,
