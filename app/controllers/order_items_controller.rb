@@ -6,16 +6,16 @@ class OrderItemsController < ApplicationController
     @item = @order.order_items.new(order_item_params)
     existing_order = @order.order_items.where(produit_id: params[:order_item][:produit_id])
     if existing_order.count >= 1
-      existing_order.last.update_column(:quantity, existing_order.last.quantity + params[:order_item][:quantity].to_i)
+      flash[:alert] = "Product already in cart"
+      redirect_to produits_path
+    elsif
+      @order.save
+      session[:order_id] = @order.id
+      flash[:notice] = "Product Successfully added to your cart"
+      redirect_to produits_path
     else
-      if @order.save
-        session[:order_id] = @order.id
-        flash[:notice] = "Product Successfully added to your cart"
-        redirect_to produits_path
-      else
-        flash[:notice] = "Problem"
-        redirect_to produits_path
-      end
+      flash[:alert] = "Problem"
+      redirect_to produits_path
     end
   end
 
@@ -24,8 +24,6 @@ class OrderItemsController < ApplicationController
     @order_item = @order.order_items.find(params[:id])
     @order_item.update_attributes(order_item_params)
     @order_items = @order.order_items
-    redirect_to cart_path
-    reload
   end
 
   def destroy
@@ -33,7 +31,6 @@ class OrderItemsController < ApplicationController
     @order_item = @order.order_items.find(params[:id])
     @order_item.destroy
     @order_items = @order.order_items
-    redirect_to cart_path
   end
 
 private

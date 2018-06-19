@@ -8,6 +8,22 @@ class Order < ApplicationRecord
     order_items.collect { |oi| oi.valid? ? (oi.quantity * oi.unit_price) : 0 }.sum
   end
 
+  def shipping
+    5.80
+  end
+
+  def total_price
+    if (shipping < 50)
+      (subtotal + shipping)
+    else
+      subtotal
+    end
+  end
+
+  def free_shipping
+    (50 - subtotal)
+  end
+
 
 private
 
