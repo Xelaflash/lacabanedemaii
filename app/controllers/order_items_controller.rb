@@ -6,7 +6,8 @@ class OrderItemsController < ApplicationController
     @item = @order.order_items.new(order_item_params)
     existing_order = @order.order_items.where(produit_id: params[:order_item][:produit_id])
     if existing_order.count >= 1
-      existing_order.last.update_column(:quantity, existing_order.last.quantity + params[:order_item][:quantity].to_i)
+      flash[:alert] = "Product already in cart"
+      redirect_to produits_path
     elsif
       @order.save
       session[:order_id] = @order.id

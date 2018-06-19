@@ -29,8 +29,6 @@ class OrderItem < ApplicationRecord
   end
 
 
-
-
 private
 
   def product_present
