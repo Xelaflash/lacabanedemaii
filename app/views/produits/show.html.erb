@@ -35,7 +35,7 @@
           <%= simple_form_for @order_item do |f| %>
             <%= f.hidden_field :produit_id, value: @produit.id %>
         <% if @produit.quantite > 0 %>
-            <%= f.input :quantity, collection: 1..@produit.quantite, label: false, default: 1, value: @order_item.quantity%>
+            <%= f.input :quantity, collection: 1..@produit.quantite, label: false, default: 1, value: @order_item.quantity, class: "form-control"%>
       </div>
       <div class="stock text-center">
           <h4 style="color: green">en stock</h4>
