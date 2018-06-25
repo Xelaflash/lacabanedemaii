@@ -8,7 +8,7 @@
               <%= cl_image_tag produit.photo, crop: :thumb, class: "img-responsive pic" %>
             </div>
             <div class="card-hover">
-              <h4 class="text">Voir le produit</h4>
+              <%= link_to "Voir le produit", produit_path(produit),class: "btn btn-block produit-show"%>
             </div>
           </div>
           <div class="card-info">
@@ -19,7 +19,7 @@
               <%= f.hidden_field :produit_id, value: produit.id %>
               <%= f.hidden_field :quantity, value: 1 %>
             </div>
-                <%= f.submit "Ajouter au panier", class: "btn btn-block" %>
+                <%= f.submit "Ajouter au panier", class: "btn btn-block panier" %>
               <% end %>
           </div>
         </div>

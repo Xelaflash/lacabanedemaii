@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :produits, only: [:index]
+  resources :produits, only: [:index, :show]
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
 
