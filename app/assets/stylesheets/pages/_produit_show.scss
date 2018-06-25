@@ -1,3 +1,39 @@
+.show-page {
+  min-height: 86vh;
+}
+
+
 .tabs-show {
   margin-bottom: 10px;
+}
+
+.prod-show {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 10px 20px 100px;
+}
+
+.show-pic {
+  max-height: 225px;
+  max-width: 225px;
+  padding: 0 5px 10px 5px;
+
+}
+
+.show-left {
+  padding: 0px 30px;
+}
+
+.show-right {
+  flex: 1;
+  padding: 0px 0px 0px 165px;
+  h6{
+    margin-bottom: 15.5px;
+  }
+}
+
+.details p {
+  font-size: 13px;
+  margin: -13px 2px 20px
 }
