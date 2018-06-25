@@ -6,7 +6,9 @@
         <div class="name text-center">
           <h6><%= produit.nom %></h6>
         </div>
+          <%= link_to produit_path(produit) do %>
           <%= cl_image_tag produit.photo, crop: :thumb, class: "cart-pic" %>
+          <% end %>
         </div>
         <div class="unit hidden-xs text-center">
           <h6>Prix unitaire :  <span id="price" style="color: green"><%= number_to_currency(order_item.unit_price, :locale => :fr)%></span></h6>

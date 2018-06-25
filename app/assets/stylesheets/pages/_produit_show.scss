@@ -1,5 +1,5 @@
 .show-page {
-  min-height: 86vh;
+  min-height: 85vh;
 }
 
 
@@ -14,15 +14,38 @@
   margin: 20px 10px 20px 100px;
 }
 
-.show-pic {
-  max-height: 225px;
-  max-width: 225px;
-  padding: 0 5px 10px 5px;
-
-}
-
 .show-left {
   padding: 0px 30px;
+}
+
+.show-pic {
+  margin-bottom: 30px;
+}
+
+.buy-show {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.test1 {
+  flex-grow: 1;
+  margin-left: 30px;
+  p {
+    font-size: 14px;
+  }
+}
+
+#order_item_quantity {
+  width: 55%;
+}
+
+.test2 {
+      flex-grow: 2;
+}
+
+.stock {
+  color: $secondary;
 }
 
 .show-right {
@@ -36,4 +59,9 @@
 .details p {
   font-size: 13px;
   margin: -13px 2px 20px
+}
+
+.title {
+  font-size: 20px;
+  color: $secondary;
 }

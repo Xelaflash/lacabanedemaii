@@ -13,77 +13,58 @@
       <h3>Enfant</h3>
     </a>
   </div>
-  <hr class=separator2>
-
+<hr class=separator2>
 
 <h6><%= link_to "back to produits", produits_path, class: "back" %></h6>
 
 
+  <div class="prod-show">
+
+    <div class="show-left">
+      <div class="show-pic">
+        <%= cl_image_tag @produit.photo, crop: :thumb, class: "img-responsive" %>
+      </div>
+      <div class="buy-show">
+          <div class="test1">
+          <p class="details">Quantité : </p>
+          </div>
+          <div class="test2">
+          <%= simple_form_for @order_item do |f| %>
+            <%= f.hidden_field :produit_id, value: @produit.id %>
+            <%= f.input :quantity, collection: 1..@produit.quantite, label: false, default: 1, value: @order_item.quantity, class: "form-control"%>
+          </div>
+      </div>
+      <div class="stock text-center">
+        <% if @produit.quantite > 0 %>
+          <h4 style="color: green">en stock</h4>
+        <% else %>
+          <h4 style="color: red">sold out</h4>
+        <% end %>
+      </div>
+          <%= f.submit "Ajouter au panier", class: "btn btn-block panier" %>
+        <% end %>
 
 
-
-
-    <div class="prod-show">
-
-      <div class="show-left">
-    <div class="show-pic">
-      <%= cl_image_tag @produit.photo, crop: :thumb, class: "img-responsive" %>
     </div>
-    <div class="stock">
-      <% if @produit.quantite > 0 %>
-        <h4>en stock</h4>
-      <% else %>
-        <h4>sold out</h4>
-      <% end %>
-    </div>
-    <div class="buy">
-      <%= simple_form_for @order_item do |f| %>
-        <%= f.hidden_field :produit_id, value: @produit.id %>
-        <p>Quantité : </p><%= f.input :quantity,
-                                        collection: 1..@produit.quantite,
-                                        label: false,
-                                        default: 1,
-                                        value: @order_item.quantity,
-                                        class: "form-control"%>
-    </div>
-        <%= f.submit "Ajouter au panier", class: "btn btn-block panier" %>
-      <% end %>
-  </div>
 
 
-  <div class="show-right">
-    <div class="title">
-      <h5><%= @produit.nom %></h5>
-    </div>
+    <div class="show-right">
+      <h5 class="title text-center"><%= @produit.nom %></h5>
       <hr class=separator2>
-
       <div class="subtitle">
         <h6> <%= number_to_currency(@produit.prix, :locale => :fr)  %></h6>
       </div>
-
-    <div class="details">
-      <h6><strong>Description : </strong></h6>
+      <div class="details">
+        <h6><strong>Description : </strong></h6>
         <p><%= @produit.description %></p>
-
-      <h6><strong> Poids : </strong></h6>
-      <p><%= @produit.poids %></p>
-
-      <h6><strong> Composition : </strong></h6>
-      <p><%= @produit.composition %></p>
-
-      <h6><strong> Utilisation : </strong></h6>
-      <p><%= @produit.utilisation %></p>
-
-      <h6><strong> Paiement sécurisé </strong></h6>
+        <h6><strong> Poids : </strong></h6>
+        <p><%= @produit.poids%> <%= @produit.unit %></p>
+        <h6><strong> Composition : </strong></h6>
+        <p><%= @produit.composition %></p>
+        <h6><strong> Utilisation : </strong></h6>
+        <p><%= @produit.utilisation %></p>
+        <h6><strong> Paiement sécurisé </strong></h6>
+      </div>
     </div>
-
   </div>
-
-    </div>
-
-
-
-
-
-
 </div>
