@@ -1,0 +1,72 @@
+.show-page {
+  min-height: 85vh;
+}
+
+.tabs-show {
+  margin-bottom: 10px;
+}
+
+.prod-show {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 10px 20px 100px;
+}
+
+.show-left {
+  padding: 0px 30px;
+}
+
+.show-pic {
+  margin-bottom: 30px;
+}
+
+.q-show {
+  p {
+    font-size: 16px;
+  }
+}
+
+ .buy-show{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 15px 25px;
+}
+
+.buy-show {
+  .form-control {
+  width: 120%;
+}
+}
+
+.sold-out {
+  background-color: red;
+  font-size: 16px !important;
+  color: white !important;
+  padding: 8px;
+  margin: 0;
+  border-radius: 2px !important;
+}
+
+.stock {
+  color: $secondary;
+}
+
+.show-right {
+  flex: 1;
+  padding: 0px 0px 0px 165px;
+  h6{
+    margin-bottom: 15.5px;
+  }
+}
+
+.details p {
+  font-size: 13px;
+  margin: -13px 2px 20px
+}
+
+.title {
+  font-size: 20px;
+  color: $secondary;
+}

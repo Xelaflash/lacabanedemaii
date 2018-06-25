@@ -21,6 +21,10 @@
   border: 1px solid $primary;
 }
 
+.cart-pic:hover {
+  opacity: 0.6;
+}
+
 .separator2 {
   border-top: 1px solid #DDCEBB;
   margin: 0;
@@ -33,7 +37,7 @@
 }
 
 .unit {
-  width: 182px;
+  width: 185px;
 
 }
 
