@@ -8,14 +8,14 @@ class OrderItemsController < ApplicationController
     if existing_order.count >= 1
       flash[:alert] = "Ce produit est déjà présent dans le panier"
       redirect_to produits_path
-    elsif
+    else
       @order.save
       session[:order_id] = @order.id
       flash[:notice] = "Le produit a été ajouté au panier"
       redirect_to produits_path
-    else
-      flash[:alert] = "Ce produit ne peut pas être rajouter au panier"
-      redirect_to produits_path
+    # else
+    #   flash[:alert] = "Ce produit ne peut pas être rajouté au panier"
+    #   redirect_to produits_path
     end
   end
 

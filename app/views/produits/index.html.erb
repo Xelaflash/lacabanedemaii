@@ -19,8 +19,12 @@
               <%= f.hidden_field :produit_id, value: produit.id %>
               <%= f.hidden_field :quantity, value: 1 %>
             </div>
-                <%= f.submit "Ajouter au panier", class: "btn btn-block panier" %>
+            <% if produit.quantite > 0 %>
+              <%= f.submit "Ajouter au panier", class: "btn btn-block panier"%>
+            <% else %>
+              <h6 class="sold-out">sold out</h6>
               <% end %>
+            <% end %>
           </div>
         </div>
       </div>
