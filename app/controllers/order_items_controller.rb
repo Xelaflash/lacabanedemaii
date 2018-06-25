@@ -12,7 +12,7 @@ class OrderItemsController < ApplicationController
       @order.save
       session[:order_id] = @order.id
       flash[:notice] = "Le produit a été ajouté au panier"
-      redirect_to produits_path
+      redirect_to cart_path
     # else
     #   flash[:alert] = "Ce produit ne peut pas être rajouté au panier"
     #   redirect_to produits_path

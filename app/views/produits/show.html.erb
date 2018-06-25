@@ -25,25 +25,23 @@
         <%= cl_image_tag @produit.photo, crop: :thumb, class: "img-responsive" %>
       </div>
       <div class="buy-show">
-          <div class="test1">
-            <% if @produit.quantite > 0 %>
-          <p>Quantité : </p>
-          <% else %>
-          <p class="hidden">Quantité : </p>
+          <div class="q-show">
+              <% if @produit.quantite > 0 %>
+          <p class="text-center"><strong>Quantité :</strong> </p>
         <% end %>
+
+
           </div>
-          <div class="test2">
           <%= simple_form_for @order_item do |f| %>
             <%= f.hidden_field :produit_id, value: @produit.id %>
-          </div>
+        <% if @produit.quantite > 0 %>
+            <%= f.input :quantity, collection: 1..@produit.quantite, label: false, default: 1, value: @order_item.quantity%>
       </div>
       <div class="stock text-center">
-        <% if @produit.quantite > 0 %>
-            <%= f.input :quantity, collection: 1..@produit.quantite, label: false, default: 1, value: @order_item.quantity, class: "form-control"%>
           <h4 style="color: green">en stock</h4>
           <%= f.submit "Ajouter au panier", class: "btn btn-block panier" %>
         <% else %>
-          <h4 style="color: red">Produit indisponible</h4>
+          <h4  class="text-center" style="color: red">Produit indisponible</h4>
           <%= f.submit "Ajouter au panier", class: "hidden" %>
         <% end %>
       </div>

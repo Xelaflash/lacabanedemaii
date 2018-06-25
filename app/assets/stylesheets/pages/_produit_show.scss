@@ -2,7 +2,6 @@
   min-height: 85vh;
 }
 
-
 .tabs-show {
   margin-bottom: 10px;
 }
@@ -22,28 +21,18 @@
   margin-bottom: 30px;
 }
 
-.buy-show {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.test1 {
-  flex-grow: 1;
-  margin-left: 30px;
+.q-show {
   p {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
-#order_item_quantity {
-  width: 55%;
+ .buy-show{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 15px 25px;
 }
-
-.test2 {
-  flex-grow: 2;
-}
-
 
 .sold-out {
   background-color: red;
