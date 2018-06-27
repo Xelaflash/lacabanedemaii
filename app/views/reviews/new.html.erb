@@ -1,0 +1,36 @@
+<div class="modal fade" id="modalReview" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            <div class="modal-header header-size">
+              <h5 class="modal-title" id="exampleModalLongTitle">Donnez votre avis</h5>
+            </div>
+
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+                    <h5 class="title"><%= @produit.nom %></h5>
+
+                    <div class="form-hate">
+                    <%= simple_form_for [@produit, @review] do |t| %>
+                    <%= t.input :rating, collection: [0, 1, 2, 3, 4, 5], prompt: 'noter ce produit' %>
+                    <hr>
+                    <%= t.input :content, prompt: 'Votre commentaire' %>
+
+
+
+                    <%= t.button :submit, class: "btn-success btn-max"%>
+                    <% end %>
+
+                  </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

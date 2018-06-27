@@ -57,6 +57,14 @@
       <div class="subtitle">
         <h6> <%= number_to_currency(@produit.prix, :locale => :fr)  %></h6>
       </div>
+      <div class="stars">
+
+      </div>
+      <div class="avis">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalReview">
+  Launch demo modal
+</button>
+      </div>
       <div class="details">
         <h6><strong>Description : </strong></h6>
         <p><%= @produit.description %></p>
@@ -70,4 +78,8 @@
       </div>
     </div>
   </div>
+
+
+
+  <%= render template: "reviews/new" %>
 </div>
