@@ -12,21 +12,21 @@
               <div class="container-fluid">
                 <div class="row">
                   <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+                    <%#= cl_image_tag @produit.photo, crop: :thumb, class: "img-responsive" %>
                     <h5 class="title"><%= @produit.nom %></h5>
-
+                    <hr>
                     <div class="form-hate">
                     <%= simple_form_for [@produit, @review] do |t| %>
-                    <%= t.input :rating, collection: [0, 1, 2, 3, 4, 5], prompt: 'noter ce produit' %>
+                    <h6>Notez ce produit:</h6>
+                    <%= t.error_notification %>
+                    <%= t.collection_radio_buttons :rating, [[1, icon('fas', 'star')] ,[2, icon('fas', 'star') + icon('fas', 'star')],[3, icon('fas', 'star') + icon('fas', 'star') + icon('fas', 'star')],[4, icon('fas', 'star') + icon('fas', 'star') + icon('fas', 'star') + icon('fas', 'star')],[5, icon('fas', 'star') + icon('fas', 'star') + icon('fas', 'star') + icon('fas', 'star') + icon('fas', 'star')]], :first, :last %>
                     <hr>
-                    <%= t.input :content, prompt: 'Votre commentaire' %>
-
-
-
+                    <%= t.input :content, label: "votre commentaire" %>
+                    <%= t.input :recommend, as: :boolean, checked_value: true, unchecked_value: false, label: "oui je recommande ce produit"%>
                     <%= t.button :submit, class: "btn-success btn-max"%>
                     <% end %>
 
                   </div>
-
                   </div>
                 </div>
               </div>

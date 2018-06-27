@@ -81,5 +81,28 @@
 
 
 
+<div class="list-group">
+
+        <% @produit.reviews.each do |review| %>
+        <%= current_user.prenom %> <%= current_user.nom %>
+          <li class="list-group-item">
+            <small>
+              <% count = 0 %>
+              <% 5.times do %>
+                <% if review.rating > count %>
+                  <i class="fas fa-star"></i>
+                <% else %>
+                  <i class="far fa-star"></i>
+                <% end %>
+                <% count += 1 %>
+              <% end %>
+            </small>
+            <br>
+            <p><%= review.content %></p>
+          </li>
+        <% end %>
+      </div>
+
+
   <%= render template: "reviews/new" %>
 </div>
