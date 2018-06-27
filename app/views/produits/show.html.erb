@@ -17,39 +17,32 @@
 
 <h6><%= link_to "back to produits", produits_path, class: "back" %></h6>
 
-
   <div class="prod-show">
-
     <div class="show-left">
       <div class="show-pic">
         <%= cl_image_tag @produit.photo, crop: :thumb, class: "img-responsive" %>
       </div>
       <div class="buy-show">
-          <div class="q-show">
-              <% if @produit.quantite > 0 %>
-          <p class="text-center"><strong>Quantité :</strong> </p>
-        <% end %>
-
-
-          </div>
-          <%= simple_form_for @order_item do |f| %>
-            <%= f.hidden_field :produit_id, value: @produit.id %>
-        <% if @produit.quantite > 0 %>
+        <div class="q-show">
+          <% if @produit.quantite > 0 %>
+            <p class="text-center"><strong>Quantité :</strong> </p>
+          <% end %>
+        </div>
+        <%= simple_form_for @order_item do |f| %>
+          <%= f.hidden_field :produit_id, value: @produit.id %>
+          <% if @produit.quantite > 0 %>
             <%= f.input :quantity, collection: 1..@produit.quantite, label: false, default: 1, value: @order_item.quantity, class: "form-control"%>
       </div>
       <div class="stock text-center">
-          <h4 style="color: green">en stock</h4>
+        <h4 style="color: green">en stock</h4>
           <%= f.submit "Ajouter au panier", class: "btn btn-block panier" %>
-        <% else %>
-          <h4  class="text-center" style="color: red;margin-left: -28px;">Produit indisponible</h4>
+          <% else %>
+            <h4  class="text-center" style="color: red;margin-left: -28px;">Produit indisponible</h4>
           <%= f.submit "Ajouter au panier", class: "hidden" %>
         <% end %>
       </div>
         <% end %>
-
-
     </div>
-
 
     <div class="show-right">
       <h5 class="title text-center"><%= @produit.nom %></h5>
@@ -79,32 +72,47 @@
     </div>
   </div>
 
+  <div class="comments">
+    <h6>Commentaires & notes</h6>
+    <hr class="separator2">
 
-
-<div class="list-group">
-
-        <% @produit.reviews.each do |review| %>
+    <div class="avg-rating">
+      <p>Average rating</p>
+      <% if @produit.reviews.empty? %>
+                    <h6>No review yet ...</h6>
+                  <% else %>
+                    <%= "⭐️" * @produit.reviews.average(:rating) %>
+                  <% end %>
+    <hr class="separator2">
+    </div>
+    <div class="list-group">
+      <% @produit.reviews.each do |review| %>
         <%= current_user.prenom %> <%= current_user.nom %>
-          <li class="list-group-item">
-            <small>
-              <% count = 0 %>
-              <% 5.times do %>
-                <% if review.rating > count %>
-                  <i class="fas fa-star"></i>
-                <% else %>
-                  <i class="far fa-star"></i>
-                <% end %>
+        <li class="list-group-item">
+          <small>
+            <% count = 0 %>
+            <% 5.times do %>
+              <% if review.rating > count %>
+                <i class="fas fa-star"></i>
+              <% else %>
+                <i class="far fa-star"></i>
+              <% end %>
                 <% count += 1 %>
               <% end %>
-            </small>
-            <br>
-            <p><%= review.content %></p>
+          </small>
+          <br>
+          <p><%= review.content %></p>
           <% if review.recommend == true %>
-          <p><i class="fas fa-check-circle"></i> Oui, je recommande ce produit</p>
-            <% end %>
-          </li>
-        <% end %>
-      </div>
+            <p><i class="fas fa-check-circle"></i> Oui, je recommande ce produit</p>
+          <% end %>
+        </li>
+      <% end %>
+    </div>
+  </div>
+
+
+
+
 
 
   <%= render template: "reviews/new" %>
