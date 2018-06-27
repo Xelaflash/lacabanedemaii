@@ -41,7 +41,7 @@
           <h4 style="color: green">en stock</h4>
           <%= f.submit "Ajouter au panier", class: "btn btn-block panier" %>
         <% else %>
-          <h4  class="text-center" style="color: red">Produit indisponible</h4>
+          <h4  class="text-center" style="color: red;margin-left: -28px;">Produit indisponible</h4>
           <%= f.submit "Ajouter au panier", class: "hidden" %>
         <% end %>
       </div>
@@ -53,7 +53,7 @@
 
     <div class="show-right">
       <h5 class="title text-center"><%= @produit.nom %></h5>
-      <hr class=separator2>
+      <hr id="sep">
       <div class="subtitle">
         <h6> <%= number_to_currency(@produit.prix, :locale => :fr)  %></h6>
       </div>

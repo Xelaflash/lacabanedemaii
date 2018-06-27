@@ -61,6 +61,11 @@
   }
 }
 
+#sep {
+  border-top: 2px solid #DDCEBB;
+  margin: 0;
+}
+
 .details p {
   font-size: 13px;
   margin: -13px 2px 20px
@@ -69,4 +74,11 @@
 .title {
   font-size: 20px;
   color: $secondary;
+}
+
+.subtitle h6 {
+  font-weight: bold;
+  font-size: 22px;
+  color: #512501;
+  margin: 30px 10px;
 }
