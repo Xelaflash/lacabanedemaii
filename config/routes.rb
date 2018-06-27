@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :produits, only: [:index, :show]
+  resources :produits, only: [:index, :show] do
+    resources :reviews, only: [ :new, :create ]
+  end
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
 
