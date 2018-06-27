@@ -5,15 +5,16 @@ class ReviewsController < ApplicationController
     @review.produit = @produit
     @order_item = current_order.order_items.new
     if @review.save
-      flash[:notice] = "ok"
+      flash[:notice] = "Votre commentaire a été ajouté"
       redirect_to produit_path(@produit)
     else
       render "produits/show"
-      flash[:alert] = "pas cool"
+      flash[:alert] = "Le commentaire n'a pas pu être ajouté. Merci de réessayer"
     end
   end
 
   private
+
 
   def review_params
     params.require(:review).permit(:content, :rating, :recommend)

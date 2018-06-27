@@ -99,6 +99,9 @@
             </small>
             <br>
             <p><%= review.content %></p>
+          <% if review.recommend == true %>
+          <p><i class="fas fa-check-circle"></i> Oui, je recommande ce produit</p>
+            <% end %>
           </li>
         <% end %>
       </div>
