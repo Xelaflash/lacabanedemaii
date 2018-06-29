@@ -13,6 +13,7 @@
   margin: 20px 0 20px 25px;
   display: flex;
   align-items: center;
+  font-size: 13px;
 }
 
 .avg-title {
@@ -32,20 +33,40 @@
   margin-bottom: 0;
   position: relative;
   display: block;
-  padding: 12px 22px;
+  padding: 0px 22px 20px 22px;
   margin-bottom: 0;
   display: flex;
   align-items: center;
+  margin: 15px 0;
 }
 
 .review-left {
   flex-basis:40%;
 }
-.content {
+.review-right {
   flex:1;
 }
 
 #author {
   text-transform: capitalize;
   font-style: italic;
+  margin-bottom: 15px;
 }
+
+.fa-star {
+  color: #c7a656;
+}
+
+.stars {
+  padding-bottom: 15px;
+}
+
+.fa-check-circle {
+  color: #19C738;
+}
+
+#content {
+  font-size: 13px;
+}
+
+
