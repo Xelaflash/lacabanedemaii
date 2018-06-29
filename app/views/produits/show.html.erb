@@ -47,15 +47,31 @@
     <div class="show-right">
       <h5 class="title text-center"><%= @produit.nom %></h5>
       <hr id="sep">
-      <div class="subtitle">
-        <h6> <%= number_to_currency(@produit.prix, :locale => :fr)  %></h6>
-      </div>
-      <div class="stars">
 
-      </div>
-
-      <div class="avis">
-
+      <div class="sub-right">
+        <div class="subtitle">
+          <h6> <%= number_to_currency(@produit.prix, :locale => :fr)  %></h6>
+        </div>
+        <div class="stars-big">
+          <% if @produit.reviews.empty? %>
+            <% 5.times do %>
+              <i class="far fa-star"></i>
+            <% end %>
+          <% else %>
+            <p>
+              <% count = 0 %>
+              <% 5.times do %>
+                <% if @produit.reviews.average(:rating) > count %>
+                  <i class="fas fa-star"></i>
+                <% else %>
+                  <i class="far fa-star"></i>
+                <% end %>
+                <% count += 1 %>
+              <% end %>
+            </p>
+          <% end %>
+        </div>
+        <p id="up-nb-comments"> (<%= @produit.reviews.count %>)</p>
       </div>
 
 
@@ -70,7 +86,9 @@
         <p><%= @produit.utilisation %></p>
         <h6><strong> Paiement sécurisé </strong></h6>
       </div>
+
     </div>
+
   </div>
 
   <div class="wrapper">
@@ -96,8 +114,8 @@
                   <% count += 1 %>
                   <% end %>
                 </p>
-              <p id="nb-comments"> (<%= @produit.reviews.count %>)</p>
             <% end %>
+              <p id="nb-comments"> (<%= @produit.reviews.count %>)</p>
           </div>
         </div>
         <div class="com-sub-right">

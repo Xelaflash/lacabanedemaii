@@ -66,6 +66,24 @@
   margin: 0;
 }
 
+.sub-right {
+  display: flex;
+  align-items: center;
+  margin: 20px 10px;
+}
+
+.stars-big p {
+  font-size: 15px;
+  margin: 0;
+  padding: 3px 15px 13px 150px;
+}
+
+#up-nb-comments {
+  margin: 0px 0 9px;
+}
+
+
+
 .details p {
   font-size: 13px;
   margin: -13px 2px 20px
@@ -78,7 +96,6 @@
 
 .subtitle h6 {
   font-weight: bold;
-  font-size: 22px;
+  font-size: 25px;
   color: #512501;
-  margin: 30px 10px;
 }
