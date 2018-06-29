@@ -1,7 +1,6 @@
 class ReviewsController < ApplicationController
   def create
     @produit = Produit.find(params[:produit_id])
-    binding.pry
     @review = current_user.reviews.new(review_params)
     @review.produit = @produit
     @order_item = current_order.order_items.new
@@ -9,6 +8,7 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Votre commentaire a été ajouté"
       redirect_to produit_path(@produit)
     else
+      flash.now[:alert] = "PLease review your inputs"
       render "produits/show"
     end
   end
