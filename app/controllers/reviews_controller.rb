@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Votre commentaire a été ajouté"
       redirect_to produit_path(@produit)
     else
-      flash.now[:alert] = "PLease review your inputs"
+      flash.now[:alert] = "Please review your inputs"
       render "produits/show"
     end
   end

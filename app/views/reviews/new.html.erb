@@ -12,13 +12,16 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
-              <%#= cl_image_tag @produit.photo, crop: :thumb, class: "img-responsive" %>
+              <div class="text-center">
+              <%= cl_image_tag @produit.photo, class: "thumb" %>
               <h5 class="title"><%= @produit.nom %></h5>
-              <hr>
+              </div>
+              <hr class="separator3">
               <div class="form-review">
                 <%= simple_form_for [@produit, @review] do |t| %>
                 <%= t.error_notification %>
-                <h6>Notez ce produit:</h6>
+
+                <h6 class="form-review" style="font-weight: bold;">Notez ce produit :</h6>
                 <%= t.collection_radio_buttons :rating,
                   [[1, icon('fas', 'star')],
                   [2, icon('fas', 'star') + icon('fas', 'star')],
@@ -27,11 +30,13 @@
                   [5, icon('fas', 'star') + icon('fas', 'star') + icon('fas', 'star') + icon('fas', 'star') + icon('fas', 'star')]],
                 :first,
                 :last %>
-                <hr>
-                <%= t.input :content, label: "Votre commentaire", required: true %>
-                <%= t.input :recommend, as: :boolean, unchecked_value: false, checked_value: true, label: "Oui, je recommande ce produit"%>
+                  <hr class="separator3">
                 <%= t.input :author, label: "Votre nom", required: true %>
-                <%= t.button :submit, class: "btn-success btn-max"%>
+                <%= t.input :content, label: "Votre commentaire", required: true %>
+
+                <%= t.input :recommend, as: :boolean, unchecked_value: false, checked_value: true, label: "Oui, je recommande ce produit"%>
+                <hr class="separator3">
+                <%= t.button :submit, "Valider", class: "btn btn-avis btn-block"%>
                 <% end %>
               </div>
             </div>
