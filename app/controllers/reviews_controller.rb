@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   def create
-    binding.pry
     @produit = Produit.find(params[:produit_id])
+    binding.pry
     @review = current_user.reviews.new(review_params)
     @review.produit = @produit
     @order_item = current_order.order_items.new

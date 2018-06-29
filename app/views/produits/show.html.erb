@@ -89,24 +89,27 @@
       <hr class="separator2">
       <div class="list-group">
         <% @produit.reviews.each do |review| %>
-        <p><%= review.author %></p>
           <li class="review-item">
-            <small>
-              <% count = 0 %>
-              <% 5.times do %>
-                <% if review.rating > count %>
-                  <i class="fas fa-star"></i>
-                <% else %>
-                  <i class="far fa-star"></i>
-                <% end %>
-                  <% count += 1 %>
-                <% end %>
-            </small>
-            <br>
-            <p><%= review.content %></p>
-            <% if review.recommend == true %>
-              <p><i class="fas fa-check-circle"></i> Oui, je recommande ce produit</p>
-            <% end %>
+            <div class="review-left">
+              <small>
+                <% count = 0 %>
+                <% 5.times do %>
+                  <% if review.rating > count %>
+                    <i class="fas fa-star"></i>
+                  <% else %>
+                    <i class="far fa-star"></i>
+                  <% end %>
+                    <% count += 1 %>
+                  <% end %>
+              </small>
+              <% if review.recommend == true %>
+                <p><i class="fas fa-check-circle"></i> Oui, je recommande ce produit</p>
+              <% end %>
+            </div>
+            <div class="content">
+              <p id="author"> Par <%= review.author %> </p>
+              <p><%= review.content %></p>
+            </div>
           </li>
         <% end %>
       </div>
