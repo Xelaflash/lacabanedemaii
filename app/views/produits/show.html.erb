@@ -53,11 +53,12 @@
       <div class="stars">
 
       </div>
+
       <div class="avis">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalReview">
-  write a review
-</button>
+
       </div>
+
+
       <div class="details">
         <h6><strong>Description : </strong></h6>
         <p><%= @produit.description %></p>
@@ -72,30 +73,38 @@
     </div>
   </div>
 
-
   <div class="wrapper">
     <div class="comments">
       <h6>Commentaires & notes</h6>
       <hr class="separator2">
-      <div class="avg-rating">
-        <% if @produit.reviews.empty? %>
-          <h6>Pas encore de commentaire ...</h6>
-        <% else %>
-            <p class="avg-title">Note moyenne</p>
-            <p>
-              <% count = 0 %>
-              <% 5.times do %>
-                <% if @produit.reviews.average(:rating) > count %>
-                  <i class="fas fa-star"></i>
-                <% else %>
-                  <i class="far fa-star"></i>
-                <% end %>
-              <% count += 1 %>
-              <% end %>
-            </p>
-          <p> (<%= @produit.reviews.count %>)</p>
-        <% end %>
+
+      <div class="com-sub">
+        <div class="com-sub-left">
+          <div class="avg-rating">
+            <% if @produit.reviews.empty? %>
+              <h6>Pas encore de commentaire ...</h6>
+            <% else %>
+                <p id="avg-title">Note moyenne</p>
+                <p>
+                  <% count = 0 %>
+                  <% 5.times do %>
+                    <% if @produit.reviews.average(:rating) > count %>
+                      <i class="fas fa-star"></i>
+                    <% else %>
+                      <i class="far fa-star"></i>
+                    <% end %>
+                  <% count += 1 %>
+                  <% end %>
+                </p>
+              <p id="nb-comments"> (<%= @produit.reviews.count %>)</p>
+            <% end %>
+          </div>
+        </div>
+        <div class="com-sub-right">
+          <button type="button" class="btn btn-avis" data-toggle="modal" data-target="#modalReview">Ecrire un avis</button>
+        </div>
       </div>
+
       <hr class="separator2">
       <div class="list-group">
         <% @produit.reviews.each do |review| %>
@@ -119,7 +128,7 @@
               <% end %>
             </div>
             <div class="review-right">
-              <p id="author"> Par <%= review.author %> </p>
+              <p id="author"><%= review.author %></p>
               <p id="content"><%= review.content %></p>
             </div>
           </li>

@@ -16,15 +16,40 @@
   font-size: 13px;
 }
 
-.avg-title {
+#avg-title {
   padding-right: 15px;
+}
+
+#nb-comments {
+  margin-left: 10px;
 }
 
 .star {
   padding-right: 15px;
 }
 
-.list-group {
+
+.com-sub {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.com-sub-right {
+  margin-right: 50px;
+}
+
+.btn-avis {
+  background-color: $green;
+  border-radius: 50px;
+  color: white;
+  font-size: 14px;
+  padding: 6px 30px;
+}
+
+.btn-avis:hover {
+  opacity: 0.8;
+  color: white;
 }
 
 
@@ -48,8 +73,9 @@
 }
 
 #author {
-  text-transform: capitalize;
+  text-transform: uppercase;
   font-style: italic;
+  font-size: 14px;
   margin-bottom: 15px;
 }
 
@@ -62,11 +88,10 @@
 }
 
 .fa-check-circle {
-  color: #19C738;
+  color: $green;
 }
 
 #content {
   font-size: 13px;
 }
-
 
