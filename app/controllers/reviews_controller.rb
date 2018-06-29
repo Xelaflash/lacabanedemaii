@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   def create
+    binding.pry
     @produit = Produit.find(params[:produit_id])
     @review = current_user.reviews.new(review_params)
     @review.produit = @produit
@@ -17,6 +18,6 @@ class ReviewsController < ApplicationController
 
 
   def review_params
-    params.require(:review).permit(:content, :rating, :recommend)
+    params.require(:review).permit(:content, :rating, :recommend, :author)
   end
 end

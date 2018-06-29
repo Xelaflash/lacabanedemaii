@@ -23,6 +23,7 @@
                     <hr>
                     <%= t.input :content, label: "votre commentaire" %>
                     <%= t.input :recommend, as: :boolean, unchecked_value: false, checked_value: true, label: "oui je recommande ce produit"%>
+                    <%= t.input :author, label: "votre nom" %>
                     <%= t.button :submit, class: "btn-success btn-max"%>
                     <% end %>
 

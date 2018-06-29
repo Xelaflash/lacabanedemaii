@@ -55,7 +55,7 @@
       </div>
       <div class="avis">
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalReview">
-  Launch demo modal
+  write a review
 </button>
       </div>
       <div class="details">
@@ -87,7 +87,7 @@
     </div>
     <div class="list-group">
       <% @produit.reviews.each do |review| %>
-        <%= current_user.prenom %> <%= current_user.nom %>
+      <p><%= review.author %></p>
         <li class="list-group-item">
           <small>
             <% count = 0 %>
