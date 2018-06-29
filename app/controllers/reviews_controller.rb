@@ -10,7 +10,6 @@ class ReviewsController < ApplicationController
       redirect_to produit_path(@produit)
     else
       render "produits/show"
-      # flash[:alert] = "Le commentaire n'a pas pu être ajouté. Merci de réessayer"
     end
   end
 

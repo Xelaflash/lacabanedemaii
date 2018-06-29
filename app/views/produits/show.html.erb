@@ -72,43 +72,47 @@
     </div>
   </div>
 
-  <div class="comments">
-    <h6>Commentaires & notes</h6>
-    <hr class="separator2">
 
-    <div class="avg-rating">
-      <p>Average rating</p>
-      <% if @produit.reviews.empty? %>
-                    <h6>No review yet ...</h6>
-                  <% else %>
-                    <%= "⭐️" * @produit.reviews.average(:rating) %>
-                  <% end %>
-    <hr class="separator2">
-    </div>
-    <div class="list-group">
-      <% @produit.reviews.each do |review| %>
-      <p><%= review.author %></p>
-        <li class="list-group-item">
-          <small>
-            <% count = 0 %>
-            <% 5.times do %>
-              <% if review.rating > count %>
-                <i class="fas fa-star"></i>
-              <% else %>
-                <i class="far fa-star"></i>
-              <% end %>
-                <% count += 1 %>
-              <% end %>
-          </small>
-          <br>
-          <p><%= review.content %></p>
-          <% if review.recommend == true %>
-            <p><i class="fas fa-check-circle"></i> Oui, je recommande ce produit</p>
+  <div class="wrapper">
+    <div class="comments">
+      <h6>Commentaires & notes</h6>
+      <hr class="separator2">
+      <div class="avg-rating">
+        <p class="avg-title">Average Rating</p>
+         <% if @produit.reviews.empty? %>
+            <h6>No review yet ...</h6>
+          <% else %>
+          <p class="star"><%= "⭐️" * @produit.reviews.average(:rating) %></p>
+          <p> (<%= @produit.reviews.count %>)</p>
           <% end %>
-        </li>
-      <% end %>
+      </div>
+      <hr class="separator2">
+      <div class="list-group">
+        <% @produit.reviews.each do |review| %>
+        <p><%= review.author %></p>
+          <li class="review-item">
+            <small>
+              <% count = 0 %>
+              <% 5.times do %>
+                <% if review.rating > count %>
+                  <i class="fas fa-star"></i>
+                <% else %>
+                  <i class="far fa-star"></i>
+                <% end %>
+                  <% count += 1 %>
+                <% end %>
+            </small>
+            <br>
+            <p><%= review.content %></p>
+            <% if review.recommend == true %>
+              <p><i class="fas fa-check-circle"></i> Oui, je recommande ce produit</p>
+            <% end %>
+          </li>
+        <% end %>
+      </div>
     </div>
   </div>
+
 
 
 
