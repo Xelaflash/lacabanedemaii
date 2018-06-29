@@ -72,14 +72,18 @@
   margin: 20px 10px;
 }
 
-.stars-big p {
+.stars-big  {
+  margin: 0;
+  padding: 4px 15px 13px 150px;
+  p , .fa-star {
   font-size: 15px;
   margin: 0;
-  padding: 3px 15px 13px 150px;
+  }
+
 }
 
 #up-nb-comments {
-  margin: 0px 0 9px;
+  margin: 0px 0 10px;
 }
 
 
