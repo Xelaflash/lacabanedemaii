@@ -3,6 +3,7 @@ class ProduitsController < ApplicationController
 
   def index
     @produits = Produit.all
+    @produits_search = @produits.search_by_marque_and_nom(params[:search])
     @order_item = current_order.order_items.new
   end
 
@@ -11,4 +12,6 @@ class ProduitsController < ApplicationController
     @review = Review.new
     @order_item = current_order.order_items.new
   end
+
+
 end

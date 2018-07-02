@@ -9,13 +9,20 @@ class Produit < ApplicationRecord
   validates :photo, presence: true, uniqueness: true
   validates :quantite, presence: true
   validates :prix, presence: true
-  validates :frais_de_port, presence: true
+  # validates :frais_de_port, presence: true
   validates :poids, presence: true
   validates :description, presence: true
   validates :composition, presence: true
   validates :utilisation, presence: true
 
   default_scope { where(active: true) }
+
+  include PgSearch
+  pg_search_scope :search_by_marque_and_nom,
+                  :against => [ :nom, :marque ],
+                  :using => {
+                    :tsearch => { :prefix => true }
+                  }
 end
 
 
