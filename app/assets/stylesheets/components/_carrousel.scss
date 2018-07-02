@@ -39,20 +39,20 @@
     object-fit: cover;
 }
 
-  .carousel-control{
-    &.left, &.right{
-      background-image: none;
-      color: black;
-    }
-  }
+  // .carousel-control{
+  //   &.left, &.right{
+  //     background-image: none;
+  //     color: black;
+  //   }
+  // }
 
 
-.left.carousel-control {
-  left: -100px;
-  cursor: pointer;
-}
+// .left.carousel-control {
+//   left: -100px;
+//   cursor: pointer;
+// }
 
-.right.carousel-control {
-  right: -100px;
-  cursor: pointer;
-}
+// .right.carousel-control {
+//   right: -100px;
+//   cursor: pointer;
+// }

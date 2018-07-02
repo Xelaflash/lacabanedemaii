@@ -39,8 +39,12 @@ body {
 }
 
 .banner {
-  height: 300px;
+  height: 350px;
   margin-top: 10px;
+  img {
+    height: 350px;
+    width: 100%;
+  }
 }
 
 .presentation p {
@@ -50,7 +54,7 @@ body {
 }
 
 .carousel {
-  margin: 20px;
+  margin: 40px -3px 20px 23px;
 }
 
 .separator {

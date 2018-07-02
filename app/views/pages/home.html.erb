@@ -15,7 +15,8 @@
   </div>
 </div>
 
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(70,70,70,0.3) 0%, rgba(45,45,45,0.1) 50%), url('<%= image_path "banner.jpg" %>');">
+<div class="banner">
+  <%= cl_image_tag "banniere_mai-02.png", :quality=>100, class: "img-responsive", alt: "La cabane de Maï"%>
 </div>
 
 
@@ -49,9 +50,6 @@
             </div>
           </div>
         </div>
-
-        <a class="left carousel-control hidden-xs" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-        <a class="right carousel-control hidden-xs" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
       </div>
   </div>
 </div>
