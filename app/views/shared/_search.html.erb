@@ -1,5 +1,5 @@
 
-<%= simple_form_for :search, url: produits_path, method: :get, html: { class: 'form-inline search'}, remote: true do |f| %>
+<%= simple_form_for :search, url: produits_path, method: :get, html: { class: 'form-inline search'} do |f| %>
   <div class="search">
         <%= f.input :produit_id, input_html: { class: 'form-search'}, label: false, placeholder: "Cherchez un produit..." %><%= link_to "<i class='fa fa-search'></i>".html_safe, method: :submit %>
   <% end %>
