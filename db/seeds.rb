@@ -87,6 +87,10 @@ Produit.create!(marque:"Aleppo soap", nom: "blaireau", reference: "718", photo:"
 
 
 
+Produit.create!(marque:"xx", nom: "test", reference: "0", photo:"https://res.cloudinary.com/drzibyjvb/image/upload/v1530537490/ruse-inc-lusage-repens-du-bois-rcupr.jpg", quantite:10, prix: 10.00, frais_de_port: 4.95, poids: 100, unit: "G", description: "Pour toute barbe, de la plus dure à la plus douce, du junior au vétéran. Pour toute peau. Blaireau pures soies de sanglier, sur manche de hêtre ergonomique. Abondants, fermes, très hydrophiles pour faire bien mousser le savon, ils apprêtent  parfaitement la barbe et la peau, même sensible, à l’action du rasoir.", composition: "acier inoxydable", utilisation: "Faire mousser sur le visage humidifié le savon à barbe recueilli dans les soies humides. Se raser, rincer et secouer la brosse. ", gamme: maison, active: true )
+
+
+
 OrderStatus.delete_all
 OrderStatus.create! id: 1, name: "In Progress"
 OrderStatus.create! id: 2, name: "Placed"
