@@ -1,3 +1,12 @@
+.shopping-cart{
+  min-height: 78vh;
+}
+
+.cart-space{
+  min-height: 42vh;
+
+}
+
 #cart-title {
   font-family: 'Yellowtail', cursive;
   font-size: 70px;
@@ -24,5 +33,16 @@
   font-size: 15px;
 }
 
-
-
+.empty-cart {
+    min-height: 40vh;
+  h4 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 40px 0 40px 0;
+    padding-top: 100px;
+  }
+  p {
+    font-size: 16px;
+    margin: 0;
+  }
+}
