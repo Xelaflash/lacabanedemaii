@@ -43,27 +43,55 @@
 </div>
 
 <div class="container">
-  <div class="tabs">
-    <a class="tab active" href="#">
-      <h3>Maison</h3>
-    </a>
-    <a class="tab" href="#">
-      <h3>Bien-Être</h3>
-    </a>
-    <a class="tab" href="#">
-      <h3>Bord de Mer</h3>
-    </a>
-    <a class="tab" href="#">
-      <h3>Enfant</h3>
-    </a>
-  </div>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><%= @gammes.first.name %></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><%= @gammes.second.name %></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><%= @gammes.third.name %></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><%= @gammes.fourth.name %></a>
+  </li>
+</ul>
 </div>
+
+
 <div class="container">
   <hr class="separator">
 </div>
 
 <div class="wrapper">
-      <%= render 'produits/product_card'%>
+  <div class="tab-content" id="myTabContent">
+
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <% @gammes.first.produits.each do |product| %>
+        <%= render 'produits/product_card'%>
+      <% end %>
+    </div>
+
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <% @gammes.second.produits.each do |product| %>
+        <%= render 'produits/product_card', product: 'product'%>
+      <% end %>
+    </div>
+
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+      <% @gammes.third.produits.each do |product| %>
+        <%= render 'produits/product_card', product: 'product'%>
+      <% end %>
+    </div>
+
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+      <% @gammes.fourth.produits.each do |product| %>
+        <%= render 'produits/product_card', product: 'product'%>
+      <% end %>
+    </div>
+
+  </div>
 </div>
 
 
