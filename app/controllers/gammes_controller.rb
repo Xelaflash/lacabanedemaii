@@ -1,11 +1,6 @@
 class GammesController < ApplicationController
   skip_before_action :authenticate_user!
 
-
-  def index
-    @gammes = Gamme.all
-  end
-
   def show
     @gammes = Gamme.all
     @gamme = Gamme.find(params[:id])
