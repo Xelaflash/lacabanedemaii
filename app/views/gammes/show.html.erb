@@ -1,33 +1,12 @@
-<div class="container">
-  <div class="row ">
-    <% @produits.order("quantite desc").each do |produit| %>
-      <div class="col-sm-3 col-xs-6">
-        <div class="card text-center">
-          <div class="card-up">
-            <div class="card-pic">
-              <%= cl_image_tag produit.photo, crop: :thumb, class: "img-responsive pic" %>
-            </div>
-            <div class="card-hover">
-              <%= link_to "Voir le produit", produit_path(produit),class: "btn btn-block produit-show"%>
-            </div>
-          </div>
-          <div class="card-info">
-            <h5><%= produit.nom %></h5>
-            <h6>  <%= number_to_currency(produit.prix, :locale => :fr)  %></h6>
-            <div class="buy">
-              <%= simple_form_for @order_item do |f| %>
-              <%= f.hidden_field :produit_id, value: produit.id %>
-              <%= f.hidden_field :quantity, value: 1 %>
-            </div>
-            <% if produit.quantite > 0 %>
-              <%= f.submit "Ajouter au panier", class: "btn btn-block panier"%>
-            <% else %>
-              <h6 class="sold-out">sold out</h6>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
-      </div>
+<div class="container show-page">
+  <div class="tabs tabs-show">
+    <% @gammes.each do |g| %>
+      <%= link_to  gamme_path(g), class: "tab" do %>
+        <h3><%= g.name %></h3>
+      <% end %>
     <% end %>
   </div>
+
+  <hr class=separator2>
+  <%= render "produits/product_card" %>
 </div>

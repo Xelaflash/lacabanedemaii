@@ -1,20 +1,14 @@
 <div class="container show-page">
   <div class="tabs tabs-show">
-    <a class="tab active" href="#">
-      <h3>Maison</h3>
-    </a>
-    <a class="tab" href="#">
-      <h3>Bien-Être</h3>
-    </a>
-    <a class="tab" href="#">
-      <h3>Bord de Mer</h3>
-    </a>
-    <a class="tab" href="#">
-      <h3>Enfant</h3>
-    </a>
+    <% @gammes.each do |g| %>
+      <%= link_to  gamme_path(g), class: "tab" do %>
+        <h3><%= g.name %></h3>
+      <% end %>
+    <% end %>
   </div>
-<hr class=separator2>
 
-
+  <hr class=separator2>
   <%= render "produits/product_card" %>
 </div>
+
+
