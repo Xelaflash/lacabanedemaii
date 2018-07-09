@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="tabs tabs-show">
+    <% @gammes.each do |g| %>
+      <%= link_to  gamme_path(g), class: "tab" do %>
+        <h3><%= g.name %></h3>
+      <% end %>
+    <% end %>
+  </div>
+  <hr class=separator2>
+</div>
+

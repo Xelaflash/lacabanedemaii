@@ -1,21 +1,8 @@
-<div class="container show-page">
-  <div class="tabs tabs-show">
-    <a class="tab active" href="#">
-      <h3>Maison</h3>
-    </a>
-    <a class="tab" href="#">
-      <h3>Bien-Être</h3>
-    </a>
-    <a class="tab" href="#">
-      <h3>Bord de Mer</h3>
-    </a>
-    <a class="tab" href="#">
-      <h3>Enfant</h3>
-    </a>
-  </div>
-<hr class=separator2>
+  <%= render "shared/tab" %>
 
-<h6><%= link_to "back to produits", root_path, class: "back" %></h6>
+<div class="container">
+
+<h6><%= link_to "back to produits", produits_path, class: "back" %></h6>
 
   <div class="prod-show">
     <div class="show-left">
