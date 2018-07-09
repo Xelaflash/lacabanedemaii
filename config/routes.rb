@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   end
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
+  resources :gammes, only: [:index, :show]
 
-  root to: 'produits#index'
+  root to: 'pages#home'
 
   get 'qui_sommes_nous', to: 'pages#qui_sommes_nous', as: :qui_sommes_nous
   get 'contact',         to: 'pages#contact',         as: :contact
