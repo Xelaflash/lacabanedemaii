@@ -1,13 +1,7 @@
 <div class="container show-page">
   <div class="tabs tabs-show">
-    <% @gammes.each do |g| %>
-      <%= link_to  gamme_path(g), class: "tab" do %>
-        <h3><%= g.name %></h3>
-      <% end %>
-    <% end %>
+    <%= render "shared/tab" %>
   </div>
-
-  <hr class=separator2>
   <%= render "produits/product_card" %>
 </div>
 
