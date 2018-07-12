@@ -1,9 +1,12 @@
+const current = document.location.pathname.split('/')[2];
+const navs = document.querySelectorAll('.tab');
+
+Array.from(navs).forEach(function(el) {
+  if (el.id === current) {
+    el.classList.add('active');
+  }
+});
 
 
-      const navs = document.querySelectorAll('.tab');
-      function tabActive() {
-        this.classList.add('active');
-      };
 
-      navs.forEach(nav => nav.addEventListener('click', tabActive ));
 
