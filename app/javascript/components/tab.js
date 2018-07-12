@@ -1,31 +1,9 @@
-// const toggleActive = (event) => {
-//   event.currentTarget.classList.add('active');
-// };
-
-// const bindToggleActiveTab = (element) => {
-//   element.addEventListener('click', toggleActive);
-// };
-
-// document.querySelectorAll('.tab').forEach(bindToggleActiveTab);
 
 
+      const navs = document.querySelectorAll('.tab');
+      function tabActive() {
+        this.classList.add('active');
+      };
 
-(function() {
+      navs.forEach(nav => nav.addEventListener('click', tabActive ));
 
-  // const adress = window.location.href;
-  // console.log(adress);
-
-    const nav = document.querySelector('.tab');
-    console.log(nav);
-
-    const ref = nav.href.split('/')[4];
-    console.log(ref);
-
-
-    const current = document.location.pathname.split('/')[2];
-    console.log(current);
-
-    if(ref == current) {
-        nav.classList.add("active");
-      }
-})();
