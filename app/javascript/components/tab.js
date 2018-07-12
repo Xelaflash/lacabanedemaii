@@ -6,7 +6,3 @@ Array.from(navs).forEach(function(el) {
     el.classList.add('active');
   }
 });
-
-
-
-
