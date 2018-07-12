@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
+  resources :gammes, only: [:show]
 
   root to: 'pages#home'
 

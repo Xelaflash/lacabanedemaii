@@ -1,49 +1,55 @@
-<% if !@order_item.nil? && @order_item.errors.any? %>
-  <div class="alert alert-danger">
-    <ul>
-    <% @order_item.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
-<% if @order_items.size == 0 %>
-  <p class="text-center">
-    There are no items in your shopping cart.  Please <%= link_to "go back", produits_path %> and add some items to your cart.
-  </p>
-<% else %>
+<div class="shopping-cart">
   <h6><%= link_to "back to produits", produits_path, class: "back" %></h6>
   <h1 id="cart-title" class="text-center">Votre Panier</h1>
-  <% @order_items.each do |order_item| %>
-    <%= render 'carts/cart_row', produit: order_item.produit, order_item: order_item, show_total: true %>
-    <div class="container prod-line">
-      <hr class="separator2">
-    </div>
-  <% end %>
-<% end %>
 
-<div class="container price-resume text-right">
-    <div class="sous-total text-right">
-      <h6>Sous-Total : <span><%= number_to_currency(current_order.subtotal, :locale => :fr) %></span></h6>
-    </div>
-    <div class="fdp text-right">
-      <% if (current_order.subtotal < 50) %>
-        <h6>Frais de port : <span><%= number_to_currency(current_order.shipping, :locale => :fr) %></span></h6>
-        <p class="fdp-text"> plus que <strong><%= number_to_currency(current_order.free_shipping, :locale => :fr)%></strong> pour bénéficier des frais de port gratuits</p>
-      <% else %>
-        <h6>Frais de port : <span><%= number_to_currency(0, :locale => :fr) %></span></h6>
-        <p class="fdp-text">Frais de ports offerts</p>
+  <div class="cart-space">
+    <% if !@order_item.nil? && @order_item.errors.any? %>
+      <div class="alert alert-danger">
+        <ul>
+        <% @order_item.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <% if @order_items.size == 0 %>
+      <div class="empty-cart">
+        <h4 class="text-center">Votre panier est vide</h4>
+        <p class="text-center">Retourner voir <%= link_to "les produits", produits_path %>.</p>
+      </div>
+    <% else %>
+      <% @order_items.each do |order_item| %>
+        <%= render 'carts/cart_row', produit: order_item.produit, order_item: order_item, show_total: true %>
+        <div class="container prod-line">
+          <hr class="separator2">
+        </div>
       <% end %>
-    </div>
-    <hr class="separator2">
-    <div class="full-total text-right">
-      <h4><strong>TOTAL : <span style="color: green"><%= number_to_currency(current_order.total_price, :locale => :fr) %></span></strong></h4>
-    </div>
-    <div class="finalize text-right">
-      <%# simple_form_for @order do |t| %>
-        <%= button_to "Finaliser la commande", class: "btn btn-block" %>
-      <%# end %>
-    </div>
+    <% end %>
   </div>
+
+  <div class="container price-resume text-right">
+      <div class="sous-total text-right">
+        <h6>Sous-Total : <span><%= number_to_currency(current_order.subtotal, :locale => :fr) %></span></h6>
+      </div>
+      <div class="fdp text-right">
+        <% if (current_order.subtotal < 50) %>
+          <h6>Frais de port : <span><%= number_to_currency(current_order.shipping, :locale => :fr) %></span></h6>
+          <p class="fdp-text"> plus que <strong><%= number_to_currency(current_order.free_shipping, :locale => :fr)%></strong> pour bénéficier des frais de port gratuits</p>
+        <% else %>
+          <h6>Frais de port : <span><%= number_to_currency(0, :locale => :fr) %></span></h6>
+          <p class="fdp-text">Frais de ports offerts</p>
+        <% end %>
+      </div>
+      <hr class="separator2">
+      <div class="full-total text-right">
+        <h4><strong>TOTAL : <span style="color: green"><%= number_to_currency(current_order.total_price, :locale => :fr) %></span></strong></h4>
+      </div>
+      <div class="finalize text-right">
+        <%# simple_form_for @order do |t| %>
+          <%= button_to "Finaliser la commande", class: "btn btn-block" %>
+        <%# end %>
+      </div>
+    </div>
+</div>
 
 

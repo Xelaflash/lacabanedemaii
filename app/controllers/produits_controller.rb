@@ -2,13 +2,22 @@ class ProduitsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-    @produits = Produit.all
+    if params[:search].present?
+      sql_query = "nom ILIKE :search OR marque ILIKE :search"
+      @produits = Produit.where(sql_query, search: "%#{params[:search]}%")
+    else
+      @produits = Produit.all
+    end
     @order_item = current_order.order_items.new
+    @gammes = Gamme.all
   end
 
   def show
     @produit = Produit.find(params[:id])
     @review = Review.new
+    @gammes = Gamme.all
     @order_item = current_order.order_items.new
   end
+
+
 end

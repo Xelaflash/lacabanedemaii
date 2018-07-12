@@ -4,6 +4,7 @@ Review.destroy_all
 User.destroy_all
 OrderItem.destroy_all
 Produit.destroy_all
+Gamme.destroy_all
 Order.destroy_all
 
 
