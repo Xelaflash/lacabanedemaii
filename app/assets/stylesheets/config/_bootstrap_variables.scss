@@ -6,7 +6,7 @@
 // General style
 $font-family-sans-serif:  $body-font;
 $headings-font-family:    $headers-font;
-$body-bg:                 #F8F8F8;
+$body-bg:                 #F0F0F0;
 $font-size-base: 18px;
 
 // Colors
@@ -23,3 +23,14 @@ $border-radius-large: 2px;
 $border-radius-small: 2px;
 
 // Override other variables below!
+
+
+.alert-danger {
+  background-color: #D80000  !important;
+  margin-bottom: 3px !important;
+}
+
+.invalid-feedback {
+  color: #D80000  !important;
+  margin-top: 1px !important;
+}

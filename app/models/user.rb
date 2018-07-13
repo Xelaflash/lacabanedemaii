@@ -6,4 +6,10 @@ class User < ApplicationRecord
 
   has_many :reviews
 
+  validates :email, presence: true, uniqueness: true
+  validates :nom, presence: true, uniqueness: true
+  validates :prenom, presence: true
+  validates :adresse, presence: true
+  validates :telephone, presence: true, uniqueness: true
+
 end
