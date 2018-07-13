@@ -91,3 +91,14 @@ p {
 .back:hover {
   text-decoration: none;
 }
+
+
+@media (max-width: 540px) {
+  #cart-title {
+    font-size: 50px;
+  }
+
+  .back {
+    margin-left: 10px;
+  }
+}

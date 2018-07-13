@@ -55,10 +55,7 @@
 .right ul {
   list-style: none;
   display:flex;
-
 }
-
-
 
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
@@ -126,4 +123,18 @@
 .fa-shopping-cart {
   font-size: 19px;
   padding: 2px 12px;
+}
+
+
+@media (max-width: 540px) {
+  .navbar-wagon {
+    padding: 0px 10px;
+  }
+  .cart-text {
+    margin-right: -40px;
+  }
+  .fa-shopping-cart {
+    font-size: 16px;
+    padding: 5px 12px;
+  }
 }

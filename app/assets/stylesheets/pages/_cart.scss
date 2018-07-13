@@ -4,7 +4,6 @@
 
 .cart-space{
   min-height: 42vh;
-
 }
 
 #cart-title {
@@ -16,10 +15,9 @@
 .price-resume {
   width: 82%;
   margin-bottom: 15px;
-
   h6 {
-  font-size: 19px;
-  padding-top: 10px;
+    font-size: 19px;
+    padding-top: 10px;
   }
 }
 
@@ -44,5 +42,33 @@
   p {
     font-size: 16px;
     margin: 0;
+  }
+}
+
+@media (max-width: 540px) {
+  #cart-title {
+    font-size: 50px;
+  }
+  .cart-space {
+    min-height: 36vh;
+  }
+
+  .empty-cart {
+    min-height: 24vh;
+    h4 {
+      margin: 40px 0 20px 0;
+      padding-top: 70px;
+    }
+  }
+  .price-resume {
+    h6 {
+      font-size: 17px;
+    }
+  }
+  .fdp-text {
+    font-size: 11px;
+  }
+  .full-total h4 {
+    font-size: 20px;
   }
 }

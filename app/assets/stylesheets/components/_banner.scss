@@ -5,3 +5,14 @@
     width: 100%;
   }
 }
+
+
+@media (max-width: 540px) {
+  .banner {
+  height: 300px;
+    img {
+      height: 295px;
+      width: 100%;
+    }
+  }
+}

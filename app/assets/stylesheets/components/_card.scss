@@ -95,7 +95,11 @@
     }
   }
   .panier {
-    font-size: 11px;
+    font-size: 10px;
+    padding: 6px 6px;
+  }
+
+  .btn{
 
   }
   .card-hover {
@@ -108,5 +112,11 @@
   }
 }
 
+@media (max-width: 540px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
 
 
