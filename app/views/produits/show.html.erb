@@ -66,7 +66,12 @@
         <h6><strong>Description : </strong></h6>
         <p><%= @produit.description %></p>
         <h6><strong> Poids : </strong></h6>
-        <p><%= @produit.poids%> <%= @produit.unit %></p>
+        <% if @produit.poids == nil %>
+          <br>
+        <% else %>
+          <p><%= @produit.poids%> <%= @produit.unit %></p>
+        <% end %>
+
         <h6><strong> Composition : </strong></h6>
         <p><%= @produit.composition %></p>
         <h6><strong> Utilisation : </strong></h6>
