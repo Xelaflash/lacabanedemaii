@@ -11,7 +11,7 @@
   justify-content: space-around;
   align-items: center;
   padding: 5px;
-  margin: 0 0 0 110px;
+  margin: 0 0 0 85px;
 }
 
 .cart-pic {
@@ -32,9 +32,9 @@
 
 
 
-.total {
-  width: 180px;
-}
+// .total {
+//   width: 180px;
+// }
 
 .unit {
   width: 185px;
@@ -94,11 +94,14 @@ p {
 
 
 @media (max-width: 540px) {
-  #cart-title {
-    font-size: 50px;
-  }
-
   .back {
-    margin-left: 10px;
+    margin-left: 12px;
+  }
+  .cart-list{
+    margin: 0;
+  }
+  .total {
+    width: 100%;
+    padding-right: 38px;
   }
 }
