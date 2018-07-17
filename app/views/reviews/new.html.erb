@@ -31,7 +31,7 @@
                 :first,
                 :last %>
                   <hr class="separator3">
-                <%= t.input :author, label: "Votre nom", required: true %>
+                <%= t.input :author, label: "Votre nom", required: true, autofocus: true %>
                 <%= t.input :content, label: "Votre commentaire", required: true %>
 
                 <%= t.input :recommend, as: :boolean, unchecked_value: false, checked_value: true, label: "Oui, je recommande ce produit"%>
