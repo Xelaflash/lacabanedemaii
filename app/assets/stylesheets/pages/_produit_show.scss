@@ -59,6 +59,7 @@ img {
 .show-right {
   flex: 1;
   padding: 0px 0px 0px 165px;
+  margin-right: 50px;
   h6{
     margin-bottom: 15.5px;
   }
@@ -141,7 +142,7 @@ img {
   and (min-device-width: 768px)
   and (max-device-width: 1024px)
  {
-   .show-right {
+  .show-right {
     padding: 0;
   }
   .buy-show {

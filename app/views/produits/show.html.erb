@@ -4,7 +4,7 @@
 
 <h6><%= link_to "back to produits", produits_path, class: "back" %></h6>
 
-  <div class="prod-show col-xs-12 col-sm-12">
+  <div class="prod-show">
     <div class="show-left">
       <div class="show-pic">
         <%= cl_image_tag @produit.photo, crop: :thumb, class: "img-responsive img-show" %>
@@ -149,7 +149,6 @@
       </div>
     </div>
   </div>
-
 
   <%= render template: "reviews/new" %>
 </div>
