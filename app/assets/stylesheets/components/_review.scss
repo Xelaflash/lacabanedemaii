@@ -34,7 +34,6 @@
     align-items: center;
     justify-content: space-between;
   }
-
 }
 
 .com-sub-right {
@@ -94,7 +93,7 @@
   color: $green;
 }
 
-@media(max-width: 568px) {
+@media(max-width: 730px) {
   .comments {
     margin: 0;
     padding: 0;

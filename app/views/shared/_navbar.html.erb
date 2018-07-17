@@ -28,6 +28,11 @@
       <div class="dropdown">
         <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li>
+            <div class="form-group">
+                <%= render 'shared/search', query: params[:search] %>
+            </div>
+          </li>
           <li><%= link_to t(".profile", default: "Mon compte"),edit_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
           <li><%= link_to t(".sign_out", default: "Déconnexion"),destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %></li>
         </ul>
