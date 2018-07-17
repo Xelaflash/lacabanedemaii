@@ -33,3 +33,16 @@ color: #512501;
     margin-left: -300px;
   }
 }
+
+@media(max-width: 568px) {
+  .search {
+    .form-search {
+      width: 100px;
+      margin-left: 20px;
+    }
+    input {
+      font-size: 9px;
+      height: 25px;
+    }
+  }
+}
