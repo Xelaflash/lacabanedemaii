@@ -4,7 +4,7 @@
   background: white;
   transition: all 0.3s ease;
   height: 70px;
-  padding: 0px 30px;
+  padding: 0px 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -45,7 +45,7 @@
 }
 
 .right {
-  margin: 18px 30px 0 0;
+  margin: 18px 10px 0 0;
   p {
     padding: 0 20px;
     margin: 10px 0 4px 0;
@@ -55,10 +55,7 @@
 .right ul {
   list-style: none;
   display:flex;
-
 }
-
-
 
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
@@ -102,3 +99,42 @@
 }
 
 
+.cart-text {
+  margin-right: 100px;
+}
+
+.header-cart {
+  display:flex;
+  color: black;
+  font-family: 'Montserrat Alternates';
+  margin-top: 9px;
+
+  p {
+    margin: -4px 0 2px;
+    font-size: 13px;
+  }
+}
+
+.header-cart:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.fa-shopping-cart {
+  font-size: 19px;
+  padding: 2px 12px;
+}
+
+
+@media (max-width: 540px) {
+  .navbar-wagon {
+    padding: 0px 10px;
+  }
+  .cart-text {
+    margin-right: -40px;
+  }
+  .fa-shopping-cart {
+    font-size: 16px;
+    padding: 5px 12px;
+  }
+}

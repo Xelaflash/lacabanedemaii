@@ -11,7 +11,7 @@
   justify-content: space-around;
   align-items: center;
   padding: 5px;
-  margin: 0 0 0 110px;
+  margin: 0 0 0 85px;
 }
 
 .cart-pic {
@@ -30,15 +30,8 @@
   margin: 0;
 }
 
-
-
-.total {
-  width: 180px;
-}
-
 .unit {
   width: 185px;
-
 }
 
 .name {
@@ -90,4 +83,18 @@ p {
 }
 .back:hover {
   text-decoration: none;
+}
+
+@media (max-width: 540px) {
+  .back {
+    margin-left: 12px;
+    font-size: 12px;
+  }
+  .cart-list{
+    margin: 0;
+  }
+  .total {
+    width: 100%;
+    padding-right: 38px;
+  }
 }

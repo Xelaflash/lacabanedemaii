@@ -28,10 +28,13 @@
   padding-right: 15px;
 }
 
-.com-sub {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+@media(min-width: 992px) {
+  .com-sub {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
 }
 
 .com-sub-right {
@@ -89,4 +92,32 @@
 
 .fa-check-circle {
   color: $green;
+}
+
+@media(max-width: 568px) {
+  .comments {
+    margin: 0;
+    padding: 0;
+    h6 {
+      font-size: 16px;
+    }
+  }
+  .com-sub-right {
+    margin: 0 0 20px 80px;
+  }
+  .avg-rating h6 {
+    margin-left: 34px;
+  }
+  #author {
+    margin-bottom: 27px;
+  }
+  .review-item {
+    padding: 0px 0px 20px 0px;
+  }
+  .review-left {
+    padding-right: 22px;
+  }
+  .review-right {
+    padding-left: 20px;
+  }
 }

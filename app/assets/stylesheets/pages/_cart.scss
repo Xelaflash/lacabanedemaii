@@ -1,10 +1,9 @@
 .shopping-cart{
-  min-height: 78vh;
+  min-height: 83vh;
 }
 
 .cart-space{
   min-height: 42vh;
-
 }
 
 #cart-title {
@@ -14,12 +13,10 @@
 }
 
 .price-resume {
-  width: 82%;
-  margin-bottom: 15px;
-
+  margin: 0 0 20px 106px;
   h6 {
-  font-size: 19px;
-  padding-top: 10px;
+    font-size: 19px;
+    padding-top: 10px;
   }
 }
 
@@ -44,5 +41,44 @@
   p {
     font-size: 16px;
     margin: 0;
+  }
+}
+
+
+
+@media (max-width: 540px) {
+  #cart-title {
+    font-size: 50px;
+    margin-bottom: 40px;
+  }
+  .cart-space {
+    min-height: 36vh;
+  }
+
+  .empty-cart {
+    min-height: 24vh;
+    h4 {
+      margin: 40px 0 20px 0;
+      padding-top: 70px;
+    }
+  }
+  #price {
+    font-size: 17px;
+  }
+  .price-resume {
+    width: 100%;
+    padding: 0px 25px;
+    h6 {
+      font-size: 17px;
+    }
+  }
+  .fdp-text {
+    font-size: 11px;
+  }
+  .full-total h4 {
+    font-size: 20px;
+  }
+  .price-resume {
+    margin: 0 0 10px 0;
   }
 }

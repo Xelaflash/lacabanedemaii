@@ -1,7 +1,7 @@
 <div class="cart-row">
   <div class="container">
     <div class="row">
-      <div class="col-xs-2 col-sm-8 col-lg-10 cart-list">
+      <div class="col-xs-12 col-sm-10 col-lg-10 cart-list">
         <div class="product">
         <div class="name text-center">
           <h6><%= produit.nom %></h6>
@@ -34,10 +34,13 @@
         <div class="delete">
           <%= link_to "<i class='far fa-trash-alt'></i>".html_safe, order_item, method: :delete, data: { confirm: "Are you sure you wish to delete the product '#{order_item.produit.nom}' from your cart?" }, remote: true %>
         </div>
-        <div class="total text-center">
+        <div class="total text-center hidden-xs">
           <h6>Total : <span id="price" style="color: green"><%= number_to_currency(order_item.total_price, :locale => :fr) %></span></h6>
         </div>
       </div>
+      <div class="total text-right hidden-md hidden-lg hidden-sm">
+          <h6>Total : <span id="price" style="color: green"><%= number_to_currency(order_item.total_price, :locale => :fr) %></span></h6>
+        </div>
     </div>
   </div>
 </div>

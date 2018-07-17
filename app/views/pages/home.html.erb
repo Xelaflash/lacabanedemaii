@@ -1,9 +1,13 @@
-<div class="banner">
-  <%= cl_image_tag "banniere_mai-02.png", :quality=>100, :crop=>"fill", alt: "La cabane de Maï", class: "img-responsive"%>
+<div class="banner hidden-xs">
+  <%= cl_image_tag "banniere_mai-02.png", :quality=>100, alt: "La cabane de Maï", class: "img-responsive"%>
+</div>
+
+<div class="banner hidden-md hidden-lg">
+  <%= cl_image_tag "banniere_mai-01.png", :width=>576, :crop=>"scale", alt: "La cabane de Maï", class: "img-responsive"%>
 </div>
 
 
-<div class="container car">
+<div class="container">
   <div class="row">
     <div class="carousel slide multi-item-carousel hidden-xs" data-ride="carousel" id="theCarousel">
       <div class="carousel-inner">
@@ -46,7 +50,6 @@
 
 <div class="container">
   <hr class="separator">
-
   <%= link_to "Decouvrez les produits", produits_path, class: "btn btn-block panier text-center" %>
 <br>
 </div>
