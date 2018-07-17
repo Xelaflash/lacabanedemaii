@@ -133,3 +133,24 @@
     margin-bottom: 40px;
   }
 }
+
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+ {
+   .show-right {
+    padding: 0;
+  }
+  .img-show {
+  margin-left: 175px;
+  }
+  .buy-show {
+    margin: 15px 121px;
+  }
+  .show-left {
+    margin-bottom: 50px;
+  }
+  // .sub-right {
+  //   margin: 20px 145px;
+  // }
+}
