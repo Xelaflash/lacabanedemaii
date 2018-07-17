@@ -4,7 +4,7 @@
   background: white;
   transition: all 0.3s ease;
   height: 70px;
-  padding: 0px 60px;
+  padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -45,10 +45,13 @@
 }
 
 .right {
-  margin: 18px 10px 0 0;
+  margin-top: 16px;
   p {
     padding: 0 20px;
-    margin: 10px 0 4px 0;
+    margin-top: 5px;
+  }
+  a {
+    margin-left: 60px;
   }
 }
 

@@ -1,18 +1,15 @@
 <div class="navbar-wagon">
-  <div class="hidden-xs">
-    <div class="form-group">
-        <%= render 'shared/search', query: params[:search] %>
-    </div>
-  </div>
-
-    <!-- Logo -->
   <div class="logo">
     <%= link_to root_path, class: "logo" do %>
       <%= image_tag "logo.jpg"%>
     <% end %>
   </div>
 
-
+  <div class="hidden-xs">
+    <div class="form-group">
+        <%= render 'shared/search', query: params[:search] %>
+    </div>
+  </div>
 
     <% if user_signed_in? %>
     <div class="navbar-wagon-right">
@@ -47,7 +44,6 @@
 
       <div class="right hidden-xs hidden-sm">
         <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-        <%= link_to t(".sign_in", default: "S'inscrire"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
         <p class="delivery">Frais de port offerts à partir de 50 €</p>
       </div>
     </div>
