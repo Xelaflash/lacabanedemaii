@@ -1,18 +1,15 @@
 <div class="navbar-wagon">
-  <div class="hidden-xs">
-    <div class="form-group">
-        <%= render 'shared/search', query: params[:search] %>
-    </div>
-  </div>
-
-    <!-- Logo -->
   <div class="logo">
     <%= link_to root_path, class: "logo" do %>
       <%= image_tag "logo.jpg"%>
     <% end %>
   </div>
 
-
+  <div class="hidden-xs">
+    <div class="form-group">
+        <%= render 'shared/search', query: params[:search] %>
+    </div>
+  </div>
 
     <% if user_signed_in? %>
     <div class="navbar-wagon-right">
@@ -22,7 +19,6 @@
 
       <div class="right hidden-xs hidden-sm">
         <%= link_to t(".profile", default: "Mon compte"),edit_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
-          <!-- to put in a dropdown with arrow -->
         <%= link_to t(".sign_out", default: "Déconnexion"),destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %>
         <p class="delivery">Frais de port offerts à partir de 50 €</p>
       </div>
@@ -32,6 +28,11 @@
       <div class="dropdown">
         <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li>
+            <div class="form-group">
+                <%= render 'shared/search', query: params[:search] %>
+            </div>
+          </li>
           <li><%= link_to t(".profile", default: "Mon compte"),edit_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
           <li><%= link_to t(".sign_out", default: "Déconnexion"),destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %></li>
         </ul>
@@ -47,7 +48,6 @@
 
       <div class="right hidden-xs hidden-sm">
         <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-        <%= link_to t(".sign_in", default: "S'inscrire"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
         <p class="delivery">Frais de port offerts à partir de 50 €</p>
       </div>
     </div>
@@ -56,8 +56,13 @@
       <div class="dropdown">
         <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li>
+            <div class="form-group hidden-sm">
+              <%= render 'shared/search', query: params[:search] %>
+            </div>
+          </li>
           <li><%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <li><%= link_to t(".sign_in", default: "S'inscrire"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+
         </ul>
     <% end %>
       </div>

@@ -2,7 +2,13 @@
   min-height: 86vh;
 }
 
-@media(min-width: 992px) {
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media(min-width: 1025px) {
   .prod-show {
     display: flex;
     align-items: center;
@@ -12,15 +18,12 @@
     margin: 20px 10px 20px 100px;
   }
 }
-
 .show-left {
   padding: 0px 30px;
 }
-
 .show-pic {
   margin-bottom: 30px;
 }
-
 .q-show {
   p {
     font-size: 16px;
@@ -56,6 +59,7 @@
 .show-right {
   flex: 1;
   padding: 0px 0px 0px 165px;
+  margin-right: 50px;
   h6{
     margin-bottom: 15.5px;
   }
@@ -101,7 +105,7 @@
   color: #512501;
 }
 
-@media(max-width: 568px) {
+@media(max-width: 730px) {
   .prod-show {
     margin-top: 20px;
   }
@@ -131,5 +135,27 @@
   }
   .details {
     margin-bottom: 40px;
+  }
+}
+
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+ {
+  .show-right {
+    padding: 0;
+  }
+  .buy-show {
+    margin: 15px 160px;
+  }
+  .show-left {
+    margin-bottom: 50px;
+  }
+  .sub-right {
+    margin: 50px 0 20px 150px;
+    max-width: 500px;
+  }
+  .details {
+    margin-left: 30px;
   }
 }

@@ -4,7 +4,7 @@
   background: white;
   transition: all 0.3s ease;
   height: 70px;
-  padding: 0px 60px;
+  padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -45,10 +45,13 @@
 }
 
 .right {
-  margin: 18px 10px 0 0;
+  margin-top: 16px;
   p {
-    padding: 0 20px;
-    margin: 10px 0 4px 0;
+    padding: 0 76px;
+    margin-top: 5px;
+  }
+  a {
+    margin-left: 60px;
   }
 }
 
@@ -126,7 +129,7 @@
 }
 
 
-@media (max-width: 540px) {
+@media (max-width: 568px) {
   .navbar-wagon {
     padding: 0px 10px;
   }
@@ -138,3 +141,13 @@
     padding: 5px 12px;
   }
 }
+
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+ {
+  .cart-text {
+    margin-right: 0;
+  }
+}
+

@@ -1,13 +1,13 @@
   <%= render "shared/tab" %>
 
-<div class="container">
+<div class="container-fluid">
 
 <h6><%= link_to "back to produits", produits_path, class: "back" %></h6>
 
-  <div class="prod-show col-xs-12">
+  <div class="prod-show">
     <div class="show-left">
       <div class="show-pic">
-        <%= cl_image_tag @produit.photo, crop: :thumb, class: "img-responsive" %>
+        <%= cl_image_tag @produit.photo, crop: :thumb, class: "img-responsive img-show" %>
       </div>
       <div class="buy-show">
         <div class="q-show">
@@ -35,7 +35,7 @@
       <h5 class="title text-center"><%= @produit.nom %></h5>
       <hr id="sep">
 
-      <div class="sub-right col-xs-12">
+      <div class="sub-right col-xs-12 col-sm-12">
         <div class="subtitle">
           <h6> <%= number_to_currency(@produit.prix, :locale => :fr)  %></h6>
         </div>
@@ -62,7 +62,7 @@
       </div>
 
 
-      <div class="details col-xs-12">
+      <div class="details col-xs-12 col-sm-11">
         <h6><strong>Description : </strong></h6>
         <p><%= @produit.description %></p>
         <h6><strong> Poids : </strong></h6>
@@ -83,7 +83,7 @@
 
   </div>
 
-  <div class="wrapper col-xs-12">
+  <div class="wrapper review-part col-xs-12 col-sm-12">
     <div class="comments">
       <h6><strong>Commentaires & notes</strong></h6>
       <hr class="separator2">
@@ -121,7 +121,7 @@
       <hr class="separator2">
       <div class="list-group">
         <% @produit.reviews.each do |review| %>
-          <li class="review-item col-xs-12">
+          <li class="review-item col-xs-12 col-sm-12">
             <div class="review-left">
               <div class="stars">
                 <p>
@@ -149,7 +149,6 @@
       </div>
     </div>
   </div>
-
 
   <%= render template: "reviews/new" %>
 </div>

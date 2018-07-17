@@ -34,7 +34,6 @@
     align-items: center;
     justify-content: space-between;
   }
-
 }
 
 .com-sub-right {
@@ -94,7 +93,7 @@
   color: $green;
 }
 
-@media(max-width: 568px) {
+@media(max-width: 730px) {
   .comments {
     margin: 0;
     padding: 0;
@@ -121,3 +120,22 @@
     padding-left: 20px;
   }
 }
+
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px) {
+  .com-sub {
+    margin-bottom: 30px;
+  }
+  .review-left {
+    padding-right: 22px;
+  }
+  .review-right {
+    padding-left: 40px;
+  }
+  .review-part {
+    margin-bottom: 30px;
+  }
+}
+
+

@@ -5,7 +5,7 @@
     margin-bottom: 0;
     margin-top: 15px;
     margin-left: 25px;
-    width: 150px;
+    width: 200px;
   }
 
   input {
@@ -23,8 +23,26 @@ font-size: 12px;
 color: #512501;
 }
 
-
 .search_submit {
   border: none;
   background-color: white;
+}
+
+@media(min-width: 1200px) {
+  .search {
+    margin-left: -300px;
+  }
+}
+
+@media(max-width: 730px) {
+  .search {
+    .form-search {
+      width: 100px;
+      margin-left: 20px;
+    }
+    input {
+      font-size: 9px;
+      height: 25px;
+    }
+  }
 }
