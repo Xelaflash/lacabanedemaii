@@ -11,6 +11,7 @@ class Produit < ApplicationRecord
   validates :prix, presence: true
   # validates :frais_de_port, presence: true
   # validates :poids, presence: true
+  # validates :unit, presence: true
   validates :description, presence: true
   validates :composition, presence: true
   validates :utilisation, presence: true
@@ -23,6 +24,12 @@ class Produit < ApplicationRecord
                   :using => {
                     :tsearch => { :prefix => true }
                   }
+
+
+# for active admin
+  def name
+    "Marque: #{marque.capitalize} - Nom: #{nom.capitalize} - ref: #{reference}"
+  end
 end
 
 
