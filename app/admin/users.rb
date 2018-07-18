@@ -13,4 +13,20 @@ ActiveAdmin.register User do
   actions
 end
 
+  form do |f|
+    f.inputs "Identity" do
+      f.input :nom
+      f.input :prenom
+      f.input :email
+      f.input :adresse
+      f.input :telephone
+    end
+    f.inputs "Admin" do
+      f.input :admin
+    end
+    f.actions
+  end
+
+  permit_params :nom, :prenom, :email, :adresse, :telephone, :admin
+
 end
