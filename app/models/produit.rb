@@ -5,7 +5,7 @@ class Produit < ApplicationRecord
 
   validates :marque, presence: true
   validates :nom, presence: true, uniqueness: true
-  validates :reference, presence: true, uniqueness: true
+  validates :reference, presence: true
   validates :photo, presence: true, uniqueness: true
   validates :quantite, presence: true
   validates :prix, presence: true
@@ -16,7 +16,7 @@ class Produit < ApplicationRecord
   validates :composition, presence: true
   validates :utilisation, presence: true
 
-  default_scope { where(active: true) }
+  # default_scope { where(active: true) }
 
   include PgSearch
   pg_search_scope :search_by_marque_and_nom,
