@@ -6,7 +6,7 @@ class ProduitsController < ApplicationController
       sql_query = "nom ILIKE :search OR marque ILIKE :search"
       @produits = Produit.where(sql_query, search: "%#{params[:search]}%")
     else
-      @produits = Produit.all
+      @produits = Produit.where(active: true)
     end
     @order_item = current_order.order_items.new
     @gammes = Gamme.all
