@@ -28,6 +28,7 @@
 .separator2 {
   border-top: 1px solid #DDCEBB;
   margin: 0;
+  margin-left: 21px;
 }
 
 .unit {
@@ -97,4 +98,7 @@ p {
     width: 100%;
     padding-right: 38px;
   }
+  .separator2 {
+  margin-left: 0;
+}
 }

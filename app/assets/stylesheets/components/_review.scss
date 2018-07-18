@@ -3,6 +3,7 @@
   padding: 12px 22px;
   h6 {
     font-size: 18px;
+    margin-left: 21px;
   }
   p {
     margin: 0;
@@ -11,7 +12,7 @@
 }
 
 .avg-rating{
-  margin: 20px 0 20px 0;
+  margin: 20px 0 20px 23px;
   display: flex;
   align-items: center;
 }
@@ -65,6 +66,10 @@
   margin: 15px 0;
 }
 
+.review-item:last-child {
+  border-bottom:0;
+}
+
 .review-left {
   flex-basis:40%;
 }
@@ -99,6 +104,7 @@
     padding: 0;
     h6 {
       font-size: 16px;
+      margin-left: 0;
     }
   }
   .com-sub-right {
@@ -135,6 +141,9 @@
   }
   .review-part {
     margin-bottom: 30px;
+  }
+  .btn-avis {
+    margin-left: 21px;
   }
 }
 
