@@ -1,14 +1,22 @@
 .comments {
-  margin: 50px 20px 10px 20px;
+  margin: 5px 20px 10px 20px;
   padding: 12px 22px;
   h6 {
     font-size: 18px;
-    margin-left: 21px;
   }
   p {
     margin: 0;
     font-size: 13px;
   }
+}
+
+#com-title {
+  margin-left: 21px;
+}
+
+.review-part {
+  border: 1px solid $primary;
+  margin-bottom: 30px;
 }
 
 .avg-rating{
@@ -55,15 +63,13 @@
 }
 
 .review-item {
-  border-bottom: 1px solid #DDCEBB;
-  margin-bottom: 0;
   position: relative;
   display: block;
-  padding: 0px 22px 20px 22px;
+  padding-bottom: 20px;
   margin-bottom: 0;
   display: flex;
   align-items: center;
-  margin: 15px 0;
+  margin: 15px 0 15px 20px;
 }
 
 .review-item:last-child {
@@ -140,7 +146,7 @@
     padding-left: 40px;
   }
   .review-part {
-    margin-bottom: 30px;
+    margin: 30px 0;
   }
   .btn-avis {
     margin-left: 21px;
