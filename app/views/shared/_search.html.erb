@@ -1,18 +1,14 @@
-
-
-  <div class="search">
-        <%#= f.input :produit_id, input_html: { class: 'form-search'}, label: false, placeholder: "Cherchez un produit..." %><%#= link_to "<i class='fa fa-search'></i>".html_safe, method: :submit %>
-  <%# end %>
+<div class="search-prod">
   <%= form_tag produits_path, method: :get do %>
-  <%= text_field_tag :search,
-    params[:search],
-    class: "search form-search",
-    placeholder: "Cherchez un produit..."%>
+    <%= text_field_tag :search,
+      params[:search],
+      class: "search-prod form-search",
+      placeholder: "Cherchez un produit..."%>
     <%= button_tag(type: "submit", class: "search_submit") do %>
     <i class='fa fa-search'></i>
     <% end %>
-    <% end %>
-  </div>
+  <% end %>
+</div>
 
 
 

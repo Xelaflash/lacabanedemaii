@@ -17,6 +17,14 @@
   line-height: 22px;
 }
 
+.location-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+
 .fa-compass, .fa-clock {
   font-size: 26px;
 }
@@ -46,8 +54,15 @@
   margin-left: 40px;
 }
 
+.location-left {
+  margin-left: 65px;
+}
+
+.location-right {
+  margin-right: 35px;
+}
+
 #map {
   height: 400px;
   width: 400px;
-  border: solid 1px red;
 }
