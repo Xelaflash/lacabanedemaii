@@ -21,8 +21,8 @@
 /* Right section */
 .navbar-wagon-right {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  // align-items: center;
+  // justify-content: space-between;
 }
 
 /* Basic navbar item */
@@ -45,7 +45,7 @@
 }
 
 .right {
-  margin-top: 2px;
+  margin-top: 8px;
   p {
     padding: 0 76px;
     margin-top: 5px;
@@ -56,9 +56,7 @@
 }
 
 .right ul {
-  list-style: none;
-  display:flex;
-}
+  list-style: none;}
 
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
@@ -143,21 +141,41 @@
 }
 
 .carret {
-  margin-top: 7px;
+  margin-top: 10px;
   margin-left: -8px;
+}
+
+.icons-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dropdown-search {
+  margin-right: 30px;
+  .fa-search {
+  color: black;
+  font-size: 14px;
+
+  }
 }
 
 @media (max-width: 568px) {
   .navbar-wagon {
     padding: 0px 10px;
   }
-  .cart-text {
-    margin-right: -40px;
-  }
   .fa-shopping-cart {
     font-size: 16px;
     padding: 5px 12px;
   }
+  .cart-text {
+    margin-right: -20px;
+  }
+  .header-cart {
+    margin-top: 2px;
+    margin-left: 110px;
+  }
+
 }
 
 @media only screen

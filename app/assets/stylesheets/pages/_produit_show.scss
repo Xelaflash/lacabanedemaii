@@ -43,7 +43,7 @@ img {
   }
 }
 
-.sold-out {
+#sold-out {
   background-color: red;
   font-size: 16px !important;
   color: white !important;
@@ -114,6 +114,7 @@ img {
   }
   .show-right {
     padding: 0;
+    margin-right: 0;
   }
   .stars-big  {
     padding: 0 10px 0 0;
@@ -131,10 +132,13 @@ img {
     margin: 12px 0 10px;
   }
   .sub-right {
-    margin: 20px 45px;
+    margin: 20px 65px;
   }
   .details {
     margin-bottom: 40px;
+  }
+  #sold-out {
+    font-size: 11px !important;
   }
 }
 

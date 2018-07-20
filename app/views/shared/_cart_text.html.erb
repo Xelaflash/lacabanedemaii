@@ -1,8 +1,8 @@
 <%= link_to  cart_path, class: "header-cart" do %>
   <i class="fas fa-shopping-cart"></i>
   <div class="cart-review">
-  <p>Panier</p>
-  <p><%= "#{current_order.order_items.size} Article(s)"%></p>
+  <p class="hidden-xs">Panier</p>
+  <p class="hidden-xs"><%= "#{current_order.order_items.size} Article(s)"%></p>
   </div>
 <% end %>
 
