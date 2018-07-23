@@ -1,5 +1,4 @@
 import GMaps from 'gmaps/gmaps.js';
-import { autocomplete } from '../components/autocomplete';
 
 const mapElement = document.getElementById('map'); {
   var store = {lat: 44.741486, lng: -1.09817};
@@ -12,5 +11,3 @@ const mapElement = document.getElementById('map'); {
     map: map
   });
 }
-
-autocomplete();
