@@ -16,7 +16,7 @@
           <% end %>
         </div>
         <%= simple_form_for @order_item do |f| %>
-          <%= f.hidden_field :produit_id, value: @produit.id %>
+          <% f.hidden_field :produit_id, value: @produit.id %>
           <% if @produit.quantite > 0 %>
             <%= f.input :quantity, collection: 1..@produit.quantite, label: false, default: 1, value: @order_item.quantity, class: "form-control"%>
       </div>

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'contact/new'
+  get 'contact/create'
   ActiveAdmin.routes(self)
   devise_for :users
 
@@ -9,6 +11,7 @@ Rails.application.routes.draw do
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
   resources :gammes, only: [:show]
+  resources :contact, only: [:new, :create]
 
   root to: 'pages#home'
 
