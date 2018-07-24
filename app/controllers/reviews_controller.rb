@@ -9,13 +9,12 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Votre commentaire a été ajouté"
       redirect_to produit_path(@produit)
     else
-      flash.now[:alert] = "Please review your inputs"
+      flash.now[:alert] = "Merci de revoir votre commentaire."
       render "produits/show"
     end
   end
 
   private
-
 
   def review_params
     params.require(:review).permit(:content, :rating, :recommend, :author)
