@@ -1,10 +1,40 @@
 <div class="container">
-  <%= simple_form_for (@contact) do |f| %>
-    <%= @contact.errors.full_messages.join(', ') %>
-    <%= f.input :name, placeholder: 'Nom' %>
-    <%= f.input :email, placeholder: 'E-mail' %>
-    <%= f.input :phone_number, placeholder: 'Tel' %>
-    <%= f.input :body, placeholder: 'Message' %>
-    <%= f.submit 'Send' %>
-  <% end %>
+  <h1 class="main-title text-center">Contactez-nous</h1>
+
+  <div class="contact-left">
+    <i class="fas fa-map-marker-alt"></i>
+    <h6 class="sub-title">Adresse</h6>
+    <p class="main-text">16 avenue pasteur<br>Andernos-les-Bains 33510</p>
+
+    <i class="fas fa-phone"></i>
+    <h6 class="sub-title">Téléphone</h6>
+    <p class="main-text"></p>
+
+    <i class="fas fa-envelope"></i>
+    <h6 class="sub-title">E-mail</h6>
+    <p class="main-text">lacabanedemaii@gmail.com</p>
+
+  </div>
+
+
+
+
+  <div class="contact-right col-xs-12 col-sm-4 col-sm-offset-4">
+    <div class="form-login contact-form">
+      <%= simple_form_for (@contact) do |f| %>
+      <div class="form-inputs">
+        <%= f.input :name, label: "Nom", placeholder: 'Pierre Durant' %>
+        <%= f.input :email, placeholder: 'pierre.durant@gmail.com' %>
+        <%= f.input :phone_number, label: "Tel", placeholder: '+33600000000' %>
+        <%= f.input :body, label: "Votre message" %>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, "Envoyez votre message", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+
+
 </div>
+
