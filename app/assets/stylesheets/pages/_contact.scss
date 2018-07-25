@@ -1,11 +1,35 @@
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .contact-left {
   border: 1px solid red;
 }
 
+.fa-map-marker-alt, .fa-phone, .fa-envelope {
+  font-size: 22px;
+}
 
+.adresse, .phone, .mail {
+  margin-bottom: 50px;
+}
 
-.contact-form {
+.adresse-flex, .phone-flex, .mail-flex {
+  display: flex;
+  align-items: end;
+  justify-content: flex-start;
+}
 
+.sub-title-contact {
+  margin: 2px 0 0px 15px;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.main-text-contact {
+  font-size: 16px;
 }
 
 input#contact_body {
