@@ -1,22 +1,26 @@
 .contact {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin: 30px;
-  padding: 20px;
+  margin: 30px 0 30px 0;
   a {
     color: black;
-
   }
 }
+
+
+@media(min-width: 1025px) {
+  .contact {
+   display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+  }
+}
+
 
 .contact-left {
   margin-top: 15px;
   padding: 40px;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
-
-
 
 .fa-map-marker-alt, .fa-phone, .fa-envelope {
   font-size: 22px;
@@ -55,3 +59,14 @@
 input#contact_body {
     height: 100px;
 }
+
+@media(max-width: 1024px) {
+  .contact {
+    margin: 10px 0 30px 0;
+  }
+  .contact-left {
+    margin-bottom: 50px;
+  }
+}
+
+
