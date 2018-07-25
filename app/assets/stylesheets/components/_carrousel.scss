@@ -1,7 +1,7 @@
 .multi-item-carousel{
   .carousel-inner{
     > .item{
-      transition: 800ms ease-in-out left;
+      transition: 500ms ease-in-out left;
       border: none !important;
     }
     .active{
@@ -27,8 +27,7 @@
       }
     }
   }
-
-  }
+}
 
 .carousel-inner img {
     width: 320px;

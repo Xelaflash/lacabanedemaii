@@ -12,6 +12,7 @@ class User < ApplicationRecord
   validates :adresse, presence: true
   validates :telephone, presence: true, uniqueness: true
 
+
   # For activeadmin
   def name
     "#{prenom.capitalize} #{nom.capitalize}"

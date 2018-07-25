@@ -1,4 +1,4 @@
-.search {
+.search-prod {
   .form-search {
     border-width: 0 0 1px;
     border-color: #512501;
@@ -29,13 +29,14 @@ color: #512501;
 }
 
 @media(min-width: 1200px) {
-  .search {
-    margin-left: -300px;
+  .search-prod {
+    margin-left: -400px;
+    margin-top: 5px;
   }
 }
 
 @media(max-width: 730px) {
-  .search {
+  .search-prod {
     .form-search {
       width: 100px;
       margin-left: 20px;
@@ -46,3 +47,22 @@ color: #512501;
     }
   }
 }
+
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+ {
+    .search-prod {
+    .form-search {
+      width: 150px;
+      margin-left: 20px;
+    }
+    input {
+      font-size: 9px;
+      height: 25px;
+    }
+  }
+  .dropdown-menu {
+    min-width: 220px !important;
+  }
+  }

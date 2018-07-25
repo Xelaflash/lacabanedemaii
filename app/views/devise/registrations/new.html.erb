@@ -7,7 +7,7 @@
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= f.error_notification %>
 
-            <div class="form-inputs">
+            <div class="form-inputs" id="start">
               <%= f.input :email, autofocus: true, placeholder: "pierre.durant@gmail.com" %>
               <div class="row">
                 <div class="col-xs-6">
@@ -19,8 +19,8 @@
               </div>
               <%= f.input :adresse, autofocus: true, placeholder: "21 rue des champs 75005 Paris" %>
               <%= f.input :telephone, autofocus: true, placeholder: "+33600000000"  %>
-              <%= f.input :password, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: "•••••••••" %>
-              <%= f.input :password_confirmation, placeholder: "•••••••••" %>
+              <%= f.input :password, label: "Mot de passe", hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length), placeholder: "•••••••••" %>
+              <%= f.input :password_confirmation,label: "Confirmer votre mot de passe", placeholder: "•••••••••" %>
             </div>
 
             <div class="form-actions">

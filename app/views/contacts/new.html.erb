@@ -1,0 +1,63 @@
+<div class="page">
+  <div class="container">
+    <h1 class="main-title text-center">Contactez-nous</h1>
+    <hr class="sep">
+
+    <div class="contact col-xs-12">
+      <div class="contact-left">
+        <div class="adresse">
+          <div class="adresse-flex">
+            <div class="adresse-left">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="adresse-right">
+              <h6 class="sub-title-contact">Adresse</h6>
+            </div>
+          </div>
+          <p class="main-text-contact">16 avenue pasteur<br>Andernos-les-Bains 33510</p>
+        </div>
+        <hr class="sep">
+        <div class="phone">
+          <div class="phone-flex">
+            <div class="phone-left">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="phone-right">
+              <h6 class="sub-title-contact">Téléphone</h6>
+            </div>
+          </div>
+          <p class="main-text-contact"><a href="tel:+33642225711">+33 6 42 22 57 11</a></p>
+        </div>
+        <hr class="sep">
+        <div class="mail">
+          <div class="mail-flex">
+            <div class="mail-left">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="mail-right">
+              <h6 class="sub-title-contact">E-mail</h6>
+            </div>
+          </div>
+          <p><a class="main-text-contact" href="mailto:lacabanedemaii@gmail.com">lacabanedemaii@gmail.com</a></p>
+        </div>
+      </div>
+
+      <div class="contact-right col-xs-12 col-lg-6 col-lg-offset-1">
+        <div class="form-contact form-login contact-form">
+          <%= simple_form_for (@contact) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :name, label: "Nom", placeholder: 'Pierre Durant' %>
+            <%= f.input :email, placeholder: 'pierre.durant@gmail.com' %>
+            <%= f.input :phone_number, label: "Tel", placeholder: '+33600000000' %>
+            <%= f.input :body, label: "Votre message" %>
+          </div>
+          <div class="form-actions">
+            <%= f.button :submit, "Envoyez votre message", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
