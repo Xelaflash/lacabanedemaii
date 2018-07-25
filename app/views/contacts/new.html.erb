@@ -1,6 +1,7 @@
 <div class="page">
   <div class="container">
     <h1 class="main-title text-center">Contactez-nous</h1>
+    <hr class="sep">
 
     <div class="contact">
       <div class="contact-left">
@@ -15,6 +16,7 @@
           </div>
           <p class="main-text-contact">16 avenue pasteur<br>Andernos-les-Bains 33510</p>
         </div>
+        <hr class="sep">
         <div class="phone">
           <div class="phone-flex">
             <div class="phone-left">
@@ -26,6 +28,7 @@
           </div>
           <p class="main-text-contact">+33 6 42 22 57 11</p>
         </div>
+        <hr class="sep">
         <div class="mail">
           <div class="mail-flex">
             <div class="mail-left">
@@ -39,8 +42,8 @@
         </div>
       </div>
 
-      <div class="contact-right col-xs-12 col-sm-4 col-sm-offset-4">
-        <div class="form-login contact-form">
+      <div class="contact-right col-xs-12 col-sm-6 col-sm-offset-1">
+        <div class="form-contact form-login contact-form">
           <%= simple_form_for (@contact) do |f| %>
           <div class="form-inputs">
             <%= f.input :name, label: "Nom", placeholder: 'Pierre Durant' %>

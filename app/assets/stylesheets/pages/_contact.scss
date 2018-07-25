@@ -1,11 +1,16 @@
 .contact {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+  margin: 30px;
+  // border: 1px solid #DDCEBB;
+  padding: 20px;
 }
 
 .contact-left {
-  border: 1px solid red;
+  margin-top: 15px;
+  padding: 40px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
 .fa-map-marker-alt, .fa-phone, .fa-envelope {
@@ -13,7 +18,7 @@
 }
 
 .adresse, .phone, .mail {
-  margin-bottom: 50px;
+  margin: 25px 15px;
 }
 
 .adresse-flex, .phone-flex, .mail-flex {
@@ -30,6 +35,16 @@
 
 .main-text-contact {
   font-size: 16px;
+}
+
+.contact-right {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.form-contact {
+  padding: 10px 20px;
+  margin-top: 5px;
+  box-shadow: 0px 0px 0px rgba(0,0,0,0.0);
 }
 
 input#contact_body {
