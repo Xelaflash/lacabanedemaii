@@ -5,6 +5,7 @@
   }
 }
 
+
 .main-title {
   font-family: 'Yellowtail', cursive;
   font-size: 70px;
@@ -17,11 +18,13 @@
   line-height: 22px;
 }
 
-.location-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 30px;
+@media(min-width: 1024px) {
+  .location-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
 }
 
 
@@ -41,6 +44,9 @@
   font-size: 20px;
   font-weight: bold;
 }
+.location-right {
+  margin-right: 35px;
+}
 
 .adress-right {
   margin-left: 56px;
@@ -58,11 +64,56 @@
   margin-left: 65px;
 }
 
-.location-right {
-  margin-right: 35px;
-}
 
 #map {
   height: 400px;
-  width: 400px;
+  width: 500px;
+}
+
+  .mobile-display1 {
+    margin-left: 33px !important;
+  }
+  .mobile-display {
+    margin-left: 15px !important;
+  }
+
+@media(max-width: 730px) {
+  #map {
+    height: 300px;
+    width: 300px;
+    margin: 30px 15px;
+  }
+
+  .main-title {
+    font-size: 50px;
+  }
+  .location-left {
+    margin-left: 13px;
+  }
+  .adress-right {
+    margin-left: 12px;
+  }
+  .time-right {
+    .sub-title {
+      margin-left: -15px;
+    }
+  }
+}
+
+@media only screen
+  and (min-device-width: 667px)
+  and (max-device-width: 1023px)
+ {
+  .location-head {
+    margin: 15px 100px;
+  }
+}
+
+@media only screen
+  and (min-device-width: 1024px)
+  and (max-device-height: 768px)
+ {
+  .location-right {
+    margin-right: 0;
+  }
 }
