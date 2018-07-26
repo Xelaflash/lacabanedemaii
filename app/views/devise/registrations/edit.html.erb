@@ -1,9 +1,9 @@
-<div class="log-page">
+<div class="log-page edit-account">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-5 col-sm-offset-4">
         <div class="form-login">
-          <h2>Edit <%= resource_name.to_s.humanize %></h2>
+          <h2>Editer votre profil</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
@@ -15,9 +15,9 @@
         <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
       <% end %>
 
-      <%= f.input :password, autocomplete: "off", hint: "Laissez blanc si vous ne voulez pas changer de mot de passe", required: false, placeholder: "•••••••••" %>
-      <%= f.input :password_confirmation, required: false, placeholder: "•••••••••" %>
-      <%= f.input :current_password, hint: "Votre mot de passe actuel", required: true, placeholder: "•••••••••" %>
+      <%= f.input :password, autocomplete: "off", label: ' Nouveau mot de passe', hint: "Laissez blanc si vous ne voulez pas changer de mot de passe", required: false, placeholder: "•••••••••" %>
+      <%= f.input :password_confirmation, label: 'confirmation nouveau mot de passe', required: false, placeholder: "•••••••••" %>
+      <%= f.input :current_password, label: 'Mot de passe actuel', required: true, placeholder: "•••••••••" %>
     </div>
 
     <div class="form-actions">

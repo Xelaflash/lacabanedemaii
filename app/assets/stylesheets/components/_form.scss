@@ -3,7 +3,13 @@
   background: $body-bg;
 }
 
-.register {
+.register{
+  .form-login {
+    margin: 50px 0;
+  }
+}
+
+.edit-account {
   .form-login {
     margin: 50px 0;
   }
