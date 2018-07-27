@@ -1,0 +1,22 @@
+.back {
+  margin-left: 55px;
+  margin-top: 20px;
+  color: $primary;
+  font-family: 'Montserrat Alternates', "Helvetica";
+  font-size: 14px;
+  font-style: italic;
+  a {
+    color: $primary;
+  }
+  a:hover {
+    text-decoration: underline;
+    opacity: 0.6;
+  }
+}
+
+@media (max-width: 730px) {
+  .back {
+    margin-left: 12px;
+    font-size: 12px;
+  }
+}
