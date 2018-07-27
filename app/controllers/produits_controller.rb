@@ -10,13 +10,18 @@ class ProduitsController < ApplicationController
     end
     @order_item = current_order.order_items.new
     @gammes = Gamme.all
+    add_breadcrumb "accueil", :root_path
+    add_breadcrumb "produits", produits_path
   end
 
   def show
-    @produit = Produit.find(params[:id])
+    @produit = Produit.friendly.find(params[:id])
     @review = Review.new
     @gammes = Gamme.all
     @order_item = current_order.order_items.new
+    add_breadcrumb "accueil", :root_path
+    add_breadcrumb "produits", produits_path
+    add_breadcrumb "#{@produit.nom}", produit_path
   end
 
 

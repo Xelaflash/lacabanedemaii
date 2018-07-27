@@ -1,5 +1,8 @@
-  <div class="container show-page">
-    <%= render "shared/tab" %>
-    <%= render "produits/product_card" %>
+<div class="container show-page">
+  <%= render "shared/tab" %>
+  <div class="breadcrumbs back">
+    <%= render_breadcrumbs :separator => ' > ' %>
   </div>
+  <%= render "produits/product_card" %>
+</div>
 

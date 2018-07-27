@@ -13,8 +13,6 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  get 'contact/new'
-  get 'contact/create'
   get 'qui_sommes_nous', to: 'pages#qui_sommes_nous', as: :qui_sommes_nous
   get 'livraison',       to: 'pages#livraison',       as: :livraison
   get 'aide',            to: 'pages#aide',             as: :aide
