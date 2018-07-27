@@ -3,6 +3,8 @@ class ContactsController < ApplicationController
 
   def new
     @contact = Contact.new
+    add_breadcrumb "accueil", :root_path
+    add_breadcrumb "contact", contact_new_path
   end
 
   def create
