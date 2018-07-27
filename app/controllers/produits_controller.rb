@@ -4,7 +4,7 @@ class ProduitsController < ApplicationController
   def index
     if params[:search].present?
       sql_query = "nom ILIKE :search OR marque ILIKE :search"
-      @produits = Produit.where(sql_query, search: "%#{params[:search]}%")
+      @produits = Produit.where(sql_query, search: "%#{params[:search]}%").where(active: true)
     else
       @produits = Produit.where(active: true)
     end

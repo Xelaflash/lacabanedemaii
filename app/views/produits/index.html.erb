@@ -2,7 +2,11 @@
   <div class="tabs tabs-show">
     <%= render "shared/tab" %>
   </div>
-  <%= render "produits/product_card" %>
+    <% if @produits.empty? %>
+      <h6 class="empty-prod text-center">Désolé, nous n'avons pas trouvé de produits correspondants à cette recherche...</h6>
+    <% else %>
+      <%= render "produits/product_card" %>
+    <% end %>
 </div>
 
 
