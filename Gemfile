@@ -20,6 +20,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'cloudinary'
+gem 'friendly_id'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

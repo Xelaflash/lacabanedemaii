@@ -13,7 +13,7 @@ class ProduitsController < ApplicationController
   end
 
   def show
-    @produit = Produit.find(params[:id])
+    @produit = Produit.friendly.find(params[:id])
     @review = Review.new
     @gammes = Gamme.all
     @order_item = current_order.order_items.new

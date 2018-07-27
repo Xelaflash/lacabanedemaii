@@ -1,4 +1,5 @@
 class Produit < ApplicationRecord
+  extend FriendlyId
   belongs_to :gamme
   has_many :reviews, dependent: :destroy
   has_many :order_items
@@ -25,6 +26,7 @@ class Produit < ApplicationRecord
                     :tsearch => { :prefix => true }
                   }
 
+  friendly_id :id , use: :slugged, slug_column: :nom
 
 # for active admin
   def name
