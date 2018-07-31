@@ -16,7 +16,7 @@ class PaymentsController < ApplicationController
       customer:     customer.id,   # You should store this customer id and re-use it.
       amount:       @order_final.total_price_cents,
       description:  "Paiement pour la commande du #{@order_final.created_at} d'un montant de #{@order_final.total_price} €",
-      currency:     @order_final.total_price.currency_symbol
+      currency:     @order_final.total_price.currency
     )
 
     @order_final.update(payment: charge.to_json, state: 'paid')

@@ -4,7 +4,7 @@
   <% @order_items.each do |order_item| %>
         <%= cl_image_tag order_item.produit.photo, crop: :thumb, class: "cart-pic" %>
         <h6><%= order_item.produit.nom %></h6>
-        <h6> Quantité: <%= order_item.produit.quantite  %></h6>
+        <h6> Quantité: <%= order_item.quantity  %></h6>
         <h6>Prix unitaire :  <span id="price" style="color: green"><%= humanized_money_with_symbol(order_item.unit_price) %></span></h6>
 
 </div>
@@ -37,7 +37,9 @@
     data-name="Ma commande"
     data-email="<%= current_user.email %>"
     data-amount="<%= @order_final.total_price_cents %>"
-    data-locale="auto"></script>
+    data-locale="auto">
+
+    </script>
 
 <% end %>
 
