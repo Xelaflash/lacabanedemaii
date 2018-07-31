@@ -1,6 +1,6 @@
 class Order < ApplicationRecord
   belongs_to :order_status
-  belongs_to :user
+  # belongs_to :user
   has_many :order_items
   before_validation :set_order_status, on: :create
   before_save :update_subtotal
@@ -35,4 +35,9 @@ private
   def update_subtotal
     self[:subtotal] = subtotal
   end
+
+  # def total
+  #   self[:total_price] = total_price
+  # end
+
 end
