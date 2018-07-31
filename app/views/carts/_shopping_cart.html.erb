@@ -50,8 +50,12 @@
         </div>
         <div class="finalize text-right">
           <%# simple_form_for @order do |t| %>
-            <%= button_to "Finaliser la commande", class: "btn btn-block" %>
+            <%#= button_to "Finaliser la commande", class: "btn btn-block" %>
           <%# end %>
+          <%= form_tag orders_path do %>
+          <%= hidden_field_tag 'order_items_id', @order_items.ids %>
+          <%= submit_tag 'Finalizer la commande', class: 'btn btn-primary' %>
+          <% end %>
         </div>
       </div>
     </div>

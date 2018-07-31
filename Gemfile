@@ -11,6 +11,8 @@ gem 'rails', '5.2.0'
 gem 'redis'
 gem 'pg_search'
 gem 'activeadmin'
+gem 'stripe'
+gem 'money-rails'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'

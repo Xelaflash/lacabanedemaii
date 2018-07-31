@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   resources :order_items, only: [:create, :update, :destroy]
   resources :gammes, only: [:show]
   resources :contacts, only: [:new, :create]
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: [:new, :create]
+  end
 
   root to: 'pages#home'
 
