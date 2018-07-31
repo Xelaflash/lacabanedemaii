@@ -1,11 +1,34 @@
-<!-- app/views/payments/new.html.erb -->
-<%= form_tag order_payments_path(@order_final) do %>
-<% @order_total.each do |order_list| %>
-  <p>order_list.order_item</p>
-  <div class="container prod-line">
-      <hr class="separator2">
-  </div>
+<h1>Récapitulatif de la commande : </h1>
+<%= form_tag order_payments_path(@order_total) do %>
+<div class="">
+  <% @order_items.each do |order_item| %>
+        <%= cl_image_tag order_item.produit.photo, crop: :thumb, class: "cart-pic" %>
+        <h6><%= order_item.produit.nom %></h6>
+        <h6> Quantité: <%= order_item.produit.quantite  %></h6>
+        <h6>Prix unitaire :  <span id="price" style="color: green"><%= humanized_money_with_symbol(order_item.unit_price) %></span></h6>
+
+</div>
 <% end %>
+
+
+<div class="container  text-right">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-lg-10 price-resume">
+        <div class="sous-total text-right">
+          <h6>Sous-Total : <span><%= humanized_money_with_symbol(current_order.subtotal) %></span></h6>
+        </div>
+        <div class="fdp text-right">
+
+            <h6>Frais de port : <span><%= humanized_money_with_symbol(current_order.shipping)%></span></h6>
+        </div>
+
+        <div class="full-total text-right">
+          <h4><strong>TOTAL : <span style="color: green"><%= humanized_money_with_symbol(current_order.total_price) %></span></strong></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 
 
@@ -13,8 +36,8 @@
     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
     data-name="Ma commande"
     data-email="<%= current_user.email %>"
-    data-amount="<%= @order_final.total_price %>"
-    data-currency="<%= number_to_currency(@order_final.total_price, :locale => :fr)%>"></script>
+    data-amount="<%= @order_final.total_price_cents %>"
+    data-locale="auto"></script>
 
 <% end %>
 

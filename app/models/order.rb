@@ -1,9 +1,9 @@
 class Order < ApplicationRecord
   belongs_to :order_status
-  # belongs_to :user
   has_many :order_items
   before_validation :set_order_status, on: :create
   before_save :update_subtotal
+  monetize :total_price_cents
 
   def subtotal
     order_items.collect { |oi| oi.valid? ? (oi.quantity * oi.unit_price) : 0 }.sum
@@ -36,8 +36,8 @@ private
     self[:subtotal] = subtotal
   end
 
-  # def total
-  #   self[:total_price] = total_price
-  # end
+  def total
+    self[:total_price] = total_price
+  end
 
 end
