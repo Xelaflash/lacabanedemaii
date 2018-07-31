@@ -32,7 +32,7 @@
     <div class=" icons-right navbar-wagon-item hidden-md hidden-lg">
       <div class="dropdown dropdown-search">
         <i class="fa fa-search dropdown-toggle" data-toggle="dropdown"></i>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu2">
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu-bis">
           <li>
             <div class="form-group">
                 <%= render 'shared/search', query: params[:search] %>
@@ -45,6 +45,14 @@
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><%= link_to t(".profile", default: "Mon compte"),edit_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
           <li><%= link_to t(".sign_out", default: "Déconnexion"),destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <hr class="sep">
+          <% @gammes.each do |g| %>
+            <li>
+              <%= link_to  gamme_path(g), class: "navbar-wagon-item navbar-wagon-link", id: "#{g.id}" do %>
+                <%= g.name %>
+                <% end %>
+              <% end %>
+            </li>
         </ul>
       </div>
     </div>
@@ -63,7 +71,7 @@
     <div class="icons-right navbar-wagon-item hidden-md hidden-lg">
       <div class="dropdown dropdown-search">
         <i class="fa fa-search dropdown-toggle" data-toggle="dropdown"></i>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu2">
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu-bis">
           <li>
             <div class="form-group">
                 <%= render 'shared/search', query: params[:search] %>
@@ -75,6 +83,14 @@
         <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <hr class="sep">
+          <% @gammes.each do |g| %>
+            <li>
+              <%= link_to  gamme_path(g), class: "navbar-wagon-item navbar-wagon-link", id: "#{g.id}" do %>
+                <%= g.name %>
+              <% end %>
+              <% end %>
+            </li>
         </ul>
     <% end %>
       </div>

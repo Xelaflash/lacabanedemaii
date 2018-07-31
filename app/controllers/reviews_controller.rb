@@ -2,7 +2,6 @@ class ReviewsController < ApplicationController
   def create
     @produit = Produit.find(params[:produit_id])
     @review = current_user.reviews.new(review_params)
-    @gammes = Gamme.all
     @review.produit = @produit
     @order_item = current_order.order_items.new
     if @review.save

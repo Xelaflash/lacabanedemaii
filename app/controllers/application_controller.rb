@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_order
+  before_action :set_gamme
   before_action :store_user_location!, if: :storable_location?
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
@@ -11,6 +12,10 @@ class ApplicationController < ActionController::Base
     else
       Order.new
     end
+  end
+
+  def set_gamme
+    @gammes = Gamme.all
   end
 
   def configure_permitted_parameters
