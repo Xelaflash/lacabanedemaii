@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_31_165512) do
+ActiveRecord::Schema.define(version: 2018_08_09_135246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,7 +78,6 @@ ActiveRecord::Schema.define(version: 2018_07_31_165512) do
     t.bigint "order_status_id"
     t.jsonb "payment"
     t.integer "total_price_cents", default: 0, null: false
-    t.integer "total_price_cents_cents", default: 0, null: false
     t.index ["order_status_id"], name: "index_orders_on_order_status_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end

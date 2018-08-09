@@ -6,7 +6,6 @@ class PaymentsController < ApplicationController
   end
 
   def create
-    raise
     customer = Stripe::Customer.create(
       source: params[:stripeToken],
       email:  params[:stripeEmail]
@@ -16,10 +15,10 @@ class PaymentsController < ApplicationController
       customer:     customer.id,   # You should store this customer id and re-use it.
       amount:       @order_final.total_price_cents,
       description:  "Paiement pour la commande du #{@order_final.created_at} d'un montant de #{@order_final.total_price} €",
-      currency:     @order_final.total_price.currency
+      currency:     'eur'
     )
 
-    @order_final.update(payment: charge.to_json, state: 'paid')
+    @order_final.update(payment: charge.to_json, status: 'paid')
     redirect_to order_path(@order_final)
 
     rescue Stripe::CardError => e
@@ -34,5 +33,6 @@ private
   def set_order
     @order_final =  current_order
     @order_total = @order_final.order_items
+    @order_final.total_price_cents = current_order.total_price * 100
   end
 end
