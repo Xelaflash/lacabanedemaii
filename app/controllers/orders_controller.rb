@@ -18,8 +18,4 @@ class OrdersController < ApplicationController
     @order_items = @order.order_items
   end
 
-  def destroy
-
-  end
-
 end
