@@ -1,0 +1,16 @@
+<h1>Order</h1>
+<ul>
+  <li>Statuts de la commande: <%= @order.order_status.name %></li>
+  <li>Client: <%= current_user.prenom %> <%= current_user.nom %></li>
+  <li>E-mail: <%= current_user.email %> </li>
+  <li>
+    <div class="">
+  <% @order_items.each do |order_item| %>
+        <%= cl_image_tag order_item.produit.photo, crop: :thumb, class: "cart-pic" %>
+        <h6><%= order_item.produit.nom %></h6>
+        <h6> Quantité: <%= order_item.quantity  %></h6>
+      </li>
+</div>
+<% end %>
+  <li>Montant payé: <%= humanized_money_with_symbol(@order.total_price) %></li>
+<ul>

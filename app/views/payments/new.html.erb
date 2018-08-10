@@ -32,7 +32,7 @@
   <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-amount="<%= @order_final.total_price_cents %>"
+    data-amount="<%= @order.total_price_cents %>"
     data-name="Demo Site"
     data-description="Example charge"
     data-image="https://stripe.com/img/documentation/checkout/marketplace.png"

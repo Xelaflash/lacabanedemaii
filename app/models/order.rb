@@ -3,6 +3,7 @@ class Order < ApplicationRecord
   has_many :order_items
   before_validation :set_order_status, on: :create
   before_save :update_subtotal
+  before_save :total
   monetize :total_price_cents
 
   def subtotal
