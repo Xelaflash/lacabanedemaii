@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :order_items, only: [:create, :update, :destroy]
   resources :gammes, only: [:show]
   resources :contacts, only: [:new, :create]
-  resources :orders, only: [:index, :show, :create] do
+  resources :orders, only: [:index, :create, :destroy] do
     resources :payments, only: [:new, :create]
   end
 

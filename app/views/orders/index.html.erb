@@ -1,3 +1,7 @@
+ <div class="breadcrumbs back">
+    <%= render_breadcrumbs :separator => ' > ' %>
+  </div>
+
 <% @orders.each do |order| %>
   <ul>
     <li>Statuts de la commande:
@@ -17,6 +21,11 @@
       <% end %>
     <li>Date: <%= order.created_at.strftime("%d/%m/%Y à %k:%M (%Z)") %></li>
     <li>Montant: <%= humanized_money_with_symbol(order.total_price) %></li>
+    <%= order.id %>
+      <% if  %>
+        <% order.order_status_id == 1 %>
+        <%= link_to "<i class='far fa-trash-alt'></i>".html_safe, order, method: :delete, data: { confirm: "Êtes-vous sûr de vouloir annuler la commande en cours?" } %>
+      <% end %>
   </ul>
 <% end %>
 

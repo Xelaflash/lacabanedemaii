@@ -26,7 +26,6 @@ class PaymentsController < ApplicationController
       redirect_to new_order_payment_path(@order)
   end
 
-
 private
 
   def set_order
