@@ -7,12 +7,18 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def current_order
-    if !session[:order_id].nil?
-      Order.find(session[:order_id])
+    order = Order.find(session[:order_id])
+    if !session[:order_id].nil? && order.active == false
+       order = Order.new
     else
-      Order.new
+      order
     end
+    rescue ActiveRecord::RecordNotFound
+        order = Order.create
+        session[:order_id] = order.id
+        order
   end
+
 
   def set_gamme
     @gammes = Gamme.all

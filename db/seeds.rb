@@ -103,8 +103,8 @@ Produit.create!(marque:"Durance", nom: "GEL BAIN DOUCHE", reference: "833", phot
 OrderStatus.delete_all
 OrderStatus.create! id: 1, name: "En cours"
 OrderStatus.create! id: 2, name: "Payé"
-OrderStatus.create! id: 2, name: "Envoyé"
-OrderStatus.create! id: 2, name: "Annulé"
+OrderStatus.create! id: 3, name: "Envoyé"
+OrderStatus.create! id: 4, name: "Annulé"
 
 
 puts "end seed"

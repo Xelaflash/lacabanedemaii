@@ -18,13 +18,13 @@ class PaymentsController < ApplicationController
       currency:     'eur'
     )
 
-    @order.update(payment: charge.to_json, order_status_id: 2)
-    redirect_to order_path(@order)
+    @order.update(payment: charge.to_json, order_status_id: 2, active: false)
+    redirect_to orders_path
+
     rescue Stripe::CardError => e
       flash[:alert] = e.message
       redirect_to new_order_payment_path(@order)
   end
-
 
 
 private
@@ -35,4 +35,6 @@ private
     @order_total = @order.order_items
     @order.total_price_cents = current_order.total_price * 100
   end
+
+
 end
