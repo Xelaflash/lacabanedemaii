@@ -10,6 +10,9 @@ class Produit < ApplicationRecord
   validates :photo, presence: true, uniqueness: true
   validates :quantite, presence: true
   validates :prix, presence: true
+  # validates :frais_de_port, presence: true
+  # validates :poids, presence: true
+  # validates :unit, presence: true
   validates :description, presence: true
   validates :composition, presence: true
   validates :utilisation, presence: true
