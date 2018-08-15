@@ -33,6 +33,7 @@
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
     data-amount="<%= @order.total_price_cents %>"
+    data-currency="eur"
     data-name="La cabane de Maï"
     data-description="Commande"
     data-image="https://res.cloudinary.com/drzibyjvb/image/upload/v1527003411/logo.jpg"

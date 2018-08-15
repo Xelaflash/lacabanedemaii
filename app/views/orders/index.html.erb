@@ -1,7 +1,8 @@
 <% @orders.each do |order| %>
   <ul>
-    <li>Statuts de la commande: <%= order.order_status.name %></li>
-    <li>Date: <%= order.created_at %></li>
-    <li>Montant: <%= order.total_price %></li>
+    <li>Statuts de la commande: <strong style="color: green"><%= order.order_status.name %></strong></li>
+    <li>Date: <%= order.created_at.strftime("%d/%m/%Y à %k:%M (%Z)") %></li>
+    <li>Montant: <%= humanized_money_with_symbol(order.total_price) %></li>
   </ul>
 <% end %>
+
