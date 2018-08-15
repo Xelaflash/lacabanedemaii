@@ -3,6 +3,7 @@ class OrderItemsController < ApplicationController
 
   def create
     @order = current_order
+    @order.user_id = current_user.id
     @item = @order.order_items.new(order_item_params)
     existing_order = @order.order_items.where(produit_id: params[:order_item][:produit_id])
     if existing_order.count >= 1
