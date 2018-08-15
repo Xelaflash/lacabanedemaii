@@ -19,7 +19,6 @@ class ApplicationController < ActionController::Base
         order
   end
 
-
   def set_gamme
     @gammes = Gamme.all
   end
