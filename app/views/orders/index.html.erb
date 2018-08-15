@@ -3,8 +3,9 @@
   </div>
 
 <% @orders.each do |order| %>
+  <h6>Commande n° :  <%= order.id %></h6>
   <ul>
-    <li>Statuts de la commande:
+    <li>Statuts:
       <% if  %>
         <% order.order_status_id == 2 %>
         <strong style="color: green"><%= order.order_status.name %></strong>
@@ -21,10 +22,9 @@
       <% end %>
     <li>Date: <%= order.created_at.strftime("%d/%m/%Y à %k:%M (%Z)") %></li>
     <li>Montant: <%= humanized_money_with_symbol(order.total_price) %></li>
-    <%= order.id %>
       <% if  %>
         <% order.order_status_id == 1 %>
-        <%= link_to "<i class='far fa-trash-alt'></i>".html_safe, order, method: :delete, data: { confirm: "Êtes-vous sûr de vouloir annuler la commande en cours?" } %>
+        <%= link_to "<i class='far fa-trash-alt'></i>".html_safe, order_path(order), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir annuler la commande en cours?" } %>
       <% end %>
   </ul>
 <% end %>

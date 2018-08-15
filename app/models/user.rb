@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
   # For activeadmin
   def name
-    "#{prenom.capitalize} #{nom.capitalize}"
+    "#{email}"
   end
 
 end
