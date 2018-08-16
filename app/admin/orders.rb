@@ -5,6 +5,7 @@ ActiveAdmin.register Order do
     column :id
     column :customer
     column :user_id
+    column :prod_list
     column :order_status
     column :subtotal
     column :shipping
