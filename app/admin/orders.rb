@@ -3,7 +3,8 @@ ActiveAdmin.register Order do
  index do
     selectable_column
     column :id
-    column :user
+    column :customer
+    column :user_id
     column :order_status
     column :subtotal
     column :shipping
