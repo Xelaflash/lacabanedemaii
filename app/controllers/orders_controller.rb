@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   def create
     @order =  current_order
     @order.user_id = current_user.id
-    order_item = @order.order_items
+    @order.customer = current_user.email
     @order.save
     redirect_to new_order_payment_path(@order)
   end

@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def current_order
-
     order = Order.find(session[:order_id])
     if !session[:order_id].nil? && order.active == false
        order = Order.new

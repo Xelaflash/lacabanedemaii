@@ -1,5 +1,4 @@
 class Order < ApplicationRecord
-  belongs_to :user
   belongs_to :order_status
   has_many :order_items, dependent: :destroy
   before_validation :set_order_status, on: :create
@@ -27,7 +26,6 @@ class Order < ApplicationRecord
     (50 - subtotal)
   end
 
-
 private
 
   def set_order_status
@@ -41,5 +39,4 @@ private
   def total
     self[:total_price] = total_price
   end
-
 end
