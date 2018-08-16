@@ -48,12 +48,14 @@
         <div class="full-total text-right">
           <h4><strong>TOTAL : <span style="color: green"><%= humanized_money_with_symbol(current_order.total_price) %></span></strong></h4>
         </div>
-        <div class="finalize text-right">
-          <%= form_tag orders_path do %>
-          <%= hidden_field_tag 'order_items_id', @order_items.ids %>
-          <%= submit_tag 'Finalizer la commande', class: 'btn produit-show' %>
-          <% end %>
-        </div>
+        <% if (current_order.subtotal > 0) %>
+          <div class="finalize text-right">
+            <%= form_tag orders_path do %>
+            <%= hidden_field_tag 'order_items_id', @order_items.ids %>
+            <%= submit_tag 'Finalizer la commande', class: 'btn produit-show' %>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
