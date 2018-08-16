@@ -14,8 +14,6 @@ class Produit < ApplicationRecord
   validates :composition, presence: true
   validates :utilisation, presence: true
 
-  # default_scope { where(active: true) }
-
   include PgSearch
   pg_search_scope :search_by_marque_and_nom,
                   :against => [ :nom, :marque ],

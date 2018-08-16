@@ -4,8 +4,8 @@
   <% @order_items.each do |order_item| %>
         <%= cl_image_tag order_item.produit.photo, crop: :thumb, class: "cart-pic" %>
         <h6><%= order_item.produit.nom %></h6>
-        <h6> Quantité: <%= order_item.quantity  %></h6>
-        <h6>Prix unitaire :  <span id="price" style="color: green"><%= humanized_money_with_symbol(order_item.unit_price) %></span></h6>
+        <h6> Quantité : <%= order_item.quantity  %></h6>
+        <h6>Prix unitaire :  <span id="price" style="color: green"><%= humanized_money(order_item.unit_price) %> <%= currency_symbol %></span></h6>
 
 </div>
 <% end %>
@@ -15,20 +15,20 @@
     <div class="row">
       <div class="col-xs-12 col-sm-10 col-lg-10 price-resume">
         <div class="sous-total text-right">
-          <h6>Sous-Total : <span><%= humanized_money_with_symbol(current_order.subtotal) %></span></h6>
+          <h6>Sous-Total : <span><%= humanized_money(current_order.subtotal) %> <%= currency_symbol %></span></h6>
         </div>
         <div class="fdp text-right">
             <% if (current_order.subtotal < 50) %>
             <h6>Frais de port :
-              <span><%= humanized_money_with_symbol(current_order.shipping)%></span>
+              <span><%= humanized_money(current_order.shipping)%> <%= currency_symbol %></span>
             </h6>
             <% else %>
-            <span><%= humanized_money_with_symbol(0)%></span>
+            <span><%= humanized_money(0)%> <%= currency_symbol %></span>
             <% end %>
         </div>
 
         <div class="full-total text-right">
-          <h4><strong>TOTAL : <span style="color: green"><%= humanized_money_with_symbol(current_order.total_price) %></span></strong></h4>
+          <h4><strong>TOTAL : <span style="color: green"><%= humanized_money(current_order.total_price) %> <%= currency_symbol %></span></strong></h4>
         </div>
       </div>
     </div>
