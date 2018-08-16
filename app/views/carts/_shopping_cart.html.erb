@@ -33,20 +33,20 @@
     <div class="row">
       <div class="col-xs-12 col-sm-10 col-lg-10 price-resume">
         <div class="sous-total text-right">
-          <h6>Sous-Total : <span><%= humanized_money_with_symbol(current_order.subtotal) %></span></h6>
+          <h6>Sous-Total : <span><%= humanized_money(current_order.subtotal) %> <%= currency_symbol %></span></h6>
         </div>
         <div class="fdp text-right">
           <% if (current_order.subtotal < 50) %>
-            <h6>Frais de port : <span><%= humanized_money_with_symbol(current_order.shipping) %></span></h6>
-            <p class="fdp-text"> plus que <strong><%= humanized_money_with_symbol(current_order.free_shipping)%></strong> pour bénéficier des frais de port gratuits</p>
+            <h6>Frais de port : <span><%= humanized_money(current_order.shipping) %> <%= currency_symbol %></span></h6>
+            <p class="fdp-text"> plus que <strong><%= humanized_money(current_order.free_shipping)%> <%= currency_symbol %></strong> pour bénéficier des frais de port gratuits</p>
           <% else %>
-            <h6>Frais de port : <span><%= humanized_money_with_symbol(0) %></span></h6>
+            <h6>Frais de port : <span><%= humanized_money(0) %> <%= currency_symbol %></span></h6>
             <p class="fdp-text">Frais de ports offerts</p>
           <% end %>
         </div>
 
         <div class="full-total text-right">
-          <h4><strong>TOTAL : <span style="color: green"><%= humanized_money_with_symbol(current_order.total_price) %></span></strong></h4>
+          <h4><strong>TOTAL : <span style="color: green"><%= humanized_money(current_order.total_price) %> <%= currency_symbol %></span></strong></h4>
         </div>
         <% if (current_order.subtotal > 0) %>
           <div class="finalize text-right">

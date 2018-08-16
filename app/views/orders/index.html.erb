@@ -21,7 +21,7 @@
     </li>
       <% end %>
     <li>Date: <%= order.created_at.strftime("%d/%m/%Y à %k:%M (%Z)") %></li>
-    <li>Montant: <%= humanized_money_with_symbol(order.total_price) %></li>
+    <li>Montant: <%= humanized_money(order.total_price) %> <%= currency_symbol %></li>
       <% if  %>
         <% order.order_status_id == 1 %>
         <%= link_to "<i class='far fa-trash-alt'></i>".html_safe, order_path(order), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir annuler la commande en cours?" } %>

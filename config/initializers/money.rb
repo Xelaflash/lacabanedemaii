@@ -3,9 +3,18 @@
 MoneyRails.configure do |config|
 
   # To set the default currency
-  #
   config.default_currency = :eur
-
+  # config.default_currency = {
+  #   priority:            1,
+  #   iso_code:            "EUR",
+  #   name:                "Euro with subunit of 4 digits",
+  #   symbol:              "€",
+  #   symbol_first:        true,
+  #   subunit:             "Subcent",
+  #   subunit_to_unit:     10000,
+  #   thousands_separator: ".",
+  #   decimal_mark:        ","
+  # }
   # Set default bank object
   #
   # Example:
@@ -46,17 +55,6 @@ MoneyRails.configure do |config|
   # Register a custom currency
   #
   # Example:
-  # config.default_currency = {
-  #   priority:            1,
-  #   iso_code:            "EU4",
-  #   name:                "Euro with subunit of 4 digits",
-  #   symbol:              "€",
-  #   symbol_first:        false,
-  #   subunit:             "Subcent",
-  #   subunit_to_unit:     10000,
-  #   thousands_separator: ".",
-  #   decimal_mark:        ","
-  # }
 
   # Specify a rounding mode
   # Any one of:
@@ -77,11 +75,11 @@ MoneyRails.configure do |config|
   # Default value is nil meaning "ignore this option".
   # Example:
   #
-  # config.default_format = {
-  #   no_cents_if_whole: nil,
-  #   symbol: "€",
-  #   sign_before_symbol: false
-  # }
+  config.default_format = {
+    symbol: "€",
+    thousands_separator: ".",
+    decimal_mark:        ","
+  }
 
   # Set default raise_error_on_money_parsing option
   # It will be raise error if assigned different currency
