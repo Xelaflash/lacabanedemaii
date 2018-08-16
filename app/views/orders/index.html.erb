@@ -1,4 +1,4 @@
- <div class="breadcrumbs back">
+<div class="breadcrumbs back">
     <%= render_breadcrumbs :separator => ' > ' %>
 </div>
 <br><br>
@@ -33,12 +33,13 @@
           <%= link_to "Effacer la commande".html_safe, order_path(order), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir annuler la commande en cours?" }, class: "btn btn-danger" %>
         <% end %>
       </div>
-
-
-
-    <% end %>
-  </div>
+      <div class="prod-list">
+        <%= order.prod_list %>
+      </div>
+  <% end %>
+    </div>
 </div>
+
 
 
 

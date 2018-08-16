@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
     @order.user_id = current_user.id
     @order.customer = current_user.email
     @order_items = @order.order_items
-    @order.prod_list =  @order_items.map{|order_item| [order_item.produit.nom, order_item.quantity]}
+    @order.prod_list =  @order_items.map{|order_item| [order_item.quantity, order_item.produit.nom]}
     @order.save
     redirect_to new_order_payment_path(@order)
   end
