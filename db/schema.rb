@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_15_162826) do
+ActiveRecord::Schema.define(version: 2018_08_16_122005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,7 +56,6 @@ ActiveRecord::Schema.define(version: 2018_08_15_162826) do
     t.decimal "unit_price"
     t.decimal "total_price"
     t.decimal "unit_shipping"
-    t.integer "unit_price_cents", default: 0, null: false
     t.index ["order_id"], name: "index_order_items_on_order_id"
     t.index ["produit_id"], name: "index_order_items_on_produit_id"
   end
@@ -78,6 +77,7 @@ ActiveRecord::Schema.define(version: 2018_08_15_162826) do
     t.jsonb "payment"
     t.integer "total_price_cents", default: 0, null: false
     t.boolean "active", default: true
+    t.string "customer"
     t.index ["order_status_id"], name: "index_orders_on_order_status_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end

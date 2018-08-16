@@ -1,4 +1,4 @@
-<h1>Récapitulatif de la commande : </h1>
+<h1>Récapitulatif de la commande n° <%= @order.id %> : </h1>
 <%= form_tag order_payments_path(@order_total) do %>
 <div class="">
   <% @order_items.each do |order_item| %>
@@ -40,7 +40,7 @@
     data-amount="<%= @order.total_price_cents %>"
     data-currency="eur"
     data-name="La cabane de Maï"
-    data-description="Commande n°: "
+    data-description="Commande n°: <%= @order.id %> "
     data-image="https://res.cloudinary.com/drzibyjvb/image/upload/v1527003411/logo.jpg"
     data-locale="fr">
   </script>

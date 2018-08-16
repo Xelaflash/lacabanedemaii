@@ -4,10 +4,8 @@ class OrderItem < ApplicationRecord
   validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
   validate :product_present
   validate :order_present
-  monetize :unit_price_cents
 
   before_save :finalize
-
 
   def unit_price
     if persisted?
@@ -41,7 +39,6 @@ private
 
   def finalize
     self[:unit_price] = unit_price
-    # self[:unit_shipping] = unit_shipping
     self[:total_price] = quantity * self[:unit_price]
   end
 end
