@@ -1,30 +1,46 @@
  <div class="breadcrumbs back">
     <%= render_breadcrumbs :separator => ' > ' %>
-  </div>
+</div>
+<br><br>
+<div class="container order-page">
+  <div class="order-list">
+    <% @orders.each do |order| %>
+    <div class="order-title text-center">
+      <h6><strong>Commande n° :  <%= order.id %></strong></h6>
+    </div>
+      <ul class="list-unstyled">
+        <li><i class="fas fa-check"></i> <u>Statuts</u> :
+          <% if  %>
+            <% order.order_status_id == 2 %>
+            <p><strong style="color: green"><%= order.order_status.name %></strong></p>
+          <% elsif %>
+            <% order.order_status_id == 1 %>
+            <p><strong style="color: orange"><%= order.order_status.name %></strong></p>
+          <% elsif %>
+            <% order.order_status_id == 3 %>
+            <p><strong style="color: blue"><%= order.order_status.name %></strong></p>
+          <% elsif %>
+            <% order.order_status_id == 4 %>
+            <p><strong style="color: red"><%= order.order_status.name %></strong></p>
+        </li>
+          <% end %>
+         <li><i class="fas fa-check"></i> <u>Date</u> : <p><%= order.created_at.strftime("%d/%m/%Y à %k:%M (%Z)") %></p></li>
+         <li><i class="fas fa-check"></i> <u>Montant</u> : <p><%= humanized_money(order.total_price) %> <%= currency_symbol %></p></li>
+      </ul>
+      <div class="order-cancel text-center">
+        <% if %>
+          <% order.order_status_id == 1 %>
+          <%= link_to "Effacer la commande".html_safe, order_path(order), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir annuler la commande en cours?" }, class: "btn btn-danger" %>
+        <% end %>
+      </div>
 
-<% @orders.each do |order| %>
-  <h6>Commande n° :  <%= order.id %></h6>
-  <ul>
-    <li>Statuts :
-      <% if  %>
-        <% order.order_status_id == 2 %>
-        <strong style="color: green"><%= order.order_status.name %></strong>
-      <% elsif %>
-        <% order.order_status_id == 1 %>
-        <strong style="color: orange"><%= order.order_status.name %></strong>
-      <% elsif %>
-        <% order.order_status_id == 3 %>
-        <strong style="color: blue"><%= order.order_status.name %></strong>
-      <% elsif %>
-        <% order.order_status_id == 4 %>
-        <strong style="color: red"><%= order.order_status.name %></strong>
-    </li>
-      <% end %>
-    <li>Date : <%= order.created_at.strftime("%d/%m/%Y à %k:%M (%Z)") %></li>
-    <li>Montant : <%= humanized_money(order.total_price) %> <%= currency_symbol %></li>
-      <% if  %>
-        <% order.order_status_id == 1 %>
-        <%= link_to "<i class='far fa-trash-alt'></i>".html_safe, order_path(order), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir annuler la commande en cours?" } %>
-      <% end %>
-  </ul>
-<% end %>
+
+
+    <% end %>
+  </div>
+</div>
+
+
+
+
+

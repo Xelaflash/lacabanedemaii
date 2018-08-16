@@ -1,0 +1,33 @@
+.order-page {
+  min-height: 80vh;
+  p {
+    font-size: 18px;
+    margin: 5px 0px 17px 55px;
+  }
+}
+
+.order-list {
+  border: 1px solid $primary;
+  max-width: 400px;
+}
+
+.order-title {
+  h6 {
+    font-size: 18px;
+  }
+}
+
+
+.fa-check {
+  font-size: 14px;
+  padding-right: 7px;
+  margin-left: 12px;
+}
+
+u {
+  margin-top: 1px;
+}
+
+.btn-danger {
+  margin: 5px 0px 20px 0px;
+}

@@ -10,6 +10,8 @@ class OrdersController < ApplicationController
 
   def index
     @orders = current_user.orders.all
+    # @order_total = @orders.order_items
+    # raise
     add_breadcrumb "accueil", :root_path
     add_breadcrumb "produits", produits_path
     add_breadcrumb "panier", cart_path
