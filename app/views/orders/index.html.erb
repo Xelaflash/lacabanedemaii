@@ -33,9 +33,7 @@
           <%= link_to "Effacer la commande".html_safe, order_path(order), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir annuler la commande en cours?" }, class: "btn btn-danger" %>
         <% end %>
       </div>
-      <div class="prod-list">
-        <%= order.prod_list %>
-      </div>
+      <%= link_to "Voir le détails", order_path(order),class: "btn btn-block produit-show"%>
   <% end %>
     </div>
 </div>

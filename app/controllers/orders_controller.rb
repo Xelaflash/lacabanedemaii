@@ -17,8 +17,13 @@ class OrdersController < ApplicationController
     add_breadcrumb "panier", cart_path
   end
 
+  def show
+    @order = current_user.orders.find(params[:id])
+    @order_items = @order.order_items
+  end
+
   def destroy
-    @order =  current_order
+    @order =  current_user.orders.find(params[:id])
     @order.destroy
   end
 
