@@ -1,16 +1,45 @@
-<h1>Order</h1>
-<ul>
-  <li>Statuts de la commande: <%= @order.order_status.name %></li>
-  <li>Client: <%= current_user.prenom %> <%= current_user.nom %></li>
-  <li>E-mail: <%= current_user.email %> </li>
-  <li>
-    <div class="">
-  <% @order_items.each do |order_item| %>
-        <%= cl_image_tag order_item.produit.photo, crop: :thumb, class: "cart-pic" %>
-        <h6><%= order_item.produit.nom %></h6>
-        <h6> Quantité: <%= order_item.quantity  %></h6>
-      </li>
+<div class="container order-show">
+  <h1 class="page-title text-center">Commande n° <%= @order.id %></h1>
+  <hr class="sep">
+  <div class="row prd-list">
+    <div class="prd-list-left col-xs-12">
+      <% @order_items.each do |order_item| %>
+        <div class="produit-item">
+          <div class="order-detail">
+            <div class="order-list-left">
+              <div class="product">
+                <div class="text-center">
+                  <h6><%= order_item.produit.nom %></h6>
+                </div>
+              <%= cl_image_tag order_item.produit.photo, crop: :thumb, class: "cart-pic" %>
+              </div>
+            </div>
+            <div class="order-list-right">
+              <div class="qte text-left">
+                <h6> Quantité: <%= order_item.quantity  %></h6>
+              </div>
+              <div class="unit hidden-xs text-left">
+                <h6>Prix unitaire :  <span id="price" style="color: green"><%= humanized_money(order_item.unit_price)%> <%= currency_symbol %></span></h6>
+              </div>
+              <div class="total text-left">
+                <h6>Total : <span id="price" style="color: green"><%= humanized_money(order_item.total_price) %> <%= currency_symbol %></span></h6>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="prd-list-right text-center col-xs-12">
+      <h6>Statuts de la commande : <strong style="color: green"><%= @order.order_status.name %></strong></h6>
+      <h6>Client : <strong> <%= current_user.prenom %> <%= current_user.nom %></strong></h6>
+      <h6>E-mail : <strong><%= current_user.email %></strong></h6>
+      <h6>Montant payé :<strong style="color: green"> <%= humanized_money(@order.total_price) %> <%= currency_symbol %></strong></h6>
+    </div>
+  </div>
+
+
+<!--   <ul>
+    <li></li>
+  </ul> -->
 </div>
-<% end %>
-  <li>Montant payé: <%= humanized_money_with_symbol(@order.total_price) %></li>
-</ul>
