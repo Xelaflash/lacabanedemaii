@@ -31,7 +31,22 @@
       <% end %>
     </div>
     <div class="prd-list-right text-center col-xs-12">
-      <h6>Statuts de la commande : <strong style="color: green"><%= @order.order_status.name %></strong></h6>
+      <h6>Statuts de la commande :
+        <% if %>
+          <% @order.order_status_id == 2 %>
+          <h6><strong style="color: green"><%= @order.order_status.name %></strong></h6>
+        <% elsif %>
+          <% @order.order_status_id == 1 %>
+          <h6><strong style="color: orange"><%= @order.order_status.name %></strong></h6>
+        <% elsif %>
+          <% @order.order_status_id == 3 %>
+          <h6><strong style="color: blue"><%= @order.order_status.name %></strong></h6>
+        <% elsif %>
+          <% @order.order_status_id == 4 %>
+          <h6><strong style="color: red"><%= @order.order_status.name %></strong></h6>
+        <% end %></h6>
+        <hr class="sep">
+
       <h6>Client : <strong> <%= current_user.prenom %> <%= current_user.nom %></strong></h6>
       <h6>E-mail : <strong><%= current_user.email %></strong></h6>
       <h6>Montant payé :<strong style="color: green"> <%= humanized_money(@order.total_price) %> <%= currency_symbol %></strong></h6>
