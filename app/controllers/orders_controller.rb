@@ -31,6 +31,7 @@ class OrdersController < ApplicationController
     @order = current_order
     @order.update_attributes(order_params)
     flash[:notice] = "L'adresse de livraison a bien été ajoutée."
+    redirect_to cart_path
   end
 
   def destroy
