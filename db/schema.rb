@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_20_193500) do
+ActiveRecord::Schema.define(version: 2018_08_20_213616) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,12 +79,13 @@ ActiveRecord::Schema.define(version: 2018_08_20_193500) do
     t.boolean "active", default: true
     t.string "customer"
     t.string "prod_list"
-    t.integer "deliv_adress_nb"
     t.string "deliv_adress"
+    t.integer "deliv_adress_nb"
     t.integer "deliv_adress_zip_code"
     t.string "deliv_adress_city"
     t.string "deliv_adress_details"
     t.string "deliv_adress_pays"
+    t.string "client_name"
     t.index ["order_status_id"], name: "index_orders_on_order_status_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
