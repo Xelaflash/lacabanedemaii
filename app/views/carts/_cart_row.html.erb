@@ -11,7 +11,7 @@
           <% end %>
         </div>
         <div class="unit hidden-xs text-center">
-          <h6>Prix unitaire :  <span id="price" style="color: green"><%= number_to_currency(order_item.unit_price, :locale => :fr)%></span></h6>
+          <h6>Prix unitaire :  <span id="price" style="color: green"><%= humanized_money(order_item.unit_price)%> <%= currency_symbol %></span></h6>
         </div>
 
 
@@ -35,11 +35,11 @@
           <%= link_to "<i class='far fa-trash-alt'></i>".html_safe, order_item, method: :delete, data: { confirm: "Êtes-vous sûr de vouloir retirer #{order_item.produit.nom} de votre panier?" }, remote: true %>
         </div>
         <div class="total text-center hidden-xs">
-          <h6>Total : <span id="price" style="color: green"><%= number_to_currency(order_item.total_price, :locale => :fr) %></span></h6>
+          <h6>Total : <span id="price" style="color: green"><%= humanized_money(order_item.total_price) %> <%= currency_symbol %></span></h6>
         </div>
       </div>
       <div class="total text-right hidden-md hidden-lg hidden-sm">
-          <h6>Total : <span id="price" style="color: green"><%= number_to_currency(order_item.total_price, :locale => :fr) %></span></h6>
+          <h6>Total : <span id="price" style="color: green"><%= humanized_money(order_item.total_price) %> <%= currency_symbol %></span></h6>
         </div>
     </div>
   </div>

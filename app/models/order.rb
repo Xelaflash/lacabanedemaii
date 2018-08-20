@@ -1,8 +1,10 @@
 class Order < ApplicationRecord
   belongs_to :order_status
-  has_many :order_items
+  has_many :order_items, dependent: :destroy
   before_validation :set_order_status, on: :create
   before_save :update_subtotal
+  before_save :total
+  monetize :total_price_cents
 
   def subtotal
     order_items.collect { |oi| oi.valid? ? (oi.quantity * oi.unit_price) : 0 }.sum
@@ -13,7 +15,7 @@ class Order < ApplicationRecord
   end
 
   def total_price
-    if (shipping < 50)
+    if (subtotal < 50)
       (subtotal + shipping)
     else
       subtotal
@@ -24,7 +26,6 @@ class Order < ApplicationRecord
     (50 - subtotal)
   end
 
-
 private
 
   def set_order_status
@@ -33,5 +34,9 @@ private
 
   def update_subtotal
     self[:subtotal] = subtotal
+  end
+
+  def total
+    self[:total_price] = total_price
   end
 end

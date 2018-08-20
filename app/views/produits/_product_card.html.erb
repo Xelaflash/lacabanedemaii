@@ -13,7 +13,7 @@
           </div>
           <div class="card-info">
             <h5><%= produit.nom %></h5>
-            <h6>  <%= number_to_currency(produit.prix, :locale => :fr)  %></h6>
+            <h6>  <%= humanized_money(produit.prix) %> <%= currency_symbol %>  </h6>
             <div class="buy">
               <%= simple_form_for @order_item do |f| %>
               <%= f.hidden_field :produit_id, value: produit.id %>

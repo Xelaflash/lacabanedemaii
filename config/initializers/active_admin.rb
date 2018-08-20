@@ -4,6 +4,12 @@ end
 
 
 ActiveAdmin.setup do |config|
+
+  ActiveAdmin::ResourceController.class_eval do
+    def find_resource
+      resource_class.is_a?(FriendlyId) ? scoped_collection.friendly.find(params[:id]) : scoped_collection.find(params[:id])
+    end
+  end
   # == Site Title
   #
   # Set the title that is displayed on the main layout
@@ -124,7 +130,7 @@ ActiveAdmin.setup do |config|
   # This allows your users to comment on any resource registered with Active Admin.
   #
   # You can completely disable comments:
-  # config.comments = false
+  config.comments = false
   #
   # You can change the name under which comments are registered:
   # config.comments_registration_name = 'AdminComment'

@@ -1,0 +1,52 @@
+<div class="container recap-order">
+
+<h1 class="page-title text-center">Récapitulatif de la commande n° <%= @order.id %> : </h1>
+<%= form_tag order_payments_path(@order_total) do %>
+<div class="">
+  <% @order_items.each do |order_item| %>
+        <%= cl_image_tag order_item.produit.photo, crop: :thumb, class: "cart-pic" %>
+        <h6><%= order_item.produit.nom %></h6>
+        <h6> Quantité : <%= order_item.quantity  %></h6>
+        <h6>Prix unitaire :  <span id="price" style="color: green"><%= humanized_money(order_item.unit_price) %> <%= currency_symbol %></span></h6>
+
+</div>
+<% end %>
+
+
+<div class="container  text-right">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-lg-10 price-resume">
+        <div class="sous-total text-right">
+          <h6>Sous-Total : <span><%= humanized_money(current_order.subtotal) %> <%= currency_symbol %></span></h6>
+        </div>
+        <div class="fdp text-right">
+            <h6>Frais de port :
+            <% if (current_order.subtotal < 50) %>
+              <span><%= humanized_money(current_order.shipping)%> <%= currency_symbol %></span>
+            </h6>
+            <% else %>
+            <span><%= humanized_money(0)%> <%= currency_symbol %></span>
+            <% end %>
+        </div>
+
+        <div class="full-total text-right">
+          <h4><strong>TOTAL : <span style="color: green"><%= humanized_money(current_order.total_price) %> <%= currency_symbol %></span></strong></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--   <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="<%#= Rails.configuration.stripe[:publishable_key] %>"
+    data-amount="<%#= @order.total_price_cents %>"
+    data-currency="eur"
+    data-name="La cabane de Maï"
+    data-description="Commande n°: <%#= @order.id %> "
+    data-image="https://res.cloudinary.com/drzibyjvb/image/upload/v1527003411/logo.jpg"
+    data-locale="fr">
+  </script> -->
+
+<% end %>
+</div>
+

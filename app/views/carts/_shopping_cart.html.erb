@@ -2,7 +2,7 @@
   <div class="breadcrumbs back">
     <%= render_breadcrumbs :separator => ' > ' %>
   </div>
-  <h1 id="cart-title" class="text-center">Votre Panier</h1>
+  <h1 id="cart-title" class="page-title text-center">Votre Panier</h1>
 
   <div class="cart-space">
     <% if !@order_item.nil? && @order_item.errors.any? %>
@@ -17,7 +17,7 @@
     <% if @order_items.size == 0 %>
       <div class="empty-cart">
         <h4 class="text-center">Votre panier est vide</h4>
-        <p class="text-center">Retourner voir <%= link_to "les produits", produits_path %>.</p>
+        <p class="text-center">Retourner voir <%= link_to "les produits", produits_path %></p>
       </div>
     <% else %>
       <% @order_items.each do |order_item| %>
@@ -33,29 +33,34 @@
     <div class="row">
       <div class="col-xs-12 col-sm-10 col-lg-10 price-resume">
         <div class="sous-total text-right">
-          <h6>Sous-Total : <span><%= number_to_currency(current_order.subtotal, :locale => :fr) %></span></h6>
+          <h6>Sous-Total : <span><%= humanized_money(current_order.subtotal) %> <%= currency_symbol %></span></h6>
         </div>
         <div class="fdp text-right">
           <% if (current_order.subtotal < 50) %>
-            <h6>Frais de port : <span><%= number_to_currency(current_order.shipping, :locale => :fr) %></span></h6>
-            <p class="fdp-text"> plus que <strong><%= number_to_currency(current_order.free_shipping, :locale => :fr)%></strong> pour bénéficier des frais de port gratuits</p>
+            <h6>Frais de port : <span><%= humanized_money(current_order.shipping) %> <%= currency_symbol %></span></h6>
+            <p class="fdp-text"> plus que <strong><%= humanized_money(current_order.free_shipping)%> <%= currency_symbol %></strong> pour bénéficier des frais de port gratuits</p>
           <% else %>
-            <h6>Frais de port : <span><%= number_to_currency(0, :locale => :fr) %></span></h6>
+            <h6>Frais de port : <span><%= humanized_money(0) %> <%= currency_symbol %></span></h6>
             <p class="fdp-text">Frais de ports offerts</p>
           <% end %>
         </div>
 
         <div class="full-total text-right">
-          <h4><strong>TOTAL : <span style="color: green"><%= number_to_currency(current_order.total_price, :locale => :fr) %></span></strong></h4>
+          <h4><strong>TOTAL : <span style="color: green"><%= humanized_money(current_order.total_price) %> <%= currency_symbol %></span></strong></h4>
         </div>
-        <div class="finalize text-right">
-          <%# simple_form_for @order do |t| %>
-            <%= button_to "Finaliser la commande", class: "btn btn-block" %>
-          <%# end %>
-        </div>
+        <% if (current_order.subtotal > 0) %>
+          <div class="finalize text-right">
+            <%= form_tag orders_path do %>
+            <%= hidden_field_tag 'order_items_id', @order_items.ids %>
+            <%= submit_tag 'COMMANDER', class: "btn btn-finalize" %>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
+
+
 
 

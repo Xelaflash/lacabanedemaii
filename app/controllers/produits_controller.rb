@@ -22,6 +22,4 @@ class ProduitsController < ApplicationController
     add_breadcrumb "produits", produits_path
     add_breadcrumb "#{@produit.nom}", produit_path
   end
-
-
 end

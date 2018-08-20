@@ -1,11 +1,11 @@
 puts "destroy all"
 
 Review.destroy_all
-User.destroy_all
 OrderItem.destroy_all
+Order.destroy_all
+User.destroy_all
 Produit.destroy_all
 Gamme.destroy_all
-Order.destroy_all
 
 
 puts "start seed"
@@ -23,10 +23,7 @@ de laurier (20% à la cuisson), il est particulièrement recommandé pour les pe
 il aide à maintenir la bonne hydratation. Estampillé d’origine, Aleppo Soap Co. vous garantit son authenticité,
 sa provenance et sa traçabilité.", composition: "olea europaea (olive) fruit oil*, laurus nobilis (laurel) fruit oil *, aqua*, sodium hydroxide.
 *Origine végétale/Plant based : 99,9%.", utilisation: "Usage quotidien, corps et visage.", gamme: bien, active: true )
-
-
 Produit.create!(marque:"Aleppo soap", nom: "Savon Alep Olive & Laurier 5%", reference: "700", photo:"https://res.cloudinary.com/drzibyjvb/image/upload/v1530539839/700.jpg", quantite:8, prix: 5.00, frais_de_port: 5.00, poids: 200, unit: "G", description: "Cuit au chaudron en discontinu selon la méthode artisanale ancestrale, puis séché 9 mois à l’air libre ; exclusivement végétal. À base d’huile d’olive additionnée en cours de saponification, d’huile de baie de laurier noble. D'une douceur unique, il très bien toléré par toute peau, même délicate et réactive.", composition: "olea europaea (olive) fruit oil*, aqua*, laurus nobilis (laurel) fruit oil*, sodium hydroxide.*Origine végétale/Plant based : 99,9%.", utilisation: "Usage quotidien, corps et visage.", gamme: bien, active: true )
-
 
 Produit.create!(marque:"Aleppo soap", nom: "Savon Alep Laurier 12%", reference: "701", photo:"https://res.cloudinary.com/drzibyjvb/image/upload/v1528215022/savon-alep-laurier-12.jpg", quantite:3, prix: 5.00, frais_de_port: 4.95, poids: 200, unit: "G", description: "Réputé depuis la plus haute Antiquité, ce savon cuit au chaudron, enrichi en huile de laurier, se gorge de grand air durant 9 mois pour révéler à maturité sa fermeté, sa teinte caractéristique, garants de ses hautes qualités cosmétiques. Commercialisé dans le respect des intérêts des agriculteurs locaux, du Maître-savonnier et de ses ouvriers, cette précieuse gemme d’Alep, prototype de tous les savons, nettoie parfaitement et respecte l’équilibre des peaux les plus fragiles.", composition: "olea europaea (olive) fruit oil*, laurus nobilis (laurel) fruit oil*, aqua*, sodium hydroxide.
   *Origine végétale/Plant based: 99,9%.", utilisation: "Usage quotidien, corps et visage.", gamme: bien, active: true )
@@ -57,8 +54,6 @@ Produit.create!(marque:"Aleppo soap", nom: "Savon surgras thé réparateur", ref
   Utilisées depuis toujours en cosmétologie, les feuilles de thé ont le bienfaisant avantage de garder sa fermeté à la peau et de l’aider à lutter contre le vieillissement.", composition: "Olea europaea (olive) fruit oil*, gossypium herbaceum (cotton) seed oil*, laurus nobilis (laurel) fruit oil*, helianthus annuus (sunflower) seed oil*, glycine soja (soybean) oil*, camellia sinensis (tea) leaf extract, cocos nucifera (coconut) oil*, aqua, sodium hydroxide.
 *Origine naturelle/Natural origin : 99,9%.", utilisation: "Usage quotidien corps et visage, sur peau mouillée avec ou sans gant.", gamme: bien, active: true )
 
-
-
 Produit.create!(marque:"Aleppo soap", nom: "Savon liquide 12%", reference: "713", photo:"https://res.cloudinary.com/drzibyjvb/image/upload/q_100/v1527003390/savon-dalep-liquide-12-laurier.jpg", quantite:0, prix: 12.00, frais_de_port: 6.15, poids: 500, unit: "ML", description: "Savon liquide, authentique surgras végétal d’Alep aux vertus cosmétiques éprouvées. Pur végétal, produit par saponification au chaudron en discontinu d’huile d’olive, enrichie de 12% d’huile de laurier noble. Riche en acides gras indispensables, vitamines, antioxydants, insaponifiables, il nettoie efficacement sans assécher la peau. Particulièrement recommandé aux épidermes sensibles à l’équilibre fragile. Usage familial quotidien de pied en cap, avec la volupté que procure l'extrême douceur de ce rare et précieux savon. Sans parabène, ni colorant, ni laureth sulfate.", composition: "Aqua* (water), potassium olivate*, potassium laurate*, glycerin*, sodium chloride*, olea europaea (olive) fruit oil*, tetrasodium glutamate diacetate, potassium benzoate, potassium sorbate, laurus nobilis (laurel) fruit oil*, tocopherol. *origine naturelle/natural origin : 99%.
 ", utilisation: "Mains, visage et corps en savon douche. Utiliser à faible dose. Mouiller pour faire mousser. Très économique et pratique grâce à la pompe.", gamme: bien, active: true )
 
@@ -84,12 +79,9 @@ Produit.create!(marque:"Aleppo soap", nom: "Porte blaireau", reference: "719", p
 
 Produit.create!(marque:"Aleppo soap", nom: "blaireau", reference: "718", photo:"http://res.cloudinary.com/drzibyjvb/image/upload/v1527003389/blaireau.jpg", quantite:0, prix: 10.00, frais_de_port: 4.95, poids: 100, unit: "G", description: "Pour toute barbe, de la plus dure à la plus douce, du junior au vétéran. Pour toute peau. Blaireau pures soies de sanglier, sur manche de hêtre ergonomique. Abondants, fermes, très hydrophiles pour faire bien mousser le savon, ils apprêtent  parfaitement la barbe et la peau, même sensible, à l’action du rasoir.", composition: "acier inoxydable", utilisation: "Faire mousser sur le visage humidifié le savon à barbe recueilli dans les soies humides. Se raser, rincer et secouer la brosse. ", gamme: bien, active: true )
 
-
 Produit.create!(marque:"Durance", nom: "BOUQUET PARFUME", reference: "800", photo:"https://res.cloudinary.com/drzibyjvb/image/upload/v1531484709/800.jpg", quantite:3, prix: 24.60, frais_de_port: 5.8, poids: 100, unit: "ML", description: "Se décline sous: COQUELICOT; FLEUR D'ORANGER; JASMIN; MANGUE PASSION; BRUMEMARINE; FLEUR DE MONOÏ; FLEUR DE COTON; AMBRE; PATCHOULI", composition: "Alcohol Denat, Parfum (Fragrance)Alcool 83.5% vol. Pour usage externe.Contient du: ALPHA-ISOMETHYL-IONONE; CITRONELLOL; LINALOOL; HYDROXYCITRONELLAL; CARYOPHYLLENE ACETATE; PIPERONAL; DIHYDROTERPINYL ACETATE. Peut produire une réaction allergique. P102 Tenir hors de portée des enfants.", utilisation: "Raffiné et élégant, ce Bouquet Parfumé, diffuseur de parfums, habillera votre intérieur tout en diffusant de manière constante des notes douces et crémeuses. Délicatement disposées dans le flacon, les tiges de rotin s’imprègnent de parfum par capillarité, le libérant ensuite pendant plusieurs semaines.", gamme: bien, active: true )
 
-
 Produit.create!(marque:"Durance", nom: "RECHARGE BOUQUET", reference: "801", photo:"https://res.cloudinary.com/drzibyjvb/image/upload/v1531484709/801.jpg", quantite:3, prix: 15.95, frais_de_port: 5.8, poids: 250, unit: "ML", description: "Se décline sous: CERISIER EN FLEUR; COQUELICOT; FLEUR D'ORANGER; JASMIN; ROSE; GRENADE; MANGUE PASSION; VERGER EN FLEURS; BRUMEMARINE; FLEUR DE MONOÏ; PAMPLEMOUSSE ROSE; THE BLANC; VERVEINE; FLEUR DE COTON; PERLE DE SOIE; POUDRE DE RIZ; AMBRE; PATCHOULI", composition: "Ingrédients : Alcohol Denat, Parfum (Fragrance)Alcool 86% vol. Pour usage externe. Contient du: Citronellol; Geraniol; Coumarin; Nerol; Piperonal.Peut produire une réaction allergique. H225 Liquide et vapeurs très inflammables. P102 Tenir hors de portée des enfants.", utilisation: "Cette recharge de parfum vous permettra de remplir les bouquets ou fleurs parfumées Durance autant de fois que souhaité. Afin d’obtenir une diffusion de parfum optimale, n’hésitez pas à changer également les tiges de rotin car avec le temps elles peuvent parfois être saturées de parfum.", gamme: bien, active: true )
-
 
 Produit.create!(marque:"Durance", nom: "LAMPE MERVEILLEUSE", reference: "806", photo:"https://res.cloudinary.com/drzibyjvb/image/upload/v1531484709/806.jpg", quantite:8, prix: 34.90, frais_de_port: 5.8, unit: "", description: "Le parfumage par catalyse à l’efficacité prouvée*La Lampe Merveilleuse utilise le procédé de la catalyse : une combustion, sans flamme et ni fumée pour assainir votre intérieur. Au cœur du système, l’action conjointe du brûleur et des parfums pour lampe à l’efficacité prouvée* développés par Durance, qui éliminent les mauvaises odeurs, même les plus rémanentes tout en diffusant un parfum délicat.*Test en laboratoire indépendant : 6 fois moins de mauvaises odeurs en 30 minutes d'utilisation.", composition: "Contient une lampe en verre vendue vide, un entonnoir plastique, un brûleur, une couronne et un éteignoir A utiliser avec les parfums lampe.", utilisation: "Cette lampe à catalyse offre une délicate sensorialité. Parée de sa prestigieuse couronne aux fins motifs floraux, la Lampe Merveilleuse saura s’adapter à tous les styles.", gamme: bien, active: true )
 
@@ -97,15 +89,10 @@ Produit.create!(marque:"Durance", nom: "BAUME LEVRES", reference: "824", photo:"
 
 Produit.create!(marque:"Durance", nom: "GEL BAIN DOUCHE", reference: "833", photo:"https://res.cloudinary.com/drzibyjvb/image/upload/v1531484711/833.jpg", quantite: 2, prix: 14.95, frais_de_port: 5.8, poids: 500, unit: "ML", description: "Ce gel bain douche, riche en Huile d’Olive bio de Nyons nourrissante et en extrait de feuilles d’olivier protecteur, nettoie en douceur votre peau pour la laisser souple et confortable.", composition: "Aqua (Water), Ammonium Lauryl Sulfate, Cocamidopropyl Betaine, Glycerin, Olea Europaea (Olive) Leaf Extract, Parfum (Fragrance), Sodium Lauryl Glucose Carboxylate, Olea Europaea (Olive) Fruit Oil*, Caprylyl/Capryl Glucoside, Lauryl Glucoside, Citric Acid, Sodium Chloride, Benzyl Alcohol, Sodium Benzoate, Potassium Sorbate, Sodium Citrate, Benzoic Acid, Sorbic Acid, Linalool, Alpha-Isomethyl Ionone, Hexyl Cinnamal, Coumarin.", utilisation: "Appliquer généreusement sur peau humide à la main ou à l’aide d’un gant.Faire mousser puis rincer.Pour le bain, mettre une noisette de produit dans l’eau puis agiter la main dans l’eau pour créer plus de mousse.", gamme: bien, active: true )
 
-
-
-
 OrderStatus.delete_all
-OrderStatus.create! id: 1, name: "In Progress"
-OrderStatus.create! id: 2, name: "Placed"
-OrderStatus.create! id: 3, name: "Shipped"
-OrderStatus.create! id: 4, name: "Cancelled"
-
+OrderStatus.create! id: 1, name: "En cours"
+OrderStatus.create! id: 2, name: "Payé"
+OrderStatus.create! id: 3, name: "Envoyé"
+OrderStatus.create! id: 4, name: "Annulé"
 
 puts "end seed"
-

@@ -21,4 +21,5 @@ ActiveAdmin.register Produit do
     column :id
     actions
   end
+
 end

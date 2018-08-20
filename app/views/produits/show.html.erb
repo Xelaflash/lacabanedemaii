@@ -39,7 +39,7 @@
 
       <div class="sub-right col-xs-12 col-sm-12">
         <div class="subtitle">
-          <h6> <%= number_to_currency(@produit.prix, :locale => :fr)  %></h6>
+          <h6> <%= humanized_money(@produit.prix) %> <%= currency_symbol %></h6>
         </div>
         <div class="stars-big">
           <% if @produit.reviews.empty? %>
