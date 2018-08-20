@@ -53,43 +53,13 @@
       <%= simple_form_for @order do |f| %>
         <%= f.error_notification %>
         <%= f.input :deliv_adress_nb, required: true, placeholder: "8", autofocus: true, label: "numéro", input_html: {id: "street_number"}%>
-        <%= f.input :deliv_adress, required: true, placeholder: "avenue des champs", autofocus: true, label: "Adresse" %>
-        <%= f.input :deliv_adress_city, required: true, placeholder: "Paris", autofocus: true, label: "Ville" %>
-        <%= f.input :deliv_adress_zip_code, required: true, placeholder: "75000", autofocus: true, label: "code postal" %>
-        <%= f.input :deliv_adress_pays, required: true, placeholder: "France", autofocus: true, label: "Pays" %>
+        <%= f.input :deliv_adress, required: true, placeholder: "avenue des champs", autofocus: true, label: "Adresse", input_html: {id: "route"} %>
+        <%= f.input :deliv_adress_city, required: true, placeholder: "Paris", autofocus: true, label: "Ville", input_html: {id: "locality"} %>
+        <%= f.input :deliv_adress_zip_code, required: true, placeholder: "75000", autofocus: true, label: "code postal", input_html: {id: "postal_code"} %>
+        <%= f.input :deliv_adress_pays, required: true, placeholder: "France", autofocus: true, label: "Pays", input_html: {id: "country"} %>
         <%= f.input :deliv_adress_details, required: true, placeholder: "Entrée, escalier...", autofocus: true, label: "Détails complémentaires" %>
         <%= f.button :submit, "Confirmer l'adresse de livraison", class: "btn-success details-btn" %>
       <% end %>
-
-<table id="address">
-      <tr>
-        <td class="label">Street address</td>
-        <td class="slimField"><input class="field" id="street_number"
-              disabled="true"></input></td>
-        <td class="wideField" colspan="2"><input class="field" id="route"
-              disabled="true"></input></td>
-      </tr>
-      <tr>
-        <td class="label">City</td>
-        <!-- Note: Selection of address components in this example is typical.
-             You may need to adjust it for the locations relevant to your app. See
-             https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
-        -->
-        <td class="wideField" colspan="3"><input class="field" id="locality"
-              disabled="true"></input></td>
-      </tr>
-      <tr>
-        <td class="label">State</td>
-        <td class="label">Zip code</td>
-        <td class="wideField"><input class="field" id="postal_code"
-              disabled="true"></input></td>
-      </tr>
-      <tr>
-        <td class="label">Country</td>
-        <td class="wideField" colspan="3"><input class="field"
-              id="country" disabled="true"></input></td>
-      </tr>
-    </table>
 
 
 

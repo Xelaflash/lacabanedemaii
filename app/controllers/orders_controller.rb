@@ -30,6 +30,7 @@ class OrdersController < ApplicationController
   def update
     @order = current_order
     @order.update_attributes(order_params)
+    flash[:notice] = "L'adresse de livraison a bien été ajoutée."
   end
 
   def destroy
@@ -40,7 +41,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:deliv_adress)
+    params.require(:order).permit(:deliv_adress, :deliv_adress_nb, :deliv_adress_zip_code, :deliv_adress_city, :deliv_adress_details, :deliv_adress_pays  )
   end
 
 end

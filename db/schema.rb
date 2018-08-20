@@ -79,10 +79,8 @@ ActiveRecord::Schema.define(version: 2018_08_20_193500) do
     t.boolean "active", default: true
     t.string "customer"
     t.string "prod_list"
-    t.string "deliv_adress"
-    t.float "latitude"
-    t.float "longitude"
     t.integer "deliv_adress_nb"
+    t.string "deliv_adress"
     t.integer "deliv_adress_zip_code"
     t.string "deliv_adress_city"
     t.string "deliv_adress_details"
