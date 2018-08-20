@@ -30,7 +30,8 @@ class OrdersController < ApplicationController
   def update
     @order = current_order
     @order.update_attributes(order_params)
-    flash[:notice] = "L'adresse de livraison a bien été ajoutée."
+    binding.pry
+    flash[:notice] = "Les détails de livraison ont bien été ajoutés"
     redirect_to cart_path
   end
 
@@ -42,7 +43,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:deliv_adress, :deliv_adress_nb, :deliv_adress_zip_code, :deliv_adress_city, :deliv_adress_details, :deliv_adress_pays  )
+    params.require(:order).permit(:deliv_adress, :deliv_adress_nb, :deliv_adress_zip_code, :deliv_adress_city, :deliv_adress_details, :deliv_adress_pays, :client_name  )
   end
 
 end

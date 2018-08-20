@@ -52,6 +52,7 @@
 
       <%= simple_form_for @order do |f| %>
         <%= f.error_notification %>
+        <%= f.input :client_name, required: true, placeholder: "Jean Blaguin", autofocus: true, label: "Nom" %>
         <%= f.input :deliv_adress_nb, required: true, placeholder: "8", autofocus: true, label: "numéro", input_html: {id: "street_number"}%>
         <%= f.input :deliv_adress, required: true, placeholder: "avenue des champs", autofocus: true, label: "Adresse", input_html: {id: "route"} %>
         <%= f.input :deliv_adress_city, required: true, placeholder: "Paris", autofocus: true, label: "Ville", input_html: {id: "locality"} %>

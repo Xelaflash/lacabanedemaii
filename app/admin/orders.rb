@@ -4,6 +4,7 @@ ActiveAdmin.register Order do
     selectable_column
     column :id
     column :customer
+    column :client_name
     column :deliv_adress_nb
     column :deliv_adress
     column :deliv_adress_zip_code
