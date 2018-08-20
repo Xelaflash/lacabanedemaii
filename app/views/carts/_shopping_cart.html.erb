@@ -27,7 +27,7 @@
       <% end %>
     <% end %>
   </div>
-  <div class="container  text-right">
+  <div class="container text-right">
     <div class="row">
       <div class="col-xs-12 col-sm-10 col-lg-10 price-resume">
         <div class="sous-total text-right">
@@ -45,36 +45,69 @@
         <div class="full-total text-right">
           <h4><strong>TOTAL : <span style="color: green"><%= humanized_money(current_order.total_price) %> <%= currency_symbol %></span></strong></h4>
         </div>
-
-    <div id="locationField">
-      <input id="autocomplete" placeholder="Enter your address" type="text"></input>
-    </div>
-
-      <%= simple_form_for @order do |f| %>
-        <%= f.error_notification %>
-        <%= f.input :client_name, required: true, placeholder: "Jean Blaguin", autofocus: true, label: "Nom" %>
-        <%= f.input :deliv_adress_nb, required: true, placeholder: "8", autofocus: true, label: "numéro", input_html: {id: "street_number"}%>
-        <%= f.input :deliv_adress, required: true, placeholder: "avenue des champs", autofocus: true, label: "Adresse", input_html: {id: "route"} %>
-        <%= f.input :deliv_adress_city, required: true, placeholder: "Paris", autofocus: true, label: "Ville", input_html: {id: "locality"} %>
-        <%= f.input :deliv_adress_zip_code, required: true, placeholder: "75000", autofocus: true, label: "code postal", input_html: {id: "postal_code"} %>
-        <%= f.input :deliv_adress_pays, required: true, placeholder: "France", autofocus: true, label: "Pays", input_html: {id: "country"} %>
-        <%= f.input :deliv_adress_details, required: true, placeholder: "Entrée, escalier...", autofocus: true, label: "Détails complémentaires" %>
-        <%= f.button :submit, "Confirmer l'adresse de livraison", class: "btn-success details-btn" %>
-      <% end %>
-
-
-        <% if (current_order.subtotal > 0) %>
-          <div class="finalize text-right">
-            <%= form_tag orders_path do %>
-            <%= hidden_field_tag 'order_items_id', @order_items.ids %>
-            <%= submit_tag 'COMMANDER', class: "btn btn-finalize" %>
-            <% end %>
-          </div>
-        <% end %>
       </div>
     </div>
   </div>
-</div>
+
+
+
+
+  <div class="container delivery-fields">
+    <h1 id="cart-title" class="page-title text-center">Détails de livraison</h1>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+
+      <label class="text-left">Entrez votre adresse afin remplir automatiquement les champs ci-dessous</label><br>
+    <div id="locationField">
+      <input id="autocomplete" class="form-control" placeholder="Entrez votre adresse ici" type="text" ></input>
+    </div>
+    </div>
+  </div>
+  <hr class="sep">
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <div class="">
+          <div class="delivery-details">
+            <%= simple_form_for @order do |f| %>
+              <%= f.error_notification %>
+              <%= f.input :client_name, required: true, placeholder: "Jean Blaguin", autofocus: true, label: "Nom" %>
+                <%= f.input :deliv_adress_nb, required: true, placeholder: "8", autofocus: true, label: "numéro", input_html: {id: "street_number"} %>
+                <%= f.input :deliv_adress, required: true, placeholder: "avenue des champs", autofocus: true, label: "Adresse", input_html: {id: "route"} %>
+              <%= f.input :deliv_adress_city, required: true, placeholder: "Paris", autofocus: true, label: "Ville", input_html: {id: "locality"} %>
+              <%= f.input :deliv_adress_zip_code, required: true, placeholder: "75000", autofocus: true, label: "code postal", input_html: {id: "postal_code"} %>
+              <%= f.input :deliv_adress_pays, required: true, placeholder: "France", autofocus: true, label: "Pays", input_html: {id: "country"} %>
+              <%= f.input :deliv_adress_details, required: true, placeholder: "Entrée, escalier...", autofocus: true, label: "Détails complémentaires" %>
+              <%= f.button :submit, "Confirmer l'adresse de livraison", class: "btn-success details-btn" %>
+            <% end %>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+        <div class="order-checkout">
+          <% if (current_order.subtotal > 0) %>
+            <div class="finalize text-right">
+              <%= form_tag orders_path do %>
+              <%= hidden_field_tag 'order_items_id', @order_items.ids %>
+              <%= submit_tag 'COMMANDER', class: "btn btn-finalize" %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+
+
+
+    </div>
+
+
 
 
 
