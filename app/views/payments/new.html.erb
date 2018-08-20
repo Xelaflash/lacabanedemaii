@@ -18,8 +18,8 @@
           <h6>Sous-Total : <span><%= humanized_money(current_order.subtotal) %> <%= currency_symbol %></span></h6>
         </div>
         <div class="fdp text-right">
-            <% if (current_order.subtotal < 50) %>
             <h6>Frais de port :
+            <% if (current_order.subtotal < 50) %>
               <span><%= humanized_money(current_order.shipping)%> <%= currency_symbol %></span>
             </h6>
             <% else %>
