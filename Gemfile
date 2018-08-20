@@ -13,6 +13,7 @@ gem 'pg_search'
 gem 'activeadmin'
 gem 'stripe'
 gem 'money-rails'
+gem "geocoder"
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
