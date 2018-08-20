@@ -20,6 +20,11 @@ class OrdersController < ApplicationController
   def show
     @order = current_user.orders.find(params[:id])
     @order_items = @order.order_items
+    add_breadcrumb "accueil", :root_path
+    add_breadcrumb "produits", produits_path
+    add_breadcrumb "panier", cart_path
+    add_breadcrumb "mes commandes", orders_path
+    add_breadcrumb "Paiement", new_order_payment_path(@order)
   end
 
   def destroy

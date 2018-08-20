@@ -1,3 +1,7 @@
+<div class="breadcrumbs back">
+    <%= render_breadcrumbs :separator => ' > ' %>
+</div>
+<br><br>
 <div class="container order-show">
   <h1 class="page-title text-center">Commande n° <%= @order.id %></h1>
   <hr class="sep">
@@ -25,7 +29,6 @@
                 <h6>Total : <span id="price" style="color: green"><%= humanized_money(order_item.total_price) %> <%= currency_symbol %></span></h6>
               </div>
             </div>
-
           </div>
         </div>
       <% end %>
@@ -52,9 +55,4 @@
       <h6>Montant payé :<strong style="color: green"> <%= humanized_money(@order.total_price) %> <%= currency_symbol %></strong></h6>
     </div>
   </div>
-
-
-<!--   <ul>
-    <li></li>
-  </ul> -->
 </div>

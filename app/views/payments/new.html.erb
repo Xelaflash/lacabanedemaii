@@ -1,5 +1,9 @@
-<div class="container recap-order">
+<div class="breadcrumbs back">
+    <%= render_breadcrumbs :separator => ' > ' %>
+</div>
+<br><br>
 
+<div class="container recap-order">
 <h1 class="page-title text-center">Récapitulatif de la commande n° <%= @order.id %> : </h1>
 <%= form_tag order_payments_path(@order_total) do %>
 <div class="">
@@ -36,16 +40,16 @@
     </div>
   </div>
 
-<!--   <script
+  <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="<%#= Rails.configuration.stripe[:publishable_key] %>"
-    data-amount="<%#= @order.total_price_cents %>"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-amount="<%= @order.total_price_cents %>"
     data-currency="eur"
     data-name="La cabane de Maï"
-    data-description="Commande n°: <%#= @order.id %> "
+    data-description="Commande n°: <%= @order.id %> "
     data-image="https://res.cloudinary.com/drzibyjvb/image/upload/v1527003411/logo.jpg"
     data-locale="fr">
-  </script> -->
+  </script>
 
 <% end %>
 </div>
