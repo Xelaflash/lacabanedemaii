@@ -27,9 +27,20 @@ class OrdersController < ApplicationController
     add_breadcrumb "Paiement", new_order_payment_path(@order)
   end
 
+  def update
+    @order = current_order
+    @order.update_attributes(order_params)
+  end
+
   def destroy
     @order =  current_user.orders.find(params[:id])
     @order.destroy
+  end
+
+  private
+
+  def order_params
+    params.require(:order).permit(:deliv_adress)
   end
 
 end

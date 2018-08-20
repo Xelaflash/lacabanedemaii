@@ -4,6 +4,7 @@ ActiveAdmin.register Order do
     selectable_column
     column :id
     column :customer
+    column :deliv_adress
     column :prod_list
     column :order_status
     column :subtotal

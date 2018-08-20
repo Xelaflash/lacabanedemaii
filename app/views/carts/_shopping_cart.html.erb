@@ -3,7 +3,6 @@
     <%= render_breadcrumbs :separator => ' > ' %>
   </div>
   <h1 id="cart-title" class="page-title text-center">Votre Panier</h1>
-
   <div class="cart-space">
     <% if !@order_item.nil? && @order_item.errors.any? %>
       <div class="alert alert-danger">
@@ -28,7 +27,6 @@
       <% end %>
     <% end %>
   </div>
-
   <div class="container  text-right">
     <div class="row">
       <div class="col-xs-12 col-sm-10 col-lg-10 price-resume">
@@ -44,10 +42,31 @@
             <p class="fdp-text">Frais de ports offerts</p>
           <% end %>
         </div>
-
         <div class="full-total text-right">
           <h4><strong>TOTAL : <span style="color: green"><%= humanized_money(current_order.total_price) %> <%= currency_symbol %></span></strong></h4>
         </div>
+
+    <div id="locationField">
+      <input id="autocomplete" placeholder="Enter your address" type="text"></input>
+    </div>
+
+      <%= simple_form_for @order do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :deliv_adress_nb, required: true, placeholder: "8", autofocus: true, label: "numéro"%>
+        <%= f.input :deliv_adress, required: true, placeholder: "avenue des champs", autofocus: true, label: "Adresse" %>
+        <%= f.input :deliv_adress_zip_code, required: true, placeholder: "75000", autofocus: true, label: "code postal" %>
+        <%= f.input :deliv_adress_city, required: true, placeholder: "Paris", autofocus: true, label: "Ville" %>
+        <%= f.input :deliv_adress_pays, required: true, placeholder: "France", autofocus: true, label: "Pays" %>
+        <%= f.input :deliv_adress_details, required: true, placeholder: "Entrée, escalier...", autofocus: true, label: "Détails complémentaires" %>
+        <%= f.button :submit, "Confirmer l'adresse de livraison", class: "btn-success details-btn" %>
+      <% end %>
+
+
+
+
+
+
+
         <% if (current_order.subtotal > 0) %>
           <div class="finalize text-right">
             <%= form_tag orders_path do %>
