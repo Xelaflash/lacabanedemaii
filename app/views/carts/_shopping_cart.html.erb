@@ -2,7 +2,7 @@
   <div class="breadcrumbs back">
     <%= render_breadcrumbs :separator => ' > ' %>
   </div>
-  <h1 id="cart-title" class="text-center">Votre Panier</h1>
+  <h1 id="cart-title" class="page-title text-center">Votre Panier</h1>
 
   <div class="cart-space">
     <% if !@order_item.nil? && @order_item.errors.any? %>
@@ -17,7 +17,7 @@
     <% if @order_items.size == 0 %>
       <div class="empty-cart">
         <h4 class="text-center">Votre panier est vide</h4>
-        <p class="text-center">Retourner voir <%= link_to "les produits", produits_path %>.</p>
+        <p class="text-center">Retourner voir <%= link_to "les produits", produits_path %></p>
       </div>
     <% else %>
       <% @order_items.each do |order_item| %>

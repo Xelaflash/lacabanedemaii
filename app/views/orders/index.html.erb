@@ -3,39 +3,56 @@
 </div>
 <br><br>
 <div class="container order-page">
-  <div class="order-list">
-    <% @orders.each do |order| %>
-    <div class="order-title text-center">
-      <h6><strong>Commande n° :  <%= order.id %></strong></h6>
+  <h1 class="page-title order-title text-center">Mes commandes</h1>
+  <hr class="sep">
+  <% if @orders.size == 0 %>
+    <div class="empty-cart">
+      <h4 class="text-center">Vous n'avez pas encore de commande</h4>
+      <p class="text-center return-prod">Retourner voir <%= link_to "les produits", produits_path %></p>
     </div>
-      <ul class="list-unstyled">
-        <li><i class="fas fa-check"></i> <u>Statuts</u> :
-          <% if  %>
-            <% order.order_status_id == 2 %>
-            <p><strong style="color: green"><%= order.order_status.name %></strong></p>
-          <% elsif %>
-            <% order.order_status_id == 1 %>
-            <p><strong style="color: orange"><%= order.order_status.name %></strong></p>
-          <% elsif %>
-            <% order.order_status_id == 3 %>
-            <p><strong style="color: blue"><%= order.order_status.name %></strong></p>
-          <% elsif %>
-            <% order.order_status_id == 4 %>
-            <p><strong style="color: red"><%= order.order_status.name %></strong></p>
-        </li>
-          <% end %>
-         <li><i class="fas fa-check"></i> <u>Date</u> : <p><%= order.created_at.strftime("%d/%m/%Y à %k:%M (%Z)") %></p></li>
-         <li><i class="fas fa-check"></i> <u>Montant</u> : <p><%= humanized_money(order.total_price) %> <%= currency_symbol %></p></li>
-      </ul>
-      <div class="order-cancel text-center">
-        <% if %>
-          <% order.order_status_id == 1 %>
-          <%= link_to "Effacer la commande".html_safe, order_path(order), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir annuler la commande en cours?" }, class: "btn btn-danger" %>
+  <% else %>
+    <div class="order-list">
+      <div class="row">
+        <% @orders.each do |order| %>
+          <div class="col-xs-12 col-lg-6">
+            <div class="order-list-item">
+              <div class="order-title text-center">
+                <h6><strong>Commande n° :  <%= order.id %></strong></h6>
+              </div>
+              <ul class="list-unstyled">
+                 <li><i class="fas fa-check"></i> <u>Date</u> : <p><%= order.created_at.strftime("%d/%m/%Y à %k:%M (%Z)") %></p></li>
+                <li><i class="fas fa-check"></i> <u>Statuts</u> :
+                  <% if  %>
+                    <% order.order_status_id == 2 %>
+                    <p><strong style="color: green"><%= order.order_status.name %></strong></p>
+                  <% elsif %>
+                    <% order.order_status_id == 1 %>
+                    <p><strong style="color: orange"><%= order.order_status.name %></strong></p>
+                  <% elsif %>
+                    <% order.order_status_id == 3 %>
+                    <p><strong style="color: blue"><%= order.order_status.name %></strong></p>
+                  <% elsif %>
+                    <% order.order_status_id == 4 %>
+                    <p><strong style="color: red"><%= order.order_status.name %></strong></p>
+                </li>
+                  <% end %>
+                 <li><i class="fas fa-check"></i> <u>Montant</u> : <p><%= humanized_money(order.total_price) %> <%= currency_symbol %></p></li>
+              </ul>
+              <div class="order-cancel text-center">
+                <% if %>
+                  <% order.order_status_id == 1 %>
+                  <%= link_to "Effacer la commande".html_safe, order_path(order), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir annuler la commande en cours?" }, class: "btn btn-danger" %>
+                <% end %>
+              </div>
+              <div class="order-details text-center">
+                <%= link_to "Voir le détails", order_path(order),class: ""%>
+              </div>
+            </div>
+          </div>
         <% end %>
       </div>
-      <%= link_to "Voir le détails", order_path(order),class: "btn btn-block produit-show"%>
-  <% end %>
     </div>
+  <% end %>
 </div>
 
 
