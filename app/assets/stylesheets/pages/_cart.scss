@@ -38,7 +38,20 @@
   }
 }
 
+.btn-finalize {
+  background-color: $secondary;
+  color: white;
+  font-size: 18px;
+  padding: 20px 60px;
+  border-radius: 3px;
 
+}
+  .btn-finalize:hover {
+    background-color: #D00000 ;
+    text-decoration: none;
+    color: white;
+    // opacity: 0.8;
+  }
 
 @media (max-width: 730px) {
   #cart-title {

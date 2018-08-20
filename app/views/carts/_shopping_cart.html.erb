@@ -52,7 +52,7 @@
           <div class="finalize text-right">
             <%= form_tag orders_path do %>
             <%= hidden_field_tag 'order_items_id', @order_items.ids %>
-            <%= submit_tag 'Finalizer la commande', class: 'btn produit-show' %>
+            <%= submit_tag 'COMMANDER', class: "btn btn-finalize" %>
             <% end %>
           </div>
         <% end %>
