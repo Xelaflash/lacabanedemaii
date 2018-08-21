@@ -32,7 +32,6 @@
 
     <div class="container delivery-fields">
       <h1 id="deliv-title" class="page-title text-center">Détails de livraison</h1>
-      <hr class="sep">
       <div class="row">
         <div class="col-xs-12">
           <div class="form-login form-deliv">
@@ -45,11 +44,17 @@
                 <input id="autocomplete" class="form-control" placeholder="Entrez votre adresse ici" type="text" ></input>
               </div>
               <hr class="sep">
-              <%= f.input :deliv_adress_nb, required: true, placeholder: "8", autofocus: true, label: "numéro", input_html: {id: "street_number"} %>
-              <%= f.input :deliv_adress, required: true, placeholder: "avenue des champs", autofocus: true, label: "Adresse", input_html: {id: "route"} %>
-              <%= f.input :deliv_adress_city, required: true, placeholder: "Paris", autofocus: true, label: "Ville", input_html: {id: "locality"} %>
-              <%= f.input :deliv_adress_zip_code, required: true, placeholder: "75000", autofocus: true, label: "code postal", input_html: {id: "postal_code"} %>
-              <%= f.input :deliv_adress_pays, required: true, placeholder: "France", autofocus: true, label: "Pays", input_html: {id: "country"} %>
+              <div class="form-inline deliv-street">
+                <%= f.input :deliv_adress_nb, required: true, placeholder: "8", autofocus: true, label: "Adresse", input_html: {id: "street_number"} %>
+                <%= f.input :deliv_adress, required: true, placeholder: "avenue des champs", autofocus: true, label: false, input_html: {id: "route"} %>
+              </div>
+              <div class="form-inline deliv-city">
+                <%= f.input :deliv_adress_zip_code, required: true, placeholder: "75000", autofocus: true, label: "ville", input_html: {id: "postal_code"} %>
+                <%= f.input :deliv_adress_city, required: true, placeholder: "Paris", autofocus: true, label: false, input_html: {id: "locality"} %>
+              </div>
+              <div class="form-inline deliv-country">
+                <%= f.input :deliv_adress_pays, required: true, placeholder: "France", autofocus: true, label: "Pays", input_html: {id: "country"} %>
+              </div>
               <%= f.input :deliv_adress_details, required: true, placeholder: "Entrée, escalier...", autofocus: true, label: "Détails complémentaires" %>
               <%= f.button :submit, "Confirmer l'adresse de livraison", class: "btn-success details-btn" %>
             <% end %>

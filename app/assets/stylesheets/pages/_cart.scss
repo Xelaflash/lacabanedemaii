@@ -47,15 +47,20 @@
 }
 .delivery-fields {
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-  max-width: 450px;
+  max-width: 550px;
   margin-left: 60px;
+  margin-top: 40px;
 }
 
 .autocomplete-text {
-  margin-top: 5px !important;
+  margin-top: 15px !important;
   font-size: 14px;
   font-style: italic;
   color: $green;
+}
+
+#autocomplete {
+  margin-bottom: 20px;
 }
 
 .form-deliv {
@@ -66,8 +71,35 @@
 .order_client_name {
   margin-bottom: 20px;
 }
-.order_deliv_adress_nb {
+
+.deliv-street {
   margin-top: 15px;
+}
+#street_number {
+  width: 50px;
+  margin-left: 10px;
+}
+#route {
+  width: 328px;
+}
+
+.deliv-city {
+  margin-top: 15px;
+}
+#postal_code {
+  width: 100px;
+  margin-left: 47px;
+}
+#locality {
+  width: 278px;
+}
+
+.deliv-country {
+  margin: 15px 0;
+}
+#country {
+  margin-left: 38px;
+  width: 383px;
 }
 
 
