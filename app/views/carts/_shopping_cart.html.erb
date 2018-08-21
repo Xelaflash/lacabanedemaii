@@ -14,9 +14,10 @@
       </div>
     <% end %>
     <% if @order_items.size == 0 %>
-      <div class="empty-cart">
+      <div class="empty-cart container">
         <h4 class="text-center">Votre panier est vide</h4>
         <p class="text-center">Retourner voir <%= link_to "les produits", produits_path %></p>
+        <hr class="sep">
       </div>
     <% else %>
       <% @order_items.each do |order_item| %>
@@ -27,9 +28,7 @@
       <% end %>
     <% end %>
   </div>
-
   <div class=" container cart-bottom">
-
     <div class="container delivery-fields">
       <h1 id="deliv-title" class="page-title text-center">Détails de livraison</h1>
       <div class="row">
@@ -62,7 +61,6 @@
         </div>
       </div>
     </div>
-
     <div class="container cart-bill">
       <div class="row">
         <div class="col-xs-12 price-resume">
@@ -84,9 +82,6 @@
         </div>
       </div>
     </div>
-
-
-
   </div>
 
 

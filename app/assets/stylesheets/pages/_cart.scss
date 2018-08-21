@@ -1,9 +1,5 @@
-.shopping-cart{
-  min-height: 80vh;
-}
-
 .cart-space{
-  min-height: 42vh;
+  margin-bottom: 40px;
 }
 
 .price-resume {
@@ -24,16 +20,16 @@
 }
 
 .empty-cart {
-    min-height: 40vh;
+    // min-height: 40vh;
   h4 {
     font-size: 20px;
     font-weight: bold;
-    margin: 40px 0 40px 0;
-    padding-top: 100px;
+    margin: 0px 0 40px 0;
+    padding-top: 50px;
   }
   p {
     font-size: 16px;
-    margin: 0;
+    margin: 0 0 40px 0;
   }
 }
 .cart-bottom {
@@ -73,11 +69,11 @@
   margin-top: 15px;
 }
 #street_number {
-  width: 50px;
+  width: 70px;
   margin-left: 10px;
 }
 #route {
-  width: 328px;
+  width: 309px;
 }
 
 .deliv-city {
