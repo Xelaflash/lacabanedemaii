@@ -3,6 +3,10 @@ class PaymentsController < ApplicationController
 
   def new
     @order_items = current_order.order_items
+    add_breadcrumb "accueil", :root_path
+    add_breadcrumb "produits", produits_path
+    add_breadcrumb "panier", cart_path
+    add_breadcrumb "Paiement", new_order_payment_path
   end
 
   def create

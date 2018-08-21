@@ -9,6 +9,7 @@ class OrderItemsController < ApplicationController
       flash[:alert] = "Ce produit est déjà présent dans le panier"
       redirect_to produits_path
     else
+      @order.validate_deliv_details = false
       @order.save
       session[:order_id] = @order.id
       flash[:notice] = "Le produit a été ajouté au panier"

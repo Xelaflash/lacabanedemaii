@@ -1,13 +1,8 @@
-.shopping-cart{
-  min-height: 80vh;
-}
-
 .cart-space{
-  min-height: 42vh;
+  margin-bottom: 40px;
 }
 
 .price-resume {
-  margin: 0 0 20px 106px;
   h6 {
     font-size: 19px;
     padding-top: 10px;
@@ -25,21 +20,101 @@
 }
 
 .empty-cart {
-    min-height: 40vh;
   h4 {
     font-size: 20px;
     font-weight: bold;
-    margin: 40px 0 40px 0;
-    padding-top: 100px;
+    margin: 0px 0 40px 0;
+    padding-top: 50px;
   }
   p {
     font-size: 16px;
-    margin: 0;
+    margin: 0 0 40px 0;
   }
 }
 
+#deliv-title {
+  font-size: 48px;
+}
+.delivery-fields {
+  box-shadow: 0 -3px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  max-width: 550px;
+}
+
+.autocomplete-text {
+  margin-top: 15px !important;
+  font-size: 14px;
+  font-style: italic;
+  color: $green;
+}
+
+#autocomplete {
+  margin-bottom: 20px;
+}
+
+.form-deliv {
+  margin-top: 0px;
+  box-shadow: 0px 0px 0px rgba(0,0,0,0.0);
+}
+.order_client_name {
+  margin-bottom: 20px;
+}
+
+.deliv-street {
+  margin-top: 15px;
+}
+
+@media(min-width: 1024px) {
+  .cart-bill {
+    margin-left: 60px;
+  }
+  .delivery-fields {
+    margin: 18px 0 20px 0px;
+  }
+  .cart-bottom {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  #street_number {
+    width: 70px;
+    margin-left: 10px;
+  }
+  #route {
+    width: 309px;
+  }
+  #country {
+    margin-left: 38px;
+    width: 383px;
+  }
+  #postal_code {
+    width: 100px;
+    margin-left: 47px;
+  }
+  #locality {
+    width: 278px;
+  }
+}
+
+.deliv-city {
+  margin-top: 15px;
+}
+
+.deliv-country {
+  margin: 15px 0;
+}
+
+#locationField {
+  margin-bottom: 10px;
+}
+
+.details-btn:hover{
+  opacity: 0.9;
+  color: black;
+}
+
 .btn-finalize {
-  background-color: $secondary;
+  background-color: #D00000;
   color: white;
   font-size: 18px;
   padding: 20px 60px;
@@ -47,26 +122,26 @@
 
 }
   .btn-finalize:hover {
-    background-color: #D00000 ;
     text-decoration: none;
     color: white;
-    // opacity: 0.8;
+    opacity: 0.8;
+    color: black;
   }
 
-@media (max-width: 730px) {
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 736px) {
+  .cart-bill {
+    margin-bottom: 20px;
+  }
   #cart-title {
     font-size: 50px;
     margin-bottom: 40px;
   }
-  .cart-space {
-    min-height: 36vh;
-  }
-
   .empty-cart {
-    min-height: 24vh;
     h4 {
-      margin: 40px 0 20px 0;
-      padding-top: 70px;
+      margin: 0px 0 10px 0;
+      padding-top: 20px;
     }
   }
   #price {
@@ -88,4 +163,33 @@
   .price-resume {
     margin: 0 0 10px 0;
   }
+
+  .form-deliv {
+    margin: 40px 0 0px 0;
+  }
+  .details-btn {
+    font-size: 17px;
+  }
+  .btn-finalize {
+    padding: 12px 106px;
+  }
 }
+
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1023px) {
+  #street_number {
+      margin-left: 10px;
+  }
+  #postal_code {
+    margin-left: 45px;
+  }
+  #country {
+    margin-left: 38px;
+    width: 346px;
+  }
+  .btn-finalize {
+    margin-bottom: 20px;
+  }
+}
+
