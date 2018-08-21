@@ -1,3 +1,36 @@
-.recap-order {
-  min-height: 80vh;
+.order-recap-page {
+  min-height: 78vh;
+  h1 {
+    margin: 0 0 20px 0;
+  }
+}
+.recap-order-item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid $primary;
+  margin: 20px 0 20px 0;
+}
+.item-recap {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+  max-width: 4000px;
+  word-wrap: break-word;
+}
+
+.item-recap-right {
+  width: 200px;
+  word-wrap: break-word;
+}
+
+.pic-recap {
+  max-height: 125px;
+  max-width: 125px;
+  padding: 0 5px 10px 5px;
+}
+
+.stripe-checkout {
+  margin-bottom: 10px;
 }
