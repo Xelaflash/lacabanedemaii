@@ -20,7 +20,6 @@
 }
 
 .empty-cart {
-    // min-height: 40vh;
   h4 {
     font-size: 20px;
     font-weight: bold;
@@ -43,7 +42,7 @@
 .delivery-fields {
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   max-width: 550px;
-  margin: 18px 0 20px 60px;
+  margin: 18px 0 20px 40px;
 }
 
 .autocomplete-text {
@@ -95,13 +94,17 @@
   width: 383px;
 }
 
-
 #locationField {
   margin-bottom: 10px;
 }
 
+.details-btn:hover{
+  opacity: 0.9;
+  color: black;
+}
+
 .btn-finalize {
-  background-color: $secondary;
+  background-color: #D00000;
   color: white;
   font-size: 18px;
   padding: 20px 60px;
@@ -109,10 +112,10 @@
 
 }
   .btn-finalize:hover {
-    background-color: #D00000 ;
     text-decoration: none;
     color: white;
-    // opacity: 0.8;
+    opacity: 0.8;
+    color: black;
   }
 
 @media (max-width: 730px) {
