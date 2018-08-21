@@ -50,8 +50,9 @@
         <% end %></h6>
         <hr class="sep">
 
-      <h6>Client : <strong> <%= current_user.prenom %> <%= current_user.nom %></strong></h6>
-      <h6>E-mail : <strong><%= current_user.email %></strong></h6>
+      <h6 class="text-center"> <strong>Adresse de livraison :</strong></h6>
+      <h6><%= @order.client_name %></h6>
+      <h6><%= @order.deliv_adress_nb %>, <%= @order.deliv_adress %><br> <%= @order.deliv_adress_zip_code %>, <%= @order.deliv_adress_city %> <br> <%= @order.deliv_adress_pays %>   </h6>
       <h6>Montant payé :<strong style="color: green"> <%= humanized_money(@order.total_price) %> <%= currency_symbol %></strong></h6>
     </div>
   </div>
