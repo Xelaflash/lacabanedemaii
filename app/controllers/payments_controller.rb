@@ -18,7 +18,7 @@ class PaymentsController < ApplicationController
     charge = Stripe::Charge.create(
       customer:     customer.id,   # You should store this customer id and re-use it.
       amount:       @order.total_price_cents,
-      description:  "Paiement pour la commande du #{@order.created_at} d'un montant de #{@order.total_price} €",
+      description:  "Paiement pour la commande n° #{@order.id} du #{@order.created_at} d'un montant de #{@order.total_price} €",
       currency:     'eur'
     )
 
