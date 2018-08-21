@@ -8,7 +8,7 @@
   <%= form_tag order_payments_path(@order_total) do %>
     <div class="deliv-details-payment text-center">
       <h4 class="text-center"><strong>Adresse de livraison :</strong></h4>
-      <h4><%= @order.client_name %></h4>
+      <h4><%= @order.name %></h4>
       <h4><%= @order.deliv_adress_nb %>, <%= @order.deliv_adress %><br> <%= @order.deliv_adress_zip_code %>, <%= @order.deliv_adress_city %> <br> <%= @order.deliv_adress_pays %></h4>
       <% if (!@order.deliv_adress_details.nil?) %>
         <h5 style="font-style: italic;"><%= @order.deliv_adress_details %></h5>
@@ -48,6 +48,13 @@
               <h4><strong>TOTAL A PAYER : <span style="color: green"><%= humanized_money(current_order.total_price) %> <%= currency_symbol %></span></strong></h4>
             </div>
             <div class="stripe-checkout">
+              <article>
+                <% if flash[:error].present? %>
+                  <div id="error_explanation">
+                    <p><%= flash[:error] %></p>
+                  </div>
+                <% end %>
+              </article>
               <script
                 src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                 data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
@@ -56,6 +63,8 @@
                 data-name="La cabane de Maï"
                 data-description="Commande n°: <%= @order.id %> "
                 data-image="https://res.cloudinary.com/drzibyjvb/image/upload/v1527003411/logo.jpg"
+                data-email="<%= @order.customer %>"
+                data-label="Payer"
                 data-locale="fr">
               </script>
             </div>

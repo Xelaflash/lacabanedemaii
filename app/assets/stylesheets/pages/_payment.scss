@@ -16,11 +16,21 @@
   justify-content: space-around;
   align-items: center;
   margin-bottom: 10px;
-  max-width: 350px;
+  max-width: 4000px;
+  word-wrap: break-word;
+}
+
+.item-recap-right {
+  width: 200px;
+  word-wrap: break-word;
 }
 
 .pic-recap {
   max-height: 125px;
   max-width: 125px;
   padding: 0 5px 10px 5px;
+}
+
+.stripe-checkout {
+  margin-bottom: 10px;
 }
