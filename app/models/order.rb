@@ -1,12 +1,22 @@
 class Order < ApplicationRecord
   belongs_to :order_status
   has_many :order_items, dependent: :destroy
+
+  validates :client_name, presence: true, if: :validate_deliv_details?
+  validates :deliv_adress_nb, presence: true, if: :validate_deliv_details?
+  validates :deliv_adress, presence: true, if: :validate_deliv_details?
+  validates :deliv_adress_zip_code, presence: true, if: :validate_deliv_details?
+  validates :deliv_adress_city, presence: true, if: :validate_deliv_details?
+  validates :deliv_adress_pays, presence: true, if: :validate_deliv_details?
+
   before_validation :set_order_status, on: :create
   geocoded_by :deliv_adress
   after_validation :geocode, if: :will_save_change_to_deliv_adress?
   before_save :update_subtotal
   before_save :total
   monetize :total_price_cents
+
+  attr_accessor :validate_deliv_details
 
   def subtotal
     order_items.collect { |oi| oi.valid? ? (oi.quantity * oi.unit_price) : 0 }.sum
@@ -40,5 +50,9 @@ private
 
   def total
     self[:total_price] = total_price
+  end
+
+  def validate_deliv_details?
+    validate_deliv_details == true
   end
 end

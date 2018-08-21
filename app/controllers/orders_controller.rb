@@ -6,8 +6,13 @@ class OrdersController < ApplicationController
     @order.customer = current_user.email
     @order_items = @order.order_items
     @order.prod_list =  @order_items.map{|order_item| [order_item.quantity, order_item.produit.nom]}
-    @order.save
-    redirect_to new_order_payment_path(@order)
+    @order.validate_deliv_details = true
+    if @order.save
+      redirect_to new_order_payment_path(@order)
+    else
+      flash[:alert] = "Vous n'avez pas rempli les détails de livraison"
+      redirect_to cart_path
+    end
   end
 
   def index
@@ -29,10 +34,14 @@ class OrdersController < ApplicationController
 
   def update
     @order = current_order
-    @order.update_attributes(order_params)
-    binding.pry
-    flash[:notice] = "Les détails de livraison ont bien été ajoutés"
-    redirect_to cart_path
+    @order.validate_deliv_details = true
+    if @order.update_attributes(order_params)
+      flash[:notice] = "Les détails de livraison ont bien été ajoutés"
+      redirect_to cart_path
+    else
+      flash[:alert] = "Vous n'avez pas rempli les détails de livraison"
+      redirect_to cart_path
+    end
   end
 
   def destroy
