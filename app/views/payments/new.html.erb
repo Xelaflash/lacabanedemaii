@@ -8,7 +8,7 @@
   <%= form_tag order_payments_path(@order_total) do %>
     <div class="deliv-details-payment text-center">
       <h4 class="text-center"><strong>Adresse de livraison :</strong></h4>
-      <h4><%= @order.name %></h4>
+      <h4><%= @order.client_name.upcase %></h4>
       <h4><%= @order.deliv_adress_nb %>, <%= @order.deliv_adress %><br> <%= @order.deliv_adress_zip_code %>, <%= @order.deliv_adress_city %> <br> <%= @order.deliv_adress_pays %></h4>
       <% if (!@order.deliv_adress_details.nil?) %>
         <h5 style="font-style: italic;"><%= @order.deliv_adress_details %></h5>

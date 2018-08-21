@@ -38,10 +38,6 @@ class Order < ApplicationRecord
     (50 - subtotal)
   end
 
-  def name
-    "#{client_name.upcase}"
-  end
-
 private
 
   def set_order_status
