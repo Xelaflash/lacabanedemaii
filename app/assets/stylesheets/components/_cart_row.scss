@@ -72,7 +72,7 @@ p {
   opacity: 0.6;
 }
 
-@media (max-width: 730px) {
+@media (max-width: 767px) {
   .cart-list{
     margin: 0;
   }
@@ -82,5 +82,13 @@ p {
   }
   .separator2 {
     margin-left: 0;
+  }
+}
+
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px) {
+   .cart-list{
+      margin: 0;
   }
 }

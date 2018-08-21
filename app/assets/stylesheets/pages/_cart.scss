@@ -31,18 +31,13 @@
     margin: 0 0 40px 0;
   }
 }
-.cart-bottom {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-}
+
 #deliv-title {
   font-size: 48px;
 }
 .delivery-fields {
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 -3px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   max-width: 550px;
-  margin: 18px 0 20px 40px;
 }
 
 .autocomplete-text {
@@ -67,31 +62,46 @@
 .deliv-street {
   margin-top: 15px;
 }
-#street_number {
-  width: 70px;
-  margin-left: 10px;
-}
-#route {
-  width: 309px;
+
+@media(min-width: 1024px) {
+  .cart-bill {
+    margin-left: 60px;
+  }
+  .delivery-fields {
+    margin: 18px 0 20px 0px;
+  }
+  .cart-bottom {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  #street_number {
+    width: 70px;
+    margin-left: 10px;
+  }
+  #route {
+    width: 309px;
+  }
+  #country {
+    margin-left: 38px;
+    width: 383px;
+  }
+  #postal_code {
+    width: 100px;
+    margin-left: 47px;
+  }
+  #locality {
+    width: 278px;
+  }
 }
 
 .deliv-city {
   margin-top: 15px;
 }
-#postal_code {
-  width: 100px;
-  margin-left: 47px;
-}
-#locality {
-  width: 278px;
-}
 
 .deliv-country {
   margin: 15px 0;
-}
-#country {
-  margin-left: 38px;
-  width: 383px;
 }
 
 #locationField {
@@ -118,20 +128,20 @@
     color: black;
   }
 
-@media (max-width: 730px) {
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 736px) {
+  .cart-bill {
+    margin-bottom: 20px;
+  }
   #cart-title {
     font-size: 50px;
     margin-bottom: 40px;
   }
-  .cart-space {
-    min-height: 36vh;
-  }
-
   .empty-cart {
-    min-height: 24vh;
     h4 {
-      margin: 40px 0 20px 0;
-      padding-top: 70px;
+      margin: 0px 0 10px 0;
+      padding-top: 20px;
     }
   }
   #price {
@@ -153,4 +163,33 @@
   .price-resume {
     margin: 0 0 10px 0;
   }
+
+  .form-deliv {
+    margin: 40px 0 0px 0;
+  }
+  .details-btn {
+    font-size: 17px;
+  }
+  .btn-finalize {
+    padding: 12px 106px;
+  }
 }
+
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1023px) {
+  #street_number {
+      margin-left: 10px;
+  }
+  #postal_code {
+    margin-left: 45px;
+  }
+  #country {
+    margin-left: 38px;
+    width: 346px;
+  }
+  .btn-finalize {
+    margin-bottom: 20px;
+  }
+}
+
