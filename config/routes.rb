@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
-  devise_for :users
+  devise_for :users, controllers: { sessions: 'users/sessions' }
 
   resources :produits, only: [:index, :show] do
     resources :reviews, only: [ :create ]
