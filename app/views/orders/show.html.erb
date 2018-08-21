@@ -35,25 +35,25 @@
     </div>
     <div class="prd-list-right text-center col-xs-12">
       <h6>Statuts de la commande :
-        <% if %>
-          <% @order.order_status_id == 2 %>
-          <h6><strong style="color: green"><%= @order.order_status.name %></strong></h6>
-        <% elsif %>
-          <% @order.order_status_id == 1 %>
-          <h6><strong style="color: orange"><%= @order.order_status.name %></strong></h6>
-        <% elsif %>
-          <% @order.order_status_id == 3 %>
-          <h6><strong style="color: blue"><%= @order.order_status.name %></strong></h6>
-        <% elsif %>
-          <% @order.order_status_id == 4 %>
-          <h6><strong style="color: red"><%= @order.order_status.name %></strong></h6>
-        <% end %></h6>
-        <hr class="sep">
-
+      <% if %>
+        <% @order.order_status_id == 2 %>
+        <h6><strong style="color: green"><%= @order.order_status.name %></strong></h6>
+      <% elsif %>
+        <% @order.order_status_id == 1 %>
+        <h6><strong style="color: orange"><%= @order.order_status.name %></strong></h6>
+      <% elsif %>
+        <% @order.order_status_id == 3 %>
+        <h6><strong style="color: blue"><%= @order.order_status.name %></strong></h6>
+      <% elsif %>
+        <% @order.order_status_id == 4 %>
+        <h6><strong style="color: red"><%= @order.order_status.name %></strong></h6>
+      <% end %></h6>
+      <hr class="sep">
       <h6 class="text-center"> <strong>Adresse de livraison :</strong></h6>
       <h6><%= @order.client_name %></h6>
       <h6><%= @order.deliv_adress_nb %>, <%= @order.deliv_adress %><br> <%= @order.deliv_adress_zip_code %>, <%= @order.deliv_adress_city %> <br> <%= @order.deliv_adress_pays %>   </h6>
-      <h6>Montant payé :<strong style="color: green"> <%= humanized_money(@order.total_price) %> <%= currency_symbol %></strong></h6>
+      <h6>Montant :<strong style="color: green"> <%= humanized_money(@order.total_price) %> <%= currency_symbol %></strong></h6>
+      <%= link_to "Retour vers paiement", new_order_payment_path(@order), class: "btn btn-finalize" %>
     </div>
   </div>
 </div>
