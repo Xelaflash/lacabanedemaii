@@ -49,11 +49,17 @@
         <h6><strong style="color: red"><%= @order.order_status.name %></strong></h6>
       <% end %></h6>
       <hr class="sep">
-      <h6 class="text-center"> <strong>Adresse de livraison :</strong></h6>
-      <h6><%= @order.client_name.upcase %></h6>
-      <h6><%= @order.deliv_adress_nb %>, <%= @order.deliv_adress %><br> <%= @order.deliv_adress_zip_code %>, <%= @order.deliv_adress_city %> <br> <%= @order.deliv_adress_pays %>   </h6>
+      <% if !@customer_details.nil?  %>
+        <h6 class="text-center"> <strong>Adresse de livraison :</strong></h6>
+        <h6><%= @order.client_name.upcase %></h6>
+        <h6><%= @order.deliv_adress_nb %>, <%= @order.deliv_adress %><br> <%= @order.deliv_adress_zip_code %>, <%= @order.deliv_adress_city %> <br> <%= @order.deliv_adress_pays %></h6>
       <h6>Montant :<strong style="color: green"> <%= humanized_money(@order.total_price) %> <%= currency_symbol %></strong></h6>
       <%= link_to "Retour vers paiement", new_order_payment_path(@order), class: "btn btn-finalize" %>
+      <% else %>
+      <br>
+        <h6><strong style="font-style: italic" >Merci d'ajouter les détails nécessaires afin de valider la commande</strong></h6>
+        <%= link_to "Retour vers le panier", cart_path %>
+      <% end %>
     </div>
   </div>
 </div>
