@@ -24,6 +24,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = current_user.orders.find(params[:id])
+    @order.validate_deliv_details = true
     @order_items = @order.order_items
     add_breadcrumb "accueil", :root_path
     add_breadcrumb "produits", produits_path
@@ -49,9 +50,9 @@ class OrdersController < ApplicationController
     @order.destroy
   end
 
-  def customer_details
-    @customer_details = @order.client_name && @order.deliv_adress_nb && @order.deliv_adress && @order.deliv_adress_zip_code && @order.deliv_adress_city && @order.deliv_adress_pays
-  end
+  # def customer_details
+  #   @customer_details = @order.client_name && @order.deliv_adress_nb && @order.deliv_adress && @order.deliv_adress_zip_code && @order.deliv_adress_city && @order.deliv_adress_pays
+  # end
 
 
   private

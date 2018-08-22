@@ -49,7 +49,7 @@
         <h6><strong style="color: red"><%= @order.order_status.name %></strong></h6>
       <% end %></h6>
       <hr class="sep">
-      <% if !@customer_details.nil?  %>
+      <% if @order.valid?  %>
         <h6 class="text-center"> <strong>Adresse de livraison :</strong></h6>
         <h6><%= @order.client_name.upcase %></h6>
         <h6><%= @order.deliv_adress_nb %>, <%= @order.deliv_adress %><br> <%= @order.deliv_adress_zip_code %>, <%= @order.deliv_adress_city %> <br> <%= @order.deliv_adress_pays %></h6>
