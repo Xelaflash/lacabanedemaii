@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
-  resources :gammes, only: [:index, :show]
+  resources :gammes, only: [:show]
   resources :contacts, only: [:new, :create]
   resources :orders, only: [:index, :create,:show,:update, :destroy] do
     resources :payments, only: [:new, :create]

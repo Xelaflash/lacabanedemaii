@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_gamme
-    @gammes = Gamme.all
+    @prod_gammes = Gamme.all
   end
 
   def configure_permitted_parameters

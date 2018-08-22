@@ -1,10 +1,6 @@
 class GammesController < ApplicationController
   skip_before_action :authenticate_user!
 
-  def index
-    @gammes = Gamme.all
-  end
-
   def show
     @gamme = Gamme.friendly.find(params[:id])
     @produits = Produit.where(gamme_id: @gamme.id).where(active: true)
