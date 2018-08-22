@@ -1,6 +1,6 @@
 <div class="container">
   <div class="tabs tabs-show">
-    <% @gammes.each do |g| %>
+    <% @prod_gammes.each do |g| %>
             <%= link_to  gamme_path(g), class: "tab", id: "#{g.id}" do %>
         <h3><%= g.name %></h3>
       <% end %>

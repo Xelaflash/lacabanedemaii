@@ -15,7 +15,7 @@
       <div class="row">
         <% @orders.each do |order| %>
           <div class="col-xs-12 col-lg-6">
-            <div class="order-list-item">
+            <div class="order-list-item" data-order-id="<%= order.id %>">
               <div class="order-title text-center">
                 <h6><strong>Commande n° :  <%= order.id %></strong></h6>
               </div>
@@ -41,11 +41,11 @@
               <div class="order-cancel text-center">
                 <% if %>
                   <% order.order_status_id == 1 %>
-                  <%= link_to "Effacer la commande".html_safe, order_path(order), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir annuler la commande en cours?" }, class: "btn btn-danger" %>
+                  <%= link_to "Effacer la commande", order_path(order), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir annuler la commande en cours ?" }, remote: true, class: "btn btn-danger" %>
                 <% end %>
               </div>
               <div class="order-details text-center">
-                <%= link_to "Voir le détails", order_path(order),class: ""%>
+                <%= link_to "Voir le détails", order_path(order) %>
               </div>
             </div>
           </div>

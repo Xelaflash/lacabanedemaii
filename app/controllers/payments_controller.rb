@@ -2,7 +2,6 @@ class PaymentsController < ApplicationController
     before_action :set_order
 
   def new
-    @order_items = current_order.order_items
     add_breadcrumb "accueil", :root_path
     add_breadcrumb "produits", produits_path
     add_breadcrumb "panier", cart_path
@@ -33,10 +32,9 @@ class PaymentsController < ApplicationController
 private
 
   def set_order
-    @order =  current_order
-    @order.user_id = current_user.id
+    @order = current_user.orders.where(order_status_id: 1).find(params[:order_id])
     @order_total = @order.order_items
-    @order.total_price_cents = current_order.total_price * 100
+    @order.total_price_cents = @order.total_price * 100
   end
 
 

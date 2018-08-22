@@ -16,7 +16,7 @@
     </div>
     <div class="recap-order-item">
       <div class="container recap-order">
-        <% @order_items.each do |order_item| %>
+        <% @order_total.each do |order_item| %>
           <div class="item-recap">
               <div class="item-recap-left">
                 <%= cl_image_tag order_item.produit.photo, crop: :thumb, class: "pic-recap" %>
@@ -33,11 +33,11 @@
         <div class="row">
           <div class="col-xs-12 col-sm-10 col-lg-10 price-resume">
             <div class="sous-total">
-              <h6>Sous-Total : <span><%= humanized_money(current_order.subtotal) %> <%= currency_symbol %></span></h6>
+              <h6>Sous-Total : <span><%= humanized_money(@order.subtotal) %> <%= currency_symbol %></span></h6>
             </div>
             <div class="fdp">
                 <h6>Frais de port :
-                <% if (current_order.subtotal < 50) %>
+                <% if (@order.subtotal < 50) %>
                   <span><%= humanized_money(current_order.shipping)%> <%= currency_symbol %></span>
                 </h6>
                 <% else %>
@@ -45,7 +45,7 @@
                 <% end %>
             </div>
             <div class="full-total">
-              <h4><strong>TOTAL A PAYER : <span style="color: green"><%= humanized_money(current_order.total_price) %> <%= currency_symbol %></span></strong></h4>
+              <h4><strong>TOTAL A PAYER : <span style="color: green"><%= humanized_money(@order.total_price) %> <%= currency_symbol %></span></strong></h4>
             </div>
             <div class="stripe-checkout">
               <article>
@@ -70,7 +70,6 @@
             </div>
             <div class="payment-disclaimer">
               <p>Les paiments sont opérés et sécurisés par l'entreprise <a href="https://stripe.com/docs/security/stripe">Stripe</a></p>
-
             </div>
           </div>
         </div>

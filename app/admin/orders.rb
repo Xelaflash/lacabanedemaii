@@ -3,6 +3,7 @@ ActiveAdmin.register Order do
  index do
     selectable_column
     column :id
+    column :user_id
     column :customer
     column :client_name
     column :deliv_adress_nb

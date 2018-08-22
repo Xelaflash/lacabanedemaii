@@ -24,6 +24,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = current_user.orders.find(params[:id])
+    @order.validate_deliv_details = true
     @order_items = @order.order_items
     add_breadcrumb "accueil", :root_path
     add_breadcrumb "produits", produits_path
