@@ -19,6 +19,18 @@
       <%= f.input :password_confirmation, label: 'confirmation nouveau mot de passe', required: false, placeholder: "•••••••••" %>
       <%= f.input :current_password, label: 'Mot de passe actuel', required: true, placeholder: "•••••••••" %>
     </div>
+    <div class="form-inputs" id="start">
+      <div class="row">
+        <div class="col-xs-6">
+          <%= f.input :prenom, autofocus: true, placeholder: "Pierre"%>
+        </div>
+        <div class="col-xs-6">
+          <%= f.input :nom, autofocus: true, placeholder: "Durant" %>
+        </div>
+      </div>
+      <%= f.input :adresse, autofocus: true, placeholder: "21 rue des champs 75005 Paris" %>
+      <%= f.input :telephone, autofocus: true, placeholder: "+33600000000"  %>
+    </div>
 
     <div class="form-actions">
       <%= f.button :submit, "Mettre à jour", class: "btn btn-primary" %>
