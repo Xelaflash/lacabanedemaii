@@ -5,9 +5,6 @@
   }
 }
 .recap-order-item {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   border: 1px solid $primary;
   margin: 20px 0 20px 0;
 }
@@ -16,7 +13,6 @@
   justify-content: space-around;
   align-items: center;
   margin-bottom: 10px;
-  max-width: 4000px;
   word-wrap: break-word;
 }
 
@@ -39,3 +35,21 @@
   margin: 20px 0 0 0;
   color: red;
 }
+
+
+@media(min-width: 1024px) {
+  .recap-order-item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  }
+}
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 1023px) {
+    .recap-order {
+      border-bottom: 1px solid $primary;
+      margin-bottom: 10px;
+    }
+  }

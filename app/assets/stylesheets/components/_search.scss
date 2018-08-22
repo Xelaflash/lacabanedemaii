@@ -28,9 +28,8 @@ color: #512501;
   background-color: white;
 }
 
-@media(min-width: 1200px) {
+@media(min-width: 1100px) {
   .search-prod {
-    margin-left: -400px;
     margin-top: 5px;
   }
 }
@@ -39,7 +38,6 @@ color: #512501;
   .search-prod {
     .form-search {
       width: 100px;
-      // margin-left: 20px;
     }
     input {
       font-size: 9px;
@@ -50,7 +48,7 @@ color: #512501;
 
 @media only screen
   and (min-device-width: 768px)
-  and (max-device-width: 1024px)
+  and (max-device-width: 1249px)
  {
     .search-prod {
     .form-search {
