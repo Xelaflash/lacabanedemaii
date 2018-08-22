@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   def current_order
     if !session[:order_id].nil?
       Order.find(session[:order_id])
-    elsif user_signed_in?
+    elsif user_signed_in? && !last_pending_customer_order.nil?
         last_pending_customer_order
     else
       Order.new
