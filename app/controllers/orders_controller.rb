@@ -50,16 +50,10 @@ class OrdersController < ApplicationController
     @order.destroy
   end
 
-  # def customer_details
-  #   @customer_details = @order.client_name && @order.deliv_adress_nb && @order.deliv_adress && @order.deliv_adress_zip_code && @order.deliv_adress_city && @order.deliv_adress_pays
-  # end
-
-
   private
 
   def order_params
     params.require(:order).permit(:deliv_adress, :deliv_adress_nb, :deliv_adress_zip_code, :deliv_adress_city, :deliv_adress_details, :deliv_adress_pays, :client_name  )
   end
-
 
 end
