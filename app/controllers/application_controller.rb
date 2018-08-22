@@ -7,11 +7,12 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def current_order
-    order = Order.find(session[:order_id])
-    if !session[:order_id].nil? && order.active == false
-       order = Order.new
+    if !session[:order_id].nil?
+      Order.find(session[:order_id])
+    elsif user_signed_in?
+        last_pending_customer_order
     else
-      order
+      Order.new
     end
     rescue ActiveRecord::RecordNotFound
         order = Order.create
@@ -43,5 +44,11 @@ class ApplicationController < ActionController::Base
     store_location_for(:user, request.fullpath)
   end
 
+end
+
+private
+
+def last_pending_customer_order
+    current_user.orders.where(order_status_id: 1).last
 end
 
