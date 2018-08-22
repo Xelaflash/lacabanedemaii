@@ -11,7 +11,7 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def destroy_current_order
-    if current_order.order_items.empty? && !current_order.user_id.nil?
+    if current_order.order_items.empty? || !current_order.user_id.nil?
       current_order.destroy
     end
   end
