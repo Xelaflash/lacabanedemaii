@@ -16,25 +16,26 @@ class PaymentsController < ApplicationController
 
     charge = Stripe::Charge.create(
       customer:     customer.id,   # You should store this customer id and re-use it.
-      amount:       @order.total_price_cents,
-      description:  "Paiement pour la commande n° #{@order.id} du #{@order.created_at} d'un montant de #{@order.total_price} €",
+      amount:       @order_pay.total_price_cents,
+      description:  "Paiement pour la commande n° #{@order_pay.id} du #{@order_pay.created_at} d'un montant de #{@order_pay.total_price} €",
       currency:     'eur'
     )
 
-    @order.update(payment: charge.to_json, order_status_id: 2, active: false)
-    redirect_to orders_path
+    flash[:notice] = "Votre paiement a été accepté. Vous allez recevoir un mail de confirmation de la commande."
+    @order_pay.update(payment: charge.to_json, order_status_id: 2, active: false)
+    redirect_to order_path(@order_pay)
 
     rescue Stripe::CardError => e
       flash[:alert] = e.message
-      redirect_to new_order_payment_path(@order)
+      redirect_to new_order_payment_path(@order_pay)
   end
 
 private
 
   def set_order
-    @order = current_user.orders.where(order_status_id: 1).find(params[:order_id])
-    @order_total = @order.order_items
-    @order.total_price_cents = @order.total_price * 100
+    @order_pay = current_order
+    @order_total = @order_pay.order_items
+    @order_pay.total_price_cents = @order_pay.total_price * 100
   end
 
 

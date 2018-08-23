@@ -3,15 +3,15 @@
 </div>
 <br>
 <div class="container order-recap-page">
-  <h1 class="page-title text-center">Récapitulatif de la commande n° <%= @order.id %> : </h1>
+  <h1 class="page-title text-center">Récapitulatif de la commande n° <%= @order_pay.id %> : </h1>
   <hr class="separator">
   <%= form_tag order_payments_path(@order_total) do %>
     <div class="deliv-details-payment text-center">
       <h4 class="text-center"><strong>Adresse de livraison :</strong></h4>
-      <h4><%= @order.client_name.upcase %></h4>
-      <h4><%= @order.deliv_adress_nb %>, <%= @order.deliv_adress %><br> <%= @order.deliv_adress_zip_code %>, <%= @order.deliv_adress_city %> <br> <%= @order.deliv_adress_pays %></h4>
-      <% if (!@order.deliv_adress_details.nil?) %>
-        <h5 style="font-style: italic;"><%= @order.deliv_adress_details %></h5>
+      <h4><%= @order_pay.client_name.upcase %></h4>
+      <h4><%= @order_pay.deliv_adress_nb %>, <%= @order_pay.deliv_adress %><br> <%= @order_pay.deliv_adress_zip_code %>, <%= @order_pay.deliv_adress_city %> <br> <%= @order_pay.deliv_adress_pays %></h4>
+      <% if (!@order_pay.deliv_adress_details.nil?) %>
+        <h5 style="font-style: italic;"><%= @order_pay.deliv_adress_details %></h5>
       <% end %>
     </div>
     <div class="recap-order-item">
@@ -33,11 +33,11 @@
         <div class="row">
           <div class="col-xs-12 col-sm-10 col-lg-10 price-resume">
             <div class="sous-total">
-              <h6>Sous-Total : <span><%= humanized_money(@order.subtotal) %> <%= currency_symbol %></span></h6>
+              <h6>Sous-Total : <span><%= humanized_money(@order_pay.subtotal) %> <%= currency_symbol %></span></h6>
             </div>
             <div class="fdp">
                 <h6>Frais de port :
-                <% if (@order.subtotal < 50) %>
+                <% if (@order_pay.subtotal < 50) %>
                   <span><%= humanized_money(current_order.shipping)%> <%= currency_symbol %></span>
                 </h6>
                 <% else %>
@@ -45,7 +45,7 @@
                 <% end %>
             </div>
             <div class="full-total">
-              <h4><strong>TOTAL A PAYER : <span style="color: green"><%= humanized_money(@order.total_price) %> <%= currency_symbol %></span></strong></h4>
+              <h4><strong>TOTAL A PAYER : <span style="color: green"><%= humanized_money(@order_pay.total_price) %> <%= currency_symbol %></span></strong></h4>
             </div>
             <div class="stripe-checkout">
               <article>
@@ -55,15 +55,16 @@
                   </div>
                 <% end %>
               </article>
+              <script src="https://js.stripe.com/v3/"></script>
               <script
                 src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                 data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                data-amount="<%= @order.total_price_cents %>"
+                data-amount="<%= @order_pay.total_price_cents %>"
                 data-currency="eur"
                 data-name="La cabane de Maï"
-                data-description="Commande n°: <%= @order.id %> "
+                data-description="Commande n°: <%= @order_pay.id %> "
                 data-image="https://res.cloudinary.com/drzibyjvb/image/upload/v1527003411/logo.jpg"
-                data-email="<%= @order.customer %>"
+                data-email="<%= @order_pay.customer %>"
                 data-label="Payer"
                 data-locale="fr">
               </script>
