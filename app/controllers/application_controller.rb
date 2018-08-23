@@ -7,10 +7,11 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def current_order
-    if !session[:order_id].nil?
-      Order.find(session[:order_id])
-    elsif user_signed_in? && !last_pending_customer_order.nil?
+    order = Order.find(session[:order_id])
+    if user_signed_in? && !last_pending_customer_order.nil?
         last_pending_customer_order
+    elsif !session[:order_id].nil? && order.active == true
+      Order.find(session[:order_id])
     else
       Order.new
     end
