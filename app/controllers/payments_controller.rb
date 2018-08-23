@@ -17,7 +17,7 @@ class PaymentsController < ApplicationController
     charge = Stripe::Charge.create(
       customer:     customer.id,   # You should store this customer id and re-use it.
       amount:       @order_pay.total_price_cents,
-      description:  "Paiement pour la commande n° #{@order_pay.id} du #{@order_pay.created_at} d'un montant de #{@order.total_price} €",
+      description:  "Paiement pour la commande n° #{@order_pay.id} du #{@order_pay.created_at} d'un montant de #{@order_pay.total_price} €",
       currency:     'eur'
     )
     flash[:notice] = "Votre paiement a été accepté. Vous allez recevoir un mail de confirmation de la commande."
@@ -32,7 +32,7 @@ class PaymentsController < ApplicationController
 private
 
   def set_order
-    @order_pay = current_user.orders.where(order_status_id: 1).find(params[:order_id])
+    @order_pay = current_order
     @order_total = @order_pay.order_items
     @order_pay.total_price_cents = @order_pay.total_price * 100
   end
