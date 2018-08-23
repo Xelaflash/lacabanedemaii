@@ -20,6 +20,7 @@ class PaymentsController < ApplicationController
       description:  "Paiement pour la commande n° #{@order_pay.id} du #{@order_pay.created_at} d'un montant de #{@order_pay.total_price} €",
       currency:     'eur'
     )
+
     flash[:notice] = "Votre paiement a été accepté. Vous allez recevoir un mail de confirmation de la commande."
     @order_pay.update(payment: charge.to_json, order_status_id: 2, active: false)
     redirect_to order_path(@order_pay)
