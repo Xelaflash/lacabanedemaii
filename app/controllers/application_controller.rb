@@ -49,6 +49,6 @@ end
 private
 
 def last_pending_customer_order
-    current_user.orders.where(order_status_id: 1).last
+  current_user.orders.where(order_status_id: 1).last
 end
 

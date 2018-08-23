@@ -7,11 +7,13 @@ class Users::SessionsController < Devise::SessionsController
   def assign_user
     order = current_order
     order.user_id = current_user.id
-    order.save
+    if !order.order_items.empty?
+      order.save
+    end
   end
 
   def destroy_current_order
-    if !current_order.order_items.empty? || !current_order.user_id.nil?
+    if current_order.order_items.empty?
       current_order.destroy
     end
   end
