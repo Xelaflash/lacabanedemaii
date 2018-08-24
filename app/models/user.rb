@@ -11,9 +11,17 @@ class User < ApplicationRecord
   validates :adresse, presence: true
   validates :telephone, presence: true, uniqueness: true
 
+  after_create :send_welcome_email
+
   # For activeadmin
   def name
     "#{email}"
+  end
+
+  private
+
+  def send_welcome_email
+    UserMailer.welcome(self).deliver_now
   end
 
 end
