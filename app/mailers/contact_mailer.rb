@@ -4,9 +4,9 @@ class ContactMailer < ApplicationMailer
       @body = message.body
       @name = message.name
       @sender = message.email
+      @title = message.subject
+      @subject = "Nouveau message reçu du site - Titre: #{@title} - De : #{@sender}"
       @recipient = 'lacabanedemaii@gmail.com'
-      @subject = "Nouveau message reçu du site - Titre: #{message.subject} - De : #{@sender}"
-
       mail(
         to: @recipient,
         subject: @subject
