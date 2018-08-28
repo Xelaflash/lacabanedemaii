@@ -15,6 +15,8 @@ gem 'stripe'
 gem 'money-rails'
 gem "geocoder"
 gem 'postmark-rails'
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
