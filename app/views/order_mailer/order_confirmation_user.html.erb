@@ -1,0 +1,138 @@
+<div class="content" style="background-color: #f3f3f5;padding:20px 0;" width="800" align="center">
+
+  <table style="width: 800px; margin: 0 auto; font-family: Arial, sans-serif;font-size: 13px; color: #323232;background-color: #ffffff;border-radius:5px;" width="800" cellspacing="0" cellpadding="0" align="center">
+      <!--Super Header-->
+    <tbody>
+      <tr>
+        <td style="padding: 20px 20px;">
+          <table style="width: 800px; margin: 0 auto; font-family: Arial, sans-serif; border-bottom: 1px solid #d7d7d7;" width="8000" cellspacing="0" cellpadding="0" align="center">
+            <tbody>
+              <tr>
+                <td style="width: 260px; padding-bottom: 10px;">
+                  <a href="https://lacabanedemaii.herokuapp.com/" target="_blank"> <img style="border: none; display: block;" src="https://res.cloudinary.com/drzibyjvb/image/upload/v1527003411/logo.jpg" alt="lacabanedemaii.com" width="125" height="100"> </a>
+                </td>
+                <td style="width: 300px; padding-bottom: 10px;" align="right"><a style="display: inline-block; width: 135px;background: #f5f5f5; font-family: Arial, sans-serif; font-size: 13px; font-size: 13px !important; color: #323232; padding: 4px 0px; text-align: center; border: 1px solid #d7d7d7; font-weight: 600; text-decoration: none;" href="/users/sign_in/" target="_blank">MON COMPTE</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <td><img style="border: none;display: block;margin-left: auto;margin-right: auto;padding-top: 20px;" src="https://res.cloudinary.com/drzibyjvb/image/upload/v1535376340/check-circle-07_2x.png" alt="lacabanedemaii.com" width="125" height="100"></td>
+      </tr>
+      <tr>
+        <td style="font-family: 'Cinzel', serif; font-size: 22px; color: black; padding: 20px 0px 40px 0;" colspan="2" align="center">Bonne nouvelles! <br>
+         Nous avons bien reçus votre commande!</td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <td style="text-align: center;"><span style="display: block; font-family: 'Cinzel', serif; font-size: 26px; color: #323232;font-weight: bold; text-align: center; padding: 30px 0 20px 0;">Détails de la commande n° <%= @order_pay.id  %> :
+        </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="list-produits" style="margin: 0 auto;display: flex;justify-content: space-around;align-items: center;width: 840px;background-color: #ffffff;">
+    <div class="prd-list-left">
+      <% @order_items.each do |order_item| %>
+        <div class="produit-item" style="margin: 0 auto;padding: 10px 0;">
+          <div class="order-detail" style="display: flex;justify-content: space-around;align-items: center;">
+            <div class="order-list-left">
+              <div class="order-product" style="width: 130px;word-wrap: break-word;">
+                <div class="text-center">
+                  <h6 style="font-size: 16px;font-weight: 400;text-align: center;margin: 0 0;" ><%= order_item.produit.nom %></h6>
+                </div>
+                <div class="pic">
+                  <%= cl_image_tag order_item.produit.photo, :height=>125, :width=>125 %>
+                </div>
+              </div>
+            </div>
+            <div class="order-list-right" style="padding-top: 45px;">
+              <div class="qte">
+                <h6 style="font-size: 18px;font-weight: 400;text-align: center;margin: 15px 0;"> <%= order_item.quantity %> x <%= humanized_money(order_item.unit_price)%> <%= currency_symbol %> = <span id="price" style="color: green"><%= humanized_money(order_item.total_price) %> <%= currency_symbol %></span></h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      <span style="display: inline-block; width: 600px; height: 1px; background: #d7d7d7;font-size: 1px; color: #323232; text-align: center; line-height: 1px; vertical-align: top;"></span>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="bottom-recap" style="margin: 0 auto;display: flex;justify-content: space-around;align-items: center;width: 840px;background-color: #ffffff;">
+    <div class="bottom-recap-left">
+      <tr>
+        <td style="">
+          <table style="border:1px solid #DDCEBB" align="center">
+            <tbody>
+              <tr>
+              <td style="padding: 20px 27px; font-family: Arial, sans-serif; font-size: 16px; font-size: 14px !important; color: #6f6f6f; line-height: 21px;">
+                  <div style="font-family: Arial, sans-serif; font-size: 16px; color: #323232; font-weight: 600; padding-bottom: 4px; margin: 0;text-align: center;">Adresse de livraison</div>
+                  <p style="text-align: center;"><%= @order_pay.client_name.upcase %><br><%= @order_pay.deliv_adress_nb %>, <%= @order_pay.deliv_adress %><br> <%= @order_pay.deliv_adress_zip_code %>, <%= @order_pay.deliv_adress_city %> <br> <%= @order_pay.deliv_adress_pays %><br>
+                  </p>
+              </td>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </div>
+    <div class="bottom-recap-right" style="border:1px solid #DDCEBB;padding: 27px;">
+      <div class="sous-total">
+        <h6 style="font-size: 18px;font-weight: 400;text-align: center;margin: 15px 0;">Sous-Total : <span><%= humanized_money(@order_pay.subtotal) %> <%= currency_symbol %></span></h6>
+      </div>
+      <div class="fdp">
+        <h6 style="font-size: 18px;font-weight: 400;text-align: center;margin: 15px 0;">Frais de port : <span><%= humanized_money(@order_pay.shipping) %> <%= currency_symbol %></span></h6>
+      </div>
+      <div class="full-total">
+        <h4 style="font-size: 20px;font-weight: 400;text-align: center;margin: 15px 0;"><strong>TOTAL PAYE : <span style="color: green"><%= humanized_money(@order_pay.total_price) %> <%= currency_symbol %></span></strong></h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-question" align="center" style="padding-top: 40px;background-color: #ffffff;width: 840px;">
+    <p style="margin:0;">Si vous avez une question sur votre commande, n'hésitez pas à <a href="mailto:lacabanedemaii@gmail.com">nous contacter</a>
+    </p>
+  </div>
+
+  <div class="footer-social" align="center" style="padding: 20px 0;background-color: #ffffff;width: 840px; border-radius: 5px;">
+    <p style="vertical-align: center">Suivez nous sur
+    </p>
+    <p>
+      <a href="https://www.facebook.com/lacabanedemaii16/" target="_blank" style="padding: 0 10px;"><img src="https://res.cloudinary.com/drzibyjvb/image/upload/v1535380961/flogo-RGB-HEX-Blk-58.png" width="30" height="30" alt="lacabanedemaii_facebook"></a>
+      <a href="https://www.instagram.com/la_cabane_de_maii/?hl=fr" target="_blank"><img src="https://res.cloudinary.com/drzibyjvb/image/upload/v1535381072/glyph-logo_May2016.png" width="30" height="30" alt="lacabanedemaii_instagram"></a>
+    </p>
+  </div>
+</div>
+
+<table class="footer-wrap" bgcolor="#044767" style="width: 100%; padding-top:20px;">
+  <tr>
+    <td></td>
+    <td class="container" align="center">
+        <div class="content">
+          <table>
+            <tr>
+              <td align="center">
+                <p style="color:white;font-family: 'Cinzel', serif;font-size: 13px;">
+                  <a href="https://lacabanedemaii.herokuapp.com/" style="color:white;font-family: 'Cinzel', serif;text-decoration: none;font-size: 16px;">La Cabane de Maii</a>
+                  <br/><br/>
+                  16 Avenue pasteur <br>
+                  N°3 La closerie du parc <br>
+                  33510 Andernos les Bains <br>
+                  +33 6 42 22 57 11 <br><br>
+                  N° SIRET 819 644 592 00019
+                </p>
+                <p><strong><a href="mailto:lacabanedemaii@gmail.com" style="color:white;font-family: 'Cinzel', serif;font-size: 13px;">lacabanedemaii@gmail.com</a></strong></p>
+                <p style="color:white;font-family: 'Cinzel', serif;font-size: 13px;"><small>© La Cabane de Maii</small></p>
+              </td>
+            </tr>
+          </table>
+        </div>
+    </td>
+    <td></td>
+  </tr>
+</table>
+

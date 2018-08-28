@@ -23,6 +23,8 @@ class PaymentsController < ApplicationController
 
     flash[:notice] = "Votre paiement a été accepté. Vous allez recevoir un mail de confirmation de la commande."
     @order_pay.update(payment: charge.to_json, order_status_id: 2, active: false)
+    OrderMailer.order_confirmation_user(@order_pay).deliver_now
+    OrderShopMailer.order_confirmation_shop(@order_pay).deliver_now
     redirect_to order_path(@order_pay)
 
     rescue Stripe::CardError => e

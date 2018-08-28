@@ -14,6 +14,7 @@ gem 'activeadmin'
 gem 'stripe'
 gem 'money-rails'
 gem "geocoder"
+gem 'postmark-rails'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
@@ -28,6 +29,8 @@ gem "breadcrumbs_on_rails"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem "letter_opener"
+  gem 'brakeman'
 end
 
 group :development, :test do

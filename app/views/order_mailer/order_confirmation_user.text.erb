@@ -1,0 +1,23 @@
+Bonne nouvelles!
+Nous avons bien reçus votre commande <%= @order_pay.id  %>!
+========================================================
+
+<% @order_items.each do |order_item| %>
+<%= order_item.produit.nom %>  <%= order_item.quantity %> x <%= humanized_money(order_item.unit_price)%> <%= currency_symbol %> = <%= humanized_money(order_item.total_price) %> <%= currency_symbol %>
+<% end %>
+
+=========================== TOTAL =======================
+
+ - Sous-Total : <%= humanized_money(@order_pay.subtotal) %><%= currency_symbol %>
+ - Frais de port : <%= humanized_money(@order_pay.shipping) %> <%= currency_symbol %>
+  TOTAL PAYE :<%= humanized_money(@order_pay.total_price) %> <%= currency_symbol %>
+
+=========================== LIVRAISON ===================
+
+Adresse de livraison :
+
+<%= @order_pay.client_name.upcase %>
+<%= @order_pay.deliv_adress_nb %>, <%= @order_pay.deliv_adress %>
+<%= @order_pay.deliv_adress_zip_code %>, <%= @order_pay.deliv_adress_city %>
+<%= @order_pay.deliv_adress_pays %>
+

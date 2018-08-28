@@ -10,8 +10,8 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.valid?
-      ContactMailer.contact_me(@contact).deliver_now
       flash.now[:notice] = "Votre message a bien été envoyé, merci!"
+      ContactMailer.contact_me(@contact).deliver_now
       redirect_to new_contact_path
     else
       flash.now[:alert] = "Un probleme est survenu, merci de réessayer."
@@ -22,7 +22,7 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:name, :email, :phone_number, :body)
+    params.require(:contact).permit(:name, :email,:subject, :body)
   end
-end
 
+end
