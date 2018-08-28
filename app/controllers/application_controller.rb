@@ -45,11 +45,13 @@ class ApplicationController < ActionController::Base
     store_location_for(:user, request.fullpath)
   end
 
+
+  private
+
+  def last_pending_customer_order
+    current_user.orders.where(order_status_id: 1).last
+  end
+
 end
 
-private
-
-def last_pending_customer_order
-  current_user.orders.where(order_status_id: 1).last
-end
 

@@ -16,6 +16,8 @@ class Order < ApplicationRecord
   before_save :total
   monetize :total_price_cents
 
+  after_save :async_cleaning
+
   attr_accessor :validate_deliv_details
 
   def subtotal
@@ -55,4 +57,10 @@ private
   def validate_deliv_details?
     validate_deliv_details == true
   end
+
+  def async_cleaning
+    DeleteOldEmptyOrdersJob.set(wait_until: Date.tomorrow.noon).perform_later(self.id)
+
+  end
+
 end

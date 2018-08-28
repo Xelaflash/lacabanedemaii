@@ -3,6 +3,12 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users, controllers: { sessions: 'users/sessions' }
 
+  # Sidekiq Web UI, only for admins.
+  require "sidekiq/web"
+  authenticate :user, lambda { |u| u.admin } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+
   resources :produits, only: [:index, :show] do
     resources :reviews, only: [ :create ]
   end
@@ -21,6 +27,5 @@ Rails.application.routes.draw do
   get 'aide',            to: 'pages#aide',             as: :aide
   get 'mentions_legales',to: 'pages#mentions_legales',as: :mentions_legales
   get 'CGV',             to: 'pages#CGV',             as: :cgv
-
 
 end
