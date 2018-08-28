@@ -1,3 +1,41 @@
-OrderShop#Order_shop_confirmation
+NOUVELLE COMMANDE  <%= @order_pay.id  %> pour ==> <%= @user.email %>
+=================================================
 
-<%= @greeting %>, find me in app/views/order_shop_mailer/Order_shop_confirmation.text.erb
+Adresse de livraison
+
+<%= @order_pay.client_name.upcase %>
+<%= @order_pay.deliv_adress_nb %>, <%= @order_pay.deliv_adress %>
+<%= @order_pay.deliv_adress_zip_code %>, <%= @order_pay.deliv_adress_city %>
+<%= @order_pay.deliv_adress_pays %>
+
+=====================================================
+
+Détails de la commande n° <%= @order_pay.id  %>
+
+<% @order_items.each do |order_item| %>
+  <%= order_item.produit.nom %>
+  <%= order_item.quantity %> x <%= humanized_money(order_item.unit_price)%> €
+  <%= humanized_money(order_item.total_price) %> €
+<% end %>
+
+
+Sous-Total :<%= humanized_money(@order_pay.subtotal) %> €
+Frais de port : <%= humanized_money(@order_pay.shipping) %> €
+TOTAL RECU : <%= humanized_money(@order_pay.total_price) %> €
+
+----------------------------- /!\ --------------------------------------
+  Attention ce montant est le montant facturé au client, il ne prend pas en compte les frais de stripe!
+----------------------------- /!\ --------------------------------------
+
+
+======================================================================
+Données du compte client
+
+      <%= @user.prenom.upcase %> <%= @user.nom.upcase %> <br>
+      <%= @user.email %> <br>
+      <%= @user.telephone %> <br>
+      <%= @user.adresse %> <br>
+
+----------------------------- /!\ --------------------------------------
+Attention ce sont les données du compte mais pas celle de livraison
+----------------------------- /!\ --------------------------------------

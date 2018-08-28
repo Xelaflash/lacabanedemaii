@@ -3,14 +3,14 @@ Nous avons bien reçus votre commande <%= @order_pay.id  %>!
 ========================================================
 
 <% @order_items.each do |order_item| %>
-<%= order_item.produit.nom %>  <%= order_item.quantity %> x <%= humanized_money(order_item.unit_price)%> <%= currency_symbol %> = <%= humanized_money(order_item.total_price) %> <%= currency_symbol %>
+<%= order_item.produit.nom %>  <%= order_item.quantity %> x <%= humanized_money(order_item.unit_price)%> € = <%= humanized_money(order_item.total_price) %> €
 <% end %>
 
 =========================== TOTAL =======================
 
- - Sous-Total : <%= humanized_money(@order_pay.subtotal) %><%= currency_symbol %>
- - Frais de port : <%= humanized_money(@order_pay.shipping) %> <%= currency_symbol %>
-  TOTAL PAYE :<%= humanized_money(@order_pay.total_price) %> <%= currency_symbol %>
+ - Sous-Total : <%= humanized_money(@order_pay.subtotal) %> €
+ - Frais de port : <%= humanized_money(@order_pay.shipping) %> €
+  TOTAL PAYE :<%= humanized_money(@order_pay.total_price) %> €
 
 =========================== LIVRAISON ===================
 
