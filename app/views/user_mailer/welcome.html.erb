@@ -3,23 +3,64 @@
   <body>
     <div class="container" style="padding-bottom:20px;background-color: #f3f3f5;">
         <%= cl_image_tag "banniere_mai-02.png", alt: "La cabane de Maï", :width=>"100%"%>
-      <div class="mailing" style="margin: 0 auto;">
+      <div class="mailing" style="margin: 0 auto;padding:20px;">
         <div class="mail-body" style="border-radius: 5px;background-color: white;width: 60%;margin: 0 auto;padding:20px;">
-          <h3 style="text-align:center;">Bonjour <%= @user.prenom %> <%= @user.nom %></h3>
+          <h3 style="text-align:center;">Bonjour <%= @user.prenom.capitalize %> <%= @user.nom.capitalize %></h3>
           <br>
-          <p>Bienvenu à la Cabane de Maii!</p>
-          <p>Nous sommes ravis d’être avec vous pour cette aventure.</p>
+          <p style="margin: 0;">Bienvenu à la Cabane de Maii!</p>
+          <p style="margin: 0;">Nous sommes ravis d’être avec vous pour cette aventure.</p>
           <br>
-          <p>Vous pouvez désormais découvrir nos produit et les commander en ligne.</p>
+          <p style="margin: 0;">Vous pouvez désormais découvrir nos produit et les commander en ligne.</p>
           <a href="<%= @url %>">La cabane de Maii</a>
           <br><br><br>
           <div class="logo-mail" style="text-align:center;">
           <p><strong>L'équipe de la Cabane</strong></p>
            <%= cl_image_tag "logo.jpg", :height=>85, alt: "La cabane de Maï"%>
           </div>
-          <br><br>
-          <p style="font-style: italic;">Vous n’avez pas créé de compte ? Aucun souci, ignorez tout simplement cet e-mail.</p>
+
+          <hr>
+          <div class="contact-question" align="center" style="padding-top: 20px;background-color: #ffffff;">
+            <p style="margin:0;">Si vous avez une question, n'hésitez pas à <a href="mailto:contact@lacabanedemaii.com">nous contacter</a>
+            </p>
+          </div>
+          <div class="footer-social" align="center" style="padding: 20px 0 40px 0;background-color: #ffffff; border-radius: 5px;">
+            <p style="vertical-align: center">Suivez nous sur
+            </p>
+            <p>
+              <a href="https://www.facebook.com/lacabanedemaii16/" target="_blank" style="padding: 0 10px;"><img src="https://res.cloudinary.com/drzibyjvb/image/upload/v1535380961/flogo-RGB-HEX-Blk-58.png" width="30" height="30" alt="lacabanedemaii_facebook"></a>
+              <a href="https://www.instagram.com/la_cabane_de_maii/?hl=fr" target="_blank"><img src="https://res.cloudinary.com/drzibyjvb/image/upload/v1535381072/glyph-logo_May2016.png" width="30" height="30" alt="lacabanedemaii_instagram"></a>
+            </p>
+          </div>
+          <p style="font-style: italic;margin:0">Vous n’avez pas créé de compte ? Aucun souci, ignorez tout simplement cet e-mail.</p>
         </div>
+      </div>
+        <table class="footer-wrap" bgcolor="#044767" style="width: 100%; padding-top:20px;">
+          <tr>
+            <td></td>
+            <td class="container" align="center">
+                <div class="content">
+                  <table>
+                    <tr>
+                      <td align="center">
+                        <p style="color:white;font-family: 'Cinzel', serif;font-size: 13px;">
+                          <a href="https://lacabanedemaii.herokuapp.com/" style="color:white;font-family: 'Cinzel', serif;text-decoration: none;font-size: 16px;">La Cabane de Maii</a>
+                          <br/><br/>
+                          16 Avenue pasteur <br>
+                          N°3 La closerie du parc <br>
+                          33510 Andernos les Bains <br>
+                          +33 6 42 22 57 11 <br><br>
+                          N° SIRET 819 644 592 00019
+                        </p>
+                        <p><strong><a href="mailto:contact@lacabanedemaii.com" style="color:white;font-family: 'Cinzel', serif;font-size: 13px;">contact@lacabanedemaii.com</a></strong></p>
+                        <p style="color:white;font-family: 'Cinzel', serif;font-size: 13px;"><small>© La Cabane de Maii</small></p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+            </td>
+            <td></td>
+          </tr>
+        </table>
       </div>
     </div>
   </body>
