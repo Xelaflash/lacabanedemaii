@@ -1,35 +1,4 @@
-.multi-item-carousel{
-  .carousel-inner{
-    > .item{
-      transition: 500ms ease-in-out left;
-      border: none !important;
-    }
-    .active{
-      &.left{
-        left:-33%;
-      }
-      &.right{
-        left:33%;
-      }
-    }
-    .next{
-      left: 33%;
-    }
-    .prev{
-      left: -33%;
-    }
-    @media all and (transform-3d), (-webkit-transform-3d) {
-      > .item{
-        transition: 500ms ease-in-out left;
-        transition: 500ms ease-in-out all;
-        backface-visibility: visible;
-        transform: none!important;
-      }
-    }
-  }
-}
-
-.carousel-inner img {
+.carousel img {
     width: 320px;
     height: 220px;
     background: cover;
@@ -40,7 +9,7 @@
   and (min-device-width: 768px)
   and (max-device-width: 1024px)
  {
-  .carousel-inner {
+  .carousel {
     height: 220px;
   }
 }
