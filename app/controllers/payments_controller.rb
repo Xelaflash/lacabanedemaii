@@ -25,7 +25,8 @@ class PaymentsController < ApplicationController
     @order_pay.update(payment: charge.to_json, order_status_id: 2, active: false)
     OrderMailer.order_confirmation_user(@order_pay).deliver_now
     OrderShopMailer.order_confirmation_shop(@order_pay).deliver_now
-    redirect_to order_path(@order_pay)
+    @order_last = current_user.orders.last
+    redirect_to order_path(@order_last)
 
     rescue Stripe::CardError => e
       flash[:alert] = e.message
