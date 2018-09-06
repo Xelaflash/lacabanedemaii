@@ -14,6 +14,7 @@ Détails de la commande n° <%= @order_pay.id  %>
 
 <% @order_items.each do |order_item| %>
   <%= order_item.produit.nom %>
+  ref : <%= order_item.produit.reference %>
   <%= order_item.quantity %> x <%= humanized_money(order_item.unit_price)%> €
   <%= humanized_money(order_item.total_price) %> €
 <% end %>
