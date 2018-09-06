@@ -7,7 +7,7 @@ class OrderShopMailer < ApplicationMailer
     @user_id = order_shop.user_id
     @user = User.find(@user_id)
       mail(
-        to:       'lacabanedemaiwebsite@gmail.com',
+        to:       'lacabanedemaii.website@gmail.com',
         subject:  "Nouvelle commande - commande n° #{@order_pay.id}  - De : #{@order_pay.customer}"
       )
   end
