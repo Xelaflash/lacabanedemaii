@@ -2,5 +2,5 @@ meta_product_name: "La cabane de Maï"
 meta_title: "La cabane de Maï"
 meta_description: "Petite boutique de cadeaux naturels, artisanaux, pour le corps, la maison, pour les tous petits...
 DURANCE, MOULIN ROTY, MARIUS FABRE, SAVON D’ALEP..."
-meta_image: "logo.jpg"                       # should exist in `app/assets/images/`
+meta_image: "logometa.jpg"             # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Cards
