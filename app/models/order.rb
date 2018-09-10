@@ -59,7 +59,7 @@ private
   end
 
   def async_cleaning
-    DeleteOldEmptyOrdersJob.perform_later(self.id)
+    DeleteOldEmptyOrdersJob.set(wait_until: Date.today.midnight).perform_later(self.id)
   end
 
 end
