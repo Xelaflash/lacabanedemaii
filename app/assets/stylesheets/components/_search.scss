@@ -37,11 +37,13 @@ color: #512501;
 @media(max-width: 730px) {
   .search-prod {
     .form-search {
-      width: 100px;
+      width: 115px;
     }
     input {
       font-size: 9px;
       height: 25px;
+      -webkit-appearance: none;
+      border-radius: 0;
     }
   }
 }
