@@ -3,5 +3,5 @@ meta_title: "La cabane de Maï - Votre boutique de produits artisanaux et nature
 meta_description: "La cabane de Maï est une petite boutique de cadeaux naturels et artisanaux.
 Tout pour le corps, la maison, les tout petits...
 Nous vendons exclusivement des marques reconnues comme : DURANCE, MOULIN ROTY, MARIUS FABRE, SAVON D’ALEP..."
-meta_image: "banniere01.png"             # should exist in `app/assets/images/`
+meta_image: "meta.png"             # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Cards
