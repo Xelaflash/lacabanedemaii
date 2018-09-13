@@ -8,8 +8,8 @@
 .card-pic {
   opacity: 1;
   display: block;
-  width: 100%;
-  height: auto;
+  // width: 100%;
+  // height: auto;
   transition: .5s ease;
   backface-visibility: hidden;
 }
@@ -114,14 +114,5 @@
   .container {
     padding-left: 10px;
     padding-right: 10px;
-  }
-}
-
-@media only screen
-  and (min-device-width: 768px)
-  and (max-device-width: 1024px)
- {
-  .product-card {
-    width: 738px;
   }
 }
