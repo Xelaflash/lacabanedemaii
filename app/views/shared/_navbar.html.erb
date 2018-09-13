@@ -79,18 +79,15 @@
           <%= render "shared/cart_text" %>
 
             <div class="dropdown-style">
-              <% if current_order.order_items == 0 %>
-                <div class="empty-cart container">
-                  <h4 class="text-center">Votre panier est vide</h4>
-                  <p class="text-center">Retourner voir <%= link_to "les produits", produits_path %></p>
-                  <hr class="sep">
-                </div>
+              <% if current_order.order_items.size == 0 %>
+                  <p class="text-center">Votre panier est vide</p>
               <% else %>
                 <% current_order.order_items.each do |order_item| %>
-                  <%= render 'carts/cart_row', produit: order_item.produit, order_item: order_item, show_total: true %>
-                  <div class="container prod-line">
-                    <hr class="separator2">
-                  </div>
+                <ul>
+                  <li>
+                    <p> <%= order_item.produit.nom %></p>
+                  </li>
+                </ul>
                 <% end %>
               <% end %>
 

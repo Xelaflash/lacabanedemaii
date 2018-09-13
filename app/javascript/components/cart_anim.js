@@ -1,5 +1,4 @@
 const triggers = document.querySelector('.cart-text');
-console.log(triggers)
 const background  = document.querySelector('.dropdownBackground');
 const nav  = document.querySelector('.top');
 
