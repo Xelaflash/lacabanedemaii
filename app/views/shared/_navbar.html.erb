@@ -1,15 +1,21 @@
-<div class="navbar-wagon">
-  <div class="logo">
-    <%= link_to root_path, class: "logo" do %>
-      <%= image_tag "logo.jpg", alt: "la cabane de maï"%>
-    <% end %>
+<nav class="top">
+  <div class="dropdownBackground">
+    <span class="arrow-style"></span>
   </div>
 
-  <div class="hidden-xs hidden-sm">
-    <div class="form-group">
-        <%= render 'shared/search', query: params[:search] %>
+
+  <div class="navbar-wagon">
+    <div class="logo">
+      <%= link_to root_path, class: "logo" do %>
+      <%= image_tag "logo.jpg", alt: "la cabane de maï"%>
+      <% end %>
     </div>
-  </div>
+
+    <div class="hidden-xs hidden-sm">
+      <div class="form-group">
+        <%= render 'shared/search', query: params[:search] %>
+      </div>
+    </div>
 
     <% if user_signed_in? %>
     <div class="navbar-wagon-right">
@@ -38,7 +44,7 @@
           <span class="arrow"></span>
           <li>
             <div class="form-group">
-                <%= render 'shared/search', query: params[:search] %>
+              <%= render 'shared/search', query: params[:search] %>
             </div>
           </li>
         </ul>
@@ -62,13 +68,43 @@
       </div>
     </div>
 
-  <% else %>
-        <!-- Login link (when logged out) -->
+    <% else %>
+    <!-- Login link (when logged out) -->
     <div class="icons-right navbar-wagon-right">
+
+
+
+
       <div class="cart-text">
-        <%= render "shared/cart_text" %>
+          <%= render "shared/cart_text" %>
+
+            <div class="dropdown-style">
+              <% if current_order.order_items == 0 %>
+                <div class="empty-cart container">
+                  <h4 class="text-center">Votre panier est vide</h4>
+                  <p class="text-center">Retourner voir <%= link_to "les produits", produits_path %></p>
+                  <hr class="sep">
+                </div>
+              <% else %>
+                <% current_order.order_items.each do |order_item| %>
+                  <%= render 'carts/cart_row', produit: order_item.produit, order_item: order_item, show_total: true %>
+                  <div class="container prod-line">
+                    <hr class="separator2">
+                  </div>
+                <% end %>
+              <% end %>
+
+            </div>
+
+
+
+
+
         <p class="delivery hidden-xs">Frais de port offerts à partir de 50 €</p>
       </div>
+
+
+
       <div class="right hidden-xs hidden-sm">
         <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
       </div>
@@ -80,7 +116,7 @@
           <span class="arrow"></span>
           <li>
             <div class="form-group">
-                <%= render 'shared/search', query: params[:search] %>
+              <%= render 'shared/search', query: params[:search] %>
             </div>
           </li>
         </ul>
@@ -92,14 +128,15 @@
           <li><%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
           <hr class="sep">
           <% @prod_gammes.each do |g| %>
-            <li>
-              <%= link_to  gamme_path(g), class: "navbar-wagon-item navbar-wagon-link", id: "#{g.id}" do %>
-                <%= g.name %>
-              <% end %>
-              <% end %>
-            </li>
+          <li>
+            <%= link_to  gamme_path(g), class: "navbar-wagon-item navbar-wagon-link", id: "#{g.id}" do %>
+            <%= g.name %>
+            <% end %>
+            <% end %>
+          </li>
         </ul>
-    <% end %>
+        <% end %>
       </div>
     </div>
   </div>
+</nav>
