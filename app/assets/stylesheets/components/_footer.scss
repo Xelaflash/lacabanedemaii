@@ -35,16 +35,28 @@
 }
 
 @media all and (max-width:1000px) {
+  .footer {
+    height: 130px;
+  }
   .footer-link ul {
     flex-wrap:wrap;
-    height: 100%;
-    margin: 15px 0 0 0;
+    margin: 15px 0 0 42px;
   }
   .footer-link li {
-    flex:1 1 50%;
-    padding: 3px;
-    text-align: center;
+    flex: 1 1 50%;
+    padding: 10px;
+
   }
+}
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .footer-link ul {
+      margin: 15px 0 0 0;
+      padding-left: 32px;
+    }
 }
 
 @media (min-width: 320px)
