@@ -1,6 +1,7 @@
 const triggers = document.querySelector('.cart-text');
 const background  = document.querySelector('.dropdownBackground');
 const nav  = document.querySelector('.top');
+let timeUp = false;
 
 function handleEnter() {
   this.classList.add('trigger-enter');
@@ -20,12 +21,16 @@ function handleEnter() {
   background.style.setProperty('width', `${coords.width}px`);
   background.style.setProperty('height', `${coords.height}px`);
   background.style.setProperty('transform', `translate(${coords.left}px, ${coords.top}px)`);
-}
+};
 
 function handleLeave() {
   this.classList.remove('trigger-enter', 'trigger-enter-active');
   background.classList.remove('open');
-}
+  background.style.removeProperty('height');
+  background.style.removeProperty('width');
+  background.style.removeProperty('transform');
+};
+
 
 triggers.addEventListener('mouseenter', handleEnter);
 triggers.addEventListener('mouseleave', handleLeave);
