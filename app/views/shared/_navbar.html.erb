@@ -3,27 +3,56 @@
     <span class="arrow-style"></span>
   </div>
 
-
   <div class="navbar-wagon">
     <div class="logo">
       <%= link_to root_path, class: "logo" do %>
       <%= image_tag "logo.jpg", alt: "la cabane de maï"%>
       <% end %>
     </div>
-
     <div class="hidden-xs hidden-sm">
       <div class="form-group">
         <%= render 'shared/search', query: params[:search] %>
       </div>
     </div>
 
-    <% if user_signed_in? %>
     <div class="navbar-wagon-right">
       <div class="cart-text">
         <%= render "shared/cart_text" %>
+
+
+
+        <div class="dropdown-style">
+          <% if current_order.order_items.size == 0 %>
+              <p class="text-center">Votre panier est vide</p>
+          <% else %>
+          <ul class="list-unstyled">
+            <% current_order.order_items.each do |order_item| %>
+            <li>
+
+              <h6 class="text-center"><strong><%= order_item.produit.nom %></strong></h6>
+              <div class="cart-anim">
+              <%= cl_image_tag order_item.produit.photo, crop: :thumb, class: "pic-cart-anim" %>
+                <div class="cart-anim-right">
+                  <p> Qantité : <%= order_item.quantity %></p>
+                  <p>Px unit : <span style="color: green"><%= humanized_money(order_item.unit_price)%> <%= currency_symbol %></span></p>
+                </div>
+              </div>
+            </li>
+              <hr class="sep">
+            <% end %>
+            <h5 class="text-right">Total : <span id="price" style="color: green"><%= humanized_money(current_order.total_price) %> <%= currency_symbol %></span></h5>
+          <% end %>
+          </ul>
+        </div>
         <p class="delivery hidden-xs">Frais de port offerts à partir de 50 €</p>
       </div>
 
+
+
+
+
+
+    <% if user_signed_in? %>
       <div class="right hidden-xs hidden-sm">
         <%= link_to "Mes commandes", orders_path, class: "navbar-wagon-item navbar-wagon-link"  %>
       </div>
@@ -49,6 +78,7 @@
           </li>
         </ul>
       </div>
+
       <div class="dropdown dropdown-user-link">
         <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
@@ -71,37 +101,6 @@
     <% else %>
     <!-- Login link (when logged out) -->
     <div class="icons-right navbar-wagon-right">
-
-
-
-
-      <div class="cart-text">
-          <%= render "shared/cart_text" %>
-
-            <div class="dropdown-style">
-              <% if current_order.order_items.size == 0 %>
-                  <p class="text-center">Votre panier est vide</p>
-              <% else %>
-                <% current_order.order_items.each do |order_item| %>
-                <ul>
-                  <li>
-                    <p> <%= order_item.produit.nom %></p>
-                  </li>
-                </ul>
-                <% end %>
-              <% end %>
-
-            </div>
-
-
-
-
-
-        <p class="delivery hidden-xs">Frais de port offerts à partir de 50 €</p>
-      </div>
-
-
-
       <div class="right hidden-xs hidden-sm">
         <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
       </div>
@@ -129,10 +128,11 @@
             <%= link_to  gamme_path(g), class: "navbar-wagon-item navbar-wagon-link", id: "#{g.id}" do %>
             <%= g.name %>
             <% end %>
-            <% end %>
+          <% end %>
           </li>
         </ul>
-        <% end %>
+      <% end %>
+
       </div>
     </div>
   </div>

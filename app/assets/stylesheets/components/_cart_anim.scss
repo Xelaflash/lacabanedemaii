@@ -2,62 +2,79 @@
   opacity: 0;
   position: absolute;
   overflow: hidden;
-  padding:20px;
-  top:-20px;
+  padding:20px 30px 0px 30px;
+  top:-30px;
+  left: -85px;
   border-radius:2px;
   transition: all 0.5s;
   transform: translateY(100px);
   will-change: opacity;
   display: none;
+  z-index: 11;
+    p {
+      margin: 10px;
+      font-size: 12px;
+    }
+
+    h6 {
+      font-size: 13px;
+    }
+    h5 {
+      margin: 15px;
+    }
 }
+
 .trigger-enter .dropdown-style {
     display: block;
   }
 
-  .trigger-enter-active .dropdown-style {
-    opacity: 1;
-  }
+.trigger-enter-active .dropdown-style {
+  opacity: 1;
+}
 
-  .dropdownBackground {
-    width:100px;
-    height:100px;
-    position: absolute;
-    background: white;
-    border-radius: 4px;
-    box-shadow: 0 50px 100px rgba(50,50,93,.1), 0 15px 35px rgba(50,50,93,.15), 0 5px 15px rgba(0,0,0,.1);
-    transition:all 0.3s, opacity 0.1s, transform 0.2s;
-    transform-origin: 50% 0;
+.dropdownBackground {
+  width:100px;
+  height:100px;
+  position: absolute;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 -3px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);;
+  transition:all 0.3s, opacity 0.1s, transform 0.2s;
+  transform-origin: 50% 0;
+  display: flex;
+  justify-content: center;
+  opacity:0;
+  z-index: 10;
+
+}
+
+.dropdownBackground.open {
+  opacity: 1;
+
+}
+.arrow-style {
+  position: absolute;
+  width:20px;
+  height:20px;
+  display: block;
+  background:white;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.pic-cart-anim {
+  height: 75px;
+  width: 75px;
+  margin-top: -10px;
+}
+
+  .cart-anim {
     display: flex;
-    justify-content: center;
-    opacity:0;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 10px 10px;
   }
 
-  .dropdownBackground.open {
-    opacity: 1;
-  }
-  .arrow-style {
-    position: absolute;
-    width:20px;
-    height:20px;
-    display: block;
-    background:white;
-    transform: translateY(-50%) rotate(45deg);
-  }
-  .cool > li > a {
-    color: yellow;
-    text-decoration: none;
-    font-size: 20px;
-    background: rgba(0,0,0,0.2);
-    padding:10px 20px;
-    display: inline-block;
-    margin:20px;
-    border-radius:5px;
-  }
-
-
-
-  .cool > li {
-    position: relative;
-    display:flex;
-    justify-content: center;
+  .cart-anim-right {
+    min-width: 150px;
+    padding-left: 25px;
   }
