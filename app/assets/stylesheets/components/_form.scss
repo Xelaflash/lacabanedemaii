@@ -1,5 +1,5 @@
 .log-page {
-  min-height: 85vh;
+  min-height: 83vh;
   background: $body-bg;
 }
 
@@ -55,3 +55,19 @@
   }
 }
 
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .form-login {
+      margin: 40px 0 40px 0;
+    }
+}
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .form-login {
+      margin: 100px 0 40px 0;
+    }
+}
