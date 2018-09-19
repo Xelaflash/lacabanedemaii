@@ -105,7 +105,7 @@
   color: #512501;
 }
 
-@media(max-width: 730px) {
+@media(max-width: 767px) {
   .prod-show {
     margin-top: 20px;
   }
@@ -148,6 +148,29 @@
  {
   .show-right {
     padding: 0;
+  }
+  .buy-show {
+    margin: 15px 160px;
+  }
+  .show-left {
+    margin-bottom: 50px;
+  }
+  .sub-right {
+    margin: 50px 0 20px 150px;
+    max-width: 500px;
+  }
+  .details {
+    margin-left: 30px;
+  }
+}
+
+@media
+  (min-width: 768px)
+  and (max-width: 1024px)
+ {
+  .show-right {
+    padding: 0;
+    margin-right: 0;
   }
   .buy-show {
     margin: 15px 160px;
