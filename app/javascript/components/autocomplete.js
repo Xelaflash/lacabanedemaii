@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   };
-  autocomplete.addListener('place_changed', fillInAddress);
+  // autocomplete.addListener('place_changed', fillInAddress);
 
   function fillInAddress() {
     // Get the place details from the autocomplete object.
