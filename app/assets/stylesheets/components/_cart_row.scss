@@ -64,16 +64,18 @@ p {
 
 .delete-item button {
   border:none;
+  background-color: white;
+  opacity: 1;
+}
+
+.delete-item button:hover {
+  opacity: 0.6;
 }
 
 .fa-trash-alt {
   color: #686868;
   font-size: 25px;
   opacity: 1;
-}
-
-.fa-trash-alt:hover {
-  opacity: 0.6;
 }
 
 @media (max-width: 767px) {
