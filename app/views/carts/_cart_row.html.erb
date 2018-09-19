@@ -29,7 +29,11 @@
 
         <div class="delete">
           <%#= link_to "<i class='far fa-trash-alt'></i>".html_safe, order_item, method: :delete, data: { confirm: "Êtes-vous sûr de vouloir retirer #{order_item.produit.nom} de votre panier?" }, remote: true %>
-          <%= button_to "delete", order_item, method: :delete, remote: true, form_class: "delete-item", data: { name: "#{order_item.produit.nom}" } %>
+          <%= button_to order_item, method: :delete, remote: true, form_class: "delete-item", data: { name: "#{order_item.produit.nom}" } do %>
+          <span class="far fa-trash-alt"></span>
+          <% end %>
+
+
 
         </div>
 

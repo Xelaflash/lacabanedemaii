@@ -10,7 +10,7 @@
   transform: translateY(100px);
   will-change: opacity;
   display: none;
-  z-index: 3;
+  z-index: 12;
     p {
       margin: 10px;
       font-size: 12px;
@@ -39,12 +39,12 @@
   background: white;
   border-radius: 4px;
   box-shadow: 0 -3px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);;
-  transition:all 0.3s, opacity 0.1s, transform 0.2s;
+  // transition:all 0.3s, opacity 0.1s, transform 0.2s;
   transform-origin: 50% 0;
   display: flex;
   justify-content: center;
   opacity:0;
-  z-index: 2;
+  z-index: 11;
 }
 
 .dropdownBackground.open {
