@@ -13,19 +13,19 @@ function bindSweetAlertButton(e) {
     buttons: true,
     dangerMode: true,
     closeOnClickOutside: false,
-  }).then(function(isConfirm) {
+  }).then((isConfirm) => {
     if (isConfirm) {
       swal({
         title: 'Supprimé!',
         text: 'Le produit a été sorti du panier!',
         icon: 'success'
-      }).then(function() {
+      }).then(() => {
         form.submit();
       });
     } else {
       swal("Annulé", " Votre produit est sain et sauf :)", "error");
     }
   });
-};
+}
 
 swalButtons.forEach(button => button.addEventListener('click', bindSweetAlertButton));
