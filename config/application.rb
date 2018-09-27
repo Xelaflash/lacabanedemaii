@@ -15,7 +15,7 @@ module Lacabanedemaii
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
     config.action_view.embed_authenticity_token_in_remote_forms = true
-    config.active_job.queue_adapter = :sidekiq
+    # config.active_job.queue_adapter = :sidekiq
     config.time_zone='Paris'
 
     # Settings in config/environments/* take precedence over those specified here.

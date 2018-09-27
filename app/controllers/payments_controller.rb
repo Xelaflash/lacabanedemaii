@@ -24,8 +24,10 @@ class PaymentsController < ApplicationController
     flash[:notice] = "Votre paiement a été accepté. Vous allez recevoir un mail de confirmation."
     @order_pay.update(payment: charge.to_json, order_status_id: 2, active: false)
 
-    OrderMailer.order_confirmation_user(@order_pay).deliver_later(wait: 1.minutes)
-    OrderShopMailer.order_confirmation_shop(@order_pay).deliver_later(wait: 2.minutes)
+    # OrderMailer.order_confirmation_user(@order_pay).deliver_later(wait: 1.minutes)
+    # OrderShopMailer.order_confirmation_shop(@order_pay).deliver_later(wait: 2.minutes)
+    OrderMailer.order_confirmation_user(@order_pay).deliver_now
+    OrderShopMailer.order_confirmation_shop(@order_pay).deliver_now
     @order_last = current_user.orders.last
     redirect_to order_path(@order_last)
 
