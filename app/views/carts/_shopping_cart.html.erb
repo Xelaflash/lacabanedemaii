@@ -38,7 +38,7 @@
               <%= f.error_notification %>
               <%= f.input :client_name, required: true, placeholder: "Jean Blaguin", autofocus: true, label: "Nom" %>
               <hr class="sep">
-              <label class="autocomplete-text text-center">Entrez votre adresse afin remplir automatiquement les champs ci-dessous</label><br>
+              <label class="autocomplete-text text-center">Entrez votre adresse afin de remplir automatiquement les champs ci-dessous</label><br>
               <div id="locationField">
                 <input id="autocomplete" class="form-control" placeholder="Entrez votre adresse ici" type="text" ></input>
               </div>
@@ -86,7 +86,7 @@
             <div class="finalize text-right">
               <%= form_tag orders_path do %>
               <%= hidden_field_tag 'order_items_id', @order_items.ids %>
-              <%= submit_tag 'COMMANDER', class: "btn btn-finalize" %>
+              <%= submit_tag 'Finaliser la commande', class: "btn btn-finalize" %>
               <% end %>
             </div>
           <% end %>
@@ -94,9 +94,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-

@@ -1,15 +1,18 @@
+nav {
+  position:relative;
+}
+
 /* Main navbar */
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.3);
   background: white;
-  transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: white;
-  transition: 0.5s background-color ease;
+  position: relative;
 }
 
 /* Logo */
@@ -56,6 +59,7 @@
 
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
+  right: -22px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
 }
@@ -70,11 +74,10 @@
 }
 .navbar-wagon-dropdown-menu li > a:hover {
   background: transparent !important;
-  color: black !important;
   font-family: 'Montserrat Alternates';
-  font-weight: lighter;
-  color: #000000;
   font-size: 13px;
+  color: $secondary !important;
+  font-weight: bold !important;
 }
 .navbar-wagon-dropdown-menu:before {
   // content: ' ';
@@ -90,7 +93,9 @@
 }
 
 .navbar-wagon-dropdown-menu-bis {
-  margin-top: -5px;
+  top: 40px;
+  right: -26px;
+  height: 60px;
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
   border-color: #E6E6E6;
   min-width: 200px;
@@ -112,6 +117,7 @@
 
 .cart-text {
   margin-right: 60px;
+  position: relative;
 }
 
 .header-cart {
@@ -141,10 +147,22 @@
   font-size: 12px !important;
 }
 
-
 .carret {
   margin-top: 10px;
   margin-left: -8px;
+  cursor: pointer;
+}
+
+.arrow {
+  border-top: 1px solid #E6E6E6;
+  border-left: 1px solid #E6E6E6;
+  position: absolute;
+  width:20px;
+  right: 20px;
+  height:20px;
+  display: block;
+  background:white;
+  transform: translateY(-78%) rotate(45deg);
 }
 
 .icons-right {
@@ -154,7 +172,7 @@
 }
 
 .dropdown-search {
-  margin-right: 30px;
+  margin-right: 40px;
   .fa-search {
   color: black;
   font-size: 14px;
@@ -188,4 +206,3 @@
     margin-right: 0;
   }
 }
-

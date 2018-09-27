@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
       redirect_to new_order_payment_path(@order)
     else
       flash[:alert] = "Vous n'avez pas rempli les détails de livraison"
-      redirect_to cart_path
+      render :create
     end
   end
 
@@ -26,6 +26,13 @@ class OrdersController < ApplicationController
     @order = current_user.orders.find(params[:id])
     @order.validate_deliv_details = true
     @order_items = @order.order_items
+    @order_items.each  do |order_item|
+      if order_item.produit.active == false
+        order_item.destroy
+        flash[:alert] = "Le produit #{order_item.produit.nom} est indisponible. Il a été retiré du panier"
+        redirect_to order_path(@order)
+      end
+    end
     add_breadcrumb "accueil", :root_path
     add_breadcrumb "produits", produits_path
     add_breadcrumb "panier", cart_path

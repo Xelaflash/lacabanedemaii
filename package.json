@@ -3,11 +3,15 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
-    "bootstrap": "3",
+    "bootstrap": "^3.3.7",
     "gmaps": "^0.4.24",
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "sweetalert": "^2.1.0"
   },
   "devDependencies": {
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
     "webpack-dev-server": "2.11.2"
   }
 }

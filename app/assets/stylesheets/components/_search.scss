@@ -4,8 +4,11 @@
     border-color: #512501;
     margin-bottom: 0;
     margin-top: 15px;
-    margin-left: 25px;
-    width: 200px;
+    margin-left: 10px;
+    width: 151px;
+    &:focus {
+      outline: none;
+    }
   }
 
   input {
@@ -26,6 +29,9 @@ color: #512501;
 .search_submit {
   border: none;
   background-color: white;
+  &:focus {
+    outline: none;
+  }
 }
 
 @media(min-width: 1100px) {
@@ -37,27 +43,32 @@ color: #512501;
 @media(max-width: 730px) {
   .search-prod {
     .form-search {
-      width: 100px;
+      width: 115px;
     }
     input {
       font-size: 9px;
       height: 25px;
+      -webkit-appearance: none;
+      border-radius: 0;
     }
   }
 }
 
 @media only screen
-  and (min-device-width: 768px)
+  and (min-device-width: 375px)
   and (max-device-width: 1249px)
+  and (-webkit-min-device-pixel-ratio: 2)
  {
     .search-prod {
     .form-search {
       width: 150px;
-      margin-left: 20px;
+      margin-left: 10px;
     }
     input {
       font-size: 9px;
       height: 25px;
+      -webkit-appearance: none;
+      border-radius: 0;
     }
   }
   .dropdown-menu {

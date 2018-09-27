@@ -6,8 +6,8 @@
   border: 1px solid $primary;
   margin: 10px 0;
   padding: 10px 0;
-  min-height: 200px;
-  max-height: 200px;
+  min-height: 210px;
+  max-height: 210px;
 }
 
 .order-detail {
@@ -37,6 +37,7 @@
   .produit-item {
     max-width: 450px;
     min-width: 450px;
+    min-height: 225px;
     }
   }
 }

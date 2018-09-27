@@ -35,6 +35,10 @@ class ApplicationController < ActionController::Base
     stored_location_for(resource_or_scope) || super
   end
 
+  def default_url_options
+    { host: ENV["HOST"] || "localhost:3000" }
+  end
+
   private
 
   def storable_location?
@@ -45,13 +49,8 @@ class ApplicationController < ActionController::Base
     store_location_for(:user, request.fullpath)
   end
 
-
-  private
-
   def last_pending_customer_order
     current_user.orders.where(order_status_id: 1).last
   end
 
 end
-
-
