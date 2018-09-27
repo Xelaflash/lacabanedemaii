@@ -58,8 +58,8 @@ private
     validate_deliv_details == true
   end
 
-  def async_cleaning
-    DeleteOldEmptyOrdersJob.set(wait_until: Date.today.midnight).perform_later(self.id)
-  end
+  # def async_cleaning
+  #   DeleteOldEmptyOrdersJob.set(wait_until: Date.today.midnight).perform_later(self.id)
+  # end
 
 end
