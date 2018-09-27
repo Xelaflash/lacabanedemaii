@@ -315,7 +315,7 @@ DEPENDENCIES
   activeadmin
   autoprefixer-rails
   bootsnap
-  bootstrap-sass (~> 3.3)
+  bootstrap-sass (~> 3.3.7)
   brakeman
   breadcrumbs_on_rails
   cloudinary
