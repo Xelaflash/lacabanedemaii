@@ -16,7 +16,7 @@ class Order < ApplicationRecord
   before_save :total
   monetize :total_price_cents
 
-  after_save :async_cleaning
+  # after_save :async_cleaning
 
   attr_accessor :validate_deliv_details
 
