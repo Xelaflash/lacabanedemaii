@@ -48,6 +48,7 @@
         <% @order.order_status_id == 4 %>
         <h6><strong style="color: red"><%= @order.order_status.name %></strong></h6>
       <% end %></h6>
+      <p>Date : <%= @order.created_at.strftime("%d/%m/%Y à %k:%M (%Z)") %></p>
       <hr class="sep">
       <% if @order.valid?  %>
         <h6 class="text-center"> <strong>Adresse de livraison :</strong></h6>

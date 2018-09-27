@@ -37,7 +37,7 @@
   </table>
 
   <div class="list-produits" style="margin: 0 auto;display: flex;justify-content: space-around;align-items: center;width: 840px;background-color: #ffffff;">
-    <div class="prd-list-left">
+    <div class="prd-list-left" style="margin-bottom: 10px;">
       <% @order_items.each do |order_item| %>
         <div class="produit-item" style="margin: 0 auto;padding: 10px 0;">
           <div class="order-detail" style="display: flex;justify-content: space-around;align-items: center;">
@@ -80,7 +80,7 @@
         </td>
       </tr>
     </div>
-    <div class="bottom-recap-right" style="border:1px solid #DDCEBB;padding: 27px;">
+    <div class="bottom-recap-right" style="border:1px solid #DDCEBB;padding: 27px;margin-top:5px;">
       <div class="sous-total">
         <h6 style="font-size: 18px;font-weight: 400;text-align: center;margin: 15px 0;">Sous-Total : <span><%= humanized_money(@order_pay.subtotal) %> <%= currency_symbol %></span></h6>
       </div>
@@ -135,4 +135,3 @@
     <td></td>
   </tr>
 </table>
-
