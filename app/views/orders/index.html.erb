@@ -22,7 +22,7 @@
               <ul class="list-unstyled">
                  <li><i class="fas fa-check"></i> <u>Date</u> : <p><%= order.created_at.strftime("%d/%m/%Y à %k:%M (%Z)") %></p></li>
                 <li><i class="fas fa-check"></i> <u>Statuts</u> :
-                  <% if  %>
+                  <% if %>
                     <% order.order_status_id == 2 %>
                     <p><strong style="color: green"><%= order.order_status.name %></strong></p>
                   <% elsif %>
@@ -54,9 +54,3 @@
     </div>
   <% end %>
 </div>
-
-
-
-
-
-

@@ -21,22 +21,18 @@
                                         label: false,
                                         default: 1,
                                         value: order_item.quantity,
-                                        class: "form-control"%>
+                                        class: "form-control" %>
             <%= f.hidden_field :produit_id, value: produit.id %>
-            <%= f.submit "Modifier qté", class: "btn btn-block panier q" %>
+            <%#= f.submit "Modifier qté", class: "btn btn-block panier q" %>
+            <%= f.button :submit, "Modifier qté", class: "btn btn-block panier q", form_class: "update_quantity" %>
             <% end %>
         </div>
 
         <div class="delete">
-          <%#= link_to "<i class='far fa-trash-alt'></i>".html_safe, order_item, method: :delete, data: { confirm: "Êtes-vous sûr de vouloir retirer #{order_item.produit.nom} de votre panier?" }, remote: true %>
           <%= button_to order_item, method: :delete, remote: true, form_class: "delete-item", data: { name: "#{order_item.produit.nom}" } do %>
           <span class="far fa-trash-alt"></span>
           <% end %>
-
-
-
         </div>
-
 
         <div class="total text-center hidden-xs">
           <h6>Total : <span id="price" style="color: green"><%= humanized_money(order_item.total_price) %> <%= currency_symbol %></span></h6>
