@@ -27,14 +27,30 @@ function bindSweetAlertButton(e) {
     }
   });
 }
-
 swalButtons.forEach(button => button.addEventListener('click', bindSweetAlertButton));
 
+// get the value of the field ok
+
+// doing the same for each row ok
+// passing old value if confirm refuse
 
 const swalButtonsQuant = document.querySelectorAll(".edit_order_item");
+
+// function old() {
+//      const select = document.querySelector('select[name="order_item[quantity]"');
+//      const oldValue = select.options[select.selectedIndex].value;
+//         return oldValue
+//    console.log(oldValue);
+// }
+
+swalButtonsQuant.forEach(function(e) {
+  const select = e.querySelector('select[name="order_item[quantity]"');
+  const oldValue = select.options[select.selectedIndex].value;
+  console.log(oldValue);
+});
+
 function bindSweetAlertButtonQuant(event) {
   const formQ = this;
-
   event.preventDefault();
   swal({
     title: `Modifier la Quantité ?`,
@@ -55,7 +71,6 @@ function bindSweetAlertButtonQuant(event) {
     } else {
       swal("Annulé", " Rien n'a été modifié", "error");
     }
-
   });
 }
 
