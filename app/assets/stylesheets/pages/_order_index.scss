@@ -37,10 +37,22 @@
   margin-left: 12px;
 }
 
-u {
-  margin-top: 1px;
-}
-
 .btn-danger {
   margin: 5px 0px 20px 0px;
+}
+
+.order-cancel p {
+  margin: 10px 0;
+}
+
+
+.delete-order button {
+  border:none;
+  padding:0;
+  background-color: white;
+  opacity: 1;
+}
+
+.delete-order button:hover {
+  opacity: 0.6;
 }

@@ -7,7 +7,7 @@ function bindSweetAlertButton(e) {
   e.preventDefault();
   swal({
     title: `Effacer ${productName.dataset.name} ?`,
-    text: "Êtes-vous sûr de vouloir retirer ce produit de votre panier?",
+    text: "Êtes-vous sûr de vouloir retirer ce produit de votre panier ? 😱",
     icon: "warning",
     buttons: true,
     dangerMode: true,
@@ -22,7 +22,7 @@ function bindSweetAlertButton(e) {
         form.submit();
       });
     } else {
-      swal("Annulé", " Votre produit est sain et sauf :)", "error");
+      swal("Annulé", "Votre produit est sain et sauf 😀 ", "error");
     }
   });
 }
@@ -35,8 +35,8 @@ function bindSweetAlertButtonQuant(event) {
   const formQ = this;
   event.preventDefault();
   swal({
-    title: `Quantité modifié!`,
-    text: "La modification de la quantité a été prise en compte avec succès",
+    title: `Quantité modifiée! `,
+    text: "La modification de la quantité a été prise en compte avec succès 👍",
     icon: "success",
     button: "ok",
   }).then(() => {

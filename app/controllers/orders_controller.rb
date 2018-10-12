@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
       redirect_to new_order_payment_path(@order)
     else
       flash[:alert] = "Vous n'avez pas rempli les détails de livraison"
-      render :create
+      redirect_to cart_path
     end
   end
 

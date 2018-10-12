@@ -32,12 +32,16 @@
 }
 
 .unit {
-  max-width: 187px;
+  width: 187px;
 }
 
 .name {
   width: 125px;
   word-wrap:break-word;
+}
+
+.total {
+  width: 129px;
 }
 
 #price {

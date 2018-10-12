@@ -1,13 +1,13 @@
 import swal from 'sweetalert';
 
-const swalButtonsDestroy = document.querySelectorAll(".btn-danger");
+const swalButtonsDestroy = document.querySelectorAll(".delete-order");
 console.log(swalButtonsDestroy);
 function bindSweetAlertButtonDestroy(e) {
-  const form = this;
+  const formDestroy = this;
   e.preventDefault();
   swal({
     title: `Effacer cette commande?`,
-    text: "Êtes-vous sûr de vouloir effacer la commande en cours?",
+    text: "Êtes-vous sûr de vouloir effacer la commande en cours ? 😱 😱",
     icon: "warning",
     buttons: true,
     dangerMode: true,
@@ -16,13 +16,13 @@ function bindSweetAlertButtonDestroy(e) {
     if (isConfirm) {
       swal({
         title: 'Supprimé!',
-        text: 'Le commande a été supprimé avec succès!',
+        text: 'La commande a été supprimée avec succès! 😥',
         icon: 'success'
       }).then(() => {
-        form.submit();
+        formDestroy.submit();
       });
     } else {
-      swal("Annulé", " Votre produit est sain et sauf :)", "error");
+      swal("Annulé", " Votre commande est toujours en vie 🤗", "error");
     }
   });
 }

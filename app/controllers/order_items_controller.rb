@@ -23,7 +23,11 @@ class OrderItemsController < ApplicationController
   def update
     @order = current_order
     @order_item = @order.order_items.find(params[:id])
-    @order_item.update_attributes(order_item_params)
+    @order_item.update(order_item_params)
+    respond_to do |format|
+      format.html
+      format.js
+    end
     @order_items = @order.order_items
     redirect_to cart_path
   end
@@ -33,6 +37,10 @@ class OrderItemsController < ApplicationController
     @order_item = @order.order_items.find(params[:id])
     @order_item.destroy
     @order_items = @order.order_items
+    respond_to do |format|
+      format.html
+      format.js
+    end
     redirect_to cart_path
   end
 

@@ -41,8 +41,12 @@
               <div class="order-cancel text-center">
                 <% if %>
                   <% order.order_status_id == 1 %>
-                  <%#= link_to "Effacer la commande", order_path(order), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir annuler la commande en cours ?" }, remote: true, class: "btn btn-danger" %>
-                  <%#= button_to order, method: :delete, remote: true, form_class: "delete-order", class: "btn btn-danger" %>
+                  <%#= link_to "Effacer la commande", order_path(order), method: :delete, remote: true, class: "btn btn-danger" %>
+                  <!-- data: { confirm: "Êtes-vous sûr de vouloir annuler la commande en cours ?" } -->
+                  <%#= button_to order_path(order), method: :delete, remote: true, form_class: "delete-order", class: "btn btn-danger" %>
+                    <%= button_to order, method: :delete, remote: true, form_class: "delete-order" do %>
+                      <p class="btn btn-danger">Effacer la commande</p>
+                    <% end %>
                 <% end %>
               </div>
               <div class="order-details text-center">

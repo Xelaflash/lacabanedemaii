@@ -23,7 +23,6 @@
                                         value: order_item.quantity,
                                         class: "form-control" %>
             <%= f.hidden_field :produit_id, value: produit.id %>
-            <%#= f.submit "Modifier qté", class: "btn btn-block panier q" %>
             <%= f.button :submit, "Modifier qté", class: "btn btn-block panier q", form_class: "update_quantity" %>
             <% end %>
         </div>
