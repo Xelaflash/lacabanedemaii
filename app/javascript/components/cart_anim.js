@@ -1,5 +1,5 @@
 const triggers = document.querySelector('.cart-text');
-const background = document.querySelector('.dropdownBackground');
+const background = document.querySelector('.dropdown-background');
 const nav = document.querySelector('.top');
 
 function handleEnter() {

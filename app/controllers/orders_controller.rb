@@ -43,7 +43,7 @@ class OrdersController < ApplicationController
   def update
     @order = current_order
     @order.validate_deliv_details = true
-    if @order.update_attributes(order_params)
+    if @order.update(order_params)
       flash[:notice] = "Les détails de livraison ont bien été ajoutés"
       redirect_to cart_path
     else

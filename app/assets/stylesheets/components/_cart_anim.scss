@@ -28,11 +28,9 @@
     display: block;
   }
 
-.trigger-enter-active .dropdown-style {
-  opacity: 1;
-}
 
-.dropdownBackground {
+
+.dropdown-background {
   width:0px;
   height:0px;
   position: absolute;
@@ -47,10 +45,21 @@
   z-index: 11;
 }
 
-.dropdownBackground.open {
-  opacity: 1;
+// .dropdown-background.open {
+//   opacity: 1;
+// }
 
+@media screen
+  and (min-device-width: 1024px){
+  .dropdown-background.open {
+      opacity: 1;
+    }
+    .trigger-enter-active .dropdown-style {
+      opacity: 1;
+    }
 }
+
+
 .arrow-style {
   position: absolute;
   width:20px;

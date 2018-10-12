@@ -1,7 +1,6 @@
 import swal from 'sweetalert';
 
 const swalButtonsDestroy = document.querySelectorAll(".delete-order");
-console.log(swalButtonsDestroy);
 function bindSweetAlertButtonDestroy(e) {
   const formDestroy = this;
   e.preventDefault();
