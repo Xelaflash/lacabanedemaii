@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
-  if(autocomplete) {
+  if (autocomplete) {
     autocomplete.addListener('place_changed', fillInAddress);
   }
 });
