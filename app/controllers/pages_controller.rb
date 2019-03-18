@@ -21,11 +21,16 @@ class PagesController < ApplicationController
 
   def mentions_legales
     add_breadcrumb "accueil", :root_path
-    add_breadcrumb "mentions_legales", mentions_legales_path
+    add_breadcrumb "mentions légales", mentions_legales_path
   end
 
   def CGV
     add_breadcrumb "accueil", :root_path
     add_breadcrumb "cgv", cgv_path
+  end
+
+  def privacy_policy
+    add_breadcrumb "accueil", :root_path
+    add_breadcrumb "politique de confidentialite", privacy_policy_path
   end
 end
