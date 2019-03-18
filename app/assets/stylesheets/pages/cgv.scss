@@ -10,10 +10,21 @@
   }
   p {
     font-size:16px;
-    margin: 10px 0;
+    margin: 10px 3px;
   }
 }
 
 .disclaimer {
   color: $red;
+}
+
+
+#price-table {
+  border-collapse: collapse;
+  margin: 20px auto;
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+  }
 }
