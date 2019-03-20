@@ -1,0 +1,30 @@
+.cc-banner {
+  border-top: 1px solid black;
+  height: 60px;
+  font-family: $body-font !important;
+  font-size: 13px !important;
+  margin-right: 1.5em;
+  flex: 0;
+}
+
+.cc-message {
+  margin-left: 50px;
+  flex: 0 1 auto !important;
+}
+
+.cc-btn {
+  min-width: 100px !important;
+}
+
+.cc-btn:hover,
+.cc-btn:focus {
+  background-color: #ddceba !important;
+  text-decoration: none !important;
+  outline: none !important;
+  box-shadow: none;
+}
+
+.cc-window.cc-banner {
+  align-items: center;
+  justify-content: center;
+}
