@@ -28,9 +28,4 @@ class PagesController < ApplicationController
     add_breadcrumb "accueil", :root_path
     add_breadcrumb "cgv", cgv_path
   end
-
-  def privacy_policy
-    add_breadcrumb "accueil", :root_path
-    add_breadcrumb "politique de confidentialite", privacy_policy_path
-  end
 end
