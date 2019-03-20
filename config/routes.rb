@@ -26,5 +26,4 @@ Rails.application.routes.draw do
   get 'aide',            to: 'pages#aide',             as: :aide
   get 'mentions_legales',to: 'pages#mentions_legales',as: :mentions_legales
   get 'CGV',             to: 'pages#CGV',             as: :cgv
-
 end

@@ -5,13 +5,20 @@
   }
 }
 
-.legal-text {
-  margin: 20px auto;
-  p {
-    font-size: 18px;
-    line-height: 30px;
-  }
+#company-infos {
+  text-align: center;
+  line-height: 30px;
 }
 
-
-
+.legal-text {
+  margin: 30px auto;
+  h2 {
+    font-size: 28px;
+  }
+  h3 {
+      font-size: 24px;
+  }
+  p, ul, li {
+    font-size: 16px;
+  }
+}

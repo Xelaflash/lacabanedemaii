@@ -21,7 +21,7 @@ class PagesController < ApplicationController
 
   def mentions_legales
     add_breadcrumb "accueil", :root_path
-    add_breadcrumb "mentions_legales", mentions_legales_path
+    add_breadcrumb "mentions légales", mentions_legales_path
   end
 
   def CGV
