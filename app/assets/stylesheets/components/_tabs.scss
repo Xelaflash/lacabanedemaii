@@ -17,17 +17,34 @@
   }
 }
 
+
 .tabs a:hover {
   cursor: pointer;
   text-decoration: none;
-  h3{
-  font-weight: bold;
-  opacity: 0.8;
+  h3 {
+    // font-weight: bold;
+    opacity: 0.8;
   }
+}
+
+.tabs a:not(.active):after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background:$primary;
+  transition: width .3s;
+}
+
+.tabs a:hover:not(.active):after {
+  width: 100%;
 }
 
 .active {
   border-bottom: 3px solid $primary;
+  // h3 {
+  //   font-weight: bold;
+  // }
 }
 
 @media (max-width: 540px) {
