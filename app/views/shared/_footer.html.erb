@@ -35,14 +35,37 @@
 
   </section>
   <section class="links">
-    <div class="footer-link">
-      <ul>
-          <li><%= link_to "Qui sommes-nous", qui_sommes_nous_path, class: "footer-item footer-link"%></li>
-          <li><%= link_to "Contact", new_contact_path, class: "footer-item footer-link"%></li>
-          <li><%= link_to "Aide", aide_path, class: "footer-item footer-link"%></li>
-          <li><%= link_to "CGV", cgv_path, class: "footer-item footer-link"%></li>
-          <li><%= link_to "Mentions légales", mentions_legales_path, class: " footer-item footer-link"%></li>
-        </ul>
+    <div class="container">
+      <div class="row links-items">
+        <div class="col-xs-6 col-sm-3">
+          <h3>La cabane</h3>
+          <ul>
+            <li><%= link_to "Qui sommes-nous", qui_sommes_nous_path, class: "footer-item footer-link"%></li>
+            <li><%= link_to "Nous contacter", new_contact_path, class: "footer-item footer-link"%></li>
+          </ul>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+          <h3>Aide</h3>
+          <ul>
+            <li><%= link_to "FAQ", aide_path, class: "footer-item footer-link"%></li>
+          </ul>
+        </div>
+        <div class="col-xs-6 col-sm-3">
+          <h3>Legal</h3>
+          <ul>
+            <li><%= link_to "CGV", cgv_path, class: "footer-item footer-link"%></li>
+            <li><%= link_to "Mentions légales", mentions_legales_path, class: " footer-item footer-link"%></li>
+          </ul>
+        </div>
+        <div class="col-xs-6 col-sm-3" id="shop-details">
+          <h3>Contact</h3>
+          <ul>
+            <li><a class="footer-item footer-link" href="mailto:contact@lacabanedemaii.com">contact@lacabanedemaii.com</a></li>
+            <li><a class="footer-item footer-link" href="tel:+33642225711">+33 6 42 22 57 11</a></li>
+            <li class="footer-item"><p >16 avenue pasteur<br> 33510, Andernos-les-Bains </p></li>
+          </ul>
+        </div>
+      </div>
     </div>
     <div class="footer-social">
       <p class="hidden-xs">Suivez nous sur </p>
