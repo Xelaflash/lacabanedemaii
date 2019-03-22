@@ -1,12 +1,36 @@
 .footer {
-  border-top: 1px solid rgba(0,0,0,0.3);
-  background: white;
-  transition: all 0.3s ease;
-  height: 60px;
-  padding: 0px 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  // border-top: 1px solid rgba(0,0,0,0.3);
+  // background: white;
+  // transition: all 0.3s ease;
+  // height: 60px;
+  // padding: 0px 30px;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
+  margin-top: 40px;
+}
+
+.reinsurance {
+  background: $primary;
+  padding: 40px 0px;
+
+  p {
+    font-size: 15px;
+    padding: 15px;
+    margin: 10px 0;
+  }
+}
+
+.reinsurance-item {
+  text-align: center;
+  padding: 30px 15px 15px 15px;
+  height: 223px;
+}
+
+
+.icon-footer {
+  height: 80px;
+  padding-top: 12px;
 }
 
 .footer-item {

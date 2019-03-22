@@ -1,16 +1,56 @@
 <div class="footer" >
-  <div class="footer-link">
-    <ul>
-        <li><%= link_to "Qui sommes-nous", qui_sommes_nous_path, class: "footer-item footer-link"%></li>
-        <li><%= link_to "Contact", new_contact_path, class: "footer-item footer-link"%></li>
-        <li><%= link_to "Aide", aide_path, class: "footer-item footer-link"%></li>
-        <li><%= link_to "CGV", cgv_path, class: "footer-item footer-link"%></li>
-        <li><%= link_to "Mentions légales", mentions_legales_path, class: " footer-item footer-link"%></li>
-      </ul>
-  </div>
-  <div class="footer-social">
-    <p class="hidden-xs">Suivez nous sur </p>
-    <a href="https://www.facebook.com/lacabanedemaii16/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-square"></i></a>
-    <a href="https://www.instagram.com/la_cabane_de_maii/?hl=fr" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-  </div>
+  <section class="reinsurance">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-sm-3 reinsurance-item">
+          <div class="suppliers">
+            <%= image_tag "quality2.png", class: "icon-footer", alt: "la cabane de maï- Fournisseurs de qualité"%>
+            <p>Fournisseurs et produits <br>
+            triés sur le volet.</p>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-3 reinsurance-item">
+          <div class="selection">
+            <%= image_tag "eco.png", class: "icon-footer", alt: "la cabane de maï - produits naturels"%>
+            <%= image_tag "craft.png", class: "icon-footer", alt: "la cabane de maï - produits artisanaux"%>
+            <p>Sélections exclusives de cadeaux <br>
+            naturels et artisanaux.</p>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-3 reinsurance-item">
+          <div class="delivery">
+            <%= image_tag "truck1.png", class: "icon-footer", alt: "la cabane de maï - Livraison"%>
+            <p>Livraison Colissimo 48H <br>
+              (offerte à partir de 50 €).</p>
+          </div>
+        </div>
+        <div class="col-xs-6 col-sm-3 reinsurance-item">
+          <div class="security">
+            <%= image_tag "lock.png", class: "icon-footer", id:"lock", alt: "la cabane de maï - Paiement sécurisé"%>
+            <p>Paiement sécurisé</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <section class="links">
+    <div class="footer-link">
+      <ul>
+          <li><%= link_to "Qui sommes-nous", qui_sommes_nous_path, class: "footer-item footer-link"%></li>
+          <li><%= link_to "Contact", new_contact_path, class: "footer-item footer-link"%></li>
+          <li><%= link_to "Aide", aide_path, class: "footer-item footer-link"%></li>
+          <li><%= link_to "CGV", cgv_path, class: "footer-item footer-link"%></li>
+          <li><%= link_to "Mentions légales", mentions_legales_path, class: " footer-item footer-link"%></li>
+        </ul>
+    </div>
+    <div class="footer-social">
+      <p class="hidden-xs">Suivez nous sur </p>
+      <a href="https://www.facebook.com/lacabanedemaii16/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-square"></i></a>
+      <a href="https://www.instagram.com/la_cabane_de_maii/?hl=fr" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+    </div>
+  </section>
+  <section class="footer-bottom">
+
+  </section>
 </div>
