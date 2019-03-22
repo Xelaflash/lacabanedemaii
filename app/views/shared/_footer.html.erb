@@ -1,7 +1,7 @@
 <div class="footer" >
   <section class="reinsurance">
     <div class="container">
-      <div class="row">
+      <div class="row" id="reinsurance-row">
         <div class="col-xs-6 col-sm-3 reinsurance-item">
           <div class="suppliers">
             <%= image_tag "quality2.png", class: "icon-footer", alt: "la cabane de maï- Fournisseurs de qualité"%>
@@ -32,7 +32,6 @@
         </div>
       </div>
     </div>
-
   </section>
   <section class="links">
     <div class="container">
@@ -68,12 +67,20 @@
       </div>
     </div>
     <div class="footer-social">
-      <p class="hidden-xs">Suivez nous sur </p>
-      <a href="https://www.facebook.com/lacabanedemaii16/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-square"></i></a>
+      <p class="hidden-xs">Suivez nous sur</p>
+      <a href="https://www.facebook.com/lacabanedemaii16/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
       <a href="https://www.instagram.com/la_cabane_de_maii/?hl=fr" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
     </div>
   </section>
+  <hr class="separator3">
   <section class="footer-bottom">
-
+    <div id="flex-container">
+      <div id="bottom-footer-row">
+        <%= image_tag "logo.jpg", class: "logo", alt: "la cabane de maï"%>
+      </div>
+      <div id="copyright">
+        <p>© 2019 La cabane de Maï. Site réalisé par <a href="https://www.alexgwebdev.com/" target="_blank" rel="noopener noreferrer"><%= image_tag "alexgwebdev.png", class: "logo-alex", alt: "Alex G - Web developer"%></a></p>
+      </div>
+    </div>
   </section>
 </div>

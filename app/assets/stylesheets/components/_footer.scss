@@ -13,6 +13,10 @@
   }
 }
 
+#reinsurance-row {
+  padding-left: 50px;
+}
+
 .reinsurance-item {
   text-align: center;
   padding: 30px 15px 15px 15px;
@@ -53,7 +57,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding: 10px 50px 10px 100px;
+  padding: 10px 50px 10px 120px;
 }
 
 
@@ -70,7 +74,7 @@
 }
 
 .footer-link:hover {
-  opacity: 0.7;
+  opacity: 0.8;
   color: #512501;
   text-decoration: none;
 }
@@ -130,28 +134,70 @@
 
 .footer-social  {
   display: flex;
-  margin: 0 40px 0 30px;
   align-items: center;
+  margin: -10px 65px 0px 30px;
+  float: right;
   p {
-    font-family: 'Montserrat Alternates';
-    color: #512501;
-    font-size: 13px;
+    font-size: 14px;
     margin: 0 10px;
   }
 }
 
 .footer-social a {
-  color: black;
+  color: $green;
   cursor: pointer;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 30px;
   padding: 0px 10px;
 }
 
-.fa-facebook-square:hover {
-  color: #4167b2;
+.footer hr {
+  margin: 5px 0 10px 0;
 }
 
-.fa-instagram:hover {
-  opacity: 0.7;
+.footer-bottom {
+  padding-bottom: 15px;
+  p {
+    font-size: 13px;
+    margin: 0 10px;
+  }
+}
+
+#flex-container {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 100px;
+}
+
+
+.logo-alex {
+  height: 40px;
+  padding-left: 10px;
+}
+.logo-alex:hover {
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    transform: scale(1.1, .9) translateY(0);
+  }
+  30% {
+    transform: scale(.9, 1.1) translateY(-15px);
+  }
+  50% {
+    transform: scale(1.05, .95) translateY(0);
+  }
+  57% {
+    transform: scale(1, 1) translateY(-7px);
+  }
+  64% {
+    transform: scale(1, 1) translateY(-15px);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
 }
