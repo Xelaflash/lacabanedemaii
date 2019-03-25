@@ -14,7 +14,7 @@
 }
 
 #reinsurance-row {
-  padding-left: 95px;
+  padding-left: 60px;
   margin: 0;
 }
 
@@ -149,81 +149,108 @@
   }
 }
 
-@media all and (max-width:1000px) {
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  #reinsurance-row {
+    padding-left: 0;
+  }
+
+  .reinsurance-item {
+    padding: 0;
+    height: 100%;
+  }
+
+  .reinsurance {
+    padding:20px 0;
+    p {
+      font-size: 13px;
+    }
+  }
+
+  .icon-footer {
+    height: 70px;
+  }
+
+  .links-items {
+    padding: 5px;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .footer-item p {
+    font-size: 11px;
+  }
   .footer-link {
-    width: 100%;
+    font-size: 11px;
   }
-  // .footer {
-  //   height: 100%;
-  //   flex-direction: column;
-  // }
-  .footer-link ul {
-    flex-wrap:wrap;
-    margin: 15px 0 15px 0px;
+
+  .links {
+    padding: 40px 0px 10px;
+    text-align: center;
   }
-  .footer-link li {
-    flex: 1 1 auto;
-    padding: 10px;
+
+  .links li {
+    margin-bottom: 0;
   }
-  // .footer-social {
-  //   margin: 0 0 20px 0 !important;
-  // }
+
+  .items-top {
+    margin-bottom: 20px;
+  }
+
+  #email-footer {
+    margin-left:-10px;
+  }
+
+  .footer-social {
+    float: none;
+    margin: 0 22%;
+    p {
+      font-size: 13px;
+    }
+  }
+
+  #flex-container {
+    display: block;
+    text-align: center;
+    padding: 0;
+  }
+
+  #bottom-footer-row {
+    margin-bottom: 10px;
+  }
+
+  #copyright {
+    margin-bottom: 5px;
+    p {
+      font-size: 11px;
+    }
+  }
 }
 
 @media only screen
   and (min-device-width: 320px)
   and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+  #email-footer {
+    margin-left: 0px;
+  }
+  #flex-container {
+    display: flex;
+    padding: 0 40px;
+  }
+}
+
+@media only screen
+  and (min-device-width: 834px)
+  and (max-device-width: 1366px)
   and (-webkit-min-device-pixel-ratio: 2) {
-    .links-items {
-      padding: 5px;
-      flex-wrap: wrap;
-      text-align: center;
-    }
-    .footer-item p {
-      font-size: 11px;
-    }
-    .footer-link {
-      font-size: 11px;
-    }
-
-    .links {
-      padding: 40px 0px 10px;
-    }
-
-    .links li {
-      margin-bottom: 0;
-    }
-
-    .items-top {
-      margin-bottom: 20px;
-    }
-
-    #email-footer {
-      margin-left:-10px;
-    }
-
-    .footer-social {
-      float: none;
-      margin: 0 22%;
-      p {
-        font-size: 13px;
-      }
-    }
-
-    #flex-container {
-      display: block;
-      text-align: center;
-      padding: 0;
-    }
-
-    .logo {
-      margin-bottom: 10px;
-    }
-
-    #copyright {
-      margin-bottom: 5px;
-      p {
-        font-size: 11px;
-      }
-    }
+  #reinsurance-row {
+    padding-left: 0;
+  }
+  .links-items {
+    padding: 0;
+  }
 }
