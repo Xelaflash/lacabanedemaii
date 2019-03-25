@@ -1,57 +1,151 @@
 .footer {
-  border-top: 1px solid rgba(0,0,0,0.3);
-  background: white;
-  transition: all 0.3s ease;
-  height: 60px;
-  padding: 0px 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  margin-top: 40px;
 }
 
+.reinsurance {
+  background: $primary;
+  padding: 40px 0px;
+
+  p {
+    font-size: 15px;
+    padding: 15px;
+    margin: 10px 0;
+  }
+}
+
+#reinsurance-row {
+  padding-left: 60px;
+  margin: 0;
+}
+
+.reinsurance-item {
+  text-align: center;
+  padding: 30px 15px 15px 15px;
+  height: 223px;
+}
+
+
+.icon-footer {
+  height: 80px;
+  padding-top: 12px;
+}
+
+
+.links {
+  padding: 40px 0px;
+  a {
+    color: #333333;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+  }
+}
+
+.links {
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  li {
+    margin-bottom: 5px;
+  }
+}
+
+.links-items {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10px 50px 10px 120px;
+}
+
+
 .footer-item {
-  cursor: pointer;
-  padding: 0 20px;
+  p {
+    font-size:14px;
+    margin: 0px auto;
+  }
 }
 
 .footer-link {
-  width: 70%;
-  font-family: 'Montserrat Alternates';
-  color: #512501;
-  font-size: 13px;
+  cursor: pointer;
+  font-size: 14px;
 }
 
-.footer-item:hover {
-  opacity: 0.7;
+.footer-link:hover {
+  opacity: 0.8;
   color: #512501;
   text-decoration: none;
 }
 
-.footer-link ul {
-  display:flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.footer-social  {
+  display: inline-flex;
+  align-items: center;
+  margin: -10px 65px 0px 30px;
+  float: right;
+  p {
+    font-size: 14px;
+    margin: 0 10px;
+  }
 }
 
-@media all and (max-width:1000px) {
-  .footer-link {
-    width: 100%;
+.footer-social a {
+  color: $green;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 30px;
+  padding: 0px 10px;
+}
+
+.footer hr {
+  margin: 5px 0 10px 0;
+}
+
+.footer-bottom {
+  padding-bottom: 15px;
+  p {
+    font-size: 13px;
+    margin: 0 10px;
   }
-  .footer {
-    height: 100%;
-    flex-direction: column;
+}
+
+#flex-container {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 100px;
+}
+
+.logo-alex {
+  height: 40px;
+  padding-left: 10px;
+}
+.logo-alex:hover {
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0% {
+    transform: scale(1, 1) translateY(0);
   }
-  .footer-link ul {
-    flex-wrap:wrap;
-    margin: 15px 0 15px 0px;
+  10% {
+    transform: scale(1.1, .9) translateY(0);
   }
-  .footer-link li {
-    flex: 1 1 auto;
-    padding: 10px;
+  30% {
+    transform: scale(.9, 1.1) translateY(-15px);
   }
-  .footer-social {
-    margin: 0 0 20px 0 !important;
+  50% {
+    transform: scale(1.05, .95) translateY(0);
+  }
+  57% {
+    transform: scale(1, 1) translateY(-7px);
+  }
+  64% {
+    transform: scale(1, 1) translateY(-15px);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
   }
 }
 
@@ -59,57 +153,108 @@
   and (min-device-width: 320px)
   and (max-device-width: 812px)
   and (-webkit-min-device-pixel-ratio: 2) {
-    .footer {
-      padding:0;
-      flex-direction: column;
-      align-items: center;
-      height: 100%;
+  #reinsurance-row {
+    padding-left: 0;
+  }
+
+  .reinsurance-item {
+    padding: 0;
+    height: 100%;
+  }
+
+  .reinsurance {
+    padding:20px 0;
+    p {
+      font-size: 13px;
     }
-    .footer-link {
+  }
+
+  .icon-footer {
+    height: 70px;
+  }
+
+  .links-items {
+    padding: 5px;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .footer-item p {
+    font-size: 11px;
+  }
+  .footer-link {
+    font-size: 11px;
+  }
+
+  .links {
+    padding: 40px 0px 10px;
+    text-align: center;
+  }
+
+  .links li {
+    margin-bottom: 0;
+  }
+
+  #item-1 {
+    flex: 1;
+  }
+
+  .items-top {
+    margin-bottom: 20px;
+  }
+
+  #email-footer {
+    margin-left:-10px;
+  }
+
+  .footer-social {
+    float: none;
+    margin: 0 22%;
+    p {
+      font-size: 13px;
+    }
+  }
+
+  #flex-container {
+    display: block;
+    text-align: center;
+    padding: 0;
+  }
+
+  #bottom-footer-row {
+    margin-bottom: 10px;
+  }
+
+  #copyright {
+    margin-bottom: 5px;
+    p {
       font-size: 11px;
-      width: 100%;
     }
-    .footer-link a {
-      margin: 5px;
-    }
-    .footer-link ul {
-      margin: 20px auto;
-    }
-    .footer-social {
-      margin: 0 0 20px 0 !important;
-    }
-    .footer-link li {
-      flex: 1 1 auto;
-      padding: 10px;
-      text-align: center;
-    }
-}
-
-
-.footer-social  {
-  display: flex;
-  margin: 0 40px 0 30px;
-  align-items: center;
-  p {
-    font-family: 'Montserrat Alternates';
-    color: #512501;
-    font-size: 13px;
-    margin: 0 10px;
   }
 }
 
-.footer-social a {
-  color: black;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 24px;
-  padding: 0px 10px;
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+  #email-footer {
+    margin-left: 0px;
+  }
+  #flex-container {
+    display: flex;
+    padding: 0 40px;
+  }
 }
 
-.fa-facebook-square:hover {
-  color: #4167b2;
-}
-
-.fa-instagram:hover {
-  opacity: 0.7;
+@media only screen
+  and (min-device-width: 834px)
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  #reinsurance-row {
+    padding-left: 0;
+  }
+  .links-items {
+    padding: 0;
+  }
 }

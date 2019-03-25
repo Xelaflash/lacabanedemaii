@@ -5,8 +5,8 @@
 
   <div class="navbar-wagon">
     <div class="logo">
-      <%= link_to root_path, class: "logo" do %>
-      <%= image_tag "logo.jpg", alt: "la cabane de maï"%>
+      <%= link_to root_path do %>
+      <%= image_tag "logo.jpg",class: "logo", alt: "la cabane de maï"%>
       <% end %>
     </div>
     <div class="hidden-xs hidden-sm">
@@ -18,7 +18,7 @@
     <div class="navbar-wagon-right">
       <div class="cart-text">
         <%= render "shared/cart_text" %>
-        <p class="delivery hidden-xs">Frais de port offerts à partir de 50 €</p>
+        <p class="free_delivery hidden-xs">Frais de port offerts à partir de 50 €</p>
         <div class="dropdown-style">
           <% if current_order.order_items.size == 0 %>
           <div class="cart-anim-empty">
