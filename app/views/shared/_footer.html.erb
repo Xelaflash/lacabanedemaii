@@ -36,14 +36,14 @@
   <section class="links">
     <div class="container">
       <div class="row links-items">
-        <div class="col-xs-6 col-sm-3">
+        <div class="col-xs-6 col-sm-3 items-top">
           <h3>La cabane</h3>
           <ul>
             <li><%= link_to "Qui sommes-nous", qui_sommes_nous_path, class: "footer-item footer-link"%></li>
             <li><%= link_to "Nous contacter", new_contact_path, class: "footer-item footer-link"%></li>
           </ul>
         </div>
-        <div class="col-xs-6 col-sm-3">
+        <div class="col-xs-6 col-sm-3 items-top">
           <h3>Aide</h3>
           <ul>
             <li><%= link_to "FAQ", aide_path, class: "footer-item footer-link"%></li>
@@ -59,15 +59,15 @@
         <address class="col-xs-6 col-sm-3" id="shop-details">
           <h3>Contact</h3>
           <ul>
-            <li><a class="footer-item footer-link" href="mailto:contact@lacabanedemaii.com">contact@lacabanedemaii.com</a></li>
             <li><a class="footer-item footer-link" href="tel:+33642225711">+33 6 42 22 57 11</a></li>
-            <li class="footer-item"><p >16 avenue pasteur<br> 33510, Andernos-les-Bains </p></li>
+            <li class="footer-item"><p>16 avenue pasteur<br> 33510, Andernos-les-Bains </p></li>
+            <li><a class="footer-item footer-link" id="email-footer" href="mailto:contact@lacabanedemaii.com">contact@lacabanedemaii.com</a></li>
           </ul>
         </address>
       </div>
     </div>
     <div class="footer-social">
-      <p class="hidden-xs">Suivez nous sur</p>
+      <p>Suivez nous sur</p>
       <a href="https://www.facebook.com/lacabanedemaii16/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
       <a href="https://www.instagram.com/la_cabane_de_maii/?hl=fr" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
     </div>
