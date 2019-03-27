@@ -1,11 +1,11 @@
 .banner {
-  background-image: url("banniere01.png");
-  min-height: 100vh;
-  width:100%;
-  background-position: center;
+  background-image: url("banniere02.png");
+  min-height: 360px;
+  // background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-attachment: fixed;
+  background-position-y: 70px;
 }
 
 @media (max-width: 540px) {

@@ -1,6 +1,6 @@
 const triggers = document.querySelector('.cart-text');
 const background = document.querySelector('.dropdown-background');
-const nav = document.querySelector('.top');
+const nav = document.querySelector('#navbar');
 
 function handleEnter() {
   this.classList.add('trigger-enter');
