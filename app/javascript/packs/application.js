@@ -1,4 +1,5 @@
 import "bootstrap";
+import "../components/nav";
 import '../components/autocomplete';
 import '../components/autocomplete_sign_in';
 import '../components/tab';

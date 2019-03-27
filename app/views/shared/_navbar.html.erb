@@ -1,9 +1,9 @@
-<nav class="top">
+<nav id="navbar">
   <div class="dropdown-background">
     <span class="arrow-style"></span>
   </div>
 
-  <div class="navbar-wagon">
+  <div class="navbar-top">
     <div class="logo">
       <%= link_to root_path do %>
       <%= image_tag "logo.jpg",class: "logo", alt: "la cabane de maï"%>
@@ -15,7 +15,7 @@
       </div>
     </div>
 
-    <div class="navbar-wagon-right">
+    <div class="navbar-right">
       <div class="cart-text">
         <%= render "shared/cart_text" %>
         <p class="free_delivery hidden-xs">Frais de port offerts à partir de 50 €</p>
@@ -50,22 +50,22 @@
 
     <% if user_signed_in? %>
       <div class="right hidden-xs hidden-sm">
-        <%= link_to "Mes commandes", orders_path, class: "navbar-wagon-item navbar-wagon-link"  %>
+        <%= link_to "Mes commandes", orders_path, class: "navbar-item navbar-link"  %>
       </div>
       <div class="carret dropdown hidden-xs hidden-sm">
         <i class="fas fa-caret-down dropdown-toggle" data-toggle="dropdown"></i>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu-bis">
+        <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu-bis">
           <span class="arrow"></span>
-          <li><%= link_to t(".profile", default: "Mon compte"),edit_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <li><%= link_to t(".sign_out", default: "Déconnexion"),destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to t(".profile", default: "Mon compte"),edit_user_registration_path, class: "navbar-item navbar-link" %></li>
+          <li><%= link_to t(".sign_out", default: "Déconnexion"),destroy_user_session_path, method: :delete, class: "navbar-item navbar-link" %></li>
         </ul>
       </div>
     </div>
 
-    <div class="icons-right navbar-wagon-item hidden-md hidden-lg">
+    <div class="icons-right navbar-item hidden-md hidden-lg">
       <div class="dropdown dropdown-search">
         <i class="fa fa-search dropdown-toggle" data-toggle="dropdown"></i>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu-bis">
+        <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu-bis">
           <span class="arrow"></span>
           <li>
             <div class="form-group">
@@ -77,34 +77,34 @@
 
       <div class="dropdown dropdown-user-link">
         <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
           <span class="arrow"></span>
           <% @prod_gammes.each do |g| %>
           <li>
-            <%= link_to  gamme_path(g), class: "navbar-wagon-item navbar-wagon-link", id: "#{g.id}" do %>
+            <%= link_to  gamme_path(g), class: "navbar-item navbar-link", id: "#{g.id}" do %>
             <%= g.name %>
             <% end %>
             <% end %>
           </li>
           <hr class="sep">
-          <li><%= link_to "Mes commandes", orders_path, class: "navbar-wagon-item navbar-wagon-link"  %></li>
-          <li><%= link_to t(".profile", default: "Mon compte"),edit_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <li><%= link_to t(".sign_out", default: "Déconnexion"),destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "Mes commandes", orders_path, class: "navbar-item navbar-link"  %></li>
+          <li><%= link_to t(".profile", default: "Mon compte"),edit_user_registration_path, class: "navbar-item navbar-link" %></li>
+          <li><%= link_to t(".sign_out", default: "Déconnexion"),destroy_user_session_path, method: :delete, class: "navbar-item navbar-link" %></li>
         </ul>
       </div>
     </div>
 
     <% else %>
     <!-- Login link (when logged out) -->
-    <div class="icons-right navbar-wagon-right">
+    <div class="icons-right navbar-right">
       <div class="right hidden-xs hidden-sm">
-        <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-item navbar-link" %>
       </div>
     </div>
-    <div class="icons-right navbar-wagon-item hidden-md hidden-lg">
+    <div class="icons-right navbar-item hidden-md hidden-lg">
       <div class="dropdown dropdown-search">
         <i class="fa fa-search dropdown-toggle" data-toggle="dropdown"></i>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu-bis">
+        <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu-bis">
           <span class="arrow"></span>
           <li>
             <div class="form-group">
@@ -115,13 +115,13 @@
       </div>
       <div class="dropdown">
         <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
           <span class="arrow"></span>
-          <li><%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-item navbar-link" %></li>
           <hr class="sep">
           <% @prod_gammes.each do |g| %>
           <li>
-            <%= link_to  gamme_path(g), class: "navbar-wagon-item navbar-wagon-link", id: "#{g.id}" do %>
+            <%= link_to  gamme_path(g), class: "navbar-item navbar-link", id: "#{g.id}" do %>
             <%= g.name %>
             <% end %>
           <% end %>
