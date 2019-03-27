@@ -10,10 +10,7 @@
 
 @media (max-width: 540px) {
   .banner {
-  height: 300px;
-    img {
-      height: 295px;
-      width: 100%;
-    }
+  min-height: 225px;
+  background-image: url("banniere01.png");
   }
 }
