@@ -1,18 +1,88 @@
 .banner {
-  height: 400px;
-  img {
-    height: 400px;
-    width: 100%;
+  background-image: url("banniere02.png"),
+  url("https://res.cloudinary.com/drzibyjvb/image/upload/v1530537490/ruse-inc-lusage-repens-du-bois-rcupr.jpg");
+  min-height: 37vh;
+  background-repeat: no-repeat;
+  background-size: contain, cover;
+  background-attachment: fixed;
+  background-position-y: 70px;
+}
+
+// big screen
+@media screen
+and (min-width: 1600px)  {
+  .banner {
+    min-height: 41vh;
   }
 }
 
-
-@media (max-width: 540px) {
+// iphone
+@media only screen
+  and (max-device-width: 812px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
   .banner {
-  height: 300px;
-    img {
-      height: 295px;
-      width: 100%;
-    }
+  min-height: 225px;
+  background-image: url("banniere01.png");
+  }
+}
+
+// iphone
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 812px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  .banner {
+    min-height: 165px;
+    background-image: url("banniere02.png");
+  }
+}
+
+// ipad portrait
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  .banner {
+    min-height: 430px;
+    background-image: url("banniere01.png");
+  }
+}
+
+// ipad landscape
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1365px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  .banner {
+    min-height: 565px;
+    background-image: url("banniere01.png");
+  }
+}
+
+// ipad pro
+@media only screen
+  and (min-device-width: 1024px)
+  and (max-device-width: 1366px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  .banner {
+    min-height: 565px;
+    background-image: url("banniere01.png");
+  }
+}
+
+// ipad pro
+@media only screen
+  and (min-device-width: 1366px)
+  and (max-device-width: 1366px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  .banner {
+    min-height: 745px;
+    background-image: url("banniere01.png");
   }
 }

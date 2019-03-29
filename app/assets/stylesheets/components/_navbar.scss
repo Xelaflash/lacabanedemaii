@@ -1,18 +1,18 @@
-nav {
-  position:relative;
+#navbar {
+  // position:fixed;
+  width: 100%;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.3);
+  z-index:10000;
+  background-color: white;
+  // transition: visibility 0.6s linear, opacity 1s linear;
 }
 
-/* Main navbar */
-.navbar-wagon {
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.3);
-  background: white;
+.navbar-top {
   height: 70px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: white;
-  position: relative;
 }
 
 /* Logo */
@@ -21,24 +21,24 @@ nav {
 }
 
 /* Right section */
-.navbar-wagon-right {
+.navbar-right {
   display: flex;
   align-items: baseline;
 }
 
 /* Basic navbar item */
-.navbar-wagon-item {
+.navbar-item {
   cursor: pointer;
   padding: 0 20px;
 }
 
 /* Navbar link */
-.navbar-wagon-link {
+.navbar-link {
   font-family: 'Montserrat Alternates';
   color: #512501;
   font-size: 13px;
 }
-.navbar-wagon-link:hover {
+.navbar-link:hover {
   opacity: 0.7;
   color: #512501;
   text-decoration: none;
@@ -58,14 +58,14 @@ nav {
 .right ul {
   list-style: none;}
 
-.navbar-wagon-dropdown-menu {
+.navbar-dropdown-menu {
   margin-top: 15px;
   right: -22px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
 }
 
-.navbar-wagon-dropdown-menu li > a {
+.navbar-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
   color: #404040 !important;
@@ -73,14 +73,14 @@ nav {
   line-height: 22px !important;
   padding: 10px 20px;
 }
-.navbar-wagon-dropdown-menu li > a:hover {
+.navbar-dropdown-menu li > a:hover {
   background: transparent !important;
   font-family: 'Montserrat Alternates';
   font-size: 13px;
   color: $secondary !important;
   font-weight: bold !important;
 }
-.navbar-wagon-dropdown-menu:before {
+.navbar-dropdown-menu:before {
   // content: ' ';
   height: 10px;
   width: 10px;
@@ -93,7 +93,7 @@ nav {
   border-radius: 5px !important;
 }
 
-.navbar-wagon-dropdown-menu-bis {
+.navbar-dropdown-menu-bis {
   top: 40px;
   right: -26px;
   height: 60px;
@@ -102,7 +102,7 @@ nav {
   min-width: 200px;
 }
 
-.navbar-wagon-dropdown-menu-bis li > a:hover {
+.navbar-dropdown-menu-bis li > a:hover {
   color: $secondary !important;
   font-weight: bold !important;
 }
@@ -182,7 +182,7 @@ nav {
 }
 
 @media (max-width: 730px) {
-  .navbar-wagon {
+  .navbar-top {
     padding: 0px 10px;
   }
   .fa-shopping-cart {

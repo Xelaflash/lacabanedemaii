@@ -1,37 +1,29 @@
-<div class="banner hidden-xs hidden-sm">
-  <%= cl_image_tag "banniere_mai-02.png", :quality=>100, alt: "La cabane de Maï", class: "img-responsive"%>
-</div>
-
-<div class="banner hidden-md hidden-lg">
-  <%= cl_image_tag "banniere_mai-01.png", :width=>"100%", alt: "La cabane de Maï", class: "img-responsive"%>
-</div>
-
-<div class="container hidden-xs">
-  <div class="row">
-    <div class="carousel">
-        <div class="item">
-          <div class="col-md-4 col-sm-6"><%= cl_image_tag "13178711_1016701331710549_7678757278327869600_n.jpg", :quality=>100, class: "img-responsive", alt: "La cabane de Maï"%></div>
+<div class="banner"></div>
+<section class="home-page">
+    <div class="container hidden-xs">
+      <div class="row">
+        <div class="carousel">
+            <div class="item">
+              <div class="col-md-4 col-sm-6"><%= cl_image_tag "13178711_1016701331710549_7678757278327869600_n.jpg", :quality=>100, class: "img-responsive", alt: "La cabane de Maï"%></div>
+            </div>
+            <div class="item">
+              <div class="col-md-4 col-sm-6"><%= cl_image_tag "14915364_1142732629107418_5153850638075461140_n.jpg", :quality=>100, class: "img-responsive", alt: "La cabane de Maï"%></div>
+            </div>
+            <div class="item hidden-sm">
+              <div class="col-md-4 col-sm-6"><%= cl_image_tag "37392830_1749119975135344_2682455888102424576_o.jpg",:quality=>100, class: "img-responsive", alt: "La cabane de Maï"%></div>
+            </div>
         </div>
-        <div class="item">
-          <div class="col-md-4 col-sm-6"><%= cl_image_tag "14915364_1142732629107418_5153850638075461140_n.jpg", :quality=>100, class: "img-responsive", alt: "La cabane de Maï"%></div>
-        </div>
-        <div class="item hidden-sm">
-          <div class="col-md-4 col-sm-6"><%= cl_image_tag "37392830_1749119975135344_2682455888102424576_o.jpg",:quality=>100, class: "img-responsive", alt: "La cabane de Maï"%></div>
-        </div>
+      </div>
     </div>
-  </div>
-</div>
-
-<div class="container presentation">
-   <p class="text-center text-justify">
-    Sélectionnant avec soin dans les meilleures marques, <strong>LA CABANE DE MAÏ</strong> vous propose des senteurs déclinées de mille et une façons tant pour l’ambiance de la maison que pour le bien-être et la beauté du corps, des saveurs au travers de thés ou d’infusions Bio et leurs accessoires. <br>
-    Mais aussi un vaste choix de savons les plus originaux (Alep, Marseille... macaron, cup cake etc...) à découvrir ou à offrir et toutes sortes d’objets Utiles ou futiles au couleurs tantôt douces tantôt acidulées qui seront une véritable mine d’inspiration pour vos futurs cadeaux. <br>
-    Enfin pour les tous petits, quelques jouets pleins de poésie et les fameux doudous de chez MOULIN ROTY viennent compléter le petit monde hétéroclite que Maï compose avec bonheur et bonne humeur dans sa « Cabane »...</p>
-</div>
-
-
-<div class="container">
-  <hr class="separator">
-  <%= link_to "Decouvrez les produits", produits_path, class: "btn btn-block panier text-center" %>
-<br>
-</div>
+    <div class="container presentation">
+       <p class="text-center text-justify">
+        Sélectionnant avec soin dans les meilleures marques, <strong>LA CABANE DE MAÏ</strong> vous propose des senteurs déclinées de mille et une façons tant pour l’ambiance de la maison que pour le bien-être et la beauté du corps, des saveurs au travers de thés ou d’infusions Bio et leurs accessoires. <br>
+        Mais aussi un vaste choix de savons les plus originaux (Alep, Marseille... macaron, cup cake etc...) à découvrir ou à offrir et toutes sortes d’objets Utiles ou futiles au couleurs tantôt douces tantôt acidulées qui seront une véritable mine d’inspiration pour vos futurs cadeaux. <br>
+        Enfin pour les tous petits, quelques jouets pleins de poésie et les fameux doudous de chez MOULIN ROTY viennent compléter le petit monde hétéroclite que Maï compose avec bonheur et bonne humeur dans sa « Cabane »...</p>
+    </div>
+    <div class="container">
+      <hr class="separator">
+      <%= link_to "Decouvrez les produits", produits_path, class: "btn btn-block panier text-center" %>
+    <br>
+    </div>
+</section>

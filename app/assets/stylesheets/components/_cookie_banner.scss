@@ -27,3 +27,20 @@
   align-items: center;
   justify-content: center;
 }
+
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 812px) {
+  .cc-window.cc-floating {
+    min-width: 100% !important;
+    max-width: 900px !important;
+    border-radius: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+
+  .cc-bottom {
+    bottom: 0 !important;
+  }
+}
