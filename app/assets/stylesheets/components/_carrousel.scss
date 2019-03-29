@@ -1,4 +1,8 @@
-.carousel img {
+.carousel-home {
+  margin: 40px -3px 20px 23px;
+}
+
+.carousel-home img {
     width: 320px;
     height: 220px;
     background: cover;
@@ -9,7 +13,7 @@
   and (min-device-width: 768px)
   and (max-device-width: 1024px)
  {
-  .carousel {
+  .carousel-home {
     height: 220px;
   }
 }

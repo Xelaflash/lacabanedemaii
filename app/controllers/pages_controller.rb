@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
       @best_products = Produit.where(active: true)
+        @order_item = current_order.order_items.new
   end
 
   def qui_sommes_nous
