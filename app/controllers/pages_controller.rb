@@ -2,8 +2,8 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!
 
   def home
-      @best_products = Produit.where(active: true)
-        @order_item = current_order.order_items.new
+    @best_products = Produit.where(best_seller: true)
+    @order_item = current_order.order_items.new
   end
 
   def qui_sommes_nous
