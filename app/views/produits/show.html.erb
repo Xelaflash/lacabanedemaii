@@ -1,11 +1,8 @@
-  <%= render "shared/tab" %>
-
+<%= render "shared/tab" %>
 <div class="container">
-
-<div class="breadcrumbs back">
-    <%= render_breadcrumbs :separator => ' > ' %>
-</div>
-
+  <div class="breadcrumbs back">
+      <%= render_breadcrumbs :separator => ' > ' %>
+  </div>
   <div class="prod-show">
     <div class="show-left">
       <div class="show-pic">
@@ -32,11 +29,9 @@
       </div>
         <% end %>
     </div>
-
     <div class="show-right">
       <h5 class="title text-center"><%= @produit.nom %></h5>
       <hr class="sep">
-
       <div class="sub-right col-xs-12 col-sm-12">
         <div class="subtitle">
           <h6> <%= humanized_money(@produit.prix) %> <%= currency_symbol %></h6>
@@ -62,8 +57,6 @@
         </div>
         <p id="up-nb-comments"> (<%= @produit.reviews.count %>)</p>
       </div>
-
-
       <div class="details col-xs-12 col-sm-11">
         <h6><strong>Description : </strong></h6>
         <p><%= @produit.description %></p>
@@ -73,23 +66,18 @@
         <% else %>
           <p><%= @produit.poids%> <%= @produit.unit %></p>
         <% end %>
-
         <h6><strong> Composition : </strong></h6>
         <p><%= @produit.composition %></p>
         <h6><strong> Utilisation : </strong></h6>
         <p><%= @produit.utilisation %></p>
         <h6><strong> Paiement sécurisé </strong></h6>
       </div>
-
     </div>
-
   </div>
-
   <div class="wrapper review-part col-xs-12 col-sm-12">
     <div class="comments">
       <h6 id="com-title"><strong>Commentaires & notes</strong></h6>
       <hr class="separator2">
-
       <div class="com-sub">
         <div class="com-sub-left">
           <div class="avg-rating">
@@ -119,7 +107,6 @@
           <button type="button" class="btn btn-avis" data-toggle="modal" data-target="#modalReview">Ecrire un avis</button>
         </div>
       </div>
-
       <div class="list-group">
         <% @produit.reviews.each do |review| %>
           <li class="review-item col-xs-12 col-sm-12">
@@ -150,6 +137,5 @@
       </div>
     </div>
   </div>
-
   <%= render template: "reviews/new" %>
 </div>
