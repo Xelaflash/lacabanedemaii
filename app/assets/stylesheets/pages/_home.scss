@@ -14,32 +14,6 @@ body {
 }
 
 // products slider
-#slider-text {
-  padding-top: 40px;
-  display: block;
-}
-
-#slider-text .col-md-6 {
-  overflow: hidden;
-}
-
-#slider-text h2 {
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 400;
-  font-size: 30px;
-  letter-spacing: 3px;
-  margin: 30px auto;
-  padding-left: 40px;
-}
-
-#slider-text h2::after {
-  border-top: 2px solid #c7c7c7;
-  content: "";
-  position: absolute;
-  bottom: 35px;
-  width: 100%;
-}
-
 #itemslider h4 {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
@@ -62,21 +36,6 @@ body {
   margin: 2px auto 5px;
 }
 
-.badge {
-  background: #b20c0c;
-  position: absolute;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  line-height: 31px;
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 300;
-  font-size: 14px;
-  border: 2px solid #FFF;
-  box-shadow: 0 0 0 1px #b20c0c;
-  top: 5px;
-  right: 25%;
-}
 
 #slider-control img {
   padding-top: 60%;

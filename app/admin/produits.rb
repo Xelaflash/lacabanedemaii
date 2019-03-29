@@ -1,5 +1,5 @@
 ActiveAdmin.register Produit do
-  permit_params  :marque, :nom, :reference, :photo, :quantite, :prix, :frais_de_port, :poids, :unit, :description, :composition, :utilisation, :gamme_id, :active
+  permit_params  :marque, :nom, :reference, :photo, :quantite, :prix, :frais_de_port, :poids, :unit, :description, :composition, :utilisation, :gamme_id, :active, :best_seller
 
   index do
     selectable_column
@@ -10,6 +10,7 @@ ActiveAdmin.register Produit do
     column :active
     column :quantite
     column :prix
+    column :best_seller
     column :frais_de_port
     column :poids
     column :unit
