@@ -13,13 +13,54 @@ body {
   border-top: 2px solid #DDCEBB;
 }
 
+
+.discover-products-btn {
+  background-color: #DDCEBB;
+  border: 0;
+  opacity: 1;
+  font-size: 22px;
+  font-family: $headers-font;
+  color: #383838;
+  font-weight:bold;
+}
+.discover-products-btn:hover {
+  opacity: 0.6;
+  background-color: $secondary;
+  color: white;
+  text-decoration: none;
+}
+
 // products slider
 .owl-carousel .owl-stage-outer {
-  padding:30px;
+  padding-bottom: 50px;
 }
+
+.owl-theme .owl-nav.disabled+.owl-dots {
+  margin: -10px 0 30px 0;
+}
+
+.owl-theme .owl-dots .owl-dot {
+    span {
+      background: $primary;
+    }
+    &.active,
+    &:hover {
+      span {
+        opacity:1;
+        background: $secondary;
+        outline: none;
+      }
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+
 .active {
   border: none;
 }
+
 .item {
   text-align: center;
 }
@@ -104,6 +145,9 @@ figure:hover+span {
     animation: pulse 1s infinite;
     filter: drop-shadow(1px -1px 5px $secondary);
   }
+  &:focus {
+    outline: none;
+  }
 }
 
 @keyframes pulse {
@@ -127,13 +171,13 @@ figure:hover+span {
   width: 100%;
   margin: 0;
   padding: 0;
-  font-size: 18px;
+  font-size: 21px;
   -webkit-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
   opacity: 0;
 }
 
 .bounce-btn:hover .buy-text {
-  bottom: -36px;
+  bottom: -40px;
   opacity: 1;
 }
