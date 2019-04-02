@@ -10,13 +10,14 @@ class OrderItemsController < ApplicationController
     existing_order = @order.order_items.where(produit_id: params[:order_item][:produit_id])
     if existing_order.count >= 1
       flash[:alert] = "Ce produit est déjà présent dans le panier"
-      redirect_to produits_path
+      redirect_back(fallback_location: root_path)
     else
       @order.validate_deliv_details = false
       @order.save
       session[:order_id] = @order.id
       flash[:notice] = "Le produit a été ajouté au panier"
-      redirect_to produits_path
+      # redirect_to produits_path
+      redirect_back(fallback_location: root_path)
     end
   end
 
