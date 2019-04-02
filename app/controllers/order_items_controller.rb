@@ -16,7 +16,6 @@ class OrderItemsController < ApplicationController
       @order.save
       session[:order_id] = @order.id
       flash[:notice] = "Le produit a été ajouté au panier"
-      # redirect_to produits_path
       redirect_back(fallback_location: root_path)
     end
   end
