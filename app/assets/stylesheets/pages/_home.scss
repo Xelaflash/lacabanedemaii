@@ -118,6 +118,16 @@ figure:hover+span {
   }
 }
 
+  .product-info {
+    h5 {
+      font-size: 16px;
+    }
+
+    h6 {
+      font-size: 20px;
+    }
+  }
+
 .add-to-cart {
   display: inline-block;
 }
@@ -175,4 +185,11 @@ figure:hover+span {
 .bounce-btn:hover .buy-text {
   bottom: -40px;
   opacity: 1;
+}
+
+@media (max-width: 540px) {
+  .discover-products-btn {
+      font-size: 15px;
+      padding: 6px 6px;
+  }
 }
