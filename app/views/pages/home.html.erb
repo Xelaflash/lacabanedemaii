@@ -34,36 +34,61 @@
 
   <div class="container">
     <div class="owl-carousel owl-theme">
-      <% @best_products.each_with_index do |produit, index| %>
+      <% @best_products.each do |produit| %>
         <div class="item">
-          <div class="card text-center slider-card">
-            <div class="card-up">
-              <div class="card-pic">
-                <%= cl_image_tag produit.photo, class: "img-responsive pic", alt: "produits de la cabane de maii" %>
-              </div>
-              <div class="card-hover">
-                <%= link_to "Voir le produit", produit_path(produit),class: "btn btn-block produit-show"%>
-              </div>
-            </div>
-            <div class="card-info">
-              <h5><%= produit.nom %></h5>
-              <h6><%= humanized_money(produit.prix) %> <%= currency_symbol %></h6>
-              <div class="buy">
-                <%= simple_form_for @order_item do |f| %>
-                  <%= f.hidden_field :produit_id, value: produit.id %>
-                  <%= f.hidden_field :quantity, value: 1 %>
-              </div>
-                  <% if produit.quantite > 0 %>
-                    <%= f.submit "Ajouter au panier", class: "btn btn-block panier"%>
-                  <% else %>
-                    <h6 id="sold-out">sold out</h6>
+          <%= link_to produit_path(produit),class: "" do %>
+            <%= cl_image_tag produit.photo, class: "", alt: "meilleures ventes de la cabane de maii" %>
+          <% end%>
+          <div class="card-info">
+            <h5><%= produit.nom %></h5>
+            <h6><%= humanized_money(produit.prix) %> <%= currency_symbol %></h6>
+          </div>
+          <div class="add-to-cart">
+            <%= simple_form_for @order_item do |f| %>
+              <%= f.hidden_field :produit_id, value: produit.id %>
+              <%= f.hidden_field :quantity, value: 1 %>
+              <div class="bounce-btn">
+                <%= button_tag(type: "submit", class: "product_submit") do %>
+                  <span><i class="fas fa-shopping-bag"></i></span>
                   <% end %>
-                <% end %>
-            </div>
+                  <p class="buy-text">Acheter</p>
+              </div>
+            <% end %>
           </div>
         </div>
-      <% end%>
+      <% end %>
     </div>
   </div>
 
 </section>
+
+
+
+
+
+<!--
+          <div class="card text-center slider-card">
+            <div class="card-up">
+              <div class="card-pic">
+                <%#= cl_image_tag produit.photo, class: "img-responsive pic", alt: "produits de la cabane de maii" %>
+              </div>
+              <div class="card-hover">
+                <%#= link_to "Voir le produit", produit_path(produit),class: "btn btn-block produit-show"%>
+              </div>
+            </div>
+            <div class="card-info">
+              <h5><%#= produit.nom %></h5>
+              <h6><%#= humanized_money(produit.prix) %> <%= currency_symbol %></h6>
+              <div class="buy">
+                <%#= simple_form_for @order_item do |f| %>
+                  <%#= f.hidden_field :produit_id, value: produit.id %>
+                  <%#= f.hidden_field :quantity, value: 1 %>
+              </div>
+                  <%# if produit.quantite > 0 %>
+                    <%#= f.submit "Ajouter au panier", class: "btn btn-block panier"%>
+                  <%# else %>
+                    <h6 id="sold-out">sold out</h6>
+                  <%# end %>
+                <%# end %>
+            </div>
+          </div> -->
