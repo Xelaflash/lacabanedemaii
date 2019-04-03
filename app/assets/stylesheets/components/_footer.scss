@@ -53,6 +53,7 @@
 .links-items {
   display: flex;
   align-items: flex-start;
+  flex-wrap: wrap;
   justify-content: center;
   padding: 10px 50px 10px 120px;
 }
@@ -75,6 +76,8 @@
   color: #512501;
   text-decoration: none;
 }
+
+
 
 .footer-social  {
   display: inline-flex;
@@ -252,5 +255,28 @@
   }
   .links-items {
     padding: 0;
+  }
+}
+
+@media only screen
+  and (min-width: 320px)
+  and (max-width: 1000px) {
+  .links-items {
+    padding: 5px;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+    #flex-container {
+      display: flex;
+      padding: 0;
+    }
+  .logo-alex {
+    padding-left: 0;
+    margin: 5px 36%;
+  }
+  .links li {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
