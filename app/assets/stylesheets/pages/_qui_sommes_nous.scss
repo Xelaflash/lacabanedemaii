@@ -17,8 +17,27 @@
     justify-content: space-between;
     margin-bottom: 30px;
   }
+  .location-right {
+    margin-right: 35px;
+  }
 }
 
+@media(max-width: 1023px) {
+  .location-head {
+    text-align: center;
+  }
+  .location-left {
+    display: inline-block;
+    margin-left: 0 !important;
+    margin-top:10px;
+  }
+  .adress-right {
+    margin-left: 56px;
+  }
+  #map {
+    margin: 30px auto;
+  }
+}
 .fa-compass, .fa-clock {
   font-size: 26px;
 }
@@ -34,14 +53,6 @@
   margin: 3px 0 0px 20px;
   font-size: 20px;
   font-weight: bold;
-}
-
-.location-right {
-  margin-right: 35px;
-}
-
-.adress-right {
-  margin-left: 56px;
 }
 
 #adress-details {
@@ -62,22 +73,20 @@
 }
 
 .mobile-display1 {
-  margin-left: 33px !important;
+  margin-left: -50px !important;
 }
 
 .mobile-display {
-  margin-left: 15px !important;
+  margin-left: -50px !important;
 }
 
 @media(max-width: 730px) {
   #map {
-    height: 300px;
-    width: 300px;
-    margin: 30px 15px;
+    height: 350px;
+    width: 350px;
+    margin: 30px auto;
   }
-  .location-left {
-    margin-left: 13px;
-  }
+
   .adress-right {
     margin-left: 12px;
   }
@@ -93,13 +102,5 @@
   and (max-device-width: 1023px) {
   .location-head {
     margin: 15px 100px;
-  }
-}
-
-@media only screen
-  and (min-device-width: 1024px)
-  and (max-device-height: 768px) {
-  .location-right {
-    margin-right: 0;
   }
 }
