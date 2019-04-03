@@ -26,18 +26,26 @@
   .location-head {
     text-align: center;
   }
+
   .location-left {
     display: inline-block;
     margin-left: 0 !important;
     margin-top:10px;
   }
+
+  .time-right {
+    margin-left: 40px;
+  }
+
   .adress-right {
     margin-left: 56px;
   }
+
   #map {
     margin: 30px auto;
   }
 }
+
 .fa-compass, .fa-clock {
   font-size: 26px;
 }
@@ -59,8 +67,8 @@
   padding-left: 24px;
 }
 
-.time-right {
-  margin-left: 40px;
+#time-table {
+  margin-left:20px;
 }
 
 .location-left {
@@ -100,7 +108,8 @@
 @media only screen
   and (min-device-width: 667px)
   and (max-device-width: 1023px) {
-  .location-head {
-    margin: 15px 100px;
+  .location-left {
+    margin-left: 0;
+    margin-right:50px;
   }
 }

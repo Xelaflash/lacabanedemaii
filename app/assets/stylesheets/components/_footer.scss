@@ -53,7 +53,7 @@
 .links-items {
   display: flex;
   align-items: flex-start;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   justify-content: center;
   padding: 10px 50px 10px 120px;
 }
@@ -77,12 +77,10 @@
   text-decoration: none;
 }
 
-
-
 .footer-social  {
   display: inline-flex;
   align-items: center;
-  margin: -10px 65px 0px 30px;
+  margin: 0 65px 0px 30px;
   float: right;
   p {
     font-size: 14px;
@@ -201,10 +199,6 @@
     margin-bottom: 20px;
   }
 
-  // #email-footer {
-  //   margin-left:-10px;
-  // }
-
   .footer-social {
     float: none;
     margin: 0 22%;
@@ -246,18 +240,6 @@
 }
 
 @media only screen
-  and (min-device-width: 834px)
-  and (max-device-width: 1366px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-  #reinsurance-row {
-    padding-left: 0;
-  }
-  .links-items {
-    padding: 0;
-  }
-}
-
-@media only screen
   and (min-width: 320px)
   and (max-width: 1000px) {
   .links-items {
@@ -277,5 +259,18 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+}
+
+@media only screen
+  and (min-device-width: 834px)
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  #reinsurance-row {
+    padding-left: 0;
+  }
+  .links-items {
+    padding: 0;
+    flex-wrap: nowrap;
   }
 }
