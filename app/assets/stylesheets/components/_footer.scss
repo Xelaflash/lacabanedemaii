@@ -201,9 +201,9 @@
     margin-bottom: 20px;
   }
 
-  #email-footer {
-    margin-left:-10px;
-  }
+  // #email-footer {
+  //   margin-left:-10px;
+  // }
 
   .footer-social {
     float: none;
@@ -236,7 +236,6 @@
   and (max-device-width: 812px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
-
   #email-footer {
     margin-left: 0px;
   }
@@ -266,10 +265,10 @@
     flex-wrap: wrap;
     text-align: center;
   }
-    #flex-container {
-      display: flex;
-      padding: 0;
-    }
+  #flex-container {
+    display: flex;
+    padding: 0;
+  }
   .logo-alex {
     padding-left: 0;
     margin: 5px 36%;
