@@ -2,6 +2,8 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!
 
   def home
+    @best_products = Produit.where(best_seller: true)
+    @order_item = current_order.order_items.new
   end
 
   def qui_sommes_nous
@@ -16,7 +18,7 @@ class PagesController < ApplicationController
 
   def aide
     add_breadcrumb "accueil", :root_path
-    add_breadcrumb "aide", aide_path
+    add_breadcrumb "FAQ", aide_path
   end
 
   def mentions_legales

@@ -1,29 +1,62 @@
 <div class="banner"></div>
 <section class="home-page">
-    <div class="container hidden-xs">
-      <div class="row">
-        <div class="carousel">
-            <div class="item">
-              <div class="col-md-4 col-sm-6"><%= cl_image_tag "13178711_1016701331710549_7678757278327869600_n.jpg", :quality=>100, class: "img-responsive", alt: "La cabane de Maï"%></div>
-            </div>
-            <div class="item">
-              <div class="col-md-4 col-sm-6"><%= cl_image_tag "14915364_1142732629107418_5153850638075461140_n.jpg", :quality=>100, class: "img-responsive", alt: "La cabane de Maï"%></div>
-            </div>
-            <div class="item hidden-sm">
-              <div class="col-md-4 col-sm-6"><%= cl_image_tag "37392830_1749119975135344_2682455888102424576_o.jpg",:quality=>100, class: "img-responsive", alt: "La cabane de Maï"%></div>
-            </div>
-        </div>
+  <div class="container hidden-xs">
+    <div class="row">
+      <div class="carousel-home">
+          <div class="item">
+            <div class="col-md-4 col-sm-6"><%= cl_image_tag "13178711_1016701331710549_7678757278327869600_n.jpg", :quality=>100, class: "img-responsive", alt: "La cabane de Maï"%></div>
+          </div>
+          <div class="item">
+            <div class="col-md-4 col-sm-6"><%= cl_image_tag "14915364_1142732629107418_5153850638075461140_n.jpg", :quality=>100, class: "img-responsive", alt: "La cabane de Maï"%></div>
+          </div>
+          <div class="item hidden-sm">
+            <div class="col-md-4 col-sm-6"><%= cl_image_tag "37392830_1749119975135344_2682455888102424576_o.jpg",:quality=>100, class: "img-responsive", alt: "La cabane de Maï"%></div>
+          </div>
       </div>
     </div>
-    <div class="container presentation">
-       <p class="text-center text-justify">
-        Sélectionnant avec soin dans les meilleures marques, <strong>LA CABANE DE MAÏ</strong> vous propose des senteurs déclinées de mille et une façons tant pour l’ambiance de la maison que pour le bien-être et la beauté du corps, des saveurs au travers de thés ou d’infusions Bio et leurs accessoires. <br>
-        Mais aussi un vaste choix de savons les plus originaux (Alep, Marseille... macaron, cup cake etc...) à découvrir ou à offrir et toutes sortes d’objets Utiles ou futiles au couleurs tantôt douces tantôt acidulées qui seront une véritable mine d’inspiration pour vos futurs cadeaux. <br>
-        Enfin pour les tous petits, quelques jouets pleins de poésie et les fameux doudous de chez MOULIN ROTY viennent compléter le petit monde hétéroclite que Maï compose avec bonheur et bonne humeur dans sa « Cabane »...</p>
-    </div>
-    <div class="container">
-      <hr class="separator">
-      <%= link_to "Decouvrez les produits", produits_path, class: "btn btn-block panier text-center" %>
+  </div>
+  <div class="container presentation">
+    <p class="text-center text-justify">
+    Sélectionnant avec soin dans les meilleures marques, <strong>LA CABANE DE MAÏ</strong> vous propose des senteurs déclinées de mille et une façons tant pour l’ambiance de la maison que pour le bien-être et la beauté du corps, des saveurs au travers de thés ou d’infusions Bio et leurs accessoires. <br>
+    Mais aussi un vaste choix de savons les plus originaux (Alep, Marseille... macaron, cup cake etc...) à découvrir ou à offrir et toutes sortes d’objets Utiles ou futiles au couleurs tantôt douces tantôt acidulées qui seront une véritable mine d’inspiration pour vos futurs cadeaux. <br>
+    Enfin pour les tous petits, quelques jouets pleins de poésie et les fameux doudous de chez MOULIN ROTY viennent compléter le petit monde hétéroclite que Maï compose avec bonheur et bonne humeur dans sa « Cabane »...</p>
     <br>
+    <%= link_to "Decouvrez les produits", produits_path, class: "btn btn-block discover-products-btn text-center" %>
+  </div>
+
+  <div class="container">
+    <h2 class="main-title page-title text-center">Meilleures ventes</h2>
+    <hr class="separator">
+  </div>
+
+  <div class="container">
+    <div class="owl-carousel owl-theme">
+      <% @best_products.each do |produit| %>
+        <div class="item">
+          <%= link_to produit_path(produit), class: "best-seller-pic" do %>
+            <figure>
+              <%= cl_image_tag produit.photo, class: "img-responsive", alt: "meilleures ventes de la cabane de maii" %>
+            </figure>
+          <% end%>
+          <div class="product-info">
+            <h5><%= produit.nom %></h5>
+            <h6><%= humanized_money(produit.prix) %> <%= currency_symbol %></h6>
+          </div>
+          <div class="add-to-cart">
+            <%= simple_form_for @order_item do |f| %>
+              <%= f.hidden_field :produit_id, value: produit.id %>
+              <%= f.hidden_field :quantity, value: 1 %>
+              <div class="bounce-btn">
+                <%= button_tag(type: "submit", class: "product_submit") do %>
+                  <span><i class="fas fa-shopping-bag"></i></span>
+                  <% end %>
+                  <p class="buy-text">Acheter</p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
     </div>
+  </div>
+
 </section>
