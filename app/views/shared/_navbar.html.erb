@@ -71,25 +71,24 @@
           </li>
         </ul>
       </div>
-
       <i class="fa fa-bars burger"></i>
       <div class="sidenav">
         <i class="far fa-times-circle closebtn"></i>
-        <ul>
-          <% @prod_gammes.each do |g| %>
-          <li>
-            <%= link_to  gamme_path(g), class: "navbar-item navbar-link", id: "#{g.id}" do %>
-            <%= g.name %>
-            <% end %>
-            <% end %>
-          </li>
+        <ul class="">
           <li><%= link_to "Mes commandes", orders_path, class: "navbar-item navbar-link"  %></li>
           <li><%= link_to t(".profile", default: "Mon compte"),edit_user_registration_path, class: "navbar-item navbar-link" %></li>
           <li><%= link_to t(".sign_out", default: "Déconnexion"),destroy_user_session_path, method: :delete, class: "navbar-item navbar-link" %></li>
+          <li role="separator" class="divider"></li>
+          <% @prod_gammes.each do |g| %>
+          <li>
+            <%= link_to  gamme_path(g), class: "navbar-item navbar-link", id: "#{g.id}" do %>
+              <%= g.name %>
+            <% end %>
+          <% end %>
+          </li>
         </ul>
       </div>
     </div>
-
     <% else %>
     <!-- Login link (when logged out) -->
       <div class="icons-right navbar-right">
@@ -116,6 +115,7 @@
             <li>
               <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-item navbar-link" %>
             </li>
+            <li role="separator" class="divider"></li>
             <% @prod_gammes.each do |g| %>
               <li>
                 <%= link_to  gamme_path(g), class: "navbar-item navbar-link", id: "#{g.id}" do %>
