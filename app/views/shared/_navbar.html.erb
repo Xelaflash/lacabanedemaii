@@ -45,8 +45,6 @@
         </div>
       </div>
 
-
-
     <% if user_signed_in? %>
       <div class="right hidden-xs hidden-sm">
         <%= link_to "Mes commandes", orders_path, class: "navbar-item navbar-link"  %>
@@ -74,10 +72,10 @@
         </ul>
       </div>
 
-      <div class="dropdown dropdown-user-link">
-        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-        <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
-          <span class="arrow"></span>
+      <i class="fa fa-bars burger"></i>
+      <div class="sidenav">
+        <i class="far fa-times-circle closebtn"></i>
+        <ul>
           <% @prod_gammes.each do |g| %>
           <li>
             <%= link_to  gamme_path(g), class: "navbar-item navbar-link", id: "#{g.id}" do %>
@@ -85,7 +83,6 @@
             <% end %>
             <% end %>
           </li>
-          <hr class="sep">
           <li><%= link_to "Mes commandes", orders_path, class: "navbar-item navbar-link"  %></li>
           <li><%= link_to t(".profile", default: "Mon compte"),edit_user_registration_path, class: "navbar-item navbar-link" %></li>
           <li><%= link_to t(".sign_out", default: "Déconnexion"),destroy_user_session_path, method: :delete, class: "navbar-item navbar-link" %></li>
@@ -95,54 +92,41 @@
 
     <% else %>
     <!-- Login link (when logged out) -->
-    <div class="icons-right navbar-right">
-      <div class="right hidden-xs hidden-sm">
-        <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-item navbar-link" %>
+      <div class="icons-right navbar-right">
+        <div class="right hidden-xs hidden-sm">
+          <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-item navbar-link" %>
+        </div>
       </div>
-    </div>
-    <div class="icons-right navbar-item hidden-md hidden-lg">
-      <div class="dropdown dropdown-search">
-        <i class="fa fa-search dropdown-toggle" data-toggle="dropdown"></i>
-        <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu-bis">
-          <span class="arrow"></span>
-          <li>
-            <div class="form-group">
-              <%= render 'shared/search', query: params[:search] %>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-
-
-
-      <i class="fa fa-bars" id="burger"></i>
-      <div id="mySidenav" class="sidenav">
-        <i class="far fa-times-circle" id="closebtn"></i>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
-        <a href="#">Contact</a>
-      </div>
-
-      <!-- <div class="dropdown">
-        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-        <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
-          <span class="arrow"></span>
-          <li><%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-item navbar-link" %></li>
-          <hr class="sep">
-          <% @prod_gammes.each do |g| %>
-          <li>
-            <%= link_to  gamme_path(g), class: "navbar-item navbar-link", id: "#{g.id}" do %>
-            <%= g.name %>
+      <div class="icons-right navbar-item hidden-md hidden-lg">
+        <div class="dropdown dropdown-search">
+          <i class="fa fa-search dropdown-toggle" data-toggle="dropdown"></i>
+          <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu-bis">
+            <span class="arrow"></span>
+            <li>
+              <div class="form-group">
+                <%= render 'shared/search', query: params[:search] %>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <i class="fa fa-bars burger"></i>
+        <div class="sidenav">
+          <i class="far fa-times-circle closebtn"></i>
+          <ul>
+            <li>
+              <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "navbar-item navbar-link" %>
+            </li>
+            <% @prod_gammes.each do |g| %>
+              <li>
+                <%= link_to  gamme_path(g), class: "navbar-item navbar-link", id: "#{g.id}" do %>
+                  <%= g.name %>
+                <% end %>
+              </li>
             <% end %>
-          <% end %>
-          </li>
-        </ul>
-      <% end %>
-      </div> -->
+          </ul>
+        </div>
+      </div>
+    <% end %>
 
-
-    </div>
   </div>
 </nav>
