@@ -13,7 +13,6 @@
         <%= render 'shared/search', query: params[:search] %>
       </div>
     </div>
-
     <div class="navbar-right">
       <div class="cart-text">
         <%= render "shared/cart_text" %>
@@ -44,7 +43,6 @@
           </ul>
         </div>
       </div>
-
     <% if user_signed_in? %>
       <div class="right hidden-xs hidden-sm">
         <%= link_to "Mes commandes", orders_path, class: "navbar-item navbar-link"  %>
@@ -58,7 +56,6 @@
         </ul>
       </div>
     </div>
-
     <div class="icons-right navbar-item hidden-md hidden-lg">
       <div class="dropdown dropdown-search">
         <i class="fa fa-search dropdown-toggle" data-toggle="dropdown"></i>
@@ -127,6 +124,5 @@
         </div>
       </div>
     <% end %>
-
   </div>
 </nav>

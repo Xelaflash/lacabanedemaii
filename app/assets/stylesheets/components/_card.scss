@@ -54,7 +54,7 @@
   opacity: 1;
   font-family: Cinzel;
   font-size: 16px;
-  color: #383838;
+  color: $dark-gray;
 }
 
 .panier:hover {
@@ -66,7 +66,7 @@
 
 .card-info, .product-info {
   h5 {
-    color: black;
+    color: $dark-gray;
     font-size: 18px;
     overflow: hidden;
     white-space: nowrap;
