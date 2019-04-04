@@ -14,9 +14,9 @@
 }
 
 .fdp-text {
-  font-family: 'Montserrat Alternates', 'Helvetica';
-  color: $primary;
-  font-size: 15px;
+  font-size: 13px;
+  font-weight: lighter;
+  margin: 5px;
 }
 
 .empty-cart {
@@ -114,7 +114,7 @@
 }
 
 .btn-finalize {
-  background-color: #E80000;
+  background-color: $green;
   color: white;
   font-size: 18px;
   padding: 20px 60px;

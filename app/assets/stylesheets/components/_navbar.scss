@@ -35,12 +35,12 @@
 /* Navbar link */
 .navbar-link {
   font-family: 'Montserrat Alternates';
-  color: #512501;
+  color: $dark-gray;
   font-size: 13px;
 }
 .navbar-link:hover {
   opacity: 0.7;
-  color: #512501;
+  color: $dark-gray;
   text-decoration: none;
 }
 
@@ -108,9 +108,9 @@
 }
 
 .free_delivery {
-  color: #D3D3D3;
   font-size: 12px;
   font-style: italic;
+  font-weight: lighter;
   margin: 0px -46px -9px;
 }
 
@@ -199,11 +199,74 @@
   }
 }
 
-@media only screen
-  and (min-device-width: 768px)
-  and (max-device-width: 1024px)
- {
-  .cart-text {
-    margin-right: 0;
+// start sidenav
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: $primary;
+  overflow-x: hidden;
+  transition: 0.75s;
+  padding-top: 60px;
+  text-align: center;
+  white-space: nowrap;
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  li {
+    margin:20px
   }
 }
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 26px;
+  display: block;
+  transition: 0.3s;
+  font-family: $headers-font;
+  color: $secondary;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  color: $secondary;
+  top: 20px;
+  right: 30px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.divider {
+  background: $secondary;
+  height: 1px;
+}
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 736px)
+ {
+  .sidenav {
+    li {
+      margin: 10px;
+    }
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
+
+  .sidenav .closebtn {
+    font-size: 28px;
+
+  }
+}
+// end sidenav

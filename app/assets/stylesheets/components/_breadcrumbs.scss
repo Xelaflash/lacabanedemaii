@@ -2,12 +2,11 @@
   margin-left: 55px;
   margin-top: 20px;
   padding-top: 5px;
-  color: $primary;
-  font-family: 'Montserrat Alternates', "Helvetica";
   font-size: 14px;
   font-style: italic;
+    color: $secondary;
   a {
-    color: $primary;
+    color: $secondary;
   }
   a:hover {
     text-decoration: underline;

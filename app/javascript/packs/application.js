@@ -7,3 +7,4 @@ import '../components/cart_anim';
 import '../components/cart_alert';
 import '../components/order_destroy_alert';
 import '../components/carousel';
+import '../components/sidenav';
