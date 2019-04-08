@@ -1,6 +1,5 @@
 import "bootstrap";
 import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
 import 'owl.carousel';
 import '../components/autocomplete';
 import '../components/autocomplete_sign_in';

@@ -35,29 +35,29 @@
 
 .owl-theme .owl-dots .owl-dot {
     span {
-      background: $primary;
+      background: $primary !important;
     }
     &.active,
     &:hover {
       span {
-        opacity:1;
-        background: $secondary;
-        outline: none;
+        opacity:1 !important;
+        background: $secondary !important;
+        outline: none !important;
       }
     }
     &:focus {
-      outline: none;
+      outline: none !important;
     }
   }
 
 .item {
-  text-align: center;
+  text-align: center !important;
 }
 
 .owl-carousel .owl-item img {
   display: block;
-  width: auto;
-  margin: 0 auto;
+  width: auto !important;
+  margin: 0 auto !important;
 }
 
 figure {
