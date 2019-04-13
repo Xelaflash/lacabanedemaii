@@ -1,12 +1,13 @@
-/*Scroll to top when arrow up clicked BEGIN*/
+var btn = $('.back_to_top');
+
 $(window).scroll(function () {
-  var height = $(window).scrollTop();
-  if (height > 300) {
-    $('.back_to_top').fadeIn();
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
   } else {
-    $('.back_to_top').fadeOut();
+    btn.removeClass('show');
   }
 });
+
 $(document).ready(function () {
   $(".back_to_top").click(function (event) {
     event.preventDefault();
@@ -17,4 +18,3 @@ $(document).ready(function () {
   });
 
 });
-/*Scroll to top when arrow up clicked END*/

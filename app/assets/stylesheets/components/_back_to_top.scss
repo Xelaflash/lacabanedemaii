@@ -3,6 +3,9 @@
   bottom: 50px;
   right: 10px;
   text-align: center;
+  transition: opacity .5s ease-in-out, visibility .5s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
 }
 
 #backToTop {
@@ -13,16 +16,18 @@
   border-radius: 5px;
   cursor: pointer;
   background-color: $green;
-  opacity:1;
   border:none;
-  transition: opacity .3s;
   &:focus {
     outline: none;
   }
 }
-
-#backToTop:hover {
+.back_to_top.show {
   opacity: 0.8;
+  visibility: visible;
+}
+
+.back_to_top.show:hover {
+  opacity: 1;
 }
 
 .fa-chevron-up {
