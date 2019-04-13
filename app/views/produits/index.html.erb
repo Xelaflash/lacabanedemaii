@@ -5,11 +5,10 @@
   <div class="breadcrumbs back">
     <%= render_breadcrumbs :separator => ' > ' %>
   </div>
-
-    <% if @produits.empty? %>
-      <h6 class="empty-prod text-center">Désolé, nous n'avons pas trouvé de produits correspondants à cette recherche...</h6>
-    <% else %>
-      <%= render "produits/product_card" %>
-    <% end %>
-    <%= render 'shared/back_to_top' %>
+  <% if @produits.empty? %>
+    <h6 class="empty-prod text-center">Désolé, nous n'avons pas trouvé de produits correspondants à cette recherche...</h6>
+  <% else %>
+    <%= render "produits/product_card" %>
+  <% end %>
 </div>
+<%= render 'shared/back_to_top' %>
