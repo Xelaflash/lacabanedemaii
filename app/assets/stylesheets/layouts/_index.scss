@@ -10,3 +10,7 @@ body {
   margin-top: 71px;
   color: $dark-gray;
 }
+
+button:focus, input:focus {
+  outline: 1px auto -webkit-focus-ring-color !important;
+}

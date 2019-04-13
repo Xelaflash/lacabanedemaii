@@ -144,9 +144,6 @@ figure:hover+span {
     animation: pulse 1s infinite;
     filter: drop-shadow(1px -1px 5px $secondary);
   }
-  &:focus {
-    outline: none;
-  }
 }
 
 @keyframes pulse {

@@ -17,9 +17,6 @@
   cursor: pointer;
   background-color: $green;
   border:none;
-  &:focus {
-    outline: none;
-  }
 }
 .back_to_top.show {
   opacity: 0.8;
