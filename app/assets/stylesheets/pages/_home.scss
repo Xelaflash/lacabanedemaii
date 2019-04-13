@@ -14,7 +14,7 @@
   opacity: 1;
   font-size: 22px;
   font-family: $headers-font;
-  color: #383838;
+  color: $dark-gray;
   font-weight:bold;
 }
 .discover-products-btn:hover {
@@ -30,7 +30,7 @@
 }
 
 .owl-theme .owl-nav.disabled+.owl-dots {
-  margin: -10px 0 30px 0;
+  margin: 0 0 30px 0;
 }
 
 .owl-theme .owl-dots .owl-dot {
@@ -42,11 +42,7 @@
       span {
         opacity:1 !important;
         background: $secondary !important;
-        outline: none !important;
       }
-    }
-    &:focus {
-      outline: none !important;
     }
   }
 
@@ -106,6 +102,10 @@ figure:hover+span {
   animation: shine 1.5s;
 }
 
+.slider-img {
+  max-height: 200px;
+}
+
 @keyframes shine {
   100% {
     left: 125%;
@@ -134,18 +134,15 @@ figure:hover+span {
 .product_submit {
   margin-top: 20px;
   border: none;
-  font-size: 35px;
+  font-size: 28px;
   background: $secondary;
   color:white;
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
   &:hover {
     animation: pulse 1s infinite;
     filter: drop-shadow(1px -1px 5px $secondary);
-  }
-  &:focus {
-    outline: none;
   }
 }
 
@@ -170,14 +167,13 @@ figure:hover+span {
   width: 100%;
   margin: 0;
   padding: 0;
-  font-size: 21px;
-  -webkit-transition: .3s ease-in-out;
+  font-size: 18px;
   transition: .3s ease-in-out;
   opacity: 0;
 }
 
 .bounce-btn:hover .buy-text {
-  bottom: -40px;
+  bottom: -35px;
   opacity: 1;
 }
 

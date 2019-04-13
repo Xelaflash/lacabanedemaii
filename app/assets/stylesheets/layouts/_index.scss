@@ -1,12 +1,9 @@
-// Import your layouts CSS files here.
-// Examples:
-// @import "dashboard";
-// @import "profile";
-// @import "map";
-
-
 body {
   background-color: white;
   margin-top: 71px;
   color: $dark-gray;
+}
+
+button:focus, input:focus, .btn:focus {
+  outline: 1px auto -webkit-focus-ring-color;
 }
