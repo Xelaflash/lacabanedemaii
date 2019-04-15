@@ -56,7 +56,7 @@
                 <% end %>
               </article>
               <script src="https://js.stripe.com/v3/"></script>
-              <script
+              <!-- <script
                 src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                 data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                 data-amount="<%= @order_pay.total_price_cents %>"
@@ -66,8 +66,9 @@
                 data-image="https://res.cloudinary.com/drzibyjvb/image/upload/v1527003411/logo.jpg"
                 data-email="<%= @order_pay.customer %>"
                 data-label="Payer"
-                data-locale="fr">
-              </script>
+                data-locale="auto">
+              </script> -->
+
             </div>
             <div class="payment-disclaimer">
               <p>Les paiments sont opérés et sécurisés par l'entreprise <a href="https://stripe.com/docs/security/stripe">Stripe</a></p>

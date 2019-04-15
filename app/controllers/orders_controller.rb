@@ -61,7 +61,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:deliv_adress, :deliv_adress_nb, :deliv_adress_zip_code, :deliv_adress_city, :deliv_adress_details, :deliv_adress_pays, :client_name  )
+    params.require(:order).permit(:deliv_adress, :deliv_adress_nb, :deliv_adress_zip_code, :deliv_adress_city, :deliv_adress_details, :deliv_adress_pays, :client_name)
   end
 
 end
