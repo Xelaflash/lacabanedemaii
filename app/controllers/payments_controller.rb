@@ -21,27 +21,11 @@ class PaymentsController < ApplicationController
     #   currency:     'eur'
     # )
 
+
     # TODO: New stripe checkout!!!
 
-    Stripe::Checkout::Session.create(
-      :success_url => 'https://www.example.com/success',
-      :cancel_url => 'https://www.example.com/cancel',
-      :payment_method_types => ['card'],
-      :line_items => [{
-        description:  "Paiement pour la commande n° #{@order_pay.id} du #{@order_pay.created_at} d'un montant de #{@order_pay.total_price} €",
-        :amount => @order_pay.total_price_cents,
-        :currency => 'eur'
-      }]
-    )
     flash[:notice] = "Votre paiement a été accepté. Vous allez recevoir un mail de confirmation."
     @order_pay.update(payment: charge.to_json, order_status_id: 2, active: false)
-
-
-
-
-
-
-
     # OrderMailer.order_confirmation_user(@order_pay).deliver_later(wait: 1.minutes)
     # OrderShopMailer.order_confirmation_shop(@order_pay).deliver_later(wait: 2.minutes)
     OrderMailer.order_confirmation_user(@order_pay).deliver_now

@@ -68,6 +68,19 @@
                 data-label="Payer"
                 data-locale="auto">
               </script> -->
+              <script>
+
+
+  var stripe = Stripe('pk_test_qvXSpLJZH3qVpz6UATEv1bt3', {
+    betas: ['checkout_beta_4']
+  });
+
+  stripe.redirectToCheckout({
+    sessionId: sessionId
+  });
+
+
+              </script>
 
             </div>
             <div class="payment-disclaimer">
