@@ -81,7 +81,7 @@
       <div class="com-sub">
         <div class="com-sub-left">
           <div class="avg-rating">
-            <% if @produit.reviews.empty? %>
+            <% if @produit.reviews.blank? %>
               <h6>Pas encore de commentaire ...</h6>
             <% else %>
                 <p id="avg-title">Note moyenne</p>
@@ -107,35 +107,12 @@
           <button type="button" class="btn btn-avis" data-toggle="modal" data-target="#modalReview">Ecrire un avis</button>
         </div>
       </div>
-      <div class="list-group">
+      <div id="reviews">
         <% @produit.reviews.each do |review| %>
-          <li class="review-item col-xs-12 col-sm-12">
-            <div class="review-left">
-              <div class="stars">
-                <p>
-                  <% count = 0 %>
-                  <% 5.times do %>
-                    <% if review.rating > count %>
-                      <i class="fas fa-star"></i>
-                    <% else %>
-                      <i class="far fa-star"></i>
-                    <% end %>
-                      <% count += 1 %>
-                    <% end %>
-                </p>
-              </div>
-              <% if review.recommend == true %>
-                <p><i class="fas fa-check-circle"></i> Oui,  je recommande ce produit</p>
-              <% end %>
-            </div>
-            <div class="review-right">
-              <p id="author"><%= review.author %></p>
-              <p><%= review.content %></p>
-            </div>
-          </li>
+          <%= render 'reviews/show', review: review %>
         <% end %>
       </div>
     </div>
   </div>
-  <%= render template: "reviews/new" %>
+  <%= render 'reviews/form', produit: @produit, review: @review %>
 </div>

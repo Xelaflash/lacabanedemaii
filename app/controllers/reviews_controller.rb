@@ -5,11 +5,19 @@ class ReviewsController < ApplicationController
     @review.produit = @produit
     @order_item = current_order.order_items.new
     if @review.save
-      flash[:notice] = "Votre commentaire a été ajouté"
-      redirect_to produit_path(@produit)
+      respond_to do |format|
+        format.html { redirect_to produit_path(@produit) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
+      # flash[:notice] = "Votre commentaire a été ajouté"
+      # redirect_to produit_path(@produit)
     else
-      flash.now[:alert] = "Merci de revoir votre commentaire."
-      render "produits/show"
+       respond_to do |format|
+        format.html { render 'produits/show' }
+        format.js  # <-- idem
+      end
+      # flash.now[:alert] = "Merci de revoir votre commentaire."
+      # render "produits/show"
     end
   end
 

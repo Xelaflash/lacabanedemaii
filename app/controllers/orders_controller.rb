@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
       redirect_to new_order_payment_path(@order)
     else
       flash[:alert] = "Vous n'avez pas rempli les détails de livraison"
-      redirect_to cart_path
+      render "carts/show"
     end
   end
 
@@ -42,13 +42,14 @@ class OrdersController < ApplicationController
 
   def update
     @order = current_order
+    @order_items = @order.order_items
     @order.validate_deliv_details = true
     if @order.update(order_params)
       flash[:notice] = "Les détails de livraison ont bien été ajoutés"
-      redirect_to cart_path
+      render "carts/show"
     else
       flash[:alert] = "Vous n'avez pas rempli les détails de livraison"
-      redirect_to cart_path
+      render "carts/show"
     end
   end
 
