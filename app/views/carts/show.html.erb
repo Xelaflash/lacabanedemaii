@@ -37,7 +37,7 @@
             <div class="form-login form-deliv">
               <%= simple_form_for @order do |f| %>
                 <%= f.error_notification %>
-                <%= f.input :client_name, required: true, placeholder: "Jean Blaguin", autofocus: true, label: "Nom" %>
+                <%= f.input :client_name, required: true, placeholder: "Jean Blaguin", autofocus: true, label: "Nom", error: 'Ce champ est obligatoire.' %>
                 <hr class="sep">
                 <label class="autocomplete-text text-center">Entrez votre adresse afin de remplir automatiquement les champs ci-dessous</label><br>
                 <div id="locationField">
@@ -45,15 +45,15 @@
                 </div>
                 <hr class="sep">
                 <div class="form-inline deliv-street">
-                  <%= f.input :deliv_adress_nb, required: true, placeholder: "8", autofocus: true, label: "Adresse", input_html: {id: "street_number"} %>
-                  <%= f.input :deliv_adress, required: true, placeholder: "avenue des champs", autofocus: true, label: false, input_html: {id: "route"} %>
+                  <%= f.input :deliv_adress_nb, required: true, placeholder: "8", autofocus: true, label: "Adresse", input_html: {id: "street_number"}, error: 'Ce champ est obligatoire.' %>
+                  <%= f.input :deliv_adress, required: true, placeholder: "avenue des champs", autofocus: true, label: false, input_html: {id: "route"}, error: 'Ce champ est obligatoire.' %>
                 </div>
                 <div class="form-inline deliv-city">
-                  <%= f.input :deliv_adress_zip_code, required: true, placeholder: "75000", autofocus: true, label: "ville", input_html: {id: "postal_code"} %>
-                  <%= f.input :deliv_adress_city, required: true, placeholder: "Paris", autofocus: true, label: false, input_html: {id: "locality"} %>
+                  <%= f.input :deliv_adress_zip_code, required: true, placeholder: "75000", autofocus: true, label: "ville", input_html: {id: "postal_code"}, error: 'Ce champ est obligatoire.' %>
+                  <%= f.input :deliv_adress_city, required: true, placeholder: "Paris", autofocus: true, label: false, input_html: {id: "locality"}, error: 'Ce champ est obligatoire.' %>
                 </div>
                 <div class="form-inline deliv-country">
-                  <%= f.input :deliv_adress_pays, required: true, placeholder: "France", autofocus: true, label: "Pays", input_html: {id: "country"} %>
+                  <%= f.input :deliv_adress_pays, required: true, placeholder: "France", autofocus: true, label: "Pays", input_html: {id: "country"}, error: 'Ce champ est obligatoire.' %>
                 </div>
                 <%= f.input :deliv_adress_details, placeholder: "Entrée, escalier...", autofocus: true, label: "Détails complémentaires" %>
                 <%= f.button :submit, "Confirmer l'adresse de livraison", class: "btn-success details-btn" %>

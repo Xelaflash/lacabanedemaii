@@ -9,8 +9,8 @@
   [5, icon('fas', 'star') + icon('fas', 'star') + icon('fas', 'star') + icon('fas', 'star') + icon('fas', 'star')]],
 :first,
 :last, :checked => [5] %>
-  <%= form.input :author, label: "Votre nom", required: true, autofocus: true %>
-  <%= form.input :content, label: "Votre commentaire", required: true %>
+  <%= form.input :author, label: "Votre nom", required: true, autofocus: true, error: 'Ce champ est obligatoire' %>
+  <%= form.input :content, label: "Votre commentaire", required: true, error: 'Ce champ est obligatoire et doit faire au minimum 10 caractères.' %>
   <%= form.input :recommend, as: :boolean, unchecked_value: false, checked_value: true, label: "Oui, je recommande ce produit"%>
   <%= form.button :submit, "Valider", class: "btn btn-avis btn-block" %>
 <% end %>

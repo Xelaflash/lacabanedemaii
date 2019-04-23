@@ -50,10 +50,10 @@
           <%= simple_form_for (@contact) do |f| %>
           <%= f.error_notification %>
           <div class="">
-            <%= f.input :name, label: "Nom", placeholder: 'Pierre Durant' %>
-            <%= f.input :email, placeholder: 'pierre.durant@gmail.com' %>
-            <%= f.input :subject, label: "Titre", placeholder: 'Question commande n° 27' %>
-            <%= f.input :body, label: "Votre message", as: :text %>
+            <%= f.input :name, label: "Nom", placeholder: 'Pierre Durant', error: 'Ce champ est obligatoire.' %>
+            <%= f.input :email, placeholder: 'pierre.durant@gmail.com', error: 'Ce champ est obligatoire.' %>
+            <%= f.input :subject, label: "Titre", placeholder: 'Question commande n° 27', error: 'Ce champ est obligatoire.' %>
+            <%= f.input :body, label: "Votre message", as: :text, error: 'Ce champ est obligatoire.' %>
           </div>
           <div class="form-actions">
             <%= f.button :submit, "Envoyez votre message", class: "btn btn-primary" %>
@@ -64,4 +64,3 @@
     </div>
   </div>
 </div>
-
