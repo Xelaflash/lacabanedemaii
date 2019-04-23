@@ -9,8 +9,8 @@ function addReview(reviewHTML) {
 }
 
 <% if @review.errors.any? %>
-refreshForm('<%= j render "reviews/form", restaurant: @restaurant, review: @review %>');
+  refreshForm('<%= j render "reviews/form", produit: @produit, review: @review %>');
 <% else %>
-addReview('<%= j render "reviews/show", review: @review %>');
-refreshForm('<%= j render "reviews/form", restaurant: @restaurant, review: Review.new %>');
+  addReview('<%= j render "reviews/show", review: @review %>');
+  refreshForm('<%= j render "reviews/form", produit: @produit, review: Review.new %>');
 <% end %>
