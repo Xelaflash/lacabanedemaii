@@ -7,17 +7,14 @@ class ReviewsController < ApplicationController
     if @review.save
       respond_to do |format|
         format.html { redirect_to produit_path(@produit) }
-        format.js  # <-- will render `app/views/reviews/create.js.erb`
+        format.js
       end
-      # flash[:notice] = "Votre commentaire a été ajouté"
-      # redirect_to produit_path(@produit)
+      flash[:notice] = "Votre commentaire a été ajouté"
     else
        respond_to do |format|
         format.html { render 'produits/show' }
-        format.js  # <-- idem
+        format.js
       end
-      # flash.now[:alert] = "Merci de revoir votre commentaire."
-      # render "produits/show"
     end
   end
 

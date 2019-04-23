@@ -333,6 +333,7 @@ DEPENDENCIES
   friendly_id
   geocoder
   jbuilder (~> 2.0)
+  jquery-rails
   letter_opener
   listen (~> 3.0.5)
   money-rails
