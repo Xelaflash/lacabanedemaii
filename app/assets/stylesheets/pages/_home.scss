@@ -1,7 +1,27 @@
-.presentation p {
-    margin: 20px;
+.presentation {
+  margin: 40px auto;
+  p {
+    margin: 10px;
     font-size: 14px;
-    line-height: 1.9;
+    line-height: 2.2;
+  }
+}
+
+.prez-img {
+  height: 250px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4),
+  0 6px 20px 0 rgba(0, 0, 0, 0.4);
+}
+
+.float-left {
+  float: left;
+  margin: 15px;
+}
+
+.float-right {
+  float: right;
+  margin-left: 15px;
 }
 
 .separator {
@@ -17,6 +37,7 @@
   color: $dark-gray;
   font-weight:bold;
 }
+
 .discover-products-btn:hover {
   opacity: 0.6;
   background-color: $secondary;
