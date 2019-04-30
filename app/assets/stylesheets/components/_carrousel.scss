@@ -1,29 +1,3 @@
-.carousel-home {
-  margin: 40px -3px 20px 23px;
-}
-
-.carousel-home img {
-    width: 320px;
-    height: 220px;
-    background: cover;
-    object-fit: cover;
-}
-
-@media only screen
-  and (min-device-width: 768px)
-  and (max-device-width: 1024px)
- {
-  .carousel-home {
-    height: 220px;
-  }
-}
-
-// TODO: css for carousel here because not working with webpack!!!! TO FIX!!!
-/**
- * Owl Carousel v2.3.4
- * Copyright 2013-2018 David Deutsch
- * Licensed under: SEE LICENSE IN https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
- */
 .owl-carousel {
   display: none;
   width: 100%;

@@ -1,18 +1,21 @@
 .banner {
   background-image: url("https://res.cloudinary.com/drzibyjvb/image/upload/v1554729815/banniere02.png"),
   url("https://res.cloudinary.com/drzibyjvb/image/upload/v1530537490/ruse-inc-lusage-repens-du-bois-rcupr.jpg");
-  min-height: 37vh;
+  min-height: 325px;
   background-repeat: no-repeat;
   background-size: contain, cover;
   background-attachment: fixed;
   background-position-y: 70px;
+  width: 100%;
 }
 
 // big screen
 @media screen
-and (min-width: 1600px)  {
+and (max-width: 800px)  {
   .banner {
-    min-height: 41vh;
+    background-image: url("https://res.cloudinary.com/drzibyjvb/image/upload/v1554729815/banniere01.png"),
+    url("https://res.cloudinary.com/drzibyjvb/image/upload/v1530537490/ruse-inc-lusage-repens-du-bois-rcupr.jpg");
+    min-height: 425px;
   }
 }
 
