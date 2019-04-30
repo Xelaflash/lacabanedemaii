@@ -1,0 +1,24 @@
+<li class="review-item col-xs-12 col-sm-12">
+  <div class="review-left">
+    <div class="stars">
+      <p>
+        <% count = 0 %>
+        <% 5.times do %>
+          <% if review.rating > count %>
+            <i class="fas fa-star"></i>
+          <% else %>
+            <i class="far fa-star"></i>
+          <% end %>
+            <% count += 1 %>
+          <% end %>
+      </p>
+    </div>
+    <% if review.recommend == true %>
+      <p><i class="fas fa-check-circle"></i> Oui,  je recommande ce produit</p>
+    <% end %>
+  </div>
+  <div class="review-right">
+    <p id="author"><%= review.author %></p>
+    <p><%= review.content %></p>
+  </div>
+</li>

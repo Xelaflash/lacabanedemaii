@@ -81,7 +81,7 @@
       <div class="com-sub">
         <div class="com-sub-left">
           <div class="avg-rating">
-            <% if @produit.reviews.empty? %>
+            <% if @produit.reviews.blank? %>
               <h6>Pas encore de commentaire ...</h6>
             <% else %>
                 <p id="avg-title">Note moyenne</p>
@@ -107,35 +107,41 @@
           <button type="button" class="btn btn-avis" data-toggle="modal" data-target="#modalReview">Ecrire un avis</button>
         </div>
       </div>
-      <div class="list-group">
+      <div id="reviews">
         <% @produit.reviews.each do |review| %>
-          <li class="review-item col-xs-12 col-sm-12">
-            <div class="review-left">
-              <div class="stars">
-                <p>
-                  <% count = 0 %>
-                  <% 5.times do %>
-                    <% if review.rating > count %>
-                      <i class="fas fa-star"></i>
-                    <% else %>
-                      <i class="far fa-star"></i>
-                    <% end %>
-                      <% count += 1 %>
-                    <% end %>
-                </p>
-              </div>
-              <% if review.recommend == true %>
-                <p><i class="fas fa-check-circle"></i> Oui,  je recommande ce produit</p>
-              <% end %>
-            </div>
-            <div class="review-right">
-              <p id="author"><%= review.author %></p>
-              <p><%= review.content %></p>
-            </div>
-          </li>
+          <%= render 'reviews/show', review: review %>
         <% end %>
       </div>
     </div>
   </div>
-  <%= render template: "reviews/new" %>
+  <div id="new-review">
+    <div class="modal fade" id="modalReview" tabindex="-1" role="dialog" aria-labelledby="modalReview" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <div class="modal-header header-size">
+            <h5 class="modal-title" id="exampleModalLongTitle">Donnez votre avis</h5>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+                  <div class="text-center">
+                    <%= cl_image_tag @produit.photo, class: "thumb" %>
+                    <h5 class="title"><%= @produit.nom %></h5>
+                  </div>
+                  <hr class="separator3">
+                  <div class="form-review">
+                    <%= render 'reviews/form', produit: @produit, review: @review %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

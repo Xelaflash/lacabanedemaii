@@ -1,0 +1,11 @@
+function addReview(reviewHTML) {
+  const reviews = document.getElementById('reviews');
+  reviews.insertAdjacentHTML('beforeend', reviewHTML);
+}
+
+<% if @review.errors.any? %>
+  $('#new_review').html('<%= j render "reviews/form", produit: @produit, review: @review %>');
+  <% else %>
+  addReview('<%= j render "reviews/show", review: @review %>');
+  location.reload();
+<% end %>

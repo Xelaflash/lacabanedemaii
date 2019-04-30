@@ -28,6 +28,3 @@ class Produit < ApplicationRecord
     "Marque: #{marque.capitalize} - Nom: #{nom.capitalize} - ref: #{reference}"
   end
 end
-
-
-

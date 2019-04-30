@@ -1,4 +1,4 @@
-<div class="log-page register">
+<div class="log-page new-pwd">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
@@ -7,7 +7,7 @@
           <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
             <%= f.error_notification %>
             <div class="form-inputs">
-              <%= f.input :email, required: true, autofocus: true %>
+              <%= f.input :email, required: true, autofocus: true, error: 'Ce champ est obligatoire.' %>
             </div>
             <div class="form-actions">
               <%= f.button :submit, "Envoyer", class: "btn btn-primary"   %>
