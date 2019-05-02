@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
-  devise_for :users, controllers: { sessions: 'users/sessions' }
+devise_for :users, controllers: { sessions: 'users/sessions' }
 
   # Sidekiq Web UI, only for admins.
   require "sidekiq/web"
