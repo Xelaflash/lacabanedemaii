@@ -49,6 +49,17 @@
   margin-right: 50px;
 }
 
+.com-sub-right-connect {
+  margin-right: 50px;
+  text-align: center;
+}
+
+#review_connect {
+  padding-top:8px;
+  font-style: italic;
+}
+
+
 .btn-avis {
   background-color: $green;
   border-radius: 50px;
@@ -62,6 +73,9 @@
   color: white;
 }
 
+#connect {
+  margin-top: 20px;
+}
 .review-item {
   position: relative;
   display: block;
@@ -112,8 +126,14 @@
   .com-sub-right {
     margin: 0 0 20px 80px;
   }
+
+  .com-sub-right-connect {
+    margin-right: 0px;
+    padding-bottom: 10px;
+  }
+
   .avg-rating h6 {
-    margin-left: 34px;
+    margin: 10px auto;
   }
   #author {
     margin-bottom: 27px;
@@ -148,5 +168,3 @@
     margin-left: 21px;
   }
 }
-
-
