@@ -103,9 +103,16 @@
                 <% end %>
           </div>
         </div>
-        <div class="com-sub-right">
-          <button type="button" class="btn btn-avis" data-toggle="modal" data-target="#modalReview">Ecrire un avis</button>
-        </div>
+        <% if user_signed_in? %>
+          <div class="com-sub-right">
+            <button type="button" class="btn btn-avis" data-toggle="modal" data-target="#modalReview">Ecrire un avis</button>
+          </div>
+        <% else %>
+          <div class="com-sub-right-connect">
+            <%= link_to t(".sign_in", default: "Se connecter"), new_user_session_path, class: "btn btn-avis", id: "connect" %>
+            <p id="review_connect"><small>Vous devez être connecté pour écrire un avis</small></p>
+          </div>
+        <% end %>
       </div>
       <div id="reviews">
         <% @produit.reviews.each do |review| %>

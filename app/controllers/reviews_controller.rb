@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+
   def create
     @produit = Produit.friendly.find(params[:produit_id])
     @review = current_user.reviews.new(review_params)
@@ -11,7 +12,7 @@ class ReviewsController < ApplicationController
       end
       flash[:notice] = "Votre commentaire a été ajouté"
     else
-       respond_to do |format|
+      respond_to do |format|
         format.html { render 'produits/show' }
         format.js
       end
