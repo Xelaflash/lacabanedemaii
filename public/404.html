@@ -2,460 +2,235 @@
 <html>
 
 <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-  <link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" />
-  <link rel="stylesheet" media="screen"
-    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <style>
-    * {
-      -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-    }
-
-    html,
-    body,
-    div,
-    span,
-    object,
-    iframe,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    blockquote,
-    pre,
-    abbr,
-    address,
-    cite,
-    code,
-    del,
-    dfn,
-    em,
-    img,
-    ins,
-    kbd,
-    q,
-    samp,
-    small,
-    strong,
-    sub,
-    sup,
-    var,
-    b,
-    i,
-    dl,
-    dt,
-    dd,
-    ol,
-    ul,
-    li,
-    fieldset,
-    form,
-    label,
-    legend,
-    caption,
-    article,
-    aside,
-    canvas,
-    details,
-    figcaption,
-    figure,
-    footer,
-    header,
-    hgroup,
-    menu,
-    nav,
-    section,
-    summary,
-    time,
-    mark,
-    audio,
-    video {
-      margin: 0;
-      padding: 0;
-      border: 0;
-      outline: 0;
-      vertical-align: baseline;
-      background: transparent;
-    }
-
-    article,
-    aside,
-    details,
-    figcaption,
-    figure,
-    footer,
-    header,
-    hgroup,
-    nav,
-    section {
-      display: block;
-    }
-
-    html {
-      font-size: 16px;
-      line-height: 24px;
-      width: 100%;
-      height: 100%;
-      -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-      overflow-y: scroll;
-      overflow-x: hidden;
-    }
-
-    img {
-      vertical-align: middle;
-      max-width: 100%;
-      height: auto;
-      border: 0;
-      -ms-interpolation-mode: bicubic;
-    }
-
-    body {
-      min-height: 100%;
-      -webkit-font-smoothing: subpixel-antialiased;
-    }
-
-    .clearfix {
-      clear: both;
-      zoom: 1;
-    }
-
-    .clearfix:before,
-    .clearfix:after {
-      content: "\0020";
-      display: block;
-      height: 0;
-      visibility: hidden;
-    }
-
-    .clearfix:after {
-      clear: both;
-    }
-  </style>
-  <style>
-    .plain.error-page-wrapper {
-      font-family: 'Source Sans Pro', sans-serif;
-      background-color: #6355bc;
-      padding: 0 5%;
-      position: relative;
-    }
-
-    .plain.error-page-wrapper .content-container {
-      -webkit-transition: left .5s ease-out, opacity .5s ease-out;
-      -moz-transition: left .5s ease-out, opacity .5s ease-out;
-      -ms-transition: left .5s ease-out, opacity .5s ease-out;
-      -o-transition: left .5s ease-out, opacity .5s ease-out;
-      transition: left .5s ease-out, opacity .5s ease-out;
-      max-width: 400px;
-      position: relative;
-      left: -30px;
-      opacity: 0;
-    }
-
-    .plain.error-page-wrapper .content-container.in {
-      left: 0px;
-      opacity: 1;
-    }
-
-    .plain.error-page-wrapper .head-line {
-      transition: color .2s linear;
-      font-size: 48px;
-      line-height: 60px;
-      color: rgba(255, 255, 255, .2);
-      letter-spacing: -1px;
-      margin-bottom: 5px;
-    }
-
-    .plain.error-page-wrapper .subheader {
-      transition: color .2s linear;
-      font-size: 36px;
-      line-height: 46px;
-      color: #fff;
-      width: 500px;
-    }
-
-    .plain.error-page-wrapper hr {
-      height: 1px;
-      background-color: rgba(255, 255, 255, .2);
-      border: none;
-      width: 250px;
-      margin: 35px 0;
-    }
-
-    .plain.error-page-wrapper .context {
-      transition: color .2s linear;
-      font-size: 18px;
-      line-height: 27px;
-      color: #fff;
-    }
-
-    .plain.error-page-wrapper .context p {
-      margin: 0;
-    }
-
-    .plain.error-page-wrapper .context p:nth-child(n+2) {
-      margin-top: 12px;
-    }
-
-    .plain.error-page-wrapper .buttons-container {
-      margin-top: 45px;
+    @import url(https://fonts.googleapis.com/css?family=opensans:500);
+    body{
+      background: #DDCEBB;
+      color:#fff;
+      font-family: 'Open Sans', sans-serif;
+      max-height:700px;
       overflow: hidden;
     }
-
-    .plain.error-page-wrapper .buttons-container a {
-      transition: color .2s linear, border-color .2s linear;
-      font-size: 14px;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: #fff;
-      border: 2px solid white;
-      border-radius: 99px;
-      padding: 8px 30px 9px;
+    .c{
+      text-align: center;
+      display: block;
+      position: relative;
+      width:80%;
+      margin:100px auto;
+    }
+    ._404{
+      font-size: 220px;
+      position: relative;
       display: inline-block;
-      float: left;
+      z-index: 2;
+      height: 250px;
+      letter-spacing: 15px;
+    }
+    ._1{
+      text-align:center;
+      display:block;
+      position:relative;
+      letter-spacing: 12px;
+      font-size: 3em;
+      padding-bottom: 10px;
     }
 
-    .plain.error-page-wrapper .buttons-container a:hover {
-      background-color: rgba(255, 255, 255, .05);
+    .text{
+      font-size: 70px;
+      text-align: center;
+      position: relative;
+      display: inline-block;
+      margin: 19px 0px 0px 0px;
+      z-index: 3;
+      width: 100%;
+      line-height: 1.2em;
+      display: inline-block;
     }
 
-    .plain.error-page-wrapper .buttons-container a:first-child {
-      margin-right: 25px;
+    .btn{
+    background-color: rgb( 255, 255, 255 );
+    position: relative;
+    display: inline-block;
+    width: 358px;
+    padding: 24px;
+    z-index: 5;
+    font-size: 25px;
+    color: #512501;
+    text-decoration: none;
+    margin-right: 10px;
+    border-radius: 50px;
+    }
+    .right{
+      float:right;
+      width:60%;
     }
 
-    @media screen and (max-width: 485px) {
-      .plain.error-page-wrapper .header {
-        font-size: 36px;
-      }
+    hr{
+      padding: 0;
+      border: none;
+      border-top: 5px solid #fff;
+      color: #fff;
+      text-align: center;
+      margin: 0px auto;
+      width: 420px;
+      height:10px;
+      z-index: -10;
+    }
 
-      .plain.error-page-wrapper .subheader {
-        font-size: 27px;
-        line-height: 38px;
-      }
+    hr:after {
+    content: "\2022";
+    display: inline-block;
+    position: relative;
+    top: -0.75em;
+    font-size: 2em;
+    padding: 0 0.2em;
+    background: #DDCEBB;
+    }
 
-      .plain.error-page-wrapper hr {
-        width: 185px;
-        margin: 25px 0;
-      }
+    .cloud {
+      width: 350px; height: 120px;
+      background: #FFF;
+      background: linear-gradient(top, #FFF 100%);
+      background: -webkit-linear-gradient(top, #FFF 100%);
+      background: -moz-linear-gradient(top, #FFF 100%);
+      background: -ms-linear-gradient(top, #FFF 100%);
+      background: -o-linear-gradient(top, #FFF 100%);
+      border-radius: 100px;
+      -webkit-border-radius: 100px;
+      -moz-border-radius: 100px;
+      position: absolute;
+      margin: 120px auto 20px;
+      z-index:-1;
+      transition: ease 1s;
+    }
 
-      .plain.error-page-wrapper .context {
-        font-size: 16px;
-        line-height: 24px;
-      }
+    .cloud:after, .cloud:before {
+      content: '';
+      position: absolute;
+      background: #FFF;
+      z-index: -1
+    }
 
-      .plain.error-page-wrapper .buttons-container {
-        margin-top: 35px;
-      }
+    .cloud:after {
+      width: 100px; height: 100px;
+      top: -50px; left: 50px;
+      border-radius: 100px;
+      -webkit-border-radius: 100px;
+      -moz-border-radius: 100px;
+    }
 
-      .plain.error-page-wrapper .buttons-container a {
-        font-size: 13px;
-        padding: 8px 0 7px;
-        width: 45%;
-        text-align: center;
-      }
+    .cloud:before {
+      width: 180px; height: 180px;
+      top: -90px; right: 50px;
+      border-radius: 200px;
+      -webkit-border-radius: 200px;
+      -moz-border-radius: 200px;
+    }
 
-      .plain.error-page-wrapper .buttons-container a:first-child {
-        margin-right: 10%;
-      }
+    .x1 {
+      top:-50px;
+      left:100px;
+      -webkit-transform: scale(0.3);
+      -moz-transform: scale(0.3);
+      transform: scale(0.3);
+      opacity: 0.9;
+      -webkit-animation: moveclouds 15s linear infinite;
+      -moz-animation: moveclouds 15s linear infinite;
+      -o-animation: moveclouds 15s linear infinite;
+    }
+
+    .x1_5{
+      top:-80px;
+      left:250px;
+      -webkit-transform: scale(0.3);
+      -moz-transform: scale(0.3);
+      transform: scale(0.3);
+      -webkit-animation: moveclouds 17s linear infinite;
+      -moz-animation: moveclouds 17s linear infinite;
+      -o-animation: moveclouds 17s linear infinite;
+    }
+
+    .x2 {
+      left: 250px;
+      top:30px;
+      -webkit-transform: scale(0.6);
+      -moz-transform: scale(0.6);
+      transform: scale(0.6);
+      opacity: 0.6;
+      -webkit-animation: moveclouds 25s linear infinite;
+      -moz-animation: moveclouds 25s linear infinite;
+      -o-animation: moveclouds 25s linear infinite;
+    }
+
+    .x3 {
+      left: 250px; bottom: -70px;
+      -webkit-transform: scale(0.6);
+      -moz-transform: scale(0.6);
+      transform: scale(0.6);
+      opacity: 0.8;
+      -webkit-animation: moveclouds 25s linear infinite;
+      -moz-animation: moveclouds 25s linear infinite;
+      -o-animation: moveclouds 25s linear infinite;
+    }
+
+    .x4 {
+      left: 470px; botttom: 20px;
+      -webkit-transform: scale(0.75);
+      -moz-transform: scale(0.75);
+      transform: scale(0.75);
+      opacity: 0.75;
+      -webkit-animation: moveclouds 18s linear infinite;
+      -moz-animation: moveclouds 18s linear infinite;
+      -o-animation: moveclouds 18s linear infinite;
+    }
+
+    .x5 {
+      left: 200px; top: 300px;
+      -webkit-transform: scale(0.5);
+      -moz-transform: scale(0.5);
+      transform: scale(0.5);
+      opacity: 0.8;
+      -webkit-animation: moveclouds 20s linear infinite;
+      -moz-animation: moveclouds 20s linear infinite;
+      -o-animation: moveclouds 20s linear infinite;
+    }
+
+    @-webkit-keyframes moveclouds {
+      0% {margin-left: 1000px;}
+      100% {margin-left: -1000px;}
+    }
+    @-moz-keyframes moveclouds {
+      0% {margin-left: 1000px;}
+      100% {margin-left: -1000px;}
+    }
+    @-o-keyframes moveclouds {
+      0% {margin-left: 1000px;}
+      100% {margin-left: -1000px;}
     }
   </style>
-
-  <style>
-    .background-color {
-      background-color: rgba(50, 183, 150, 1) !important;
-    }
-
-
-    .primary-text-color {
-      color: rgba(244, 244, 244, 1) !important;
-    }
-
-    .secondary-text-color {
-      color: rgba(244, 244, 244, 1) !important;
-    }
-
-
-
-
-    .border-button {
-      color: rgba(244, 244, 244, 1) !important;
-      border-color: rgba(244, 244, 244, 1) !important;
-    }
-
-    .button {
-      background-color: rgba(244, 244, 244, 1) !important;
-      color:  !important;
-    }
-
-    .wedding {
-      height: 150px;
-      width: 150px;
-      margin: 0;
-    }
-
-    .flex {
-      display: flex;
-    }
-  </style>
-
 </head>
 
-<body class="plain error-page-wrapper background-color background-image">
-  <div class="content-container">
-
-    <div class="head-line secondary-text-color">
-      404
-    </div>
-    <div class="flex">
-      <div class="left"><img src="/images/groom.png" alt="groom" class="wedding"></div>
-      <div class="right"><img src="/images/bride.png" alt="bride" class="wedding"></div>
-    </div>
-    <div class="subheader primary-text-color">
-      Oops, the page you're <br>
-      looking for does not exist...
-      <hr>
-
-      <p class="context primary-text-color">But please do not cancel your wedding </p>
-    </div>
-    <hr>
-    <div class="clearfix"></div>
-    <div class="context primary-text-color">
-      <!-- doesn't use context_content because it's ALWAYS the same thing -->
-      <p>
-        You may want to head back to the homepage.<br />
-        If you think something is broken, report a problem.
-      </p>
-    </div>
-    <div class="buttons-container">
-      <a class="border-button" href="http://www.happyseat.fr" target="_blank">Go To Homepage</a>
-      <a class="border-button" href="mailto:help@happyseat" target="_blank">Report A Problem</a>
-    </div>
+<body>
+  <div id="clouds">
+    <div class="cloud x1"></div>
+    <div class="cloud x1_5"></div>
+    <div class="cloud x2"></div>
+    <div class="cloud x3"></div>
+    <div class="cloud x4"></div>
+    <div class="cloud x5"></div>
   </div>
-
-
-  <script>
-    function ErrorPage(container, pageType, templateName) {
-      this.$container = $(container);
-      this.$contentContainer = this.$container.find(templateName == 'sign' ? '.sign-container' : '.content-container');
-      this.pageType = pageType;
-      this.templateName = templateName;
-    }
-
-    ErrorPage.prototype.centerContent = function () {
-      var containerHeight = this.$container.outerHeight(),
-        contentContainerHeight = this.$contentContainer.outerHeight(),
-        top = (containerHeight - contentContainerHeight) / 2,
-        offset = this.templateName == 'sign' ? -100 : 0;
-
-      this.$contentContainer.css('top', top + offset);
-    };
-
-    ErrorPage.prototype.initialize = function () {
-      var self = this;
-
-      this.centerContent();
-      this.$container.on('resize', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        self.centerContent();
-      });
-
-      // fades in content on the plain template
-      if (this.templateName == 'plain') {
-        window.setTimeout(function () {
-          self.$contentContainer.addClass('in');
-        }, 500);
-      }
-
-      // swings sign in on the sign template
-      if (this.templateName == 'sign') {
-        $('.sign-container').animate({
-          textIndent: 0
-        }, {
-          step: function (now) {
-            $(this).css({
-              transform: 'rotate(' + now + 'deg)',
-              'transform-origin': 'top center'
-            });
-          },
-          duration: 1000,
-          easing: 'easeOutBounce'
-        });
-      }
-    };
-
-
-    ErrorPage.prototype.createTimeRangeTag = function (start, end) {
-      return (
-        '<time utime=' + start + ' simple_format="MMM DD, YYYY HH:mm">' + start + '</time> - <time utime=' + end +
-        ' simple_format="MMM DD, YYYY HH:mm">' + end + '</time>.'
-      )
-    };
-
-
-    ErrorPage.prototype.handleStatusFetchSuccess = function (pageType, data) {
-      if (pageType == '503') {
-        $('#replace-with-fetched-data').html(data.status.description);
-      } else {
-        if (!!data.scheduled_maintenances.length) {
-          var maint = data.scheduled_maintenances[0];
-          $('#replace-with-fetched-data').html(this.createTimeRangeTag(maint.scheduled_for, maint.scheduled_until));
-          $.fn.localizeTime();
-        } else {
-          $('#replace-with-fetched-data').html('<em>(there are no active scheduled maintenances)</em>');
-        }
-      }
-    };
-
-
-    ErrorPage.prototype.handleStatusFetchFail = function (pageType) {
-      $('#replace-with-fetched-data').html('<em>(enter a valid Statuspage url)</em>');
-    };
-
-
-    ErrorPage.prototype.fetchStatus = function (pageUrl, pageType) {
-      //console.log('in app.js fetch');
-      if (!pageUrl || !pageType || pageType == '404') return;
-
-      var url = '',
-        self = this;
-
-      if (pageType == '503') {
-        url = pageUrl + '/api/v2/status.json';
-      } else {
-        url = pageUrl + '/api/v2/scheduled-maintenances/active.json';
-      }
-
-      $.ajax({
-        type: "GET",
-        url: url,
-      }).success(function (data, status) {
-        //console.log('success');
-        self.handleStatusFetchSuccess(pageType, data);
-      }).fail(function (xhr, msg) {
-        //console.log('fail');
-        self.handleStatusFetchFail(pageType);
-      });
-
-    };
-    var ep = new ErrorPage('body', "404", "plain");
-    ep.initialize();
-
-    // hack to make sure content stays centered >_<
-    $(window).on('resize', function () {
-      $('body').trigger('resize')
-    });
-  </script>
-
-
+  <div class='c'>
+    <div class='_404'>404</div>
+    <hr>
+    <div class='_1'>La page <br>
+      est introuvable
+    </div>
+    <div class='_2'></div>
+     <a class='btn' href="https://www.lacabanedemaii.com/" rel="noopener noreferrer">Retour vers la Cabane</a>
+  </div>
 </body>
 
 </html>
