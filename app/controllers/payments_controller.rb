@@ -25,8 +25,7 @@ class PaymentsController < ApplicationController
     # OrderShopMailer.order_confirmation_shop(@order_pay).deliver_later(wait: 2.minutes)
     OrderMailer.order_confirmation_user(@order_pay).deliver_now
     OrderShopMailer.order_confirmation_shop(@order_pay).deliver_now
-
-    @order_last = current_user.orders.last
+    @order_last = current_user.orders.last.id
     redirect_to order_path(@order_last)
 
     rescue Stripe::CardError => e
