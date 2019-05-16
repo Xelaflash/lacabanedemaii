@@ -45,7 +45,7 @@ class OrdersController < ApplicationController
     @order_items = @order.order_items
     @order.validate_deliv_details = true
     if @order.update(order_params)
-      flash[:notice] = "Les détails de livraison ont bien été ajoutés"
+      flash.now[:notice] = "Les détails de livraison ont bien été ajoutés"
       render "carts/show"
     else
       flash[:alert] = "Vous n'avez pas rempli les détails de livraison"
