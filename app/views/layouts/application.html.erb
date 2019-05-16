@@ -63,21 +63,5 @@
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_pack_tag "map" %>
-    <script>
-      window.ReboundSettings = {
-        publicToken: "xjmvlhj6esoubqhosmceop",
-        email: "<%= current_user.email %>",
-        appearance: "alert",
-        position: "topLeft",
-        title: "Merci de modifier votre email",
-        description: "Un E-mail récemment envoyé à [[email]] nous a été retourné.
-    Raison : [[reason]].
-    Votre e-mail est probablement incorrect merci de le corriger.
-    ",
-        actionLabel: "Modifier email",
-        actionUrl: "https://lacabanedemaii.com/users/edit",
-      }
-    </script>
-    <script>(function(r,e,b,o,u,n,d){if(r.Rebound)return;d=function(){o="script";u=e.createElement(o);u.type="text/javascript";u.src=b;u.async=true;n=e.getElementsByTagName(o)[0];n.parentNode.insertBefore(u,n)};if(r.attachEvent){r.attachEvent("onload",d)}else{r.addEventListener("load",d,false)}})(window,document,"https://rebound.postmarkapp.com/widget/1.0");</script>
   </body>
 </html>
