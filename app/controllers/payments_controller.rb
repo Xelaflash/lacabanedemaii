@@ -27,7 +27,6 @@ class PaymentsController < ApplicationController
     OrderShopMailer.order_confirmation_shop(@order_pay).deliver_now
     @order_last = current_user.orders.last.id
     redirect_to order_path(@order_last)
-
     rescue Stripe::CardError => e
       flash[:alert] = e.message
       redirect_to new_order_payment_path(@order_pay)
