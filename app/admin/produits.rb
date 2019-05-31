@@ -1,4 +1,5 @@
 ActiveAdmin.register Produit do
+  menu label: "Produits"
   permit_params  :marque, :nom, :reference, :photo, :quantite, :prix, :frais_de_port, :poids, :unit, :description, :composition, :utilisation, :gamme_id, :active, :best_seller
 
   index do

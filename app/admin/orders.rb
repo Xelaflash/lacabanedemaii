@@ -1,4 +1,5 @@
 ActiveAdmin.register Order do
+  menu label: "Commandes"
   permit_params :total_price, :order_status_id
  index do
     selectable_column
