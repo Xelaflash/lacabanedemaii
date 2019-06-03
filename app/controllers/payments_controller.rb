@@ -14,7 +14,7 @@ class PaymentsController < ApplicationController
       email:  params[:stripeEmail]
     )
     charge = Stripe::Charge.create(
-      customer:     customer.id,   # You should store this customer id and re-use it.
+      customer:     customer.id,
       amount:       @order_pay.total_price_cents,
       description:  "Paiement pour la commande n° #{@order_pay.id} du #{@order_pay.created_at} d'un montant de #{@order_pay.total_price} €",
       currency:     'eur'
@@ -22,8 +22,6 @@ class PaymentsController < ApplicationController
     flash[:notice] = "Votre paiement a été accepté. Vous allez recevoir un mail de confirmation."
     @order_pay.update(payment: charge.to_json, order_status_id: 2, active: false)
     update_stock
-    # OrderMailer.order_confirmation_user(@order_pay).deliver_later(wait: 1.minutes)
-    # OrderShopMailer.order_confirmation_shop(@order_pay).deliver_later(wait: 2.minutes)
     OrderMailer.order_confirmation_user(@order_pay).deliver_now
     OrderShopMailer.order_confirmation_shop(@order_pay).deliver_now
     @order_last = current_user.orders.last.id
@@ -42,14 +40,10 @@ private
   end
 
   def update_stock
-    @order_total.each do |item|
-      product_id_to_update = item.produit_id
-      product_to_update = Produit.find(product_id_to_update)
-      product_stock = item.produit.quantite
-      quantity_to_remove = item.quantity
-      product_to_update.quantite = product_stock - quantity_to_remove
+    @order_total.each do |cart_item|
+      product_to_update = Produit.find(cart_item.produit_id)
+      product_to_update.quantite = cart_item.produit.quantite - cart_item.quantity
       product_to_update.save
-
     end
   end
 
