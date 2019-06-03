@@ -21,6 +21,7 @@ class PaymentsController < ApplicationController
     )
     flash[:notice] = "Votre paiement a été accepté. Vous allez recevoir un mail de confirmation."
     @order_pay.update(payment: charge.to_json, order_status_id: 2, active: false)
+    update_stock
     # OrderMailer.order_confirmation_user(@order_pay).deliver_later(wait: 1.minutes)
     # OrderShopMailer.order_confirmation_shop(@order_pay).deliver_later(wait: 2.minutes)
     OrderMailer.order_confirmation_user(@order_pay).deliver_now
@@ -38,6 +39,18 @@ private
     @order_pay = current_order
     @order_total = @order_pay.order_items
     @order_pay.total_price_cents = @order_pay.total_price * 100
+  end
+
+  def update_stock
+    @order_total.each do |item|
+      product_id_to_update = item.produit_id
+      product_to_update = Produit.find(product_id_to_update)
+      product_stock = item.produit.quantite
+      quantity_to_remove = item.quantity
+      product_to_update.quantite = product_stock - quantity_to_remove
+      product_to_update.save
+
+    end
   end
 
 end

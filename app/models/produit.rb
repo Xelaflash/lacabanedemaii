@@ -27,4 +27,5 @@ class Produit < ApplicationRecord
   def name
     "Marque: #{marque.capitalize} - Nom: #{nom.capitalize} - ref: #{reference}"
   end
+
 end

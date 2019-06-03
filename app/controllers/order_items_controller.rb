@@ -28,7 +28,6 @@ class OrderItemsController < ApplicationController
       format.html
       format.js
     end
-    @order_items = @order.order_items
     redirect_to cart_path
   end
 
