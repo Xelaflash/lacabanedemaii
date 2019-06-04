@@ -17,12 +17,12 @@
     </tbody>
   </table>
 
-  <div class="list-produits" style="margin: 0 auto;display: flex;justify-content: space-around;align-items: center;width: 840px;background-color: #ffffff;">
-    <div class="prd-list-left">
+  <div class="list-produits" style="margin: 0 auto;display: flex;width: 840px;background-color: #ffffff;">
+    <div class="prd-list-left" style="padding-left:120px;">
       <% @order_items.each do |order_item| %>
         <div class="produit-item" style="margin: 0 auto;padding: 10px 0;">
-          <div class="order-detail" style="display: flex;justify-content: space-around;align-items: center;">
-            <div class="order-list-left">
+          <div class="order-detail" style="display: flex;">
+            <div class="order-list-left" style="padding: 20px 0 20px 150px;">
               <div class="order-product" style="width: 130px;word-wrap: break-word;">
                 <div class="text-center">
                   <h6 style="font-size: 16px;font-weight: 400;text-align: center;margin: 0 0;" ><%= order_item.produit.nom %></h6>
@@ -30,7 +30,7 @@
                 </div>
               </div>
             </div>
-            <div class="order-list-right" style="padding-top: 45px;">
+            <div class="order-list-right" style="padding: 20px 0 0 70px;">
               <div class="qte">
                 <h6 style="font-size: 18px;font-weight: 400;text-align: center;margin: 15px 0;"> <%= order_item.quantity %> x <%= humanized_money(order_item.unit_price)%> <%= currency_symbol %> = <span id="price" style="color: green"><%= humanized_money(order_item.total_price) %> <%= currency_symbol %></span></h6>
               </div>
