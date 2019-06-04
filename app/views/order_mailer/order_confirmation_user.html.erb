@@ -39,9 +39,9 @@
   <div class="list-produits" style="margin: 0 auto;display: flex;width: 840px;background-color: #ffffff;">
     <div class="prd-list-left" style="margin: 0 0 10px 120px;">
       <% @order_items.each do |order_item| %>
-        <div class="produit-item" style="margin: 15px 0 15px 100px;padding: 10px 0;">
+        <div class="produit-item" style="margin: 15px 0;padding: 10px 0;">
           <div class="order-detail" style="display: flex;">
-            <div class="order-list-left" style="padding-left: 65px;">
+            <div class="order-list-left" style="margin-left: 80px;">
               <div class="order-product" style="width: 130px;word-wrap: break-word;">
                 <div class="text-center">
                   <h6 style="font-size: 16px;font-weight: 400;text-align: center;margin: 0 0;" ><%= order_item.produit.nom %></h6>
@@ -51,7 +51,7 @@
                 </div>
               </div>
             </div>
-            <div class="order-list-right" style="padding-top: 45px;margin-left: 100px;">
+            <div class="order-list-right" style="padding-top: 45px;margin-left: 200px;">
               <div class="qte">
                 <h6 style="font-size: 18px;font-weight: 400;text-align: center;margin: 15px 0;"> <%= order_item.quantity %> x <%= humanized_money(order_item.unit_price)%> <%= currency_symbol %> = <span id="price" style="color: green"><%= humanized_money(order_item.total_price) %> <%= currency_symbol %></span></h6>
               </div>
@@ -64,7 +64,7 @@
   </div>
 
   <div class="bottom-recap" style="margin: 0 auto;display: flex;width: 840px;background-color: #ffffff;">
-    <div class="bottom-recap-left" style="padding: 20px;margin-left: 100px;">
+    <div class="bottom-recap-left" style="padding: 20px;margin-left: 125px;">
       <tr>
         <td>
           <table style="border:1px solid #DDCEBB" align="center">

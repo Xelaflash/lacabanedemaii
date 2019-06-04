@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
     if @order.save
       redirect_to new_order_payment_path(@order)
     else
-      flash[:alert] = "Vous n'avez pas rempli les détails de livraison"
+      flash.now[:alert] = "Vous n'avez pas rempli les détails de livraison"
       render "carts/show"
     end
   end
@@ -48,7 +48,7 @@ class OrdersController < ApplicationController
       flash.now[:notice] = "Les détails de livraison ont bien été ajoutés"
       render "carts/show"
     else
-      flash[:alert] = "Vous n'avez pas rempli les détails de livraison"
+      flash.now[:alert] = "Vous n'avez pas rempli les détails de livraison"
       render "carts/show"
     end
   end
