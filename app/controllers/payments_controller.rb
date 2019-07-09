@@ -13,16 +13,17 @@ class PaymentsController < ApplicationController
       locale: "fr",
       line_items: [{
         name: "Commande n° #{@order_pay.id}",
-        description: "Paiement pour la commande n° #{@order_pay.id} du #{@order_pay.created_at.strftime("%d/%m/%Y à %H:%M")} d'un montant de #{@order_pay.total_price} €",
+        description: "Paiement pour la commande n° #{@order_pay.id} du #{@order_pay.created_at.strftime("%d/%m/%Y à %H:%M")}",
         amount: @order_pay.total_price_cents,
         currency: 'eur',
         quantity: 1,
         images: ['https://res.cloudinary.com/drzibyjvb/image/upload/v1553790778/cabane_biz_card.jpg'],
       }],
-      success_url: 'https://example.com/success',
-      cancel_url: 'https://example.com/cancel',
+      success_url: 'http://localhost:3000/paiement_reussi',
+      cancel_url: 'http://localhost:3000/paiement_annule',
     )
     @session = session.id
+
   end
 
   def create
@@ -53,20 +54,5 @@ class PaymentsController < ApplicationController
     #   redirect_to new_order_payment_path(@order_pay)
   end
 
-private
-
-  def set_order
-    @order_pay = current_order
-    @order_total = @order_pay.order_items
-    @order_pay.total_price_cents = @order_pay.total_price * 100
-  end
-
-  def update_stock
-    @order_total.each do |cart_item|
-      product_to_update = Produit.find(cart_item.produit_id)
-      product_to_update.quantite = cart_item.produit.quantite - cart_item.quantity
-      product_to_update.save
-    end
-  end
 
 end
