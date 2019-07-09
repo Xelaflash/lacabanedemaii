@@ -35,8 +35,8 @@ class PagesController < ApplicationController
   def payment_success
     add_breadcrumb "accueil", :root_path
     add_breadcrumb "paiement accepté", payment_success_path
-    @order_pay.update(payment: session.to_json, order_status_id: 2, active: false)
     flash[:notice] = "Votre paiement a été accepté. Vous allez recevoir un mail de confirmation."
+    @order_pay.update(payment: session.to_json, order_status_id: 2, active: false)
     update_stock
     OrderMailer.order_confirmation_user(@order_pay).deliver_now
     OrderShopMailer.order_confirmation_shop(@order_pay).deliver_now
