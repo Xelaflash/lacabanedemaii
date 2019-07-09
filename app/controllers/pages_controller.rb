@@ -30,4 +30,14 @@ class PagesController < ApplicationController
     add_breadcrumb "accueil", :root_path
     add_breadcrumb "cgv", cgv_path
   end
+
+  def payment_success
+    add_breadcrumb "accueil", :root_path
+    add_breadcrumb "paiement accepté", payment_success_path
+  end
+
+  def payment_cancel
+    add_breadcrumb "accueil", :root_path
+    add_breadcrumb "paiement annulé", payment_cancel_path
+  end
 end

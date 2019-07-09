@@ -55,8 +55,10 @@
                   </div>
                 <% end %>
               </article>
-              <script src="https://js.stripe.com/v3/"></script>
-              <script
+
+              <%= submit_tag 'Payer la commande', class: 'btn', id:"checkout-button" %>
+
+              <!-- <script
                 src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                 data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                 data-amount="<%= @order_pay.total_price_cents %>"
@@ -67,7 +69,21 @@
                 data-email="<%= @order_pay.customer %>"
                 data-label="Payer"
                 data-locale="auto">
+              </script> -->
+              <script src="https://js.stripe.com/v3/"></script>
+              <script>
+                const stripe = Stripe("<%= Rails.configuration.stripe[:publishable_key] %>");
+                const checkoutButton = document.querySelector('#checkout-button');
+                checkoutButton.addEventListener('click', () => {
+                  stripe.redirectToCheckout({
+                    sessionId: '<%= @session %>'
+                  }).then((result) => {
+                    console.log(result.error.message);
+                  });
+                });
               </script>
+
+
             </div>
             <div class="payment-disclaimer">
               <p>Les paiments sont opérés et sécurisés par l'entreprise <a href="https://www.stripe.com/fr/" target="_blank" rel="noopener noreferrer"><%= cl_image_tag("Stripe_logo.png", height: 30) %></a></p>
