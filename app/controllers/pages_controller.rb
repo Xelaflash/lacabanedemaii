@@ -48,6 +48,7 @@ class PagesController < ApplicationController
   def payment_cancel
     add_breadcrumb "accueil", :root_path
     add_breadcrumb "paiement annulé", payment_cancel_path
+    redirect_to new_payments_path(@order)
   end
 
   private
