@@ -25,6 +25,12 @@ class ApplicationController < ActionController::Base
     @prod_gammes = Gamme.all
   end
 
+    def set_order
+    @order_pay = current_order
+    @order_total = @order_pay.order_items
+    @order_pay.total_price_cents = @order_pay.total_price * 100
+  end
+
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
     devise_parameter_sanitizer.permit(:sign_up, keys: [:prenom, :nom, :adresse, :telephone])
