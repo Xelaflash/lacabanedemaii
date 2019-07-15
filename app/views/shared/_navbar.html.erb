@@ -21,7 +21,7 @@
           <% if current_order.order_items.size == 0 %>
           <div class="cart-anim-empty">
             <p class="text-center">Votre panier est vide</p>
-            <em><p class="text-center">Voir <%= link_to "les produits", produits_path %></p></em>
+            <p class="text-center"><em>Voir <%= link_to "les produits", produits_path %></em></p>
           </div>
           <% else %>
           <ul class="list-unstyled">

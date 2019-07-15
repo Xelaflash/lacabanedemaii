@@ -1,8 +1,8 @@
 .reinsurance {
   background: $primary;
   padding: 40px 0px;
-
-  p {
+  h1 {
+    font-family: $body-font;
     font-size: 15px;
     padding: 15px;
     margin: 10px 0;
@@ -106,7 +106,8 @@
 
 .footer-bottom {
   padding-bottom: 15px;
-  p {
+  h1 {
+    font-family: $body-font;
     font-size: 13px;
     margin: 0 10px;
   }
@@ -165,7 +166,7 @@
 
   .reinsurance {
     padding:20px 0;
-    p {
+    h1 {
       font-size: 13px;
     }
   }
@@ -223,7 +224,7 @@
 
   #copyright {
     margin-bottom: 5px;
-    p {
+    h1 {
       font-size: 11px;
     }
   }

@@ -193,3 +193,11 @@
     margin-bottom: 20px;
   }
 }
+
+@media only screen
+and (min-width: 500px)
+and (max-width: 1023px) {
+  .btn-finalize {
+    margin-bottom: 20px;
+  }
+}
