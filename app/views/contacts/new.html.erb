@@ -55,6 +55,9 @@
             <%= f.input :subject, label: "Titre", placeholder: 'Question commande n° 27', error: 'Ce champ est obligatoire.' %>
             <%= f.input :body, label: "Votre message", as: :text, error: 'Ce champ est obligatoire.' %>
           </div>
+          <div class="text-center">
+            <%= recaptcha_tags(id: "recaptcha_field") %>
+          </div>
           <div class="form-actions">
             <%= f.button :submit, "Envoyez votre message", class: "btn btn-primary" %>
           </div>

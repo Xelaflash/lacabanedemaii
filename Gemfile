@@ -26,6 +26,7 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem "recaptcha"
 gem 'cloudinary'
 gem 'friendly_id'
 gem "breadcrumbs_on_rails"
