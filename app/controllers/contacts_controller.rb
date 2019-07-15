@@ -9,7 +9,7 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
-    if @contact.valid?
+    if verify_recaptcha(model: @contact) && @contact.valid?
       flash[:notice] = "Votre message a bien été envoyé, merci!"
       ContactMailer.contact_me(@contact).deliver_now
       redirect_to new_contact_path

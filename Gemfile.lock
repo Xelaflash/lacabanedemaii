@@ -244,6 +244,8 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    recaptcha (5.0.0)
+      json
     redis (4.1.0)
     responders (2.4.1)
       actionpack (>= 4.2.0, < 6.0)
@@ -344,6 +346,7 @@ DEPENDENCIES
   pry-rails
   puma
   rails (= 5.2.2.1)
+  recaptcha
   redis
   sass-rails
   sidekiq

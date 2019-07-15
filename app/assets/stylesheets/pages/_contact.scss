@@ -51,12 +51,17 @@
 
 .form-contact {
   padding: 10px 20px;
-  margin-top: 5px;
+  margin: 5px auto;
   box-shadow: 0px 0px 0px rgba(0,0,0,0.0);
 }
 
 textarea#contact_body {
   height: 100px;
+}
+
+#recaptcha_field {
+  margin: 15px auto 30px;
+  display: inline-block;
 }
 
 @media(max-width: 1024px) {
