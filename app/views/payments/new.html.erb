@@ -58,14 +58,15 @@
               <%= submit_tag 'Payer la commande', class: 'btn', id:"checkout-button" %>
             </div>
             <div class="payment-disclaimer">
-              <p>Les paiments sont opérés et sécurisés par l'entreprise <a href="https://www.stripe.com/fr/" target="_blank" rel="noopener noreferrer"><%= cl_image_tag("Stripe_logo.png", height: 30) %></a></p>
+              <p>Les paiments sont opérés et sécurisés par l'entreprise <a href="https://www.stripe.com/fr/" target="_blank" rel="noopener noreferrer"><%= image_tag "https://res.cloudinary.com/drzibyjvb/image/upload/v1556631183/Stripe_logo.png", height: 30 %></a>
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
     <script src="https://js.stripe.com/v3/"></script>
-    <script>
+    <%= javascript_tag nonce: true do -%>
       const stripe = Stripe("<%= Rails.configuration.stripe[:publishable_key] %>");
       const checkoutButton = document.querySelector('#checkout-button');
       checkoutButton.addEventListener('click', () => {
@@ -75,6 +76,6 @@
           alert(result.error.message);
         });
       });
-    </script>
+    <% end -%>
   <% end %>
 </div>

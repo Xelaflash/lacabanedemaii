@@ -19,8 +19,10 @@ class PaymentsController < ApplicationController
         images: ['https://res.cloudinary.com/drzibyjvb/image/upload/v1553790778/cabane_biz_card.jpg'],
       }],
       # TODO: change URL for real ones!!!!!
-      success_url: 'https://lacabanedemaii.herokuapp.com/paiement_reussi',
-      cancel_url: 'https://lacabanedemaii.herokuapp.com/paiement_annule',
+      # success_url: 'https://lacabanedemaii.herokuapp.com/paiement_reussi',
+      # cancel_url: 'https://lacabanedemaii.herokuapp.com/paiement_annule',
+      success_url: 'http://localhost:3000/paiement_reussi',
+      cancel_url: 'http://localhost:3000/paiement_annule',
     )
     @session = session.id
   end

@@ -3,7 +3,8 @@ class PagesController < ApplicationController
   before_action :set_order
 
   def home
-    @best_products = Produit.where(best_seller: true, active: true)
+    @best_products = Produit.where("quantite > ?", 0)
+    .where(best_seller: true, active: true)
     @order_item = current_order.order_items.new
   end
 
