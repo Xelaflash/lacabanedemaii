@@ -42,5 +42,3 @@ document.addEventListener("DOMContentLoaded", () => {
     autocomplete.addListener('place_changed', fillInAddress);
   }
 });
-
-export { fillInAddress };
