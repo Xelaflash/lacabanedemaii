@@ -33,22 +33,19 @@ class PagesController < ApplicationController
   end
 
   def payment_success
-    add_breadcrumb "accueil", :root_path
-    add_breadcrumb "paiement accepté", payment_success_path
     flash[:notice] = "Votre paiement a été accepté. Vous allez recevoir un mail de confirmation."
-    @order_pay.update(payment: session.to_json, order_status_id: 2, active: false)
     update_stock
     OrderMailer.order_confirmation_user(@order_pay).deliver_now
     OrderShopMailer.order_confirmation_shop(@order_pay).deliver_now
-
+    @order_pay.update(active: false)
     @order_last = current_user.orders.last.id
     redirect_to order_path(@order_last)
   end
 
   def payment_cancel
-    add_breadcrumb "accueil", :root_path
-    add_breadcrumb "paiement annulé", payment_cancel_path
-    redirect_to new_payments_path(@order)
+    flash[:alert] = "Votre paiement a été annulé. Merci de réessayer."
+    @order_last = current_user.orders.last.id
+    redirect_to new_order_payment_path(@order_last)
   end
 
   private
@@ -60,4 +57,5 @@ class PagesController < ApplicationController
       product_to_update.save
     end
   end
+
 end

@@ -70,12 +70,8 @@
       const checkoutButton = document.querySelector('#checkout-button');
       checkoutButton.addEventListener('click', () => {
         stripe.redirectToCheckout({
-          // sessionId: '<%= @session %>'
           sessionId: '<%= @order.checkout_session_id %>'
         });
-        // .then((result) => {
-        //   alert(result.error.message);
-        // });
       });
     </script>
   <% end %>

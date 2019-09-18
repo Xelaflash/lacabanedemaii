@@ -8,7 +8,6 @@ class OrdersController < ApplicationController
     @order_items = @order.order_items
     @order.prod_list =  @order_items.map{|order_item| [order_item.quantity, order_item.produit.nom]}
     @order.validate_deliv_details = true
-
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       submit_type: "pay",
@@ -21,13 +20,12 @@ class OrdersController < ApplicationController
         quantity: 1,
         images: ['https://res.cloudinary.com/drzibyjvb/image/upload/v1553790778/cabane_biz_card.jpg'],
       }],
-      # # TODO: change URL for real ones!!!!!
-      # success_url: 'https://lacabanedemaii.herokuapp.com/paiement_reussi',
-      # cancel_url: 'https://lacabanedemaii.herokuapp.com/paiement_annule',
-      success_url: order_url(@order),
-      cancel_url: order_url(@order)
+      # TODO: change URL for real ones!!!!!
+      success_url: 'http://localhost:3000/paiement_reussi',
+      cancel_url: 'http://localhost:3000/paiement_annule',
+      # success_url: order_url(@order),
+      # cancel_url: order_url(@order)
     )
-
     @order.checkout_session_id = session.id
     if @order.save
       redirect_to new_order_payment_path(@order)
@@ -35,8 +33,6 @@ class OrdersController < ApplicationController
       flash.now[:alert] = "Vous n'avez pas rempli les détails de livraison"
       render "carts/show"
     end
-
-    # @order.update(checkout_session_id: session.id)
   end
 
   def index
@@ -61,7 +57,6 @@ class OrdersController < ApplicationController
     add_breadcrumb "produits", produits_path
     add_breadcrumb "panier", cart_path
     add_breadcrumb "mes commandes", orders_path
-    add_breadcrumb "Paiement", new_order_payment_path(@order)
   end
 
   def update
