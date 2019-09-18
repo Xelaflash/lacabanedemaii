@@ -17,7 +17,7 @@ devise_for :users, controllers: { sessions: 'users/sessions' }
   resources :gammes, only: [:show]
   resources :contacts, only: [:new, :create]
   resources :orders, only: [:index, :create,:show,:update, :destroy] do
-    resources :payments, only: [:new, :create]
+    resources :payments, only: :new
   end
 
   root to: 'pages#home'
@@ -26,6 +26,6 @@ devise_for :users, controllers: { sessions: 'users/sessions' }
   get 'aide',            to: 'pages#aide',             as: :aide
   get 'mentions_legales',to: 'pages#mentions_legales',as: :mentions_legales
   get 'CGV',             to: 'pages#CGV',             as: :cgv
-  get 'paiement_reussi', to: 'pages#payment_success', as: :payment_success
-  get 'paiement_annule', to: 'pages#payment_cancel', as: :payment_cancel
+  # get 'paiement_reussi', to: 'pages#payment_success', as: :payment_success
+  # get 'paiement_annule', to: 'pages#payment_cancel', as: :payment_cancel
 end

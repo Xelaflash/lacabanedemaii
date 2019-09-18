@@ -12,6 +12,7 @@ gem 'redis'
 gem 'pg_search'
 gem 'activeadmin'
 gem 'stripe'
+gem 'stripe_event'
 gem 'money-rails'
 gem "geocoder"
 gem 'postmark-rails'
