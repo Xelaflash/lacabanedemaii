@@ -33,6 +33,7 @@ class PagesController < ApplicationController
   end
 
   def payment_success
+    binding.pry
     flash[:notice] = "Votre paiement a été accepté. Vous allez recevoir un mail de confirmation."
     update_stock
     OrderMailer.order_confirmation_user(@order_pay).deliver_now
