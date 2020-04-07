@@ -9,23 +9,23 @@ class ApplicationController < ActionController::Base
   def current_order
     order = Order.find(session[:order_id])
     if user_signed_in? && !last_pending_customer_order.nil?
-        last_pending_customer_order
+      last_pending_customer_order
     elsif !session[:order_id].nil? && order.active == true
       Order.find(session[:order_id])
     else
       Order.new
     end
-    rescue ActiveRecord::RecordNotFound
-        order = Order.create
-        session[:order_id] = order.id
-        order
+  rescue ActiveRecord::RecordNotFound
+    order = Order.create
+    session[:order_id] = order.id
+    order
   end
 
   def set_gamme
     @prod_gammes = Gamme.all
   end
 
-    def set_order
+  def set_order
     @order_pay = current_order
     @order_total = @order_pay.order_items
     @order_pay.total_price_cents = @order_pay.total_price * 100
@@ -33,8 +33,8 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:prenom, :nom, :adresse, :telephone])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:prenom, :nom, :adresse, :telephone])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[prenom nom adresse telephone])
+    devise_parameter_sanitizer.permit(:account_update, keys: %i[prenom nom adresse telephone])
   end
 
   def after_sign_in_path_for(resource_or_scope)
@@ -48,7 +48,7 @@ class ApplicationController < ActionController::Base
   private
 
   def storable_location?
-      request.get? && is_navigational_format? && !devise_controller? && !request.xhr?
+    request.get? && is_navigational_format? && !devise_controller? && !request.xhr?
   end
 
   def store_user_location!
@@ -58,5 +58,4 @@ class ApplicationController < ActionController::Base
   def last_pending_customer_order
     current_user.orders.where(order_status_id: 1).last
   end
-
 end

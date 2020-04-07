@@ -35,6 +35,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem "letter_opener"
   gem 'brakeman'
+  gem 'rubocop', require: false
 end
 
 group :development, :test do
